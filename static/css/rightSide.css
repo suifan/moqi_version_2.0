@@ -25,19 +25,26 @@
     background-size: 3804%;
 
 }
-#duty .content ul{
+#duty ul{
     color: #fff;
     font-size: 1vw;
     margin: 1vw 0 1vw 1vw;
-    width: 11vw;
-    float:left
+    float:left;
+    border-right: 1px solid #8b98b0;
+    width: 12vw;
 }
-#duty .content ul li{
+#duty ul li{
     line-height: 1.8vw;
+    color:#8b98b0;
 }
-#duty .content ul li span{
-    width: 8vw;
+#duty ul li span{
+    width: 6vw;
     display: inline-block;
+    color: #8b98b0;
+    text-align: right;
+}
+#duty ul em{
+    padding:0 .5vw;
 }
 
 #duty .content div{
@@ -47,6 +54,12 @@
     font-weight: bold;
     line-height: 1.5vw;
     margin-top: 2.3vw;
+    margin-right: 2vw;
+}
+
+#duty .content div p{
+    font-weight:normal;
+    color: #8b98b0;
 }
 
 #cause .content{
@@ -62,7 +75,7 @@
     text-align: center;
     font-size: 1vw;
     line-height: 1.5vw;
-    padding-top: .5vw;
+    padding: .9vw 0 .5vw 0;
     margin-left: .4vw;
     margin-top: .4vw;
 }

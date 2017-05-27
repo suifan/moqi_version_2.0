@@ -6,7 +6,7 @@
     /*background: #999;*/
 }
 .bottom-head {
-    background: url("../images/bottom-head.png") no-repeat;
+    background: url("../images/bottom_head.png") no-repeat;
     background-size: 100%;
     margin: 0 auto;
     width: 22vw;
@@ -27,8 +27,8 @@
 .bottom-content {
     display: block;
     height: 15.9vw;
-    background: #404950;
-    border-top: 2px solid #435875;
+    background: #0e1a33;
+    border-top: 1px solid #526b96;
     color: #fff;
 }
 .bottom-left {
@@ -36,8 +36,9 @@
     height: 100%;
     margin-right: 0.8vw;
     float: left;
-    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#333f4c), to(rgba(93, 104, 116, 0.8)));
-    background: -webkit-linear-gradient(top, #66707b, #343d48);
+    /*background:-webkit-gradient(linear, 0 0, 0 bottom, from(#333f4c), to(rgba(93, 104, 116, 0.8)));*/
+    background: rgba(50, 102, 195, 0.5);;
+    border: 1px solid #4b86f0;
     font-size: 1.55vw;
     text-align: center;
     line-height: 1.8vw;
@@ -168,4 +169,45 @@
 
 .bottom-body {
     height: 12.3vw;
+}
+
+/*莫旗简介模块css*/
+#Box {
+    padding: 1.2vw 0;
+    height: 13.4vw;
+}
+#Box .box-item {
+    display: block;
+}
+#Box .box-item {
+    height: 13.4vw;
+    width: 54vw;
+    overflow-y: auto;
+    padding: 0 .4vw;
+}
+#Box .box-item p{
+    font-size: 1vw;
+    letter-spacing: 2px;
+    margin-top: .6vw;
+    line-height: 1.6vw;
+}
+#slideBox_r {
+    float: left;
+    width: 34vw;
+    /*background: black;*/
+    height: 13.4vw;
+    margin-left: 3.6vw;
+    overflow: hidden;
+}
+#slideBox_r .box-wrapper {
+    height: 100%;
+    padding: 1.5vw 0;
+}
+#slideBox_r .slide-item {
+    width: 15.6vw;
+    height: 10.5vw;
+    background: aliceblue;
+    margin: 0 .8vw;
+    float: left;
+    overflow: hidden;
 }

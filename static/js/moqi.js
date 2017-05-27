@@ -36,7 +36,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $(".bottom-header ul li").removeClass("click-active").eq(0).addClass("click-active")
             var $this = $(this).siblings(".bottom-content");
             $this.slideToggle(function(){
-                api.getDoctorSign('illnessCasuses');
+                // api.getDoctorSign('illnessCasuses');
             });
 
         });
@@ -121,10 +121,23 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------end
 
             //底部--------------------start
-            $('.bottom').html(template('doctorSignTemp', {}));
-            bottomBind();
+            $('.bottom').html(template('moqiIntroduction', {}));
+            // bottomBind();
+            //家医签约按钮点击事件
+            $(".bottom-head").on("click",function(){
+                var $this = $(this).siblings(".bottom-content");
+                $this.slideToggle(function(){
+                    var showBool = $this.is(":visible");
+                    if(!showBool&&window.timeOut){
+                        clearTimeout(timeOut);
+                    }else{
+                        api.slide("slideBox_r","box-wrapper",1900);
+                        // chart.barChart("doctorSign");
+                    }
+                });
+            });
             //家医签约切换标题
-            $(".bottom-header ul").on("click","li", function(){
+            /*$(".bottom-header ul").on("click","li", function(){
                 var activeBool = $(this).hasClass("click-active");
                 if(!activeBool){
                     $(this).addClass("click-active");
@@ -132,7 +145,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     var type = $(this).attr("data-type");
                     api.getDoctorSign(type);
                 }
-            });
+            });*/
             //底部--------------------end
         },
         'getFiveGroup': function(){
@@ -182,7 +195,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
-                        api.slide("slideBox");
+                        api.slide("slideBox","box-wrapper");
                         // chart.barChart("doctorSign");
                     }
                 });
@@ -453,7 +466,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
-                        api.slide("slideBox");
+                        api.slide("slideBox","box-wrapper");
                         // chart.barChart("doctorSign");
                     }
                 });
@@ -576,17 +589,19 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         /**
          * 轮播图方法
          * @param id 容器id
+         * @param wrapper 滚动元素父标签
          */
-        'slide':function(id){
+        'slide':function(id,wrapper,time){
+            var timeGap = time || 2200;
             var outerBox = $("#"+id);
-            var innerBoxArr = outerBox.children().children();
+            var innerBoxArr = outerBox.children("."+wrapper).children();
             var leng = innerBoxArr.length;
             // outerBox.children().animate({left:0},"fast")
             if(leng<3)return;
             // var i=1;
             var leftFlag = 0;
             var perWidth = innerBoxArr[0].offsetWidth;
-            var distance = perWidth/2200;
+            var distance = perWidth/timeGap;
             var setLeft = function(arr){
                 /*if(leftFlag > perWidth*(leng-1)) {
                  leftFlag = 0;

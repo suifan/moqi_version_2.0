@@ -17,10 +17,10 @@ define(['jquery'],function($){
             var minute = Math.floor(leave2/60000);
             var leave3 = leave2%60000;
             var second = Math.floor(leave3/1000);
-            $("#countDown .day").text(day);
-            $("#countDown .hour").text(hour);
-            $("#countDown .minute").text(minute)
-            $("#countDown .second").text(second)
+            $("#countDownDiv .day").text(day);
+            $("#countDownDiv .hour").text(hour);
+            $("#countDownDiv .minute").text(minute)
+            $("#countDownDiv .second").text(second)
 
         },1000)
 

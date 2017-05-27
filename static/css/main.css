@@ -2,15 +2,15 @@
 
 /*滚动条 start*/
 ::-webkit-scrollbar {width: 5px;height:6px;}
-::-webkit-scrollbar-track-piece{background-color: #37424b;margin: -2px;}
-::-webkit-scrollbar-thumb{background: #fff;min-height: 150px;min-width: 150px;border-radius: 10px;}
-::-webkit-scrollbar-thumb:vertical:hover{background: #fff}
-::-webkit-scrollbar-thumb:horizontal:hover{background: #fff}
+::-webkit-scrollbar-track-piece{background-color: #4b586d;margin: -2px;}
+::-webkit-scrollbar-thumb{background: #20407b;min-height: 150px;min-width: 150px;border-radius: 10px;}
+::-webkit-scrollbar-thumb:vertical:hover{background: #20407b}
+::-webkit-scrollbar-thumb:horizontal:hover{background: #20407b}
 /*滚动条 end*/
 
 /*头部 start*/
 header{
-    background: url(../images/moqiSprite.png) 0 -13.8vw no-repeat;
+    background: url(../images/moqiSpriteV2.png) 0 0 no-repeat;
     -webkit-background-size: 100%;
     background-size: 100%;
     height: 10.5vw;
@@ -19,154 +19,114 @@ header{
 }
 .mainTitle{
     color: #fff;
-    font-size: 1.7vw;
-    /*font-weight: normal;*/
+    font-size: 1.5vw;
     width: auto;
-    margin: 1.3vw 0 0 2vw;
+    margin: 1.7vw 0 0 1.5vw;
     display: inline-block;
-    letter-spacing: .2vw;
     float: left;
+    font-weight: normal;
+}
+#logout{
+    float: right;
+    margin-top: 2vw;
+    font-size: 1.1vw;
+    margin-right: 2vw;
 }
 #tab{
-    width: 38.7vw;
-    margin: 0 auto;
-    padding-top: 2vw;
+    display: flex;
+    align-items: center;
+    height: 5.1vw;
+    margin-left: 22vw;
 }
-#tab div {
+#tab li {
     display: inline-block;
     background: transparent;
     color: #fff;
-    font-weight: bold;
-    border: 1px solid #b4b7ba;
-    min-width: 6vw;
     text-align: center;
-    padding: .5vw .3vw .5vw .5vw;
-    font-size: 1.2vw;
+    padding: .5vw 1vw .5vw 1vw;
+    font-size: 1.1vw;
     cursor: pointer;
-    letter-spacing: 0.2vw;
-    margin-left: .5vw;
-    border-radius: 0.7vw;
+    margin-left: 1.5vw;
 }
-#tab div:first-child{
+#tab li:first-child{
     margin-left: 0;
 }
-#tab div.active{
-    background: #092544;
-    -webkit-box-shadow: 0 2px 4px #111 inset;
-    border-color: #111;
+#tab li.active{
+    background: #3266c3;
+    -webkit-border-radius:1vw;
+    -moz-border-radius:1vw;
+    border-radius:1vw;
 
 }
-#changeAreaInHeader{
-    float: right;
-    margin: 1.5vw 2vw 0 0;
-}
-#areaSelectInHeader{
-    -webkit-appearance: none;
-    background: transparent;
-    border: 0;
-}
-#changeAreaInHeader label{
-    color: #b4b7ba;
-    font-size: 1vw;
-    vertical-align: bottom;
-}
-#changeAreaInHeader select {
-    color: #fff;
-    width: 16vw;
-    font-size: 1.2vw;
-    text-shadow: 1px 1px 4px #000;
-    background: url(../images/moqiSprite.png) 13vw -5.5vw no-repeat;
-    background-size: 450%;
-}
-#changeAreaInHeader .logout{
-    display: inline;
-    font-size: 1vw;
-    color: #fff;
-    border: 1px solid #b4b7ba;
-    padding: .1vw .5vw;
-    border-radius: .4vw;
-    cursor: pointer;
-}
+
 #countDownDiv{
-    height: 5vw;
-    width: 47.7vw;
+    height: 3vw;
+    width: 41.7vw;
     position: absolute;
-    left: 26.4%;
-    top: 5.5vw;
+    left: 29.4%;
+    top: 5.1vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.countDownTitle{
-    font-size: 1.2vw;
-    text-shadow: 1px 1px 4px #000;
-    color: #fff;
-    width: 13vw;
-    text-align: center;
-    line-height: 1.8vw;
-    margin-left: 2vw;
-    float: left;
-    margin-top: .5vw;
-    letter-spacing: 0.1vw;
-}
-#countDownDiv>span{
-    color: #fff;
-    margin-top: 1.6vw;
-    margin-right: .7vw;
-    display: inline-block;
-    margin-left: 3vw;
-    float: left;
-    font-size: 1.2vw;
-}
-#countDown{
-    display: inline-block;
-    background: url(../images/moqiSprite.png) -38.5vw -7.3vw no-repeat;
-    height: 4vw;
-    width: 16vw;
-    background-size: 680%;
-    margin-top: .7vw;
-    position: relative;
-    color: #fff;
-    font-size: 1.2vw;
-}
-#countDown span{
+#countDownDiv span{
     position: absolute;
-    /*top: .5vw;*/
-    left: 1vw;
-    width: 6vw;
+    left: 19vw;
+    width: 4vw;
     text-align: center;
     line-height: 2.2vw;
+    color: #fd8713;
+    text-shadow: 0px 0px 9px #000;
 }
-#countDown .hour{
-    left: 7.3vw;
+#countDownDiv .hour{
+    left: 24.3vw;
     width: 2.5vw;
 }
-#countDown .minute{
-    left: 10.2vw;
+#countDownDiv .minute{
+    left: 28.5vw;
     width: 2.5vw;
 }
-#countDown .second{
-    left: 13vw;
+#countDownDiv .second{
+    left: 32.5vw;
     width: 2.5vw;
 }
 /*头部 end*/
 
 /*左右侧 start*/
 #leftSide,#rightSide{
-    width: 23vw;
-    height: auto;/*待改*/
-    background: #313b43;
+    width: 26%;
+    height: auto;
     float: left;
-    margin-top: -5.8vw;
+    margin-top: -4.5vw;
     z-index: 100;
     position: relative;
-    overflow-y:auto;
-    box-shadow: 1px 0px 13px #000;
+    overflow-y: auto;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 #rightSide{
     float: right;
 }
 
+.section{
+    margin-bottom:1vw;
+}
+
 .section .header{
-    background: -webkit-linear-gradient(top,#6c7783,#2e3640);
-    border-bottom: 1px solid #263139;
+    background: rgba(72, 153, 241, 0.25);
+    border: 1px solid #43738e;
+}
+.section .section-body,.section .content{
+    background: rgba(3, 19, 39, 0.52);
+    border: 1px solid #696969;
+    border-top: 0;
+}
+.content:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
 }
 
 .section .header h2{
@@ -180,14 +140,18 @@ header{
 }
 
 .section .header .goToDetail{
-    background: url(../images/moqiSprite.png) 0 0 no-repeat;
+    background: url(../images/goToDetailV2.png) 2.7vw 0.7vw no-repeat;
     height: 2vw;
-    width: 2vw;
+    width: 2.5vw;
+    padding-right: 1vw;
     display: inline-block;
     float: right;
-    background-size: 5000%;
-    margin-top: .6vw;
+    background-size: 24%;
     cursor: pointer;
+    font-size: 1vw;
+    color: #9ba8c0;
+    margin-right: .5vw;
+    line-height: 2.3vw;
 }
 
 .section .header .sectionTab{

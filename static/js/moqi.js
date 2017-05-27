@@ -61,11 +61,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     });
                     //致贫原因饼图
                     var causePieChartData = {
-                        color:['#abfb06','#1ff4be','#c4572e','#387b14','#cb4345','#a96969','#40bfec','#c73983','#0786ef','#fde101'],
-                        legend:['因病致贫','因学致贫','因灾致贫','缺土地','缺水','缺劳力','缺资金','交通条件落后','自身动力不足'],
-                        data:data[area].causePieChartData
+                        color:['#ed6942','#63c727','#fff100','#f39801','#0168b7','#5f52a1','#546fb4','#00b8ee','#f9b552','#f2914a'],
+                        data:data[area].causePieChartData,
+                        center:["50%","50%"],
+                        radius:["25%","50%"]
                     };
-                    charts.pieChart("chartForCause",false,causePieChartData);
+                    charts.labelPie("chartForCause",causePieChartData);
                     //责任主体绑定点击事件
                     $(".goToDetail").on("click", function () {
                         $.jBox('', {title: "组织架构", buttons: {}, border: 0, opacity: 0.4});
@@ -644,7 +645,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             mapApi.getData();
         })
         //切换头部标签
-        $("#tab").on("click","div", function(){
+        $("#tab").on("click","li", function(){
 
             //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
                 if ($(this).hasClass('fiveInOne')||$(this).hasClass('sixExactness')) {
@@ -655,7 +656,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             if(!activeBool){
                 $("#rightSide").empty();
                 $(this).addClass("active");
-                $(this).siblings("div").removeClass("active")
+                $(this).siblings("li").removeClass("active")
             }
             if($(this).hasClass("homepage")){//点击首页按钮
                 api.getHomePage(area);

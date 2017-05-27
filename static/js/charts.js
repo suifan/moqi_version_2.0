@@ -209,14 +209,14 @@ define(['echarts'],function(echarts){
                         type:'pie',
                         center:pieData.center||["50%","60%"],
                         radius: ['35%', '60%'],
-                        avoidLabelOverlap: false,
+                        avoidLabelOverlap: true,
                         label: {
                             normal: {
                                 show: true,
                                 position: 'outside',
-                                textStyle: {
-                                    color:'#fff'
-                                }
+                                // textStyle: {
+                                //     color:'#fff'
+                                // }
                             },
                             emphasis: {
                                 show: true
@@ -225,9 +225,9 @@ define(['echarts'],function(echarts){
                         labelLine: {
                             normal: {
                                 show: true,
-                                lineStyle: {
-                                    color:'#fff'
-                                }
+                                // lineStyle: {
+                                //     color:'#fff'
+                                // }
                             }
                         },
                         data:pieData.data

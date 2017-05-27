@@ -94,7 +94,7 @@
 #cause #chartForCause{
     clear: both;
     height: 18vw;
-    width: 22vw;
+    width: 100%;
     background: transparent;
     border: none;
 }

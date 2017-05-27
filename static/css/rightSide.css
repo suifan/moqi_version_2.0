@@ -55,18 +55,19 @@
 
 .content li.progressLi{
     height: 4.7vw;
-    width: 24%;
-    border: 1px solid #333;
+    width: 23%;
     display: inline-block;
     float: left;
-    background: -webkit-linear-gradient(top,#5d6772,#354250);
+    background: rgba(255,255,255,.1);
     text-align: center;
     font-size: 1vw;
     line-height: 1.5vw;
     padding-top: .5vw;
+    margin-left: .4vw;
+    margin-top: .4vw;
 }
 .content li.progressLi.long{
-    width: 49%;
+    width: 47.5%;
 }
 .progressLi.long .progressBar{
     width: 8vw;

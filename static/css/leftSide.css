@@ -113,13 +113,11 @@ span.span-active {
     width: 0;
     height: .86vw;
 }
-.second-sec .progressBar .progressBarbg {
+.second-sec .progressBar .progressBarBg {
     width: 14vw;
     height: .86vw;
     background: #37424b;
     border-radius: 3vw;
-    border: 1px solid #444;
-    border-bottom-color: #555;
 }
 .progressRate {
     float: right;

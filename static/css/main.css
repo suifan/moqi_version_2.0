@@ -130,10 +130,8 @@ header{
 }
 
 .section .header h2{
-    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(248, 251, 255)), to(rgb(178, 198, 222)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    color: #b3c6e8;
+    font-weight: normal;
     font-size: 1.1vw;
     line-height: 2.4vw;
     margin-left: 1vw;
@@ -206,20 +204,19 @@ header{
     width: 4.5vw;
 }
 .progressBar .progressBarBg{
-    background: #37424b;
-    height: .7vw;
+    background: rgba(255,255,255,.1);
+    height: .6vw;
     width: 100%;
-    border-radius: 3vw;
-    border: 1px solid #444;
-    border-bottom-color: #555;
+    border-radius: 5vw;
+
 }
 .progressBar .progressBarBar{
-    height: .7vw;
+    height: .6vw;
     width: 0;
     background: #eee;
     position: absolute;
-    top: 1px;
-    border-radius: 3vw;
+    top: 0;
+    border-radius: 7vw;
 }
 
 
@@ -233,7 +230,7 @@ header{
 
 /*蓝色*/
 .progressBar.pg_blue .progressBarBar{
-    background: -webkit-linear-gradient(top,#1ba9f9,#0d6bc2);
+    background:#1fa9f4;
 
 }
 /*红色*/

@@ -111,9 +111,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });
             $('#leftSide').html(template('homepageLeftSideTemp', dataLeft));
             // $('#leftSide').html(template('homepageLeftSideTemp', data));
-            chart.pieChart("poorFamily","#8ed02b","#1b9aea",houseHoldArr,dataLeft.townData.poorHouseholds.percentage);
-            chart.pieChart("poorPeople","#8ed02b","#1b9aea",populationArr,dataLeft.townData.poorHouseholds.percentage);
-            chart.pieChart("poorRate","#8ed02b","#1b9aea",rateArr,dataLeft.townData.poorProbability.percentage);
+            chart.pieChart("poorFamily","#1fa9f4","#4b586d",houseHoldArr,dataLeft.townData.poorHouseholds.percentage);
+            chart.pieChart("poorPeople","#63c727","#4b586d",populationArr,dataLeft.townData.poorHouseholds.percentage);
+            chart.pieChart("poorRate","#e9733f","#4b586d",rateArr,dataLeft.townData.poorProbability.percentage);
             $(".section-body.second-sec").find(".progressBar").each(function () {
                 var value = $(this).next("div").children("span").text();
                 progressBar.generate(this,value);

@@ -35,13 +35,30 @@ span.span-active {
     background: -webkit-linear-gradient(top,#505963,#383c3e);
     background: #212425;
 }
-.section-body {
+#leftSide .section-body {
     padding: 0 1vw;
+    /*overflow: hidden;*/
+}
+#leftSide .section-body ul {
+    /*padding: 0 1vw;*/
+    overflow: hidden;
 }
 .section-body>ul>li {
     overflow: hidden;
     padding: 0.6vw 0;
-    border-bottom: 1px solid #5b6671;
+    border-bottom: 1px solid rgba(91, 102, 113, 0.5);
+    float: left;
+    width: 49%;
+}
+.section-body.second-sec>ul>li {
+    overflow: hidden;
+    padding: 0.6vw 0;
+    /*border-bottom: 1px solid rgba(91, 102, 113, 0.5);*/
+    float: left;
+    width: 100%;
+}
+.second-sec>ul {
+    padding-top: 1vw;
 }
 .second-sec>ul>li {
     border: none;
@@ -49,30 +66,60 @@ span.span-active {
 #leftSide .f-left-top {
     width: 5.8vw;
     height: 1.3vw;
-    background: #092544;
-    border-radius: 0.6vw;
+    /* background: #092544; */
+    /* border-radius: 0.6vw; */
     font-size: 0.8vw;
-    text-align: center;
-    line-height: 1.3vw;
+    /* text-align: center; */
+     line-height: 1.3vw;
+    color: #d4e4ff;
 }
 .f-left ul li {
-    height: 2vw;
-    line-height: 2vw;
-    font-size: 1vw;
+    height: 1.2vw;
+    line-height: 1.2vw;
+    font-size: .8vw;
+    color: #8b98b0;
 }
 .f-left ul {
-    padding-left: 1vw;
+    padding-left: 2.2vw;
     margin: 0.5vw 0;
 }
 .f-left {
-    float: left;
-    width: 62%;
+    margin-top: 1.2vw;
 }
 .f-right {
-    float: right;
-    width: 36%;
-    height: 6.6vw;
-    margin-top: 0.6vw;
+    /*float: right;*/
+    width: 50%;
+    height: 7.2vw;
+    margin: 0.6vw auto;
+}
+.first-pie .f-left li span {
+    color: #1fa9f4;
+}
+.second-pie {
+    border-left: 1px solid rgba(91, 102, 113, 0.5);
+    /*border-bottom: 1px solid #d9d9d9;*/
+}
+.second-pie .f-left li span {
+    color: #63c727;
+}
+.section-body>ul>.third-pie {
+    width: 100%;
+    display: table;
+    /* vertical-align: middle; */
+    margin: .8vw 0;
+}
+.third-pie .f-left li span {
+    color: #e9733f;
+}
+.third-pie div {
+    display: inline-block;
+    margin: 0;
+    /*display: table-cell;*/
+    vertical-align: middle;
+    padding-left: .8vw;
+}
+.third-pie .f-left ul {
+    padding-left: 0.8vw;
 }
 .center-rate {
     font-size:0.8vw;
@@ -94,28 +141,40 @@ span.span-active {
     cursor: pointer;
 }
 .s-left-header {
-    padding: 0.4vw 0;
+    padding: 0.4vw 0 0.4vw 2.8vw;
     line-height: 1.4vw;
-    font-size: .9vw;
+    font-size: .8vw;
+    color: #949ca9;
 }
-.second-sec .progressBar .progressBarBar{
+.s-left-header span,.s-left-header em {
+    color: #949ca9;
+}
+/*.second-sec .progressBar .progressBarBar{
     -webkit-transition: width 2s;
     -moz-transition: width 2s;
     -o-transition: width 2s;
     transition: width 2s;
+}*/
+.second-sec .progress-title {
+    display: inline-block;
+    padding: 0 .3vw;
+    color: #d4e4ff;
+}
+.s-left-bar {
+    display: inline-block;
 }
 .second-sec .progressBar{
-    width: 14vw;
+    width: 16vw;
     display: inline-block;
     position: relative;
 }
 .second-sec .progressBar .progressBarBar {
     width: 0;
-    height: .86vw;
+    /*height: .86vw;*/
 }
 .second-sec .progressBar .progressBarBg {
-    width: 14vw;
-    height: .86vw;
+    width: 16vw;
+    /*height: .86vw;*/
     background: #37424b;
     border-radius: 3vw;
 }
@@ -123,6 +182,7 @@ span.span-active {
     float: right;
     font-size: .9vw;
     color: #26fffe;
+    margin-left: 1.4vw;
 }
 .progressRate span {
     color: #26fffe;

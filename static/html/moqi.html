@@ -2817,55 +2817,50 @@
         </div>
         <div class="section-body">
             <ul>
-                <li>
-                    <div class="f-left">
+                <li class = "first-pie">
+                    <div class="f-right">
                         <div class="f-left-top">贫困户</div>
-                        <ul>
-                            <li>计划脱贫（户）：<span>{{townData.poorHouseholds.planPoorHouseholds}}</span></li>
-                            <li>实际脱贫（户）：<span>{{townData.poorHouseholds.actualPoorHouseholds}}</span></li>
-                            <li>还未脱贫（户）：<span>{{townData.poorHouseholds.notPoorHouseholds}}</span></li>
-                        </ul>
-                    </div>
-                    <div class="f-right">
                         <div id = "poorFamily" style="width: 100%;height: 100%;"></div>
-                        <!--<div class="center-rate">
-                            <p>88.56%</p>
-                            <h7>完成率</h7>
-                        </div>-->
                     </div>
-
-                </li>
-                <li>
                     <div class="f-left">
-                        <div class="f-left-top">贫困人口</div>
                         <ul>
-                            <li>计划脱贫（人）：<span>{{townData.poorPersons.planPoorPersons}}</span></li>
-                            <li>实际脱贫（人）：<span>{{townData.poorPersons.actualPoorPersons}}</span></li>
-                            <li>还未脱贫（人）：<span>{{townData.poorPersons.notPoorPersons}}</span></li>
+                            <li>计划脱贫：<span>{{townData.poorHouseholds.planPoorHouseholds}}</span>&nbsp;户</li>
+                            <li>实际脱贫：<span>{{townData.poorHouseholds.actualPoorHouseholds}}</span>&nbsp;户</li>
+                            <li>还未脱贫：<span>{{townData.poorHouseholds.notPoorHouseholds}}</span>&nbsp;户</li>
                         </ul>
                     </div>
+                </li>
+                <li class = "second-pie">
                     <div class="f-right">
+                        <div class="f-left-top">贫困人口</div>
                         <div id = "poorPeople" style="width: 100%;height: 100%;"></div>
                         <!-- <div class="center-rate">
                              <p>88.56%</p>
                              <h7>完成率</h7>
                          </div>-->
                     </div>
-                </li>
-                <li style="border: none;">
                     <div class="f-left">
-                        <div class="f-left-top">贫困发生率</div>
                         <ul>
-                            <li>贫困人口（人）：<span>{{townData.poorProbability.poorPersons}}</span></li>
-                            <li>农村人口（人）：<span>{{townData.poorProbability.countryHousePersons}}</span></li>
+                            <li>计划脱贫：<span>{{townData.poorPersons.planPoorPersons}}</span>&nbsp;人</li>
+                            <li>实际脱贫：<span>{{townData.poorPersons.actualPoorPersons}}</span>&nbsp;人</li>
+                            <li>还未脱贫：<span>{{townData.poorPersons.notPoorPersons}}</span>&nbsp;人</li>
                         </ul>
                     </div>
+                </li>
+                <li class = "third-pie" style="border: none;">
                     <div class="f-right">
                         <div id = "poorRate" style="width: 100%;height: 100%;"></div>
                         <!--<div class="center-rate">
                             <p>88.56%</p>
                             <h7>完成率</h7>
                         </div>-->
+                    </div>
+                    <div class="f-left">
+                        <div class="f-left-top">贫困发生率</div>
+                        <ul>
+                            <li>贫困人口：<span>{{townData.poorProbability.poorPersons}}</span>&nbsp;人</li>
+                            <li>农村人口：<span>{{townData.poorProbability.countryHousePersons}}</span>&nbsp;人</li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -2879,54 +2874,59 @@
         <div class="section-body second-sec">
             <ul>
                 <li>
-                    <div class="s-left-header">搬迁：建档立卡<span>&nbsp;{{mission.pyAlleMission.documentHouses}}&nbsp;</span>户<em>&nbsp;{{mission.pyAlleMission.documentPersons}}&nbsp;</em>人,目标<span>&nbsp;{{mission.pyAlleMission.targetPersonsCount}}&nbsp;</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_red">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{mission.pyAlleMission.percentage}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="s-left-header">民政：兜底保障贫困人口<span>&nbsp;{{mission.civilAdministration.poorHouses}}&nbsp;</span>户<em>&nbsp;{{mission.civilAdministration.poorPersons}}&nbsp;</em>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_green">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{mission.civilAdministration.percentage}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="s-left-header">医疗：<span>&nbsp;{{mission.medicalCare.poorPersons}}&nbsp;</span>贫困人口实现家医签约</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_orange">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{mission.medicalCare.percentage}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="s-left-header">教育：建设项目<span>&nbsp;{{mission.education.projectCount}}&nbsp;</span>个，总建筑面积<em>&nbsp;{{mission.education.areaStructure}}&nbsp;</em>m,总投资<span>&nbsp;{{mission.education.investment}}&nbsp;</span>万元</div>
+                    <div class="progress-title">搬迁</div>
                     <div class="s-left-bar">
                         <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
-                        <div class="progressRate">完成度: <span>{{mission.education.percentage}}</span></div>
+                        <div class="progressRate"><span>{{mission.pyAlleMission.percentage}}</span></div>
                     </div>
+                    <div class="s-left-header">建档立卡<span>&nbsp;{{mission.pyAlleMission.documentHouses}}&nbsp;</span>户<em>&nbsp;{{mission.pyAlleMission.documentPersons}}&nbsp;</em>人,目标<span>&nbsp;{{mission.pyAlleMission.targetPersonsCount}}&nbsp;</span>人</div>
                 </li>
                 <li>
-                    <div class="s-left-header">产业：整合涉农涉牧资金<span>&nbsp;{{mission.industry.investment}}&nbsp;</span>万元，带动<em>&nbsp;{{mission.industry.housesCount}}&nbsp;</em>户<span>&nbsp;{{mission.industry.personCount}}&nbsp;</span>人脱贫</div>
+                    <div class="progress-title">民政</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_light_blue">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
-                        <div class="progressRate">完成度: <span>{{mission.industry.percentage}}</span></div>
+                        <div class="progressRate"><span>{{mission.civilAdministration.percentage}}</span></div>
                     </div>
+                    <div class="s-left-header">兜底保障贫困人口<span>&nbsp;{{mission.civilAdministration.poorHouses}}&nbsp;</span>户<em>&nbsp;{{mission.civilAdministration.poorPersons}}&nbsp;</em>人</div>
+                </li>
+                <li>
+                    <div class="progress-title">医疗</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate"><span>{{mission.medicalCare.percentage}}</span></div>
+                    </div>
+                    <div class="s-left-header"><span>&nbsp;{{mission.medicalCare.poorPersons}}&nbsp;</span>贫困人口实现家医签约</div>
+                </li>
+                <li>
+                    <div class="progress-title">教育</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate"><span>{{mission.education.percentage}}</span></div>
+                    </div>
+                    <div class="s-left-header">建设项目<span>&nbsp;{{mission.education.projectCount}}&nbsp;</span>个，总建筑面积<em>&nbsp;{{mission.education.areaStructure}}&nbsp;</em>m,总投资<span>&nbsp;{{mission.education.investment}}&nbsp;</span>万元</div>
+                </li>
+                <li>
+                    <div class="progress-title">产业</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate"><span>{{mission.industry.percentage}}</span></div>
+                    </div>
+                    <div class="s-left-header">整合涉农涉牧资金<span>&nbsp;{{mission.industry.investment}}&nbsp;</span>万元，带动<em>&nbsp;{{mission.industry.housesCount}}&nbsp;</em>户<span>&nbsp;{{mission.industry.personCount}}&nbsp;</span>人脱贫</div>
                 </li>
             </ul>
         </div>

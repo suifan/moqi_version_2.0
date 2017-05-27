@@ -1,0 +1,232 @@
+{
+  "moqi":{
+    "poorPersons":12134,	
+    "dataList":[{"value":331,"name":"丧失劳动力"},{"value":4553,"name":"无劳动力"},{"value":12,"name":"技能劳动力"},{"value":7238,"name":"普通劳动力"}],
+    "list":[
+      {
+        "townName":"尼尔基镇",
+        "poorPersons":2222,
+        "ordinaryWork":1421,
+        "loseWork":12,
+        "technologyWork":3,
+        "noWork":786
+      },
+      {
+        "townName":"宝山镇",
+        "poorPersons":706,
+        "ordinaryWork":329,
+        "loseWork":14,
+        "technologyWork":0,
+        "noWork":363
+      },
+      {
+        "townName":"汉古尔河镇",
+        "poorPersons":1021,
+        "ordinaryWork":707,
+        "loseWork":17,
+        "technologyWork":1,
+        "noWork":296
+      },
+      {
+        "townName":"西瓦尔图镇",
+        "poorPersons":454,
+        "ordinaryWork":274,
+        "loseWork":15,
+        "technologyWork":0,
+        "noWork":165
+      },
+      {
+        "townName":"登特科镇",
+        "poorPersons":968,
+        "ordinaryWork":547,
+        "loseWork":70,
+        "technologyWork":2,
+        "noWork":349
+      },
+      {
+        "townName":"红彦镇",
+        "poorPersons":543,
+        "ordinaryWork":255,
+        "loseWork":25,
+        "technologyWork":1,
+        "noWork":262
+      },
+      {
+        "townName":"哈达阳镇",
+        "poorPersons":600,
+        "ordinaryWork":330,
+        "loseWork":31,
+        "technologyWork":0,
+        "noWork":239
+      },
+      {
+        "townName":"阿尔拉镇",
+        "poorPersons":286,
+        "ordinaryWork":179,
+        "loseWork":7,
+        "technologyWork":0,
+        "noWork":100
+      },
+      {
+        "townName":"腾克镇",
+        "poorPersons":1253	,
+        "ordinaryWork":808,
+        "loseWork":4,
+        "technologyWork":0,
+        "noWork":441
+      },
+      {
+        "townName":"奎勒河镇",
+        "poorPersons":934,
+        "ordinaryWork":538,
+        "loseWork":2,
+        "technologyWork":0,
+        "noWork":394
+      },
+      {
+        "townName":"塔温敖宝镇",
+        "poorPersons":452,
+        "ordinaryWork":301,
+        "loseWork":19,
+        "technologyWork":1,
+        "noWork":131
+      },
+      {
+        "townName":"巴彦鄂温克民族乡",
+        "poorPersons":678,
+        "ordinaryWork":315,
+        "loseWork":35,
+        "technologyWork":0,
+        "noWork":328
+      },
+      {
+        "townName":"库如奇乡",
+        "poorPersons":235,
+        "ordinaryWork":118,
+        "loseWork":29,
+        "technologyWork":0,
+        "noWork":88
+      },
+      {
+        "townName":"杜拉尔鄂温克民族乡",
+        "poorPersons":179,
+        "ordinaryWork":65,
+        "loseWork":10,
+        "technologyWork":0,
+        "noWork":104
+      },
+      {
+        "townName":"坤密尔堤办事处",
+        "poorPersons":342,
+        "ordinaryWork":213,
+        "loseWork":14,
+        "technologyWork":1,
+        "noWork":114
+      },
+      {
+        "townName":"额尔和办事处",
+        "poorPersons":581,
+        "ordinaryWork":373,
+        "loseWork":23,
+        "technologyWork":0,
+        "noWork":185
+      },
+      {
+        "townName":"卧罗河办事处",
+        "poorPersons":680,
+        "ordinaryWork":465,
+        "loseWork":4,
+        "technologyWork":3,
+        "noWork":208
+      }
+    ]
+  },
+"baoshanzhen":{
+"poorPersons":5511,
+"dataList":[{"value":2500,"name":"丧失劳动力"},{"value":2500,"name":"无劳动力"},{"value":2500,"name":"技能劳动力"},{"value":2500,"name":"普通劳动力"}],
+"list":[
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+},
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+}
+]
+},
+"nierjizhen":{
+"poorPersons":5511,
+"dataList":[{"value":2500,"name":"丧失劳动力"},{"value":2500,"name":"无劳动力"},{"value":2500,"name":"技能劳动力"},{"value":2500,"name":"普通劳动力"}],
+"list":[
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+},
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+}
+]
+},
+"xiwaertuzhen":{
+"poorPersons":5511,
+"dataList":[{"value":2500,"name":"丧失劳动力"},{"value":2500,"name":"无劳动力"},{"value":2500,"name":"技能劳动力"},{"value":2500,"name":"普通劳动力"}],
+"list":[
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+},
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+}
+]
+},
+"hanguerhezhen":{
+"poorPersons":5511,
+"dataList":[{"value":2500,"name":"丧失劳动力"},{"value":2500,"name":"无劳动力"},{"value":2500,"name":"技能劳动力"},{"value":2500,"name":"普通劳动力"}],
+"list":[
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+},
+{
+"townName":"丰收村",
+"poorPersons":200,
+"ordinaryWork":180,
+"loseWork":10,
+"technologyWork":10,
+"noWork":5
+}
+]
+}
+}

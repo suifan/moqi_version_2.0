@@ -1,0 +1,458 @@
+#leftSide {
+    font-size: 1vw;
+}
+#leftSide .header h2 {
+    display: inline-block;
+}
+.switch-head {
+    display: inline-block;
+    position: absolute;
+    top: 0.6vw;
+    right: 1vw;
+    border: 1px solid #383c3e;
+    border-radius: 0.3vw;
+}
+.switch-head span {
+    float: left;
+    width: 2.4vw;
+    height: 1.2vw;
+    background: #fff;
+    background: -webkit-linear-gradient(top,#505963,#383c3e);
+    text-align: center;
+    line-height: 1.2vw;
+    font-size: 0.8vw;
+    cursor: pointer;
+}
+.switch-head span:nth-child(2) {
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+.switch-head span:nth-child(1) {
+    border-top-left-radius: 0.3vw;
+    border-bottom-left-radius: 0.3vw;
+}
+span.span-active {
+    background: -webkit-linear-gradient(top,#505963,#383c3e);
+    background: #212425;
+}
+.section-body {
+    padding: 0 1vw;
+}
+.section-body>ul>li {
+    overflow: hidden;
+    padding: 0.6vw 0;
+    border-bottom: 1px solid #5b6671;
+}
+.second-sec>ul>li {
+    border: none;
+}
+#leftSide .f-left-top {
+    width: 5.8vw;
+    height: 1.3vw;
+    background: #092544;
+    border-radius: 0.6vw;
+    font-size: 0.8vw;
+    text-align: center;
+    line-height: 1.3vw;
+}
+.f-left ul li {
+    height: 2vw;
+    line-height: 2vw;
+    font-size: 1vw;
+}
+.f-left ul {
+    padding-left: 1vw;
+    margin: 0.5vw 0;
+}
+.f-left {
+    float: left;
+    width: 62%;
+}
+.f-right {
+    float: right;
+    width: 36%;
+    height: 6.6vw;
+    margin-top: 0.6vw;
+}
+.center-rate {
+    font-size:0.8vw;
+    position: relative;
+    top: -50%;left: 50%;
+    text-align:center;
+    transform: translate(-50%, -50%);
+}
+.left-btn {
+    width: 2.8vw;
+    height: 8.5vw;
+    /* float: right; */
+    background: url(../images/left_slide_btn.png) no-repeat;
+    background-size: 96%;
+    margin-top: 5.6vw;
+    margin-left: 23vw;
+    position: absolute;
+    z-index: 101;
+    cursor: pointer;
+}
+.s-left-header {
+    padding: 0.4vw 0;
+    line-height: 1.4vw;
+    font-size: .9vw;
+}
+.second-sec .progressBar .progressBarBar{
+    -webkit-transition: width 2s;
+    -moz-transition: width 2s;
+    -o-transition: width 2s;
+    transition: width 2s;
+}
+.second-sec .progressBar{
+    width: 14vw;
+    display: inline-block;
+    position: relative;
+}
+.second-sec .progressBar .progressBarBar {
+    width: 0;
+    height: .86vw;
+}
+.second-sec .progressBar .progressBarbg {
+    width: 14vw;
+    height: .86vw;
+    background: #37424b;
+    border-radius: 3vw;
+    border: 1px solid #444;
+    border-bottom-color: #555;
+}
+.progressRate {
+    float: right;
+    font-size: .9vw;
+    color: #26fffe;
+}
+.progressRate span {
+    color: #26fffe;
+}
+
+/*贫困家庭*/
+.section-body table {
+    width: 100%;
+    margin: 1vw 0;
+}
+.section-body thead {
+    line-height: 2vw;
+
+}
+.section-body table td {
+    text-align: center;
+    line-height: 2vw;
+    font-size: .9vw;
+    border: none;
+    padding: 0;
+}
+.section-body table tr:nth-child(odd) td {
+    background: none;
+}
+.section-body table tr:nth-child(even) td {
+    background: none;
+}
+.section-body table tr:hover td {
+    background: none;
+}
+.section-body tbody tr {
+    margin: 1vw 0;
+}
+.section-body table th {
+    padding: 0;
+    /* height: 1vw; */
+    border: none;
+    padding: 0;
+    background: none;
+
+}
+
+/*弹窗样式*/
+/*#jbox .jbox-title {
+            color: #fff;
+            font-size: 1vw;
+        }
+
+        #jbox .jbox-title-panel {
+            background: -webkit-linear-gradient(top,#6c7783,#2e3640);
+            width: 71.8vw;
+            border: none;
+        }
+        #jbox-content {
+            width: 74vw;
+            padding: 0.8vw 0;
+            background: #37424b;
+            text-align: left;
+        }*/
+#jbox .jbox-title {
+    text-align: center;
+    width: 96%;
+}
+.per-main {
+    width: 74vw;
+    padding: 1.4vw 0;
+    height: 40vw;
+    background: #37424b;
+    font-size: .8vw;
+}
+.per-top>div {
+    height: 10vw;
+    padding: 0 1.2vw;
+    float: left;
+}
+.per-top {
+    overflow: hidden;
+    font-size: .8vw;
+    line-height: 1.2vw;
+}
+.per-top-head {
+    display: block;
+    height: 1.2vw;
+    line-height: 1.2vw;
+    margin-top: .8vw;
+    max-width: 8vw;
+    text-align: center;
+    background: #092544;
+    border-radius: 0.6vw;
+}
+.per-top div:nth-child(1) {
+    width: 18%;
+}
+.per-top div:nth-child(2) {
+    width: 24%;
+}
+.per-top div:nth-child(3) {
+    width: 38%;
+}
+.per-right .per-top div:nth-child(2) {
+    width: 18%;
+}
+.per-right .per-top div:nth-child(3) {
+    width: 30%;
+}
+.per-right .per-top div:nth-child(4) {
+    width: 32%;
+}
+.per-left {
+    float: left;
+    /*background: red;*/
+    width: 38vw;
+    height: 100%;
+    padding: 0 2vw;
+}
+.per-right {
+    float: right;
+    /*background: blue;*/
+    width: 28vw;
+    height: 100%;
+    padding: 0 2vw;
+    /*overflow: auto;*/
+}
+.per-lefttop div.per-img {
+    width: 5.6vw;
+    height: 5.6vw;
+    margin: 0 auto;
+    border-radius: 3vw;
+    overflow: hidden;
+    margin-top: 1.1vw;
+}
+.per-lefttop div.per-img img {
+    width: 19.6vw;
+}
+.per-lefttop p {
+    text-align: center;
+    margin-top: 0.6vw;
+}
+.per-leftmid ul {
+    margin-top: 1.2vw;
+}
+.per-leftbtm ul {
+    margin-top: 1.2vw;
+}
+.annual-money {
+    color: #02d49b;
+    font-size: 1.4vw;
+    text-align: center;
+    margin-top: 0.8vw;
+}
+.family-list table {
+    width: 100%;
+    margin: 1vw auto;
+}
+.thin th,.thin td,.family-list table th,.family-list table td{
+    height:1.6vw;
+    line-height: 1.6vw;
+    padding:.2vw;
+    /*border:1px solid #222;*/
+    text-align: center;
+    font-size: .8vw;
+    border: none;
+}
+.thin th,.family-list table th {
+    background: #2a3239;
+}
+.per-btm p,.per-mid p,.per-right p {
+    margin-bottom: 0.6vw;
+}
+.artical-img div {
+    display: inline-block;
+    background: #333;
+    height: 6.8vw;
+    width: 24%;
+    overflow: hidden;
+}
+.per-btm article {
+    height: 15vw;
+    overflow: auto;
+    line-height: 1.4vw;
+}
+article h6 {
+    padding: 1vw 0;
+}
+.per-right .per-top {
+    border-bottom: 1px solid #5b6671;
+}
+.per-right .per-top .per-leftbtm {
+    float: right;
+    padding: 0;
+    width: 30%;
+}
+.per-right .per-top .per-leftmid {
+    padding: 0 1vw;
+    width: 34%;
+}
+.per-right section {
+    height: 38.1vw;
+    overflow: auto;
+}
+.per-right .per-top ul {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.per-right .per-top>div {
+    height: 8vw;
+    padding: 0 1.2vw;
+    float: left;
+}
+.per-right .per-leftbtm li {
+    width: 3vw;
+    height: 3vw;
+    display: inline-block;
+    background: #2b343b;
+    margin-right: 0.6vw;
+    border-radius: 1.5vw;
+}
+.per-right .per-leftbtm li:nth-child(1) div {
+    background: url("../images/moqiSprite.png");
+    background-position: 0.5vw -27.3vw;
+    background-size: 3500%;
+    width: 100%;
+    height: 100%;
+}
+.per-right .per-leftbtm li:nth-child(2) div {
+    background: url("../images/moqiSprite.png");
+    background-position: 0.4vw -28.3vw;
+    background-size: 3300%;
+    width: 100%;
+    height: 100%;
+}
+table tr:nth-child(odd) td{
+    background: #343e4a;
+}
+table tr:nth-child(even) td{
+    background: #495666;
+}
+#jbox-content table tr:hover td{
+    background: -webkit-linear-gradient(top,#73bcf3,#2773cb);
+}
+/*脱贫弹窗*/
+.tuopin-left {
+    height: 25vw;
+    width: 4.4%;
+    float: left;
+    font-size: 1.2vw;
+    text-align: center;
+    vertical-align: middle;
+}
+.tuopin-right {
+    height: 25vw;
+    width: 93%;
+    float: left;
+}
+.tuopin-left span {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 1.8vw;
+}
+/*建档情况*/
+.select-switch {
+    position: absolute;
+    top: 0.6vw;
+    left: 2.2vw;
+}
+.down-angle {
+    margin-top: -0.8vw;
+    margin-left: 4.4vw;
+}
+.doc-left {
+    width: 58%;
+    padding: 0 2.2vw;
+    overflow: auto;
+}
+.doc-right {
+    width: 34%;
+    text-align: center;
+}
+.doc-right h5 {
+    margin: .4vw;
+    position: relative;
+    top: 3vw;
+    font-size: 1.4vw;
+}
+.doc-right p {
+    margin: .4vw;
+    position: relative;
+    bottom: 3vw;
+    font-size: 1.2vw;
+}
+#docChart {
+    width: 100%;
+    height: 20vw;
+}
+#laborWindowChart {
+    width: 100%;
+    height: 20vw;
+}
+.family-list ul li {
+    display: inline-block;
+    margin: 0 .3vw;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.village {
+    width: 97%;
+}
+
+.organization img {
+    width: 72vw;
+    padding-left: 2.4vw;
+}
+
+
+.per-title{
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+    color: #e5ecec;
+}
+
+.bfjl{
+    font-size: 1vw;
+    text-shadow: 1px 1px 1px #000;
+}

@@ -1,0 +1,29 @@
+{
+	"pyAlleMission":{
+		"documentHouses":135,
+		"documentPersons":350,
+		"targetPersonsCount":175,
+		"percentage":"4.5%"
+	},
+	"civilAdministration":{
+		"poorHouses":1829,
+		"poorPersons":3103,
+		"percentage":"4.5%"
+	},
+	"medicalCare":{
+		"poorPersons":15383,
+		"percentage":"23.3%"
+	},
+	"education":{
+		"projectCount":10,
+		"areaStructure":39900,
+		"investment":17909,
+		"percentage":"4.5%"
+	},
+	"industry":{
+		"investment":15428,
+		"housesCount":1480,
+		"personCount":3450,
+		"percentage":"4.5%"
+	}
+}	

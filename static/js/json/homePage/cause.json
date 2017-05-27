@@ -1,0 +1,34 @@
+{
+	"poorCausesZhutu":{
+		"illnessCasuses":"42.53%",
+		"studyCasuses":"0.67%",
+		"disasterCasuses":"5.4%",
+		"landCasuses":"38.79%",
+		"waterCasuses":"0.041%",
+		"technologyCasuses":"0.041%",
+		"labourCasuses":"2.69%",
+		"moneyCasuses":"8.71%",
+		"trafficCasuses":"0.06%",
+		"selfLabourCasuses":"1.14%"
+	},
+	"causePieChartData":[
+                        {"value":335, "name":"因病致贫"},
+                        {"value":300, "name":"因学致贫"},
+                        {"value":211, "name":"因灾致贫"},
+                        {"value":30, "name":"缺土地"},
+                        {"value":320, "name":"缺水"},
+                        {"value":100, "name":"缺劳力"},
+                        {"value":340, "name":"缺资金"},
+                        {"value":50, "name":"交通条件落后"},
+                        {"value":20, "name":"自身动力不足"}
+                    	],
+	"responsibility":{
+		"fiveGroup":88,
+		"villageSecretary":17,
+		"helpingCardres":56,
+		"familyDoctorTeams":284,
+		"specialist":83,
+		"overridezhen":171,
+		"xingzhengcun":221
+	}
+}

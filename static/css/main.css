@@ -1,0 +1,383 @@
+/*整体框架及公共css*/
+
+/*滚动条 start*/
+::-webkit-scrollbar {width: 5px;height:6px;}
+::-webkit-scrollbar-track-piece{background-color: #37424b;margin: -2px;}
+::-webkit-scrollbar-thumb{background: #fff;min-height: 150px;min-width: 150px;border-radius: 10px;}
+::-webkit-scrollbar-thumb:vertical:hover{background: #fff}
+::-webkit-scrollbar-thumb:horizontal:hover{background: #fff}
+/*滚动条 end*/
+
+/*头部 start*/
+header{
+    background: url(../images/moqiSprite.png) 0 -13.8vw no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    height: 10.5vw;
+    width: 100%;
+    position: relative;
+}
+.mainTitle{
+    color: #fff;
+    font-size: 1.7vw;
+    /*font-weight: normal;*/
+    width: auto;
+    margin: 1.3vw 0 0 2vw;
+    display: inline-block;
+    letter-spacing: .2vw;
+    float: left;
+}
+#tab{
+    width: 38.7vw;
+    margin: 0 auto;
+    padding-top: 2vw;
+}
+#tab div {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #b4b7ba;
+    min-width: 6vw;
+    text-align: center;
+    padding: .5vw .3vw .5vw .5vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    letter-spacing: 0.2vw;
+    margin-left: .5vw;
+    border-radius: 0.7vw;
+}
+#tab div:first-child{
+    margin-left: 0;
+}
+#tab div.active{
+    background: #092544;
+    -webkit-box-shadow: 0 2px 4px #111 inset;
+    border-color: #111;
+
+}
+#changeAreaInHeader{
+    float: right;
+    margin: 1.5vw 2vw 0 0;
+}
+#areaSelectInHeader{
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+}
+#changeAreaInHeader label{
+    color: #b4b7ba;
+    font-size: 1vw;
+    vertical-align: bottom;
+}
+#changeAreaInHeader select {
+    color: #fff;
+    width: 16vw;
+    font-size: 1.2vw;
+    text-shadow: 1px 1px 4px #000;
+    background: url(../images/moqiSprite.png) 13vw -5.5vw no-repeat;
+    background-size: 450%;
+}
+#changeAreaInHeader .logout{
+    display: inline;
+    font-size: 1vw;
+    color: #fff;
+    border: 1px solid #b4b7ba;
+    padding: .1vw .5vw;
+    border-radius: .4vw;
+    cursor: pointer;
+}
+#countDownDiv{
+    height: 5vw;
+    width: 47.7vw;
+    position: absolute;
+    left: 26.4%;
+    top: 5.5vw;
+}
+.countDownTitle{
+    font-size: 1.2vw;
+    text-shadow: 1px 1px 4px #000;
+    color: #fff;
+    width: 13vw;
+    text-align: center;
+    line-height: 1.8vw;
+    margin-left: 2vw;
+    float: left;
+    margin-top: .5vw;
+    letter-spacing: 0.1vw;
+}
+#countDownDiv>span{
+    color: #fff;
+    margin-top: 1.6vw;
+    margin-right: .7vw;
+    display: inline-block;
+    margin-left: 3vw;
+    float: left;
+    font-size: 1.2vw;
+}
+#countDown{
+    display: inline-block;
+    background: url(../images/moqiSprite.png) -38.5vw -7.3vw no-repeat;
+    height: 4vw;
+    width: 16vw;
+    background-size: 680%;
+    margin-top: .7vw;
+    position: relative;
+    color: #fff;
+    font-size: 1.2vw;
+}
+#countDown span{
+    position: absolute;
+    /*top: .5vw;*/
+    left: 1vw;
+    width: 6vw;
+    text-align: center;
+    line-height: 2.2vw;
+}
+#countDown .hour{
+    left: 7.3vw;
+    width: 2.5vw;
+}
+#countDown .minute{
+    left: 10.2vw;
+    width: 2.5vw;
+}
+#countDown .second{
+    left: 13vw;
+    width: 2.5vw;
+}
+/*头部 end*/
+
+/*左右侧 start*/
+#leftSide,#rightSide{
+    width: 23vw;
+    height: auto;/*待改*/
+    background: #313b43;
+    float: left;
+    margin-top: -5.8vw;
+    z-index: 100;
+    position: relative;
+    overflow-y:auto;
+    box-shadow: 1px 0px 13px #000;
+}
+#rightSide{
+    float: right;
+}
+
+.section .header{
+    background: -webkit-linear-gradient(top,#6c7783,#2e3640);
+    border-bottom: 1px solid #263139;
+}
+
+.section .header h2{
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(248, 251, 255)), to(rgb(178, 198, 222)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.1vw;
+    line-height: 2.4vw;
+    margin-left: 1vw;
+}
+
+.section .header .goToDetail{
+    background: url(../images/moqiSprite.png) 0 0 no-repeat;
+    height: 2vw;
+    width: 2vw;
+    display: inline-block;
+    float: right;
+    background-size: 5000%;
+    margin-top: .6vw;
+    cursor: pointer;
+}
+
+.section .header .sectionTab{
+    float: right;
+    margin-top: .2vw;
+}
+
+.section:after{
+    overflow: hidden;
+    content:'';
+    height:0;
+    display: block;
+    clear: both;
+}
+
+
+/*左右侧 end*/
+
+/*公共组件*/
+/*图表中的tab start*/
+.sectionTab{
+    display: inline-block;
+}
+.sectionTab span{
+    -webkit-border-radius: 0 .2vw .2vw 0;
+    -moz-border-radius: 0 .2vw .2vw 0;
+    border-radius: 0 .3vw .3vw 0;
+    display: inline-block;
+    background: #51595c;
+    border: 1px solid #111213;
+    font-size: .9vw;
+    padding: .3vw .4vw;
+    cursor: pointer;
+    color: #fff;
+    margin-left: -6px;
+}
+
+.sectionTab span:first-child{
+    border-radius: .3vw 0 0 .3vw;
+    margin-left:0;
+}
+
+.sectionTab span.active{
+    background: #212425;
+}
+/*图表中的tab end*/
+
+/*进度条 start*/
+.progressBar{
+    display: inline-block;
+    position: relative;
+    width: 4.5vw;
+}
+.progressBar .progressBarBg{
+    background: #37424b;
+    height: .7vw;
+    width: 100%;
+    border-radius: 3vw;
+    border: 1px solid #444;
+    border-bottom-color: #555;
+}
+.progressBar .progressBarBar{
+    height: .7vw;
+    width: 0;
+    background: #eee;
+    position: absolute;
+    top: 1px;
+    border-radius: 3vw;
+}
+
+
+.progressBar .progressBarBar{
+    -webkit-transition: width 2s;
+    -moz-transition: width 2s;
+    -o-transition: width 2s;
+    transition: width 2s;
+}
+
+
+/*蓝色*/
+.progressBar.pg_blue .progressBarBar{
+    background: -webkit-linear-gradient(top,#1ba9f9,#0d6bc2);
+
+}
+/*红色*/
+.progressBar.pg_red .progressBarBar{
+    background: -webkit-linear-gradient(top,#cf5353,#a21a1c);
+}
+/*橙色*/
+.progressBar.pg_orange .progressBarBar{
+    background: -webkit-linear-gradient(top,#e68769,#b73815);
+}
+/*绿色*/
+.progressBar.pg_green .progressBarBar{
+    background: -webkit-linear-gradient(top,#b0d25a,#77a51f);
+
+}
+/*青色*/
+.progressBar.pg_light_blue .progressBarBar{
+    background: -webkit-linear-gradient(top,#1bf9cd,#14ae8c);
+
+}
+/*进度条 end*/
+
+/*表格 start*/
+table{
+    width:90%;
+    margin: 10px auto;
+}
+table th,table td{
+    height:1vw;
+    padding:.9vw;
+    border:1px solid #222;
+    text-align: center;
+}
+table th{
+    background: #495666;
+}
+
+table tr:nth-child(odd) td{
+    background: #343e4a;
+}
+table tr:nth-child(even) td{
+    background: #495666;
+}
+table tr:hover td{
+    background: -webkit-linear-gradient(top,#73bcf3,#2773cb);
+}
+/*表格 end*/
+
+.hide{
+    display: none;
+}
+
+/*弹窗公共*/
+#jbox .jbox-title {
+    color: #fff;
+    font-size: 1vw;
+}
+#jbox .jbox-title-panel {
+    background: -webkit-linear-gradient(top,#6c7783,#2e3640);
+    width: 74vw;
+    border: none;
+}
+#jbox-content {
+    width: 74vw;
+    padding: 0.8vw 0;
+    background: #37424b;
+    text-align: left;
+}
+div.jbox .jbox-container {
+    background-color: #37424b;
+    border: none;
+}
+#jbox #jbox-states {
+    background: #37424b;
+}
+/*弹窗select组件*/
+#jbox-content select {
+    color: #fff;
+    font-size: 1vw;
+    text-shadow: 1px 1px 4px #000;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.down-angle {
+    background: url(../images/select.png) no-repeat;
+    display: inline-block;
+    width: 1.2vw;
+    height: 0.6vw;
+    background-size: 65%;
+    position: absolute;
+    margin-top: 0.6vw;
+    margin-left: 0.4vw;
+    cursor: pointer;
+}
+
+ option{
+    color: #000;
+}
+
+ .page li{
+     display: inline-block;
+     margin: 0 .3vw;
+     cursor: pointer;
+     font-size: 1vw;
+ }
+
+ .page .curPage{
+     color: #26adff;
+ }

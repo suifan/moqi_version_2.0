@@ -1,0 +1,130 @@
+{
+    "overcomePovertyPlan": [
+        {
+            "townName": "莫旗",
+            "targetHouseholds": "1785",
+            "doneHouseholds": "0",
+            "targetPopulation": "4475",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "尼尔基镇",
+            "targetHouseholds": "353",
+            "doneHouseholds": "0",
+            "targetPopulation": "911",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "红彦镇",
+            "targetHouseholds": "124",
+            "doneHouseholds": "0",
+            "targetPopulation": "276",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "西瓦尔图镇",
+            "targetHouseholds": "59",
+            "doneHouseholds": "0",
+            "targetPopulation": "147",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "宝山镇",
+            "targetHouseholds": "150",
+            "doneHouseholds": "0",
+            "targetPopulation": "363",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "塔温敖宝镇",
+            "targetHouseholds": "50",
+            "doneHouseholds": "0",
+            "targetPopulation": "153",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "腾克镇",
+            "targetHouseholds": "141",
+            "doneHouseholds": "0",
+            "targetPopulation": "387",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "巴彦乡",
+            "targetHouseholds": "132",
+            "doneHouseholds": "0",
+            "targetPopulation": "270",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "阿尔拉镇",
+            "targetHouseholds": "35",
+            "doneHouseholds": "0",
+            "targetPopulation": "105",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "杜拉尔乡",
+            "targetHouseholds": "41",
+            "doneHouseholds": "0",
+            "targetPopulation": "99",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "汉古尔河镇",
+            "targetHouseholds": "119",
+            "doneHouseholds": "0",
+            "targetPopulation": "317",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "哈达阳镇",
+            "targetHouseholds": "57",
+            "doneHouseholds": "0",
+            "targetPopulation": "145",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "奎勒河镇",
+            "targetHouseholds": "112",
+            "doneHouseholds": "0",
+            "targetPopulation": "291",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "库如奇乡",
+            "targetHouseholds": "53",
+            "doneHouseholds": "0",
+            "targetPopulation": "127",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "登特科",
+            "targetHouseholds": "124",
+            "doneHouseholds": "0",
+            "targetPopulation": "294",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "额尔和",
+            "targetHouseholds": "116",
+            "doneHouseholds": "0",
+            "targetPopulation": "237",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "卧罗河",
+            "targetHouseholds": "68",
+            "doneHouseholds": "0",
+            "targetPopulation": "212",
+            "donePopulation": "0"
+        },
+        {
+            "townName": "坤密尔堤",
+            "targetHouseholds": "51",
+            "doneHouseholds": "0",
+            "targetPopulation": "141",
+            "donePopulation": "0"
+        }
+    ]
+}

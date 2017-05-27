@@ -1,0 +1,171 @@
+.bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 101;
+    /*background: #999;*/
+}
+.bottom-head {
+    background: url("../images/bottom-head.png") no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    width: 22vw;
+    height: 2.6vw;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    line-height: 2.6vw;
+    cursor: pointer;
+}
+.bottom-head img {
+    vertical-align: middle;
+    width: 1.2vw;
+}
+.bottom-head span {
+    font-size: 1.2vw;
+}
+.bottom-content {
+    display: block;
+    height: 15.9vw;
+    background: #404950;
+    border-top: 2px solid #435875;
+    color: #fff;
+}
+.bottom-left {
+    width: 4%;
+    height: 100%;
+    margin-right: 0.8vw;
+    float: left;
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#333f4c), to(rgba(93, 104, 116, 0.8)));
+    background: -webkit-linear-gradient(top, #66707b, #343d48);
+    font-size: 1.55vw;
+    text-align: center;
+    line-height: 1.8vw;
+    position: relative;
+    z-index: 10;
+}
+.bottom-left h6 {
+    width: 1.6vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(248, 251, 255)), to(rgb(178, 198, 222)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+.bottom-right {
+    float: left;
+    width: 94.8%;
+    padding: 1.72vw 0;
+    height: 12.4vw;
+    letter-spacing: 1.2px;
+}
+.box-wrapper {
+    width: 9999px;
+    position:relative;
+}
+.box-item {
+    width: 40vw;
+    height: 12.4vw;
+    display: table;
+    float: left;
+}
+.box-item>div {
+    display: table-cell;
+    vertical-align: top;
+}
+.box-left {
+    width: 8vw;
+    text-align: center;
+}
+.box-left .user-name {
+    margin: 1vw 0;
+}
+.great-s {
+    padding-top: 1vw;
+}
+.great-s span {
+    display: inline-block;
+}
+.great-s span:nth-child(1) {
+    width: 1.2vw;
+    height: 1.2vw;
+    background: url("../images/great_s.png") no-repeat;
+    background-size: 100%;
+}
+.great-s span:nth-child(2) {
+    letter-spacing: 0;
+}
+.user-img {
+    width: 6vw;
+    height: 6vw;
+    border-radius: 3vw;
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+}
+.user-img img {
+    width: 6vw;
+}
+.box-middle {
+    width: 13.8vw;
+}
+.box-middle p {
+    margin-top: 0.8vw;
+    line-height: 1.2vw;
+    font-size: .9vw;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+.item-img {
+    width: 8.2vw;
+    height: 5.8vw;
+    float: left;
+    background: rgba(153, 153, 153, 0);
+    margin: 0.3vw;
+    overflow: hidden;
+    border: 1px solid #465b77;
+}
+.item-img img {
+    width: 8.2vw;
+}
+
+/*家医签约*/
+.bottom-header {
+    height: 3.5vw;
+    background: -webkit-linear-gradient(bottom, #344557, #4a5f7a);
+    display: table;
+    width: 100%;
+}
+.bottom-header ul {
+    margin: 0 auto;
+    width: 54.8vw;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.bottom-header ul li {
+    display: inline-block;
+    width: 9vw;
+    height: 2vw;
+    line-height: 1.8vw;
+    border: 1px solid #a2a5a9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0 1vw;
+}
+.bottom-header .click-active {
+    background: #092544;
+    border: 0px;
+    box-shadow: inset 1px 1px 4px #171e27;
+}
+
+.bottom-body {
+    height: 12.3vw;
+}

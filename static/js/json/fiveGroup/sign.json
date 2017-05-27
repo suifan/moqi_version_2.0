@@ -1,0 +1,607 @@
+{
+  "moqi": {
+    "signPersons": 10371,
+    "pieChart": {
+      "rate": "4.07%",
+      "dataList": [
+        {
+          "value": 10371,
+          "name": "已签约"
+        },
+        {
+          "value": 244162,
+          "name": "未签约"
+        }
+      ],
+      "allPersons": 254533
+    },
+    "list": [
+      {
+        "townName": "尼尔基镇",
+        "allPersons": 36872,
+        "signPersons": 2223,
+        "completionRate": "50%"
+      },
+      {
+        "townName": "宝山镇",
+        "allPersons": 21300,
+        "signPersons": 54,
+        "completionRate": "0.25%"
+      },
+      {
+        "townName": "西瓦尔图镇",
+        "allPersons": 19830,
+        "signPersons": 482,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "汉古尔河镇",
+        "allPersons": 19221,
+        "signPersons": 355,
+        "completionRate": "1.85%"
+      },
+      {
+        "townName": "登特科镇",
+        "allPersons": 21143,
+        "signPersons": 920,
+        "completionRate": "4.35%"
+      },
+      {
+        "townName": "红彦镇",
+        "allPersons": 14563,
+        "signPersons": 362,
+        "completionRate": "2.49%"
+      },
+      {
+        "townName": "哈达阳镇",
+        "allPersons": 5920,
+        "signPersons": 932,
+        "completionRate": "15.74%"
+      },
+      {
+        "townName": "阿尔拉镇",
+        "allPersons": 7980,
+        "signPersons": 329,
+        "completionRate": "4.12%"
+      },
+      {
+        "townName": "腾克镇",
+        "allPersons": 15420,
+        "signPersons": 995,
+        "completionRate": "6.45%"
+      },
+      {
+        "townName": "奎勒河镇",
+        "allPersons": 14854,
+        "signPersons": 235,
+        "completionRate": "1.58%"
+      },
+      {
+        "townName": "塔温敖宝镇",
+        "allPersons": 22217,
+        "signPersons": 161,
+        "completionRate": "0.72%"
+      },
+      {
+        "townName": "巴彦鄂温克民族乡",
+        "allPersons": 15923,
+        "signPersons": 1217,
+        "completionRate": "7.64%"
+      },
+      {
+        "townName": "库如奇乡",
+        "allPersons": 6033,
+        "signPersons": 301,
+        "completionRate": "4.99%"
+      },
+      {
+        "townName": "杜拉尔鄂温克民族乡",
+        "allPersons": 7920,
+        "signPersons": 193,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "坤密尔堤办事处",
+        "allPersons": 10147,
+        "signPersons": 483,
+        "completionRate": "4.76%"
+      },
+      {
+        "townName": "额尔和办事处",
+        "allPersons": 13012,
+        "signPersons": 446,
+        "completionRate": "3.43%"
+      },
+      {
+        "townName": "卧罗河办事处",
+        "allPersons": 8211,
+        "signPersons": 683,
+        "completionRate": "8.32%"
+      }
+    ]
+  },
+  "baoshanzhen": {
+    "signPersons": 5511,
+    "pieChart": {
+      "rate": "37%",
+      "dataList": [
+        {
+          "value": 300,
+          "name": "已签约"
+        },
+        {
+          "value": 300,
+          "name": "已签约"
+        }
+      ],
+      "allPersons": 5511
+    },
+    "list": [
+      {
+        "townName": "尼尔基镇",
+        "allPersons": 36872,
+        "signPersons": 2223,
+        "completionRate": "50%"
+      },
+      {
+        "townName": "宝山镇",
+        "allPersons": 21300,
+        "signPersons": 54,
+        "completionRate": "0.25%"
+      },
+      {
+        "townName": "西瓦尔图镇",
+        "allPersons": 19830,
+        "signPersons": 482,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "汉古尔河镇",
+        "allPersons": 19221,
+        "signPersons": 355,
+        "completionRate": "1.85%"
+      },
+      {
+        "townName": "登特科镇",
+        "allPersons": 21143,
+        "signPersons": 920,
+        "completionRate": "4.35%"
+      },
+      {
+        "townName": "红彦镇",
+        "allPersons": 14563,
+        "signPersons": 362,
+        "completionRate": "2.49%"
+      },
+      {
+        "townName": "哈达阳镇",
+        "allPersons": 5920,
+        "signPersons": 932,
+        "completionRate": "15.74%"
+      },
+      {
+        "townName": "阿尔拉镇",
+        "allPersons": 7980,
+        "signPersons": 329,
+        "completionRate": "4.12%"
+      },
+      {
+        "townName": "腾克镇",
+        "allPersons": 15420,
+        "signPersons": 995,
+        "completionRate": "6.45%"
+      },
+      {
+        "townName": "奎勒河镇",
+        "allPersons": 14854,
+        "signPersons": 235,
+        "completionRate": "1.58%"
+      },
+      {
+        "townName": "塔温敖宝镇",
+        "allPersons": 22217,
+        "signPersons": 161,
+        "completionRate": "0.72%"
+      },
+      {
+        "townName": "巴彦鄂温克民族乡",
+        "allPersons": 15923,
+        "signPersons": 1217,
+        "completionRate": "7.64%"
+      },
+      {
+        "townName": "库如奇乡",
+        "allPersons": 6033,
+        "signPersons": 301,
+        "completionRate": "4.99%"
+      },
+      {
+        "townName": "杜拉尔鄂温克民族乡",
+        "allPersons": 7920,
+        "signPersons": 193,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "坤密尔堤办事处",
+        "allPersons": 10147,
+        "signPersons": 483,
+        "completionRate": "4.76%"
+      },
+      {
+        "townName": "额尔和办事处",
+        "allPersons": 13012,
+        "signPersons": 446,
+        "completionRate": "3.43%"
+      },
+      {
+        "townName": "卧罗河办事处",
+        "allPersons": 8211,
+        "signPersons": 683,
+        "completionRate": "8.32%"
+      }
+    ]
+  },
+  "nierjizhen": {
+    "signPersons": 5511,
+    "pieChart": {
+      "rate": "37%",
+      "dataList": [
+        {
+          "value": 300,
+          "name": "已签约"
+        },
+        {
+          "value": 300,
+          "name": "已签约"
+        }
+      ],
+      "allPersons": 5511
+    },
+    "list": [
+      {
+        "townName": "尼尔基镇",
+        "allPersons": 36872,
+        "signPersons": 2223,
+        "completionRate": "50%"
+      },
+      {
+        "townName": "宝山镇",
+        "allPersons": 21300,
+        "signPersons": 54,
+        "completionRate": "0.25%"
+      },
+      {
+        "townName": "西瓦尔图镇",
+        "allPersons": 19830,
+        "signPersons": 482,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "汉古尔河镇",
+        "allPersons": 19221,
+        "signPersons": 355,
+        "completionRate": "1.85%"
+      },
+      {
+        "townName": "登特科镇",
+        "allPersons": 21143,
+        "signPersons": 920,
+        "completionRate": "4.35%"
+      },
+      {
+        "townName": "红彦镇",
+        "allPersons": 14563,
+        "signPersons": 362,
+        "completionRate": "2.49%"
+      },
+      {
+        "townName": "哈达阳镇",
+        "allPersons": 5920,
+        "signPersons": 932,
+        "completionRate": "15.74%"
+      },
+      {
+        "townName": "阿尔拉镇",
+        "allPersons": 7980,
+        "signPersons": 329,
+        "completionRate": "4.12%"
+      },
+      {
+        "townName": "腾克镇",
+        "allPersons": 15420,
+        "signPersons": 995,
+        "completionRate": "6.45%"
+      },
+      {
+        "townName": "奎勒河镇",
+        "allPersons": 14854,
+        "signPersons": 235,
+        "completionRate": "1.58%"
+      },
+      {
+        "townName": "塔温敖宝镇",
+        "allPersons": 22217,
+        "signPersons": 161,
+        "completionRate": "0.72%"
+      },
+      {
+        "townName": "巴彦鄂温克民族乡",
+        "allPersons": 15923,
+        "signPersons": 1217,
+        "completionRate": "7.64%"
+      },
+      {
+        "townName": "库如奇乡",
+        "allPersons": 6033,
+        "signPersons": 301,
+        "completionRate": "4.99%"
+      },
+      {
+        "townName": "杜拉尔鄂温克民族乡",
+        "allPersons": 7920,
+        "signPersons": 193,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "坤密尔堤办事处",
+        "allPersons": 10147,
+        "signPersons": 483,
+        "completionRate": "4.76%"
+      },
+      {
+        "townName": "额尔和办事处",
+        "allPersons": 13012,
+        "signPersons": 446,
+        "completionRate": "3.43%"
+      },
+      {
+        "townName": "卧罗河办事处",
+        "allPersons": 8211,
+        "signPersons": 683,
+        "completionRate": "8.32%"
+      }
+    ]
+  },
+  "xiwaertuzhen": {
+    "signPersons": 5511,
+    "pieChart": {
+      "rate": "37%",
+      "dataList": [
+        {
+          "value": 300,
+          "name": "已签约"
+        },
+        {
+          "value": 300,
+          "name": "已签约"
+        }
+      ],
+      "allPersons": 5511
+    },
+    "list": [
+      {
+        "townName": "尼尔基镇",
+        "allPersons": 36872,
+        "signPersons": 2223,
+        "completionRate": "50%"
+      },
+      {
+        "townName": "宝山镇",
+        "allPersons": 21300,
+        "signPersons": 54,
+        "completionRate": "0.25%"
+      },
+      {
+        "townName": "西瓦尔图镇",
+        "allPersons": 19830,
+        "signPersons": 482,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "汉古尔河镇",
+        "allPersons": 19221,
+        "signPersons": 355,
+        "completionRate": "1.85%"
+      },
+      {
+        "townName": "登特科镇",
+        "allPersons": 21143,
+        "signPersons": 920,
+        "completionRate": "4.35%"
+      },
+      {
+        "townName": "红彦镇",
+        "allPersons": 14563,
+        "signPersons": 362,
+        "completionRate": "2.49%"
+      },
+      {
+        "townName": "哈达阳镇",
+        "allPersons": 5920,
+        "signPersons": 932,
+        "completionRate": "15.74%"
+      },
+      {
+        "townName": "阿尔拉镇",
+        "allPersons": 7980,
+        "signPersons": 329,
+        "completionRate": "4.12%"
+      },
+      {
+        "townName": "腾克镇",
+        "allPersons": 15420,
+        "signPersons": 995,
+        "completionRate": "6.45%"
+      },
+      {
+        "townName": "奎勒河镇",
+        "allPersons": 14854,
+        "signPersons": 235,
+        "completionRate": "1.58%"
+      },
+      {
+        "townName": "塔温敖宝镇",
+        "allPersons": 22217,
+        "signPersons": 161,
+        "completionRate": "0.72%"
+      },
+      {
+        "townName": "巴彦鄂温克民族乡",
+        "allPersons": 15923,
+        "signPersons": 1217,
+        "completionRate": "7.64%"
+      },
+      {
+        "townName": "库如奇乡",
+        "allPersons": 6033,
+        "signPersons": 301,
+        "completionRate": "4.99%"
+      },
+      {
+        "townName": "杜拉尔鄂温克民族乡",
+        "allPersons": 7920,
+        "signPersons": 193,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "坤密尔堤办事处",
+        "allPersons": 10147,
+        "signPersons": 483,
+        "completionRate": "4.76%"
+      },
+      {
+        "townName": "额尔和办事处",
+        "allPersons": 13012,
+        "signPersons": 446,
+        "completionRate": "3.43%"
+      },
+      {
+        "townName": "卧罗河办事处",
+        "allPersons": 8211,
+        "signPersons": 683,
+        "completionRate": "8.32%"
+      }
+    ]
+  },
+  "hanguerhezhen": {
+    "signPersons": 5511,
+    "pieChart": {
+      "rate": "37%",
+      "dataList": [
+        {
+          "value": 300,
+          "name": "已签约"
+        },
+        {
+          "value": 300,
+          "name": "已签约"
+        }
+      ],
+      "allPersons": 5511
+    },
+    "list": [
+      {
+        "townName": "尼尔基镇",
+        "allPersons": 36872,
+        "signPersons": 2223,
+        "completionRate": "50%"
+      },
+      {
+        "townName": "宝山镇",
+        "allPersons": 21300,
+        "signPersons": 54,
+        "completionRate": "0.25%"
+      },
+      {
+        "townName": "西瓦尔图镇",
+        "allPersons": 19830,
+        "signPersons": 482,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "汉古尔河镇",
+        "allPersons": 19221,
+        "signPersons": 355,
+        "completionRate": "1.85%"
+      },
+      {
+        "townName": "登特科镇",
+        "allPersons": 21143,
+        "signPersons": 920,
+        "completionRate": "4.35%"
+      },
+      {
+        "townName": "红彦镇",
+        "allPersons": 14563,
+        "signPersons": 362,
+        "completionRate": "2.49%"
+      },
+      {
+        "townName": "哈达阳镇",
+        "allPersons": 5920,
+        "signPersons": 932,
+        "completionRate": "15.74%"
+      },
+      {
+        "townName": "阿尔拉镇",
+        "allPersons": 7980,
+        "signPersons": 329,
+        "completionRate": "4.12%"
+      },
+      {
+        "townName": "腾克镇",
+        "allPersons": 15420,
+        "signPersons": 995,
+        "completionRate": "6.45%"
+      },
+      {
+        "townName": "奎勒河镇",
+        "allPersons": 14854,
+        "signPersons": 235,
+        "completionRate": "1.58%"
+      },
+      {
+        "townName": "塔温敖宝镇",
+        "allPersons": 22217,
+        "signPersons": 161,
+        "completionRate": "0.72%"
+      },
+      {
+        "townName": "巴彦鄂温克民族乡",
+        "allPersons": 15923,
+        "signPersons": 1217,
+        "completionRate": "7.64%"
+      },
+      {
+        "townName": "库如奇乡",
+        "allPersons": 6033,
+        "signPersons": 301,
+        "completionRate": "4.99%"
+      },
+      {
+        "townName": "杜拉尔鄂温克民族乡",
+        "allPersons": 7920,
+        "signPersons": 193,
+        "completionRate": "2.43%"
+      },
+      {
+        "townName": "坤密尔堤办事处",
+        "allPersons": 10147,
+        "signPersons": 483,
+        "completionRate": "4.76%"
+      },
+      {
+        "townName": "额尔和办事处",
+        "allPersons": 13012,
+        "signPersons": 446,
+        "completionRate": "3.43%"
+      },
+      {
+        "townName": "卧罗河办事处",
+        "allPersons": 8211,
+        "signPersons": 683,
+        "completionRate": "8.32%"
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+    "povertyStructure": {
+		"moqi": {
+            "townName": "莫旗",
+            "poorCount": "12134",
+            "numberOfWomen": "5502"
+        },
+        "aerlazhen": {
+            "townName": "阿尔拉镇",
+            "poorCount": "286",
+            "numberOfWomen": "125"
+        },
+        "bayanxiang": {
+            "townName": "巴彦乡",
+            "poorCount": "679",
+            "numberOfWomen": "315"
+        },
+        "baoshanzhen": {
+            "townName": "宝山镇",
+            "poorCount": "706",
+            "numberOfWomen": "308"
+        },
+        "dengteke": {
+            "townName": "登特科",
+            "poorCount": "968",
+            "numberOfWomen": "445"
+        },
+        "dulaerxiang": {
+            "townName": "杜拉尔乡",
+            "poorCount": "179",
+            "numberOfWomen": "87"
+        },
+        "hadayangzhen": {
+            "townName": "哈达阳镇",
+            "poorCount": "1181",
+            "numberOfWomen": "511"
+        },
+        "hanguerhezhen": {
+            "townName": "汉古尔河镇",
+            "poorCount": "1020",
+            "numberOfWomen": "464"
+        },
+        "hongyanzhen": {
+            "townName": "红彦镇",
+            "poorCount": "543",
+            "numberOfWomen": "299"
+        },
+        "kuquqixiang": {
+            "townName": "库如奇乡",
+            "poorCount": "235",
+            "numberOfWomen": "102"
+        },
+        "kuilehezhen": {
+            "townName": "奎勒河镇",
+            "poorCount": "934",
+            "numberOfWomen": "410"
+        },
+        "nierjizhen": {
+            "townName": "尼尔基镇",
+            "poorCount": "2222",
+            "numberOfWomen": "1026"
+        },
+        "tawenaobaozhen": {
+            "townName": "塔温敖宝镇",
+            "poorCount": "1132",
+            "numberOfWomen": "499"
+        },
+        "tengkezhen": {
+            "townName": "腾克镇",
+            "poorCount": "1253",
+            "numberOfWomen": "552"
+        },
+        "xiwaertuzhen": {
+            "townName": "西瓦尔图镇",
+            "poorCount": "796",
+            "numberOfWomen": "359"
+        },
+        "eerhe": {
+            "townName": "额尔和",
+            "poorCount": "?",
+            "numberOfWomen": "?"
+        },
+        "woluohe": {
+            "townName": "卧罗河",
+            "poorCount": "?",
+            "numberOfWomen": "?"
+        },
+        "kunmierdi": {
+            "townName": "坤密尔堤",
+            "poorCount": "?",
+            "numberOfWomen": "?"
+        }
+    }
+}

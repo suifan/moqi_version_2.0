@@ -1,0 +1,102 @@
+{
+    "povertyStructure": {
+        "aerlazhen": {
+            "townName": "阿尔拉镇",
+            "poorHouseCount": "112",
+            "poorPeoCount": "286",
+			"poorSick": "10",
+			"signJYCount": "329"
+        },
+        "bayanxiang": {
+            "townName": "巴彦乡",
+            "poorHouseCount": "334",
+            "poorPeoCount": "679",
+			"poorSick": "193",
+			"signJYCount": "1217"
+        },
+        "baoshanzhen": {
+            "townName": "宝山镇",
+            "poorHouseCount": "291",
+            "poorPeoCount": "706",
+			"poorSick": "48",
+			"signJYCount": "54"
+        },
+        "dengteke": {
+            "townName": "登特科",
+            "poorHouseCount": "402",
+            "poorPeoCount": "968",
+			"poorSick": "195",
+			"signJYCount": "920"
+        },
+        "dulaerxiang": {
+            "townName": "杜拉尔乡",
+            "poorHouseCount": "75",
+            "poorPeoCount": "179",
+			"poorSick": "30",
+			"signJYCount": "193"
+        },
+        "hadayangzhen": {
+            "townName": "哈达阳镇",
+            "poorHouseCount": "489",
+            "poorPeoCount": "1181",
+			"poorSick": "54",
+			"signJYCount": "932"
+        },
+        "hanguerhezhen": {
+            "townName": "汉古尔河镇",
+            "poorHouseCount": "395",
+            "poorPeoCount": "1020",
+			"poorSick": "171",
+			"signJYCount": "355"
+        },
+        "hongyanzhen": {
+            "townName": "红彦镇",
+            "poorHouseCount": "257",
+            "poorPeoCount": "543",
+			"poorSick": "109",
+			"signJYCount": "362"
+        },
+        "kuquqixiang": {
+            "townName": "库如奇乡",
+            "poorHouseCount": "94",
+            "poorPeoCount": "235",
+			"poorSick": "39",
+			"signJYCount": "301"
+        },
+        "kuilehezhen": {
+            "townName": "奎勒河镇",
+            "poorHouseCount": "354",
+            "poorPeoCount": "934",
+			"poorSick": "84",
+			"signJYCount": "235"
+        },
+        "nierjizhen": {
+            "townName": "尼尔基镇",
+            "poorHouseCount": "881",
+            "poorPeoCount": "2233",
+			"poorSick": "349",
+			"signJYCount": "2223"
+        },
+        "tawenaobaozhen": {
+            "townName": "塔温敖宝镇",
+            "poorHouseCount": "417",
+            "poorPeoCount": "1132",
+			"poorSick": "61",
+			"signJYCount": "161"
+        },
+        "tengkezhen": {
+            "townName": "腾克镇",
+            "poorHouseCount": "457",
+            "poorPeoCount": "1253",
+			"poorSick": "20",
+			"signJYCount": "995"
+        },
+        "xiwaertuzhen": {
+            "townName": "西瓦尔图镇",
+            "poorHouseCount": "351",
+            "poorPeoCount": "796",
+			"poorSick": "53",
+			"signJYCount": "482"
+        }
+    }
+}

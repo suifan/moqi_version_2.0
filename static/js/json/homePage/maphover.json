@@ -1,0 +1,30 @@
+data:{//地图hover数据
+	"hanguerzhen":{//汉古尔镇
+		"poorHouseholdsCount":23,//贫困户
+		"poorPersonsCount":280,//贫困人口
+		"illnessCasusesCount":360,//因病致贫
+		"industryPovertyAlleviationCount":325,//产业扶贫
+		"signCount":670//签约数量
+	},
+	"nierjizhen":{//尼尔基镇
+		"poorHouseholdsCount":23,//贫困户
+		"poorPersonsCount":280,//贫困人口
+		"illnessCasusesCount":360,//因病致贫
+		"industryPovertyAlleviationCount":325,//产业扶贫
+		"signCount":670//签约数量
+	},
+	"xiertuzhen":{//希尔图镇
+		"poorHouseholdsCount":23,//贫困户
+		"poorPersonsCount":280,//贫困人口
+		"illnessCasusesCount":360,//因病致贫
+		"industryPovertyAlleviationCount":325,//产业扶贫
+		"signCount":670//签约数量
+	},
+	"baoshanzhen":{//宝山镇
+		"poorHouseholdsCount":23,//贫困户
+		"poorPersonsCount":280,//贫困人口
+		"illnessCasusesCount":360,//因病致贫
+		"industryPovertyAlleviationCount":325,//产业扶贫
+		"signCount":670//签约数量
+	}
+}

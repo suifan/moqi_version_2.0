@@ -1,0 +1,19 @@
+{
+	"poorHouseholds":{
+		"planPoorHouseholds":1900,
+		"actualPoorHouseholds":200,
+		"notPoorHouseholds":1700,
+		"percentage":"21%"
+	},
+	"poorPersons":{
+		"planPoorPersons":5700,
+		"actualPoorPersons":600,
+		"notPoorPersons":51000,
+		"percentage":"21%"
+	},
+	"poorProbability":{
+		"poorPersons":15328,
+		"countryHousePersons":24000,
+		"percentage":"21%"
+	}
+}	

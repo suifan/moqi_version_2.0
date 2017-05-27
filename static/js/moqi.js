@@ -63,7 +63,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     var causePieChartData = {
                         color:['#ed6942','#63c727','#fff100','#f39801','#0168b7','#5f52a1','#546fb4','#00b8ee','#f9b552','#f2914a'],
                         data:data[area].causePieChartData,
-                        center:["50%","50%"],
+                        center:["50%","55%"],
                         radius:["25%","50%"]
                     };
                     charts.labelPie("chartForCause",causePieChartData);

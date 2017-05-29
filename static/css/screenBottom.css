@@ -37,7 +37,7 @@
     margin-right: 0.8vw;
     float: left;
     /*background:-webkit-gradient(linear, 0 0, 0 bottom, from(#333f4c), to(rgba(93, 104, 116, 0.8)));*/
-    background: rgba(50, 102, 195, 0.5);;
+    background: rgb(48, 86, 154);
     border: 1px solid #4b86f0;
     font-size: 1.55vw;
     text-align: center;
@@ -64,7 +64,7 @@
     letter-spacing: 1.2px;
 }
 .box-wrapper {
-    width: 9999px;
+    width: 999999px;
     position:relative;
 }
 .box-item {

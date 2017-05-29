@@ -149,7 +149,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });*/
             //底部--------------------end
         },
-        'getFiveGroup': function(){
+        'getFiveGroup': function(switchFlag){
             $("#leftTabs").addClass("hide");
             // $("#leftOperation").addClass("hide");
             // $("#sevenStepsTab").removeClass("hide");
@@ -170,16 +170,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //右侧--------------------end
 
             //左侧--------------------start
-            $.getJSON("../js/json/fiveGroup/fivegroup_left.json",function(res){
-                var data = res[area];
-                $('#leftSide').html(template('fiveLeftSideTemp', data));
-                //进度条生成
-                $(".section-body.second-sec").find(".progressBar").each(function () {
-                    var value = $(this).next("div").children("span").text();
-                    progressBar.generate(this,value);
-                })
-            });
-
+            api.getFiveLeft();
             //左侧--------------------end
 
             //底部--------------------start
@@ -188,7 +179,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 data.list = res.povertyNews["moqi"];
                 $('.bottom').html(template('helpDynamicTemp', data));
             });
-            //家医签约按钮点击事件
+            //扶贫动态按钮点击事件
             $(".bottom-head").on("click",function(){
                 var $this = $(this).siblings(".bottom-content");
                 $this.slideToggle(function(){
@@ -207,11 +198,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //建档情况
             $("#openDoc").on("click", function () {
                 var $pop = api.openPopWindow("建档情况");
-                /*var $pop = $.jBox('', {title: "建档情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                //改变title宽度
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/recordJbox.json",function(res){
                     if(res&&res[area]){
                         var data = res[area];
@@ -225,10 +211,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //脱贫情况
             $("#openTuopin").on("click", function () {
                 var $pop = api.openPopWindow("脱贫情况");
-               /* var $pop = $.jBox('', {title: "脱贫情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/overcomePoverty.json",function(res){
                     if(res){
                         $pop.find('.jbox-content').html(template('tuopinTemp',{}));
@@ -246,10 +228,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //劳动力情况
             $("#laborCondition").on("click", function () {
                 var $pop = api.openPopWindow("劳动力情况");
-                /*var $pop = $.jBox('', {title: "劳动力情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/labor.json",function(res){
                     if(res&&res[area]){
                         var data = res[area];
@@ -259,16 +237,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         charts.labelPie('laborWindowChart',docData)
                     }
                 });
-                /*var box=document.getElementById("jbox");
-                 box.style.top = "3vw";*/
             })
             //诊断情况 与建档情况公用一个模板
             $("#diagnoseCondition").on("click", function () {
                 var $pop = api.openPopWindow("诊断情况");
-                /*var $pop=$.jBox('', {title: "诊断情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/diagnose.json",function(res){
                     if(res&&res[area]){
                         var data = res[area];
@@ -278,17 +250,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         charts.pieChart('docChart',true,docData)
                     }
                 });
-
-                /*var box=document.getElementById("jbox");
-                 box.style.top = "3vw";*/
-            })
+            });
             //身体健康状况 与劳动力情况公用一个模板
             $("#healthCondition").on("click", function () {
                 var $pop = api.openPopWindow("身体健康情况");
-                /*var $pop = $.jBox('', {title: "身体健康情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/health.json",function(res){
                     if(res&&res[area]){
                         var data = res[area];
@@ -298,16 +263,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         charts.labelPie('laborWindowChart',docData)
                     }
                 });
-                /*var box=document.getElementById("jbox");
-                 box.style.top = "3vw";*/
-            })
+
+            });
             //签约情况 与建档情况公用一个模板     --------------暂时这么写，后续提取公共部分--------------
             $("#signCondition").on("click", function () {
                 var $pop = api.openPopWindow("签约情况");
-                /*var $pop = $.jBox('', {title: "签约情况", buttons: {}, border: 0, opacity: 0.4});
-                document.getElementsByTagName('body')[0].style.padding="0";
-                var title = document.getElementsByClassName("jbox-title")[0];
-                title.style.width ="96%";*/
                 $.getJSON("../js/json/fiveGroup/sign.json",function(res){
                     if(res&&res[area]){
                         var data = res[area];
@@ -317,9 +277,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         charts.pieChart('docChart',true,docData)
                     }
                 });
-                /*var box=document.getElementById("jbox");
-                 box.style.top = "3vw";*/
-            })
+            });
             //个人中心
             /*$("#openPerinfo").on("click", function () {
                 $.jBox('', {title: "李茜茜", buttons: {}, border: 0, opacity: 0.4});
@@ -346,6 +304,34 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 var html = template('personalTemp',{});
                 document.getElementsByClassName('jbox-content')[0].innerHTML = html;
             })
+        },
+        'getFiveLeft': function(switchFlag){
+            $.getJSON("../js/json/fiveGroup/fivegroup_left.json",function(res){
+                var data = res[area];
+                data['huorren'] = switchFlag || 1;
+                $('#leftSide').html(template('fiveLeftSideTemp', data));
+                //进度条生成
+                $(".section-body.second-sec").find(".progressBar").each(function () {
+                    var value = $(this).next("div").children("span").text();
+                    progressBar.generate(this,value);
+                })
+            });
+            //绑定左侧 人/户 切换点击事件
+            $(".switch-head").on("click","span", function(){
+                var activeBool = $(this).hasClass("span-active");
+                if(!activeBool){
+                    // $(this).addClass("span-active");
+                    // $(this).siblings("span").removeClass("span-active")
+                    var text = $(this).text();
+                    // var obj = $(".section-body table thead tr").children();
+                    if(text == "户"){
+                        api.getFiveLeft(1);
+                    }else{
+                        api.getFiveLeft(2);
+                    }
+                }
+
+            });
         },
         'getPoorFamilyLeft': function(switchFlag){//贫困家庭左侧
             $.getJSON("../js/json/povertyFamily/poorFamily.json",function(data){
@@ -648,7 +634,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         $("#tab").on("click","li", function(){
 
             //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
-                if ($(this).hasClass('fiveInOne')||$(this).hasClass('sixExactness')) {
+                if (!$(this).attr('class')) {
                     return;
                 }
             //---暂时代码 
@@ -853,7 +839,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 //      * @param type 所选中的tab
                 //      */
             "getData":function () {
-                        var txt = $("#tab div.active").text();
+                        var txt = $("#tab li.active").text();
                         switch (txt) {
                             case "首页":
                                 api.getHomePage();

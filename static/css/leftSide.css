@@ -9,34 +9,36 @@
     position: absolute;
     top: 0.6vw;
     right: 1vw;
-    border: 1px solid #383c3e;
-    border-radius: 0.3vw;
+    border: 1px solid #43738e;
+    border-radius: 0.6vw;
 }
 .switch-head span {
     float: left;
     width: 2.4vw;
     height: 1.2vw;
-    background: #fff;
-    background: -webkit-linear-gradient(top,#505963,#383c3e);
+    /*background: #fff;*/
+    background: #20407b;
     text-align: center;
     line-height: 1.2vw;
     font-size: 0.8vw;
     cursor: pointer;
+    /*border: 1px solid #4b85f0;*/
 }
 .switch-head span:nth-child(2) {
-    border-top-right-radius: 0.3vw;
-    border-bottom-right-radius: 0.3vw;
+    border-top-right-radius: 0.6vw;
+    border-bottom-right-radius: 0.6vw;
 }
 .switch-head span:nth-child(1) {
-    border-top-left-radius: 0.3vw;
-    border-bottom-left-radius: 0.3vw;
+    border-top-left-radius: 0.6vw;
+    border-bottom-left-radius: 0.6vw;
 }
 span.span-active {
-    background: -webkit-linear-gradient(top,#505963,#383c3e);
-    background: #212425;
+    /*background: -webkit-linear-gradient(top,#505963,#383c3e);*/
+    background: #4c586e;
+    /*border: 1px solid ;*/
 }
 #leftSide .section-body {
-    padding: 0 1vw;
+    padding: 1vw;
     /*overflow: hidden;*/
 }
 #leftSide .section-body ul {
@@ -57,9 +59,9 @@ span.span-active {
     float: left;
     width: 100%;
 }
-.second-sec>ul {
+/*.second-sec>ul {
     padding-top: 1vw;
-}
+}*/
 .second-sec>ul>li {
     border: none;
 }
@@ -70,8 +72,20 @@ span.span-active {
     /* border-radius: 0.6vw; */
     font-size: 0.8vw;
     /* text-align: center; */
-     line-height: 1.3vw;
+    line-height: 1.3vw;
     color: #d4e4ff;
+    margin-left: -0.6vw;
+}
+#leftSide .five-group .f-left-top {
+    width: 5.8vw;
+    height: 1.3vw;
+    /* background: #092544; */
+    /* border-radius: 0.6vw; */
+    font-size: 0.8vw;
+    /* text-align: center; */
+    line-height: 1.3vw;
+    color: #d4e4ff;
+    margin-left: 0;
 }
 .f-left ul li {
     height: 1.2vw;
@@ -145,6 +159,9 @@ span.span-active {
     line-height: 1.4vw;
     font-size: .8vw;
     color: #949ca9;
+}
+.five-group .s-left-header {
+    padding: 0.4vw 0 0.4vw 0;
 }
 .s-left-header span,.s-left-header em {
     color: #949ca9;

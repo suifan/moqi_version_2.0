@@ -119,7 +119,7 @@ header{
 }
 .section .section-body,.section .content{
     background: rgba(3, 19, 39, 0.52);
-    border: 1px solid #696969;
+    border: 1px solid #43738e;
     border-top: 0;
 }
 .content:after {

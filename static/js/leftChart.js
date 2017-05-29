@@ -28,11 +28,11 @@ define(['echarts'],function(echarts){
                         normal: {
                             show: true,
                             position: 'center',
-                            formatter:percent,
+                            formatter:percent+"\n完成率",
                             textStyle: {
                                 fontSize: '12',
                                 fontWeight: 'normal',
-                                color:'#fff'
+                                color:color1
                             }
                         },
                         emphasis: {

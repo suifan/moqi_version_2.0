@@ -2873,6 +2873,7 @@
         </div>
         <div class="section-body second-sec">
             <ul>
+
                 <li>
                     <div class="progress-title">搬迁</div>
                     <div class="s-left-bar">
@@ -2934,18 +2935,30 @@
 </script>
 <!--五人小组模板-->
 <script id="fiveLeftSideTemp" type="text/html">
-    <div class="section">
+    <div class="section five-group">
         <div class="header">
             <!--<span class="goToDetail"></span>-->
             <h2>2017年度扶贫任务</h2>
+            {{if huorren==1 }}
+            <div class="switch-head">
+                <span class="span-active">户</span>
+                <span>人</span>
+            </div>
+            {{else if huorren==2}}
+            <div class="switch-head">
+                <span>户</span>
+                <span class="span-active">人</span>
+            </div>
+            {{/if}}
         </div>
         <div class="section-body second-sec">
+            {{if huorren == 1}}
             <ul>
                 <li>
                     <div class="f-left-top">总体目标</div>
                     <div class="s-left-header">脱贫目标：<span>{{populationTarget.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_red">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -2956,7 +2969,7 @@
                     <div class="f-left-top">因病致贫</div>
                     <div class="s-left-header">脱贫目标：<span>{{illnessCasuses.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_red">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -2967,7 +2980,7 @@
                     <div class="f-left-top">因学致贫</div>
                     <div class="s-left-header">脱贫目标：<span>{{studyCasuses.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_green">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -2978,7 +2991,7 @@
                     <div class="f-left-top">因灾致贫</div>
                     <div class="s-left-header">脱贫目标：<span>{{disasterCasuses.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_orange">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -2989,7 +3002,7 @@
                     <div class="f-left-top">缺技术致贫</div>
                     <div class="s-left-header">脱贫目标：<span>{{teachnologyCasuses.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_light_blue">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -3000,7 +3013,7 @@
                     <div class="f-left-top">缺资金致贫</div>
                     <div class="s-left-header">脱贫目标：<span>{{moneyCasuses.poorTarget}}</span>户</div>
                     <div class="s-left-bar">
-                        <div class="progressBar pg_light_blue">
+                        <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
                             <div class="progressBarBar"></div>
                         </div>
@@ -3008,6 +3021,76 @@
                     </div>
                 </li>
             </ul>
+            {{else if huorren == 2}}
+            <ul>
+                <li>
+                    <div class="f-left-top">总体目标</div>
+                    <div class="s-left-header">脱贫目标：<span>{{populationTarget.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{populationTarget.complete}}</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-left-top">因病致贫</div>
+                    <div class="s-left-header">脱贫目标：<span>{{illnessCasuses.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{illnessCasuses.complete}}</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-left-top">因学致贫</div>
+                    <div class="s-left-header">脱贫目标：<span>{{studyCasuses.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{studyCasuses.complete}}</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-left-top">因灾致贫</div>
+                    <div class="s-left-header">脱贫目标：<span>{{disasterCasuses.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{disasterCasuses.complete}}</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-left-top">缺技术致贫</div>
+                    <div class="s-left-header">脱贫目标：<span>{{teachnologyCasuses.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{teachnologyCasuses.complete}}</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-left-top">缺资金致贫</div>
+                    <div class="s-left-header">脱贫目标：<span>{{moneyCasuses.poorTarget}}</span>人</div>
+                    <div class="s-left-bar">
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar"></div>
+                        </div>
+                        <div class="progressRate">完成度: <span>{{moneyCasuses.complete}}</span></div>
+                    </div>
+                </li>
+            </ul>
+            {{/if}}
         </div>
     </div>
 </script>
@@ -3029,38 +3112,7 @@
             {{/if}}
         </div>
         <div class="section-body">
-            <table>
-                <thead>
-                {{if huorren==1 }}
-                <th>乡、镇（办事处）</th>
-                <th>目标户数</th>
-                <th>完成户数</th>
-                {{else if huorren==2}}
-                <th>乡、镇（办事处）</th>
-                <th>目标人数</th>
-                <th>完成人数</th>
-                {{/if}}
-                </thead>
-                <tbody>
-                {{if huorren==1}}
-                    {{each overcomePovertyPlan as value}}
-                    <tr>
-                        <td>{{value.townName}}</td>
-                        <td>{{value.targetHouseholds}}</td>
-                        <td>{{value.doneHouseholds}}</td>
-                    </tr>
-                    {{/each}}
-                {{else if huorren ==2 }}
-                    {{each overcomePovertyPlan as value}}
-                    <tr>
-                        <td>{{value.townName}}</td>
-                        <td>{{value.targetPopulation}}</td>
-                        <td>{{value.donePopulation}}</td>
-                    </tr>
-                    {{/each}}
-                {{/if}}
-                </tbody>
-            </table>
+
         </div>
     </div>
 </script>
@@ -3108,11 +3160,13 @@
                             <h7>走访核查信息</h7>
                             <p>{{data.info}}</p>
                         </div>
+                        {{if data.pic.length}}
                         <div class="box-right">
                             {{each data.pic as pic}}
                                 <div class="item-img"><img src="..{{pic}}" alt=""></div>
                             {{/each}}
                         </div>
+                        {{/if}}
                     </div>
                     {{/each}}
                 </div>

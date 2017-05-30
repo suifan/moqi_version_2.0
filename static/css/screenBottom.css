@@ -139,7 +139,7 @@
 /*家医签约*/
 .bottom-header {
     height: 3.5vw;
-    background: -webkit-linear-gradient(bottom, #344557, #4a5f7a);
+    background:#20407b;
     display: table;
     width: 100%;
 }
@@ -155,7 +155,6 @@
     width: 9vw;
     height: 2vw;
     line-height: 1.8vw;
-    border: 1px solid #a2a5a9;
     border-radius: 10px;
     box-sizing: border-box;
     cursor: pointer;
@@ -163,8 +162,8 @@
 }
 .bottom-header .click-active {
     background: #092544;
-    border: 0px;
-    box-shadow: inset 1px 1px 4px #171e27;
+    border: 1px solid #fff;
+
 }
 
 .bottom-body {

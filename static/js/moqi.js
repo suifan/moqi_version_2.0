@@ -58,12 +58,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 if(data) {
                     $('#rightSide').html(template('homepageRightSideTemp', data[area]));
                     //进度条生成
-
                     $("#performance").find(".progressBar").each(function(){
                         var percent = $(this).find(".progressRate").text();
                         progressBar.generate($(this),percent);
                     })
-
                 }
                 $(".command").viewer();
                 $(".management").viewer();
@@ -75,7 +73,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //获取首页左侧数据
             $.ajaxSettings.async = false;
             var dataLeft={},targetChart={};
-
             $.getJSON("../js/json/homePage/basicInfoV2.json",function(res){
                 dataLeft['basicInfo']=res.basic_info[area];
             });
@@ -99,7 +96,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------end
 
             //底部--------------------start
-            $('.bottom').html(template('moqiIntroduction', {}));
+            $('.bottom').html(template('povertyStatus', {}));
             // bottomBind();
             //家医签约按钮点击事件
             $(".bottom-head").on("click",function(){
@@ -109,22 +106,37 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
+                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                        if($(".bottom-head").hasClass("active")){
+                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                        }else{
+                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                        }
                         api.slide("slideBox_r","box-wrapper",1900);
-                        // chart.barChart("doctorSign");
+                        api.getPovertyDistribution();
                     }
                 });
             });
-            //家医签约切换标题
-            /*$(".bottom-header ul").on("click","li", function(){
+            //贫困状况切换标题
+            $(".bottom-header ul").on("click","li", function(){
                 var activeBool = $(this).hasClass("click-active");
                 if(!activeBool){
                     $(this).addClass("click-active");
                     $(this).siblings("li").removeClass("click-active");
-                    var type = $(this).attr("data-type");
-                    api.getDoctorSign(type);
+                    if($(this).hasClass("povertyDistribution")){
+                        api.getPovertyDistribution();
+                    }else {
+                        api.getPovertyCauses();
+                    }
                 }
-            });*/
+            });
             //底部--------------------end
+        },
+        'getPovertyDistribution':function(){
+            chart.barChart("poverty_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,222,333,222,111,111,222,333,444,223,554,323,1234,343,234,778,334]);
+        },
+        'getPovertyCauses':function(){
+            chart.barChart("poverty_status",["因病","因学","因灾","缺土地","缺水","缺技术","缺劳力","缺资金","交通条件落后","自身动力不足"],[111,222,333,222,111,111,222,333,444,223]);
         },
         'getFiveGroup': function(switchFlag){
             $("#leftTabs").addClass("hide");

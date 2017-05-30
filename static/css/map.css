@@ -1,115 +1,120 @@
- .mapBox{
- 	width:100%;
- 	height: 100%;
- 	background-color: #ccc;
- 	position: absolute;
- 	background: none;
- 	overflow: hidden;	
+ .mapBox {
+     width: 100%;
+     height: 100%;
+     background-color: #ccc;
+     position: absolute;
+     background: none;
+     overflow: hidden;
  }
-.body-bg{
-	background: url('../images/bg_img2.jpg') no-repeat center center;
- 	-webkit-background-size: 100%;
-	height: 100vh;
-}
-
-.svgBox{
-	margin:6.6vw auto;
-	margin-bottom: 0;
-	width: 50%;
-	/*background-color: pink;*/
-	height: 90%;
-	position: relative;
-	overflow: hidden;	
-}
-.map-tips{
-	position: fixed;
-	z-index: 100;
-	display: none;		
-}
-
-.map-links{
-	position: fixed;
-	z-index: 200;
-	display: none;	
-}
-.map-sanjiao{
-	position: absolute;
-	bottom:0;
-	right: 0;
-	background: none;
-	border-radius: 10px;
-}
-.map-sanjiao:after{
-	content:''; 
-	position: absolute;
-	box-sizing: border-box;
-	width: 30px;
-	height: 20px;
-	bottom:-20px;
-	right: 68px;
-	border-bottom:none;
-	border-top:20px solid rgba(221, 230, 230, 0.6);
-	border-top:20px solid rgba(115, 113, 132, 0.9);
-	border-left:15px solid rgba(248, 251, 255, 0);
-	border-right:15px solid rgba(248, 251, 255, 0);
-}
-.map-tips .tips-list{
-	padding:1vw 2vw;
-	background-color: rgba(221, 230, 230, 0.6);
-	background-color: rgba(115, 113, 132, 0.9);
-	border-radius: 10px;
-}
-.map-tips{
-
-}
-.map-links .links-list{
-	padding:10px;
-	padding-top: 1px;
-	background-color: rgba(221, 230, 230, 0.6);
-	background-color: rgba(115, 113, 132, 0.9);
-	border-radius: 10px;
-
-}
-
-.tips-list li,
-.links-list li{
-	line-height:2.1vw;
-	font-size:1.2vw;
-}
-.links-list li{
-	background-color: rgba(145, 150, 137,0.8);
-	background-color: rgba(86, 84, 202, 0.24);
-	text-align: center;
-	margin-top: 10px;
-	padding:0 10px;
-}
-.links-list li a{
-	
-	text-decoration: none;
-	color:inherit;
-}
+ 
+ .body-bg {
+     background: url('../images/bg_img2.jpg') no-repeat center center;
+     -webkit-background-size: 100%;
+     height: 100vh;
+ }
+ 
+ .svgBox {
+     margin: 6.6vw auto;
+     margin-bottom: 0;
+     width: 50%;
+     /*background-color: pink;*/
+     height: 90%;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .map-tips {
+     position: fixed;
+     z-index: 100;
+     display: none;
+ }
+ 
+ .map-links {
+     position: fixed;
+     z-index: 200;
+     display: none;
+ }
+ 
+ .map-sanjiao {
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     background: none;
+     border-radius: 10px;
+ }
+ 
+ .map-sanjiao:after {
+     content: '';
+     position: absolute;
+     box-sizing: border-box;
+     width: 30px;
+     height: 20px;
+     bottom: -20px;
+     right: 68px;
+     border-bottom: none;
+     border-top: 20px solid rgba(221, 230, 230, 0.6);
+     border-top: 20px solid rgba(115, 113, 132, 0.9);
+     border-left: 15px solid rgba(248, 251, 255, 0);
+     border-right: 15px solid rgba(248, 251, 255, 0);
+ }
+ 
+ .map-tips .tips-list {
+     padding: 1vw 2vw;
+     background-color: rgba(221, 230, 230, 0.6);
+     background-color: rgba(115, 113, 132, 0.9);
+     border-radius: 10px;
+ }
+ 
+ .map-tips {}
+ 
+ .map-links .links-list {
+     padding: 10px;
+     padding-top: 1px;
+     background-color: rgba(221, 230, 230, 0.6);
+     background-color: rgba(115, 113, 132, 0.9);
+     border-radius: 10px;
+ }
+ 
+ .tips-list li,
+ .links-list li {
+     line-height: 2.1vw;
+     font-size: 1.2vw;
+ }
+ 
+ .links-list li {
+     background-color: rgba(145, 150, 137, 0.8);
+     background-color: rgba(86, 84, 202, 0.24);
+     text-align: center;
+     margin-top: 10px;
+     padding: 0 10px;
+ }
+ 
+ .links-list li a {
+     text-decoration: none;
+     color: inherit;
+ }
+ 
  svg {
      /*background-color: yellow;*/
      width: 100%;
      display: none;
  }
-
+ 
  path {
      stroke: #436082;
-     stroke-width:2;
+     stroke-width: 2;
      fill: #1c2d49;
      opacity: 0.7;
  }
  
-
-.moqiSvg path{
-	stroke-width:6px;
-}
-.moqiSvg  .st1 {
-     font-size: 50px;
-     fill:#fff;
+ .moqiSvg path {
+     stroke-width: 6px;
  }
-
+ 
+ .moqiSvg .st1 {
+     font-size: 50px;
+     fill: #fff;
+ }
  
  svg .validMap:hover path {
      fill: #1d4b99;
@@ -120,200 +125,185 @@
      fill: #1b2769;
  }
  
-svg .color_a path{
-    fill:#0e1a30;
-}
-svg .color_b path{
-    fill:#182641;
-}
-
+ svg .color_a path {
+     fill: #0e1a30;
+ }
+ 
+ svg .color_b path {
+     fill: #182641;
+ }
  
  svg .validMap path {
      fill: #1b2769;
  }
-
+ 
  svg .validMap:hover {
      fill: #1d4b99;
      cursor: pointer;
  }
  
-
- svg .validMap:active path { 
+ svg .validMap:active path {
      fill: blue;
      cursor: pointer;
  }
  
-
- svg circle {
-     fill: rgba(220, 247, 27, 1);
-     stroke: rgba(220, 247, 27, 1);
-     stroke-width: 5;
+ svg .cir {
+     fill: rgba(27, 247, 37, 1);
+     stroke: rgba(27, 247, 37, 1);
      stroke-miterlimit: 10;
  }
+ 
+ svg .cir-in {
+     fill: rgba(27, 247, 37, 1);
+     stroke: rgba(27, 247, 37, 1);
+     stroke-width: 0;
+     r: 0.3%;
+ }
+ 
+ svg .cir-out {
+     fill: rgba(27, 247, 37, 0.5);
+     stroke: rgba(27, 247, 37, 1);
+     stroke-width: 0.1%;
+     r: 1.2%;
+     -webkit-animation: WaveOutS 3s infinite;
+ }
+ 
+ svg .colorM .cir-out {
+     fill: rgba(27, 247, 37, 0.5);
+     stroke: rgba(27, 247, 37, 1);
+     stroke-width: 0.1%;
+     r: 1.2%;
+     -webkit-animation: WaveOutM 3s infinite;
+ }
+ 
+ svg .colorL .cir-out {
+     fill: rgba(27, 247, 37, 0.5);
+     stroke: rgba(27, 247, 37, 1);
+     stroke-width: 0.1%;
+     r: 1.2%;
+     -webkit-animation: WaveOutL 3s infinite;
+ }
+ 
 
-.moqiSvg .cir-out {
-     -webkit-animation: moQiWaveOut 3s infinite;  
- }
- .baoshanzhenSvg .cir-out{
- 	 -webkit-animation: baoshanWaveOut 3s infinite;  
- }
- svg .cir-out{
- 	 -webkit-animation: subWaveOut 3s infinite;  
- }
-  svg .cir-in{
-     -webkit-animation: subWaveIn 3s infinite;
- }
-/* svg .moQifla .cir-out {
-     -webkit-animation: moQiWaveOut 3s infinite;
-    
- }*/
  
-/* svg .fla .cir-in {
-     -webkit-animation: myWaveIn 3s infinite;
-     
- }*/
- #moqi path{
- 	transform: scale(1,1) translateX(-10px);
- }
- @keyframes moQiWaveOut {
-     from {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 1;
-         stroke: green;
-     }
-     90% {
-         fill: rgba(220, 247, 27, 0.4);
-         stroke-width: 5;
-         stroke: yellow;
-     }
-     99% {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 2;
-         stroke:rgba(220, 247, 27, 1);
-          r:40;
-     }
-     to {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 2;
-         stroke:rgba(220, 247, 27, 0.2);
-          r:40;
-     }
+ svg .colorM .cir-in {
+     fill: rgba(247, 255, 1, 0.98);
+     stroke: rgba(247, 255, 1, 0.98);
+     stroke-width: 0;
+     r: 0.3%;
  }
  
- @keyframes moQiWaveIn {
-     from {
-         
-         stroke-width: 1;
-        
+ svg .colorL .cir-in {
+     fill: rgba(236, 57, 35, 0.87);
+     stroke: rgba(236, 57, 35, 0.87);
+     stroke-width: 0;
+     r: 0.3%;
+ }
+ 
+ @keyframes WaveOutS {
+     0% {
+         r: 0.1%;
+         fill: rgba(27, 247, 37, 1);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.3%;
      }
      60% {
-         
-         stroke-width: 10;
-         stroke: rgba(220, 247, 27, 0.5);
+         fill: rgba(27, 247, 37, 0.7);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.2%;
      }
-     to {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 2;
-         stroke: yellow;
-         r:15;
-
-     }
- }
-  @keyframes baoshanWaveOut {
-     from {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 1;
-         stroke: green;
-         r:1;
-     }
-     90% {
-         fill: rgba(220, 247, 27, 0.4);
-         stroke-width: 1;
-         stroke: yellow;
+     80% {
+         fill: rgba(27, 247, 37, 0.5);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.1%;
      }
      99% {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 1;
-         stroke:rgba(220, 247, 27, 1);
-          r:8;
-     }
-     to {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 1;
-         stroke:rgba(220, 247, 27, 0.2);
-          r:8;
+         fill: rgba(27, 247, 37, 0.3);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.1%;
+         r: 1.2%;
      }
  }
  
- @keyframes baoshanWaveIn {
+ @keyframes WaveOutM {
      from {
-         
-         stroke-width: 1;
-        
+         fill: rgba(247, 255, 1, 1);
+         stroke-width: 0.3%;
+         stroke: rgba(247, 255, 1, 1);
+         r: 0.1%;
      }
      60% {
-         
-         stroke-width: 10;
-         stroke: rgba(220, 247, 27, 0.5);
+         fill: rgba(247, 255, 1, 0.7);
+         stroke: rgba(247, 255, 1, 1);
+         stroke-width: 0.2%;
+     }
+     80% {
+         fill: rgba(247, 255, 1, 0.5);
+         stroke-width: 0.1%;
+         stroke: rgba(247, 255, 1, 1);
      }
      to {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 2;
-         stroke: yellow;
-         r:15;
-
-     }
- }
-
-     @keyframes subWaveIn {
-     from {
-         
-         stroke-width: 1;
-        
-     }
-     60% {
-         
-         stroke-width: 4;
-         stroke: rgba(220, 247, 27, 0.5);
-     }
-     to {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 2;
-         stroke: yellow;
-         r:5;
-
-     }
- }
-
-   @keyframes subWaveOut {
-     from {
-         fill: rgba(220, 247, 27, 1);
-         stroke-width: 1;
-         stroke: green;
-         r:3;
-     }
-     90% {
-         fill: rgba(220, 247, 27, 0.4);
-         stroke-width: 1;
-         stroke: yellow;
-     }
-     99% {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 1;
-         stroke:rgba(220, 247, 27, 1);
-          r:10;
-     }
-     to {
-         fill: rgba(220, 247, 27, 0);
-         stroke-width: 1;
-         stroke:rgba(220, 247, 27, 0.2);
-          r:25;
+         fill: rgba(247, 255, 1, 0.3);
+         stroke: rgba(247, 255, 1, 1);
+         stroke-width: 0.1%;
+         r: 1.2%;
      }
  }
  
-.hide{
-	display: none;
-}
-.show{
-	display:block;
-}
+ @keyframes WaveOutL {
+     from {
+         fill: rgba(236, 57, 35, 1);
+         stroke-width: 0.3%;
+         stroke: rgba(236, 57, 35, 1);
+         r: 0.1%;
+     }
+     60% {
+         fill: rgba(236, 57, 35, 0.7);
+         stroke: rgba(236, 57, 35, 1);
+         stroke-width: 0.2%;
+     }
+     80% {
+         fill: rgba(236, 57, 35, 0.5);
+         stroke-width: 0.1%;
+         stroke: rgba(236, 57, 35, 1);
+     }
+     to {
+         fill: rgba(236, 57, 35, 0.3);
+         stroke: rgba(236, 57, 35, 1);
+         stroke-width: 0.1%;
+         r: 1.2%;
+     }
+ }
+ 
+ @keyframes WaveOut {
+     from {
+         fill: rgba(27, 247, 37, 1);
+         stroke-width: 0.3%;
+         stroke: rgba(27, 247, 37, 1);
+         r: 0.1%;
+     }
+     60% {
+         fill: rgba(27, 247, 37, 0.7);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.2%;
+     }
+     80% {
+         fill: rgba(27, 247, 37, 0.5);
+         stroke-width: 0.1%;
+         stroke: rgba(27, 247, 37, 1);
+     }
+     to {
+         fill: rgba(27, 247, 37, 0.3);
+         stroke: rgba(27, 247, 37, 1);
+         stroke-width: 0.1%;
+         r: 1.2%;
+     }
+ }
+ 
+ .hide {
+     display: none;
+ }
+ 
+ .show {
+     display: block;
+ }

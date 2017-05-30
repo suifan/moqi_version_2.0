@@ -3,7 +3,7 @@
      height: 100%;
      background-color: #ccc;
      position: absolute;
-     background: none;
+     background: none; 
      overflow: hidden;
  }
  
@@ -23,7 +23,7 @@
      overflow: hidden;
  }
  
- .map-tips {
+  .map-tips {
      position: fixed;
      z-index: 100;
      display: none;
@@ -35,50 +35,16 @@
      display: none;
  }
  
- .map-sanjiao {
-     position: absolute;
-     bottom: 0;
-     right: 0;
-     background: none;
-     border-radius: 10px;
- }
- 
- .map-sanjiao:after {
-     content: '';
-     position: absolute;
-     box-sizing: border-box;
-     width: 30px;
-     height: 20px;
-     bottom: -20px;
-     right: 68px;
-     border-bottom: none;
-     border-top: 20px solid rgba(221, 230, 230, 0.6);
-     border-top: 20px solid rgba(115, 113, 132, 0.9);
-     border-left: 15px solid rgba(248, 251, 255, 0);
-     border-right: 15px solid rgba(248, 251, 255, 0);
- }
- 
- .map-tips .tips-list {
+ .flo-box ul {
      padding: 1vw 2vw;
-     background-color: rgba(221, 230, 230, 0.6);
-     background-color: rgba(115, 113, 132, 0.9);
-     border-radius: 10px;
+     font-size: 1vw;     
  }
+
  
- .map-tips {}
- 
- .map-links .links-list {
-     padding: 10px;
-     padding-top: 1px;
-     background-color: rgba(221, 230, 230, 0.6);
-     background-color: rgba(115, 113, 132, 0.9);
-     border-radius: 10px;
- }
- 
- .tips-list li,
- .links-list li {
-     line-height: 2.1vw;
-     font-size: 1.2vw;
+
+.flo-box ul li{
+    margin-bottom: 0.5vw;
+     
  }
  
  .links-list li {
@@ -87,8 +53,60 @@
      text-align: center;
      margin-top: 10px;
      padding: 0 10px;
+
+    line-height: 3vw;
+     font-size: 1vw;
+ }
+ .flo-box .links-list {
+    padding:0;
+  
  }
  
+ .flo-box .links-list li{
+   
+    line-height: 2vw;
+ }
+ .links-list li a {
+     text-decoration: none;
+     color: inherit;
+ }
+ /*211111111212*/
+
+ 
+.flo-box .content {
+    position: relative;
+     overflow: hidden;
+     border-radius: 8px;
+     min-width:10vw;
+     border-radius: 10px;
+     border: 0.1vw solid rgba(100, 94, 128, 0.87);
+      background-color:rgba(49, 53, 64, 0.95);
+ }
+ 
+ .map-sanjiao {
+     position: absolute;
+     left: 40%;
+     width: 13px;
+     height: 13px;
+     background-color: rgba(49, 53, 64, 1);
+     bottom: -7px;
+     transform: rotate(45deg);
+     border: 0.1vw solid rgba(100, 94, 128, 0.87);
+     border-top: none;
+     border-left: none;
+ }
+ 
+.flo-box .title {
+     margin: 0;
+     line-height: 3vw;
+     font-size: 1vw;
+     padding-left: 2vw;
+      padding-right: 2vw;
+     background-color: rgba(65, 73, 96, 0.78);
+     color: #fff;
+ }
+ 
+
  .links-list li a {
      text-decoration: none;
      color: inherit;
@@ -98,7 +116,7 @@
      /*background-color: yellow;*/
      width: 100%;
      display: none;
- }
+ } 
  
  path {
      stroke: #436082;

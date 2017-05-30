@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/rightSide.css">
     <link rel="stylesheet" href="../css/screenBottom.css">
     <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet" href="../css/viewer.min.css">
 </head>
 <body class ="body-bg">
 <div class="mapBox">
@@ -2199,15 +2200,15 @@
     <!--</div>-->
     <ul id="tab">
         <li class="homepage active">首页</li>
-        <li class="fivePeople">五人小组</li>
-        <li class="poverty">贫困家庭</li>
+        <li class="production">产业扶贫</li>
+        <li class="goverment">党建促脱贫</li>
         <!--<div class="fiveInOne">五个一批</div>-->
         <!--<div class="sixExactness">六个精准</div>-->
-        <li>精准扶贫</li>
-        <li>党建促扶贫</li>
-        <li>民族团结进步</li>
-        <li>农牧业产业化</li>
-        <li>重大项目</li>
+        <li class="health">健康扶贫</li>
+        <li>异地搬迁</li>
+        <li>生态扶贫</li>
+        <li>教育扶贫</li>
+        <li>兜底扶贫</li>
     </ul>
     <div id="countDownDiv">
         <!--<div class="countDownTitle">2017年脱贫攻坚计划倒计时</div>-->
@@ -2261,117 +2262,63 @@
 <!-- 右侧-模板 start-->
 <!--首页模板-->
 <script id="homepageRightSideTemp" type="text/html">
-    <div class="section" id="duty">
+    <div class="section" id="command">
         <div class="header">
-            <span class="goToDetail">more</span>
+            <!--<span class="goToDetail">more</span>-->
             <h2>指挥体系</h2>
         </div>
         <div class="content">
-            <ul>
-                <li><span>五人小组：</span><em>{{fiveGroup}}</em>个</li>
-                <li><span>村支书：</span><em>{{villageSecretary}}</em>人</li>
-                <li><span>帮扶干部：</span><em>{{helpingCardres}}</em>人</li>
-                <li><span>家医团队：</span><em>{{familyDoctorTeams}}</em>个</li>
-                <li><span>专科医生：</span><em>{{specialist}}</em>个</li>
-            </ul>
-            <div>
-                <p>覆盖乡镇/办事处</p>
-                <p><span>{{overridezhen}}</span>个</p>
-                <p>覆盖行政村</p>
-                <p><span>{{xingzhengcun}}</span>个</p>
-            </div>
+            <img src="../images/homePage_commandV2.png" class="command" alt="指挥体系">
         </div>
     </div>
-    <div class="section" id="cause">
+    <div class="section" id="management">
         <div class="header">
-            <h2>致贫原因情况</h2>
+            <h2>管理体系</h2>
+        </div>
+        <div class="content">
+            <img src="../images/homePage_managementV2.png" class="management" alt="指挥体系">
+        </div>
+    </div>
+    <div class="section" id="performance">
+        <div class="header">
+            <h2>绩效体系</h2>
         </div>
         <div class="content">
             <ul>
-                <li class="progressLi">
-                    <p>因病</p>
-                    <p class="percent">{{poorCausesZhutu.illnessCasuses}}</p>
+                <li>
+                    <div class="progress-title">出勤率完成率：</div>
+
+                        <div class="progressBar pg_blue">
+                            <div class="progressBarBg"></div>
+                            <div class="progressBarBar" style="width: 50%;"></div>
+                            <div class="progressRate"><span>4.5%</span></div>
+                        </div>
+                </li>
+                <li>
+                    <div class="progress-title">履职考核完成率：</div>
+
                     <div class="progressBar pg_blue">
                         <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
+                        <div class="progressBarBar" style="width: 4.5%;"></div>
+                        <div class="progressRate"><span>4.5%</span></div>
                     </div>
                 </li>
-                <li class="progressLi">
-                    <p>因学</p>
-                    <p class="percent">{{poorCausesZhutu.studyCasuses}}</p>
+                <li>
+                    <div class="progress-title">纪律考核完成率：</div>
+
                     <div class="progressBar pg_blue">
                         <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
+                        <div class="progressBarBar" style="width: 4.5%;"></div>
+                        <div class="progressRate"><span>4.5%</span></div>
                     </div>
                 </li>
-                <li class="progressLi">
-                    <p>因灾</p>
-                    <p class="percent">{{poorCausesZhutu.disasterCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi">
-                    <p>缺土地</p>
-                    <p class="percent">{{poorCausesZhutu.landCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi">
-                    <p>缺水</p>
-                    <p class="percent">{{poorCausesZhutu.waterCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi">
-                    <p>缺技术</p>
-                    <p class="percent">{{poorCausesZhutu.technologyCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi">
-                    <p>缺劳力</p>
-                    <p class="percent">{{poorCausesZhutu.labourCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi">
-                    <p>缺资金</p>
-                    <p class="percent">{{poorCausesZhutu.moneyCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi long">
-                    <p>交通条件落后</p>
-                    <p class="percent">{{poorCausesZhutu.trafficCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                <li class="progressLi long">
-                    <p>自身动力不足</p>
-                    <p class="percent">{{poorCausesZhutu.selfLabourCasuses}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
+
+
+
             </ul>
-            <div id="chartForCause"><!--饼图--></div>
         </div>
     </div>
+
 </script>
 <!--五人小组模板-->
 <script id="sevenStepsRightSideTemp" type="text/html">
@@ -2591,8 +2538,7 @@
 <script id="homepageLeftSideTemp" type="text/html">
     <div class="section">
         <div class="header">
-            <!--<span class="goToDetail"></span>-->
-            <h2>2017年度脱贫情况</h2>
+            <h2>基本情况</h2>
         </div>
         <div class="section-body">
             <ul>

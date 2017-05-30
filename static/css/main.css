@@ -99,7 +99,7 @@ header{
     height: auto;
     float: left;
     margin-top: -4.5vw;
-    z-index: 100;
+    /*z-index: 100;*/
     position: relative;
     overflow-y: auto;
     margin-left: 1vw;
@@ -116,6 +116,9 @@ header{
 .section .header{
     background: rgba(72, 153, 241, 0.25);
     border: 1px solid #43738e;
+}
+.section .content{
+    padding:.8vw;
 }
 .section .section-body,.section .content{
     background: rgba(3, 19, 39, 0.52);
@@ -136,6 +139,10 @@ header{
     font-size: 1.1vw;
     line-height: 2.4vw;
     margin-left: 1vw;
+}
+img{
+    width:94%;
+    margin:3%;
 }
 
 .section .header .goToDetail{
@@ -203,16 +210,17 @@ header{
     display: inline-block;
     position: relative;
     width: 4.5vw;
+    height: .6vw;
 }
 .progressBar .progressBarBg{
     background: rgba(255,255,255,.1);
-    height: .6vw;
+    height: 100%;
     width: 100%;
     border-radius: 5vw;
 
 }
 .progressBar .progressBarBar{
-    height: .6vw;
+    height: 100%;
     width: 0;
     background: #eee;
     position: absolute;
@@ -231,7 +239,7 @@ header{
 
 /*蓝色*/
 .progressBar.pg_blue .progressBarBar{
-    background:#1fa9f4;
+    background:-webkit-linear-gradient(top,#169eee,#0b5fb9);
 }
 /*红色*/
 /*.progressBar.pg_red .progressBarBar{

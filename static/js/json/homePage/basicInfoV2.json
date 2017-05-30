@@ -1,0 +1,123 @@
+{
+  "basic_info": [
+    {
+      "name": "尼尔基镇",
+      "house_num": "2160",
+      "person_num": "852",
+      "cause_by_disease": "41.1%",
+      "cause_by_field": "42.17%"
+    },
+    {
+      "name": "红彦镇",
+      "house_num": "534",
+      "person_num": "257",
+      "cause_by_disease": "48.2%",
+      "cause_by_field": "50.82%"
+    },
+    {
+      "name": "西瓦尔图镇",
+      "house_num": "454",
+      "person_num": "192",
+      "cause_by_disease": "30.0%",
+      "cause_by_field": "32.23%"
+    },
+    {
+      "name": "宝山镇",
+      "house_num": "691",
+      "person_num": "285",
+      "cause_by_disease": "52.2%",
+      "cause_by_field": "52.53%"
+    },
+    {
+      "name": "塔温敖宝镇",
+      "house_num": "691",
+      "person_num": "234",
+      "cause_by_disease": "21.1%",
+      "cause_by_field": "25.28%"
+    },
+    {
+      "name": "腾克镇",
+      "house_num": "1253",
+      "person_num": "457",
+      "cause_by_disease": "30.8%",
+      "cause_by_field": "30.88%"
+    },
+    {
+      "name": "巴彦乡",
+      "house_num": "679",
+      "person_num": "334",
+      "cause_by_disease": "39.5%",
+      "cause_by_field": "39.76%"
+    },
+    {
+      "name": "阿尔拉镇",
+      "house_num": "286",
+      "person_num": "112",
+      "cause_by_disease": "31.2%",
+      "cause_by_field": "36.71%"
+    },
+    {
+      "name": "杜拉尔乡",
+      "house_num": "179",
+      "person_num": "75",
+      "cause_by_disease": "54.6%",
+      "cause_by_field": "55.30%"
+    },
+    {
+      "name": "汉古尔河镇",
+      "house_num": "1020",
+      "person_num": "395",
+      "cause_by_disease": "30.1%",
+      "cause_by_field": "31.07%"
+    },
+    {
+      "name": "哈达阳镇",
+      "house_num": "493",
+      "person_num": "189",
+      "cause_by_disease": "30.1%",
+      "cause_by_field": "29.41%"
+    },
+    {
+      "name": "奎勒河镇",
+      "house_num": "922",
+      "person_num": "349",
+      "cause_by_disease": "32.0%",
+      "cause_by_field": "31.56%"
+    },
+    {
+      "name": "库如奇乡",
+      "house_num": "235",
+      "person_num": "94",
+      "cause_by_disease": "56.3%",
+      "cause_by_field": "54.04%"
+    },
+    {
+      "name": "登特科办事处",
+      "house_num": "956",
+      "person_num": "394",
+      "cause_by_disease": "31.4%",
+      "cause_by_field": "30.75%"
+    },
+    {
+      "name": "额尔和办事处",
+      "house_num": "582",
+      "person_num": "271",
+      "cause_by_disease": "42.8%",
+      "cause_by_field": "40.72%"
+    },
+    {
+      "name": "卧罗河办事处",
+      "house_num": "784",
+      "person_num": "266",
+      "cause_by_disease": "25.5%",
+      "cause_by_field": "27.04%"
+    },
+    {
+      "name": "坤密尔堤办事处",
+      "house_num": "342",
+      "person_num": "159",
+      "cause_by_disease": "32.7%",
+      "cause_by_field": "33.33%"
+    }
+  ]
+}

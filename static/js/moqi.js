@@ -12,7 +12,8 @@ require.config({
         "charts": "../js/charts",
         "progressBar":"../js/progressBar",
         "countDown" : "../js/countDown",
-        "page":"../js/page"
+        "page":"../js/page",
+        "viewer" :"../lib/viewer"
     },
     shim:{
         'jbox':{
@@ -20,13 +21,19 @@ require.config({
         },
         'migrate':{
             deps:['jquery']
-        }
+        },
+        'viewer':{
+            deps:['jquery'],
+            exports:"jQuery.fn.viewer"}
+
     }
 });
 
-require(['jquery','migrate','template','chart','charts','jbox','progressBar','countDown'], function ($,migrate,template,chart,charts,jbox,progressBar,countDown){
+require(['jquery','migrate','template','chart','charts','jbox','progressBar','countDown','viewer'], function ($,migrate,template,chart,charts,jbox,progressBar,countDown){
     //当前所选区域对应的全局变量
     var area = "moqi";
+    //图片浏览插件option设置
+    $.fn.viewer.setDefaults( {navbar:false,title:false});
     //由于贫困家庭与首页共用签约，提取公共部分
     /**
      * 家医签约点击方法，暂时不做保存筛选条件的处理
@@ -45,44 +52,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     // 数据加载
     var api = {
         'getHomePage': function(){
-            $("#leftTabs").addClass("hide");
-            //$("#leftOperation").removeClass("hide");
-            //$("#sevenStepsTab").addClass("hide");
-
+            // $("#leftTabs").addClass("hide");
             //右侧--------------------start
-
             $.getJSON("../js/json/homePage/dutyHost.json",function(data){
                 if(data) {
                     $('#rightSide').html(template('homepageRightSideTemp', data[area]));
                     //进度条生成
-                    $("#cause").find(".progressBar").each(function(){
-                        var value = $(this).prev().text();
-                        progressBar.generate(this,value);
-                    });
-                    //致贫原因饼图
-                    var causePieChartData = {
-                        color:['#ed6942','#63c727','#fff100','#f39801','#0168b7','#5f52a1','#546fb4','#00b8ee','#f9b552','#f2914a'],
-                        data:data[area].causePieChartData,
-                        center:["50%","55%"],
-                        radius:["25%","50%"]
-                    };
-                    charts.labelPie("chartForCause",causePieChartData);
-                    //责任主体绑定点击事件
-                    $(".goToDetail").on("click", function () {
-                        $.jBox('', {title: "组织架构", buttons: {}, border: 0, opacity: 0.4});
-                        document.getElementsByTagName('body')[0].style.padding="0";
-                        var title = document.getElementsByClassName("jbox-title")[0];
-                        title.style.width ="96%";
-                        // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                        //设置弹窗top值
-                        var box = document.getElementById("jbox");
-                        // var title = document.getElementsByClassName("jbox-title")[0];
-                        box.style.top = "2.6vw";
-                        // title.style.textAlign ="cen";
-                        var html = template('organizationTemp',{});
-                        document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-                    })
+
                 }
+                $(".command").viewer();
+                $(".management").viewer();
             })
 
             //右侧--------------------end

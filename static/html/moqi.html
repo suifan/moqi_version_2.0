@@ -2290,8 +2290,8 @@
 
                         <div class="progressBar pg_blue">
                             <div class="progressBarBg"></div>
-                            <div class="progressBarBar" style="width: 50%;"></div>
-                            <div class="progressRate"><span>4.5%</span></div>
+                            <div class="progressBarBar"></div>
+                            <div class="progressRate"><span>80%</span></div>
                         </div>
                 </li>
                 <li>
@@ -2299,8 +2299,8 @@
 
                     <div class="progressBar pg_blue">
                         <div class="progressBarBg"></div>
-                        <div class="progressBarBar" style="width: 4.5%;"></div>
-                        <div class="progressRate"><span>4.5%</span></div>
+                        <div class="progressBarBar"></div>
+                        <div class="progressRate"><span>90%</span></div>
                     </div>
                 </li>
                 <li>
@@ -2308,8 +2308,8 @@
 
                     <div class="progressBar pg_blue">
                         <div class="progressBarBg"></div>
-                        <div class="progressBarBar" style="width: 4.5%;"></div>
-                        <div class="progressRate"><span>4.5%</span></div>
+                        <div class="progressBarBar" ></div>
+                        <div class="progressRate"><span>70%</span></div>
                     </div>
                 </li>
 
@@ -2536,125 +2536,39 @@
 <!--左侧模板 start-->
 <!--首页模板-->
 <script id="homepageLeftSideTemp" type="text/html">
-    <div class="section">
+    <div class="section" class="basicInfo">
         <div class="header">
             <h2>基本情况</h2>
         </div>
-        <div class="section-body">
+        <div class="content">
             <ul>
-                <li class = "first-pie">
-                    <div class="f-right">
-                        <div class="f-left-top">贫困户</div>
-                        <div id = "poorFamily" style="width: 100%;height: 100%;"></div>
-                    </div>
-                    <div class="f-left">
-                        <ul>
-                            <li>计划脱贫：<span>{{townData.poorHouseholds.planPoorHouseholds}}</span>&nbsp;户</li>
-                            <li>实际脱贫：<span>{{townData.poorHouseholds.actualPoorHouseholds}}</span>&nbsp;户</li>
-                            <li>还未脱贫：<span>{{townData.poorHouseholds.notPoorHouseholds}}</span>&nbsp;户</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class = "second-pie">
-                    <div class="f-right">
-                        <div class="f-left-top">贫困人口</div>
-                        <div id = "poorPeople" style="width: 100%;height: 100%;"></div>
-                        <!-- <div class="center-rate">
-                             <p>88.56%</p>
-                             <h7>完成率</h7>
-                         </div>-->
-                    </div>
-                    <div class="f-left">
-                        <ul>
-                            <li>计划脱贫：<span>{{townData.poorPersons.planPoorPersons}}</span>&nbsp;人</li>
-                            <li>实际脱贫：<span>{{townData.poorPersons.actualPoorPersons}}</span>&nbsp;人</li>
-                            <li>还未脱贫：<span>{{townData.poorPersons.notPoorPersons}}</span>&nbsp;人</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class = "third-pie" style="border: none;">
-                    <div class="f-right">
-                        <div id = "poorRate" style="width: 100%;height: 100%;"></div>
-                        <!--<div class="center-rate">
-                            <p>88.56%</p>
-                            <h7>完成率</h7>
-                        </div>-->
-                    </div>
-                    <div class="f-left">
-                        <div class="f-left-top">贫困发生率</div>
-                        <ul>
-                            <li>贫困人口：<span>{{townData.poorProbability.poorPersons}}</span>&nbsp;人</li>
-                            <li>农村人口：<span>{{townData.poorProbability.countryHousePersons}}</span>&nbsp;人</li>
-                        </ul>
-                    </div>
-                </li>
+                <li>贫困家庭： <span>{{basicInfo.house_num}}</span> 户</li>
+                <li>贫困人口： <span>{{basicInfo.person_num}}</span> 人</li>
+                <li>因病致贫（返贫）家庭比例： <span>{{basicInfo.cause_by_disease}}</span> </li>
+                <li>因缺土地致贫比例： <span>{{basicInfo.cause_by_field}}</span> </li>
             </ul>
+
         </div>
     </div>
     <div class="section">
         <div class="header">
-            <!--<span class="goToDetail"></span>-->
-            <h2>2017年度扶贫任务</h2>
+            <h2>脱贫目标（目标数量/完成数量）</h2>
         </div>
-        <div class="section-body second-sec">
-            <ul>
+        <div class="content">
+            <div id="targetChart"></div>
 
-                <li>
-                    <div class="progress-title">搬迁</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate"><span>{{mission.pyAlleMission.percentage}}</span></div>
-                    </div>
-                    <div class="s-left-header">建档立卡<span>&nbsp;{{mission.pyAlleMission.documentHouses}}&nbsp;</span>户<em>&nbsp;{{mission.pyAlleMission.documentPersons}}&nbsp;</em>人,目标<span>&nbsp;{{mission.pyAlleMission.targetPersonsCount}}&nbsp;</span>人</div>
-                </li>
-                <li>
-                    <div class="progress-title">民政</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate"><span>{{mission.civilAdministration.percentage}}</span></div>
-                    </div>
-                    <div class="s-left-header">兜底保障贫困人口<span>&nbsp;{{mission.civilAdministration.poorHouses}}&nbsp;</span>户<em>&nbsp;{{mission.civilAdministration.poorPersons}}&nbsp;</em>人</div>
-                </li>
-                <li>
-                    <div class="progress-title">医疗</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate"><span>{{mission.medicalCare.percentage}}</span></div>
-                    </div>
-                    <div class="s-left-header"><span>&nbsp;{{mission.medicalCare.poorPersons}}&nbsp;</span>贫困人口实现家医签约</div>
-                </li>
-                <li>
-                    <div class="progress-title">教育</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate"><span>{{mission.education.percentage}}</span></div>
-                    </div>
-                    <div class="s-left-header">建设项目<span>&nbsp;{{mission.education.projectCount}}&nbsp;</span>个，总建筑面积<em>&nbsp;{{mission.education.areaStructure}}&nbsp;</em>m,总投资<span>&nbsp;{{mission.education.investment}}&nbsp;</span>万元</div>
-                </li>
-                <li>
-                    <div class="progress-title">产业</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate"><span>{{mission.industry.percentage}}</span></div>
-                    </div>
-                    <div class="s-left-header">整合涉农涉牧资金<span>&nbsp;{{mission.industry.investment}}&nbsp;</span>万元，带动<em>&nbsp;{{mission.industry.housesCount}}&nbsp;</em>户<span>&nbsp;{{mission.industry.personCount}}&nbsp;</span>人脱贫</div>
-                </li>
-            </ul>
+        </div>
+    </div>
+    <div class="section" id="thinking">
+        <div class="header">
+            <!--<span class="goToDetail"></span>-->
+            <h2>工作思路</h2>
+        </div>
+        <div class="content">
+            <div>
+            农村环境卫生整治，整治标准全面提升，工作运行全面常态化，力争进入全县先进行列。抓四个方面的工作：第一，抓每天一汇报，办点干部每天汇报一次村场情况。第二，抓每周一通报。每周一的例会上，对全镇各村的进展进行通报。第三，抓作风督查。成立督查小组，专门负责干部的作风督查，查办点干部是否下村，查村场干部是否重视，查有没有实质性的进展。第四，抓责任追究。因本村工作不力，对全镇造成恶劣影响的，采取严厉的责任追究措施
+            </div>
+
         </div>
     </div>
 </script>

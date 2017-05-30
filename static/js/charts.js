@@ -239,6 +239,70 @@ define(['echarts'],function(echarts){
     };
 
 
+
+    /**
+     * 横向柱状图
+     * @param id : string 图表容器
+     * @param pieData : object
+     * @pieData.color : 颜色(可以为array)
+     * @pieData.data  : 数据
+     * @pieData.yAxisData : Y轴坐标轴字段
+     */
+    var xBarChart = function(id,barData){
+        var chart = echarts.init(document.getElementById(id));
+        chart.setOption(
+             {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '2%',
+                    right: '5%',
+                    bottom: '3%',
+                    top:"0%",
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01],
+                    axisLabel: {
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#111',
+                            width: 3
+                        }
+                    },
+                    splitLine: {show:false}
+                },
+                yAxis: {
+                    data: barData.yAxisData,
+                    axisLabel: {
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#111',
+                            width: 3
+                        }
+                    }
+                },
+                series: barData.data,
+                 color:barData.color
+            }
+        );
+        resize_window(chart);
+    }
+
+
     /**
      * 重置浏览器窗口图表随之变化
      * @param Chart 图表
@@ -247,12 +311,13 @@ define(['echarts'],function(echarts){
         $(window).resize(function () {
             Chart.resize();
         });
-    };
+    }
 
     return {
         'pieChart':pieChart,
         'gauge':gauge,
         'labelPie':labelPie,
-        'fullPieChart':fullPieChart
+        'fullPieChart':fullPieChart,
+        'xBarChart':xBarChart
     }
 })

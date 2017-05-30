@@ -33,7 +33,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     //当前所选区域对应的全局变量
     var area = "moqi";
     //图片浏览插件option设置
-    $.fn.viewer.setDefaults( {navbar:false,title:false});
+    $.fn.viewer.setDefaults({navbar:false,title:false});
     //由于贫困家庭与首页共用签约，提取公共部分
     /**
      * 家医签约点击方法，暂时不做保存筛选条件的处理
@@ -59,6 +59,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     $('#rightSide').html(template('homepageRightSideTemp', data[area]));
                     //进度条生成
 
+                    $("#performance").find(".progressBar").each(function(){
+                        var percent = $(this).find(".progressRate").text();
+                        progressBar.generate($(this),percent);
+                    })
+
                 }
                 $(".command").viewer();
                 $(".management").viewer();
@@ -68,36 +73,29 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             //左侧--------------------start
             //获取首页左侧数据
-            var dataLeft ={};
-            var houseHoldArr, populationArr, rateArr;
             $.ajaxSettings.async = false;
-            $.getJSON("../js/json/homePage/2017poorTarget.json",function(res){
-                // console.log(res)
-                var _data = res[area];
-                houseHoldArr = [
-                    {"value":_data.poorHouseholds.actualPoorHouseholds,"name":'已完成'},{"value":_data.poorHouseholds.notPoorHouseholds,"name":'未完成'}
-                ];
-                populationArr = [
-                    {"value":_data.poorPersons.actualPoorPersons,"name":'已完成'},{"value":_data.poorPersons.notPoorPersons,"name":'未完成'}
-                ];
-                rateArr = [
-                    {"value":_data.poorProbability.poorPersons,"name":'贫困人口'},{"value":_data.poorProbability.countryHousePersons,"name":'农村户籍人口'}
+            var dataLeft={},targetChart={};
 
-                ];
-                dataLeft['townData']=_data;
+            $.getJSON("../js/json/homePage/basicInfoV2.json",function(res){
+                dataLeft['basicInfo']=res.basic_info[area];
             });
-            $.getJSON("../js/json/homePage/helpMission.json",function(res){
-                dataLeft['mission']=res;
+            $.getJSON("../js/json/homePage/targetV2.json",function(res){
+                targetChart=res.overcome_poverty_aim[area].aim;
             });
-            $('#leftSide').html(template('homepageLeftSideTemp', dataLeft));
+            $('#leftSide').html(template('homepageLeftSideTemp',dataLeft));
+            var chartData={};
+            chartData.color=["#1fa9f4","#0cb871"];
+            chartData.yAxisData = [2017,2018,2019];
+            var target = [],done = [];
+            for(var i=0,length=targetChart.length;i<length;i++){
+                done.push(targetChart[i].house_num);
+                target.push(targetChart[i].person_num);
+            }
+            chartData.data=[{name:"完成数量",type:"bar",data:done, barMaxWidth:10},{name:"目标数量",type:"bar",data:target, barMaxWidth:10}]
+            charts.xBarChart("targetChart",chartData)
+
             // $('#leftSide').html(template('homepageLeftSideTemp', data));
-            chart.pieChart("poorFamily","#1fa9f4","#4b586d",houseHoldArr,dataLeft.townData.poorHouseholds.percentage);
-            chart.pieChart("poorPeople","#63c727","#4b586d",populationArr,dataLeft.townData.poorHouseholds.percentage);
-            chart.pieChart("poorRate","#e9733f","#4b586d",rateArr,dataLeft.townData.poorProbability.percentage);
-            $(".section-body.second-sec").find(".progressBar").each(function () {
-                var value = $(this).next("div").children("span").text();
-                progressBar.generate(this,value);
-            })
+
             //左侧--------------------end
 
             //底部--------------------start

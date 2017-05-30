@@ -173,6 +173,14 @@ img{
     clear: both;
 }
 
+.content>ul li {
+    display: inline-block;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    min-width: 11.5vw;
+    color: #b6b6b6;
+}
+
 
 /*左右侧 end*/
 

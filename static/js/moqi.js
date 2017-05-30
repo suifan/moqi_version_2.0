@@ -736,8 +736,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             var x = event.pageX || event.clientX + mapApi.scrollX;
                             var y = event.pageY || event.clientY + mapApi.scrollY;
                             //加载hover模板
+                            var target = this.id;
                             $.getJSON("../js/json/map_hover.json",function(res){
-                                var target = event.target.id;
+                                
                                 var data = res.povertyStructure[target];
                                 $(".map-tips").html(template("mapHoverTemp", data)).addClass("show")
                                     .css({
@@ -774,8 +775,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                             // console.log(this.id);
                             $(".map-tips").removeClass("show");
+                             var target = this.id;
                             $.getJSON("../js/json/map_hover.json", function(res){
-                                var target = event.target.id;
+                                //var target = event.target.id;
                                 var data = res.povertyStructure[target];
                                 $(".map-links").html(template("mapClickTemp",data)).css({
                                     "left": x - mapApi.dis_w,

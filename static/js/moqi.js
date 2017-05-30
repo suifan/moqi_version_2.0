@@ -620,32 +620,32 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             mapApi.getData();
         })
         //切换头部标签
-        $("#tab").on("click","li", function(){
-
-            //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
-                if (!$(this).attr('class')) {
-                    return;
-                }
-            //---暂时代码 
-            var activeBool = $(this).hasClass("active");
-            if(!activeBool){
-                $("#rightSide").empty();
-                $(this).addClass("active");
-                $(this).siblings("li").removeClass("active")
-            }
-            if($(this).hasClass("homepage")){//点击首页按钮
-                api.getHomePage(area);
-
-            }else if($(this).hasClass("poverty")){//点击贫困家庭按钮
-                    api.getDisease();
-
-            }else if($(this).hasClass("fivePeople")){//---------------点击五人小组按钮----------------
-                api.getFiveGroup(area);
-            }else{
-                $("#leftTabs").addClass("hide");
-
-            }
-        });
+        // $("#tab").on("click","li", function(){
+        //
+        //     //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
+        //         if (!$(this).attr('class')) {
+        //             return;
+        //         }
+        //     //---暂时代码
+        //     var activeBool = $(this).hasClass("active");
+        //     if(!activeBool){
+        //         $("#rightSide").empty();
+        //         $(this).addClass("active");
+        //         $(this).siblings("li").removeClass("active")
+        //     }
+        //     if($(this).hasClass("homepage")){//点击首页按钮
+        //         api.getHomePage(area);
+        //
+        //     }else if($(this).hasClass("poverty")){//点击贫困家庭按钮
+        //             api.getDisease();
+        //
+        //     }else if($(this).hasClass("fivePeople")){//---------------点击五人小组按钮----------------
+        //         api.getFiveGroup(area);
+        //     }else{
+        //         $("#leftTabs").addClass("hide");
+        //
+        //     }
+        // });
         //贫困家庭右侧栏tab切换
         $("#leftTabs").on("click","span",function(){
             if(!$(this).hasClass("active")){

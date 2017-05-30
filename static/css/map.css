@@ -44,7 +44,7 @@
 
 .flo-box ul li{
     margin-bottom: 0.5vw;
-     
+     display: list-item;
  }
  
  .links-list li {
@@ -73,7 +73,7 @@
  /*211111111212*/
 
  
-.flo-box .content {
+.flo-box .map-content {
     position: relative;
      overflow: hidden;
      border-radius: 8px;

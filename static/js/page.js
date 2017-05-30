@@ -21,6 +21,9 @@ define(['jquery','template'],function($,template){
         pageList.push("<li>></li>");
         $(".page").append(pageList.join(""));
         $(".page li:eq(1)").addClass("curPage");
+        _data.data= Array.prototype.slice.call(data,0,9);
+        var html = template(tempId, _data);
+        $(place).html(html)
         $(".page").on("click","li",function(){
             var page =Math.ceil(data.length/10);
             var val = $(this).text();

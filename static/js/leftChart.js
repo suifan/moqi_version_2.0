@@ -56,10 +56,20 @@ define(['echarts'],function(echarts){
         });
         resize_window(pieChart);
     };
-    var barChart = function(id,towns,data){
+    var barChart = function(id,towns,data,titleBool){
         var barchart = echarts.init(document.getElementById(id));
         // var towns = ["尼尔基镇", "西瓦尔图镇", "拉杜尔鄂温族乡","拉杜尔鄂","拉杜", "拉杜克民族乡", "反政府武装", "西瓦尔图镇", "拉杜尔鄂乡", "拉杜克民族乡", "反政府武装","伊拉克", "美国", "北京", "登特办事处", "坤米尔", "办事粗"];
         barchart.setOption({
+            title : {
+                text: '年总额(单位：万)',
+                textAlign:'left',
+                textStyle:{
+                    color:'#fff',
+                    fontSize: 10
+                },
+                right: 0,
+                show: titleBool
+            },
             color: ['#3398DB'],
             tooltip : {
                 trigger: 'axis',
@@ -115,7 +125,7 @@ define(['echarts'],function(echarts){
                     splitLine: {
                         lineStyle: {
                             color: "#3a4146",
-                            width: 3
+                            width: 1
                         }
                     }
                 }

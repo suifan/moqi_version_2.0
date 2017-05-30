@@ -21,7 +21,7 @@ define(['jquery','template'],function($,template){
         pageList.push("<li>></li>");
         $(".page").append(pageList.join(""));
         $(".page li:eq(1)").addClass("curPage");
-        _data.data= Array.prototype.slice.call(data,0,9);
+        _data.data= Array.prototype.slice.call(data,0,10);
         var html = template(tempId, _data);
         $(place).html(html)
         $(".page").on("click","li",function(){

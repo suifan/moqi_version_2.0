@@ -260,7 +260,7 @@ span.span-active {
             text-align: left;
         }*/
 #jbox .jbox-title {
-    text-align: center;
+    text-align: left;
     width: 96%;
 }
 .per-main {
@@ -271,14 +271,56 @@ span.span-active {
     font-size: .8vw;
 }
 .per-top>div {
-    height: 10vw;
+    height: 12vw;
     padding: 0 1.2vw;
     float: left;
+    line-height: 1.4vw;
 }
 .per-top {
     overflow: hidden;
     font-size: .8vw;
     line-height: 1.2vw;
+}
+.check-container {
+    padding: .8vw;
+}
+.check-container>div {
+    float: left;
+    margin: .2vw 1.4vw;
+}
+/*checkbox组件样式---start*/
+.check-container .chk_1:checked + label {
+    background-color: #060e1d;
+    /*border: 1px solid #92A1AC;*/
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #243441;
+}
+.check-container .chk_1 + label {
+    background-color: #060e1d;
+    /*border: 1px solid #C1CACA;*/
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    /* border-radius: 5px; */
+    display: inline-block;
+    position: relative;
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+.check-container .chk_1:checked + label:after {
+    content: '\2714';
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    color: #758794;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+    padding: 0;
+    vertical-align: text-top;
+}
+/*checkbox组件样式---end*/
+.per-btm,.per-mid {
+    margin-top: 1vw;
 }
 .per-top-head {
     display: block;
@@ -312,8 +354,9 @@ span.span-active {
     float: left;
     /*background: red;*/
     width: 38vw;
-    height: 100%;
+    height: 40vw;
     padding: 0 2vw;
+    border-right: 3px dotted #2b59ab;
 }
 .per-right {
     float: right;
@@ -322,6 +365,28 @@ span.span-active {
     height: 100%;
     padding: 0 2vw;
     /*overflow: auto;*/
+}
+.per-right.card {
+    float: left;
+    /*background: blue;*/
+    width: 31.4vw;
+    height: 100%;
+    padding: 0 1vw;
+    /*overflow: auto;*/
+}
+.per-right.card section {
+    height: 14vw;
+}
+.cure-plan {
+    margin-top: 1vw;
+}
+.cure-title {
+    display: inline-block;
+    vertical-align: top;
+}
+.cure-info {
+    display: inline-block;
+    width: 84%;
 }
 .per-lefttop div.per-img {
     width: 5.6vw;
@@ -344,6 +409,21 @@ span.span-active {
 .per-leftbtm ul {
     margin-top: 1.2vw;
 }
+.physexam-record {
+    width: 100%;
+    height: 8vw;
+    /*background: blanchedalmond;*/
+    margin-top: 1vw;
+}
+.physexam-record > div {
+    width: 18%;
+    height: 8vw;
+    /*background: black;*/
+    /* margin-top: 1vw; */
+    display: inline-block;
+    margin-right: .8vw;
+    overflow: hidden;
+}
 .annual-money {
     color: #02d49b;
     font-size: 1.4vw;
@@ -352,7 +432,7 @@ span.span-active {
 }
 .family-list table {
     width: 100%;
-    margin: 1vw auto;
+    margin: 0;
 }
 .thin th,.thin td,.family-list table th,.family-list table td{
     height:1.6vw;
@@ -363,8 +443,11 @@ span.span-active {
     font-size: .8vw;
     border: none;
 }
+.family-list {
+    margin-top: 1vw;
+}
 .thin th,.family-list table th {
-    background: #2a3239;
+    background: #21427e;
 }
 .per-btm p,.per-mid p,.per-right p {
     margin-bottom: 0.6vw;
@@ -377,9 +460,10 @@ span.span-active {
     overflow: hidden;
 }
 .per-btm article {
-    height: 15vw;
+    height: 23vw;
     overflow: auto;
     line-height: 1.4vw;
+    margin-top: 1vw;
 }
 article h6 {
     padding: 1vw 0;
@@ -397,8 +481,20 @@ article h6 {
     width: 34%;
 }
 .per-right section {
-    height: 38.1vw;
+    height: 8vw;
     overflow: auto;
+}
+.per-right .fupin-bar {
+    height: 12vw;
+}
+.per-right .profit-bar {
+    height: 12vw;
+}
+#fupinBar,#profitBar {
+    width: 100%;
+    height: 72%;
+    /*background: black;*/
+    margin-top: .6vw;
 }
 .per-right .per-top ul {
     margin: 0;
@@ -434,10 +530,10 @@ article h6 {
     height: 100%;
 }
 table tr:nth-child(odd) td{
-    background: #343e4a;
+    background: #0e1a33;
 }
 table tr:nth-child(even) td{
-    background: #495666;
+    background: #21427e;
 }
 #jbox-content table tr:hover td{
     background: -webkit-linear-gradient(top,#73bcf3,#2773cb);
@@ -467,16 +563,16 @@ table tr:nth-child(even) td{
 /*建档情况*/
 .select-switch {
     position: absolute;
-    top: 0.6vw;
-    left: 2.2vw;
+    top: 0.8vw;
+    left: 3.2vw;
 }
 .down-angle {
     margin-top: -0.8vw;
-    margin-left: 4.4vw;
+    margin-left: -1.4vw;
 }
 .doc-left {
     width: 58%;
-    padding: 0 2.2vw;
+    margin: 0 2.2vw;
     overflow: auto;
 }
 .doc-right {
@@ -511,7 +607,7 @@ table tr:nth-child(even) td{
 }
 
 .village {
-    width: 97%;
+    width: 95%;
 }
 
 .organization img {
@@ -525,6 +621,7 @@ table tr:nth-child(even) td{
     font-weight: bold;
     text-shadow: 1px 1px 1px #000;
     color: #e5ecec;
+    margin-bottom: 0.6vw;
 }
 
 .bfjl{

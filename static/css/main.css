@@ -285,10 +285,10 @@ table th{
 }
 
 table tr:nth-child(odd) td{
-    background: #343e4a;
+    background: #0e1a33;
 }
 table tr:nth-child(even) td{
-    background: #495666;
+    background: #21427e;
 }
 table tr:hover td{
     background: -webkit-linear-gradient(top,#73bcf3,#2773cb);
@@ -305,22 +305,27 @@ table tr:hover td{
     font-size: 1vw;
 }
 #jbox .jbox-title-panel {
-    background: -webkit-linear-gradient(top,#6c7783,#2e3640);
+    background: #2b59ab;
     width: 74vw;
-    border: none;
+    /*border: 1px solid #4b86f0;*/
+    border-bottom: none;
+}
+#jbox .jbox-state {
+    border-top: 1px solid #4b86f0;
 }
 #jbox-content {
-    width: 74vw;
-    padding: 0.8vw 0;
-    background: #37424b;
+    width: 76vw;
+    padding: 1.6vw 0;
+    background: #0e1a33;
     text-align: left;
 }
 div.jbox .jbox-container {
     background-color: #37424b;
-    border: none;
+    border: 1px solid #4b86f0;
 }
 #jbox #jbox-states {
-    background: #37424b;
+    background: #0e1a33;
+    /*border: 1px solid #4b86f0;*/
 }
 /*弹窗select组件*/
 #jbox-content select {
@@ -347,10 +352,12 @@ div.jbox .jbox-container {
  option{
     color: #000;
 }
-
+ul.page {
+    text-align: center;
+}
  .page li{
      display: inline-block;
-     margin: 0 .3vw;
+     margin: 0 .4vw;
      cursor: pointer;
      font-size: 1vw;
  }

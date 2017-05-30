@@ -29,7 +29,7 @@ require.config({
     }
 });
 
-require(['jquery','migrate','template','chart','charts','jbox','progressBar','countDown','viewer'], function ($,migrate,template,chart,charts,jbox,progressBar,countDown){
+require(['jquery','migrate','template','chart','charts','jbox','progressBar','countDown','viewer','page'], function ($,migrate,template,chart,charts,jbox,progressBar,countDown,viewer,jpage){
     //当前所选区域对应的全局变量
     var area = "moqi";
     //图片浏览插件option设置
@@ -902,26 +902,53 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             // $.getJSON("../js/json/map_peopleList.json",function(res){
                                 $.getJSON("../js/json/mapPeopleDetail.json",function(res){
                                     var data={};
-                                    data.data = res[area][mapApi.curr_path_id];
-                                    var totalList = data.list;
+                                    var _data = data.data = res[area][mapApi.curr_path_id];
+                                    // var totalList = data.list;
                                     var membersTemp = template("villageTemp", data);
-                                    $.jBox(membersTemp, { title: "", buttons: {}, border: 0, opacity: 0.4 });
+                                    var titleHtml = template("selectTown",{});
+                                    var html = titleHtml +"<div>"+membersTemp+"</div>";
+                                        html += "<ul class='page'></ul>";
+                                    $.jBox(html, { title: "", buttons: {}, border: 0, opacity: 0.4 });
+                                    // document.getElementsByClassName('jbox-content')[1].innerHTML = html;
+                                    // 获取表格容器
+                                    var container = $('.jbox-content>div').eq(1);
+                                    jpage.page(_data,"villageTemp",container);
                                     document.getElementsByTagName('body')[0].style.padding = "0";
                                     // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
                                     //设置弹窗top值
 
                                     //家庭列表绑定点击事件
-                                    $(".village tbody").on("click","tr",function() {
+                                    $(".jbox-content>div").on("click","tr",function() {
+                                        var text = $("#tab li.active").text();
                                         var name = $(this).find("td:eq(1)").text();
                                         var family = data.data.filter(function(a) {
                                             return a.name == name;
                                         });
-
                                         var $pop = $.jBox('', { title: name, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByTagName('body')[0].style.padding = "0";
                                         $pop.find("#jbox").css("top", "2.6vw");
-                                        var html = template('personalTemp',family[0] );
-                                        document.getElementsByClassName('jbox-content')[1].innerHTML = html;
+                                        if(text == "产业扶贫"){//****************************************************
+                                            var cardHtml = template('helpCardTemp',{} );
+                                            document.getElementsByClassName('jbox-content')[1].innerHTML = cardHtml;
+                                            //绑定图片放大事件
+                                            $(".physexam-record img").viewer();
+                                            //绑定家庭成员点击事件
+                                            $pop.find(".per-mid tbody").on("click","tr", function(){
+                                                var member = $(this).children("td").eq(0).text();
+                                                var $popOther = $.jBox('', { title: member, buttons: {}, border: 0, opacity: 0.4 });
+                                                document.getElementsByTagName('body')[0].style.padding = "0";
+                                                $popOther.find("#jbox").css("top", "2.6vw");
+                                                var html = template('helpCardTemp',{} );
+                                                document.getElementsByClassName('jbox-content')[2].innerHTML = html;
+                                                //绑定图片放大事件
+                                                $popOther.find(".physexam-record img").viewer();
+                                            })
+                                        }else {
+
+                                            document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp',family[0] );
+                                            chart.barChart("fupinBar",[2016,2017,2018,2019],[520,120,685,520],true);
+                                            chart.barChart("profitBar",[2016,2017,2018,2019],[520,120,685,520],true);
+                                        }
                                     });
                             })
 

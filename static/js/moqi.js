@@ -912,7 +912,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                     // document.getElementsByClassName('jbox-content')[1].innerHTML = html;
                                     // 获取表格容器
                                     var container = $('.jbox-content>div').eq(1);
-                                    jpage.page(_data,"villageTemp",container);
+                                    jpage.page(_data,"villageTemp",container,10);
                                     document.getElementsByTagName('body')[0].style.padding = "0";
                                     // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
                                     //设置弹窗top值

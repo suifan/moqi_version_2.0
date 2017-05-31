@@ -4,15 +4,16 @@
  * @param data : 传到模板里的数据
  * @param tempId : 模板ID
  * @param place : html需要替换的内容的容器
+ * @param num : 每页显示的条数
  */
 
 
 define(['jquery','template'],function($,template){
 
 
-    var page = function(data,tempId,place){
+    var page = function(data,tempId,place,num){
         var _data={};
-        var length =Math.ceil( data.length/10);
+        var length =Math.ceil( data.length/num);
         var pageList = [];
         pageList.push("<li><</li>");
         for(var i=0;i<length;i++){
@@ -21,11 +22,11 @@ define(['jquery','template'],function($,template){
         pageList.push("<li>></li>");
         $(".page").append(pageList.join(""));
         $(".page li:eq(1)").addClass("curPage");
-        _data.data= Array.prototype.slice.call(data,0,10);
+        _data.data= Array.prototype.slice.call(data,0,num);
         var html = template(tempId, _data);
         $(place).html(html)
         $(".page").on("click","li",function(){
-            var page =Math.ceil(data.length/10);
+            var pageNum =Math.ceil(data.length/num);
             var val = $(this).text();
             var curVal;
             var cur = $(".page").find(".curPage");
@@ -35,21 +36,20 @@ define(['jquery','template'],function($,template){
                     return;
                 }else{
                     cur.prev().addClass("curPage").siblings().removeClass("curPage");
-                    _data.data= Array.prototype.slice.call(data,(curVal-2)*10,(curVal-1)*10);
+                    _data.data= Array.prototype.slice.call(data,(curVal-2)*num,(curVal-1)*num);
 
                 }
             }else if(val==">"){
-                if(curVal==page){
+                if(curVal==pageNum){
                     return;
                 }else{
                     cur.next().addClass("curPage").siblings().removeClass("curPage");
-                    _data.data= Array.prototype.slice.call(data,curVal*10,(+curVal+1)*10);
+                    _data.data= Array.prototype.slice.call(data,curVal*num,(+curVal+1)*num);
                 }
 
             }else{
-                var page = $(this).text();
                 $(this).addClass("curPage").siblings().removeClass("curPage");
-                _data.data= Array.prototype.slice.call(data,(page-1)*10,page*10);
+                _data.data= Array.prototype.slice.call(data,(val-1)*num,val*num);
             }
             var html = template(tempId, _data);
             $(place).html(html)

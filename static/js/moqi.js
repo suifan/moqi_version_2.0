@@ -868,26 +868,26 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             //this.style.fill = mapApi.inColor;
                             var x = event.pageX || event.clientX + mapApi.scrollX;
                             var y = event.pageY || event.clientY + mapApi.scrollY;
-                            $(".map-tips").addClass('show');
-                            //console.log($(this).attr('id'));
-                            $(".map-tips").css({
-                                "left": x - mapApi.dis_w,
-                                "top": y - mapApi.dis_h
-                            });
+                            // $(".map-tips").addClass('show');
+                            // //console.log($(this).attr('id'));
+                            // $(".map-tips").css({
+                            //     "left": x - mapApi.dis_w,
+                            //     "top": y - mapApi.dis_h
+                            // });
                         }
                     });
 
                     oSvg.on('click', '.validMap', function(event) {
                         event.stopPropagation();
-                        if (mapApi.curr_path_id) {
+                        if (mapApi.curr_path_id&&mapApi.curr_path_id != this.id) {
                             //如果有当前id 已选中某镇
-                            if (mapApi.curr_path_id != this.id) {
+                            
                                 //oSvg.find('.validMap').css('fill', mapApi.outColor);
                                 mapApi.curr_path_id = false;
                                 $(".map-tips").removeClass('show');
                                 mapApi.hoverLock = true;
-                                //alert('饮茶美好列表');
-                            }
+                                
+                            
                         } else {
                             //如果没有当前id;未选中镇
                             mapApi.hoverLock = false;

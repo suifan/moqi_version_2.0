@@ -618,6 +618,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         //左右两侧高度适应屏幕
         sideResize();
         window.onresize = function(){
+
             sideResize();
         }
         //加载倒计时
@@ -648,13 +649,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             if($(this).hasClass("homepage")){//点击首页按钮
                 api.getHomePage(area);
 
-            }else if($(this).hasClass("poverty")){//点击贫困家庭按钮
-                    api.getDisease();
+            }else if($(this).hasClass("production")){//产业扶贫
 
-            }else if($(this).hasClass("fivePeople")){//---------------点击五人小组按钮----------------
-                api.getFiveGroup(area);
-            }else{
-                $("#leftTabs").addClass("hide");
+            }else if($(this).hasClass("goverment")){//党建促脱贫
+            }else if($(this).hasClass("health")){//健康脱贫
+
+            }else if($(this).hasClass("ecology")){//生态脱贫
+
+            }else if($(this).hasClass("education")){//教育脱贫
+
+            }else if($(this).hasClass("doudi")){//兜底脱贫
 
             }
         });

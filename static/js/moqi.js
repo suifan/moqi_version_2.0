@@ -712,7 +712,21 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             
             "init": function() {
                 mapApi.getMap($("#moqi"));
+                mapApi.goBack();
             },
+
+            // 返回莫旗大地图
+            "goBack":function(){
+                $('#map-goBack').on('click', function(event) {
+                    event.preventDefault();
+                    /* Act on the event */                  
+                    area = "moqi";
+                    mapApi.showMap("moqi");
+                    mapApi.getData();
+                    $(this).removeClass('show');
+                });
+            },
+            //初始化 首页地图
             "getMap": function(oSvg) {//获取县地图
 
                     mapApi.curr_svg = oSvg;
@@ -734,6 +748,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             /* Act on the event */
                         });
                     }
+                    //鼠标移入地图
                     oSvg.on("mouseover", ".validMap", function(event) {
                         if (mapApi.hoverLock) {
 
@@ -756,7 +771,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             //console.log($(this).attr("id"));
                         }
                     });
-
+                      //鼠标点击地图
                     oSvg.on("click", ".validMap", function(event) {
                         event.stopPropagation();
                         if (mapApi.curr_path_id) {
@@ -850,8 +865,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                 break;
                         }
                     },
-
+            //进入二级地图
             "getSubMap" :function(oSvg) {
+
+                    $('#map-goBack').addClass('show');
                     mapApi.curr_svg = oSvg;
                     if (mapApi.curr_svg) {
                         //console.log(mapApi.curr_svg.attr("id"))
@@ -997,6 +1014,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     mapApi.hoverLock = true;
                     mapApi.curr_path_id=false;
                 },
+
 
         }; //mapApi
         //初始化地图方法；

@@ -642,7 +642,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //---暂时代码
             var activeBool = $(this).hasClass("active");
             if(!activeBool){
-                $("#rightSide").empty();
                 $(this).addClass("active");
                 $(this).siblings("li").removeClass("active")
             }

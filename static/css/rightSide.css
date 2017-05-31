@@ -106,8 +106,8 @@
 }
 
 #diseaseStructureChart{
-    height: 20vw;
-    width: 22vw;
+    height: 15vw;
+    width: 100%;
 }
 #diseaseIncidence .content p{
     font-weight: bold;
@@ -266,3 +266,23 @@
     margin-top:1vw;
 }
 /*五人小组 end*/
+
+
+li.progressLi p {
+    line-height: 1.4vw;
+}
+
+.content li.progressLi {
+    height: 4.7vw;
+    width: 23%;
+    display: inline-block;
+    float: left;
+    background: rgba(255,255,255,.1);
+    text-align: center;
+    font-size: 1vw;
+    line-height: 1.1vw;
+    padding: .5vw 0vw 0vw 0vw;
+    margin-left: .4vw;
+    margin-top: .4vw;
+    min-width: initial;
+}

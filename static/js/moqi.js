@@ -90,12 +90,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             var chartData={};
             chartData.color=["#1fa9f4","#0cb871"];
             chartData.yAxisData = [2017,2018,2019];
-            var target = [],done = [];
+            var people = [],family = [];
             for(var i=0,length=targetChart.length;i<length;i++){
-                done.push(targetChart[i].house_num);
-                target.push(targetChart[i].person_num);
+                family.push(targetChart[i].house_num);
+                people.push(targetChart[i].person_num);
             }
-            chartData.data=[{name:"完成数量",type:"bar",data:done, barMaxWidth:10},{name:"目标数量",type:"bar",data:target, barMaxWidth:10}]
+            chartData.data=[{name:"目标户数",type:"bar",data:family, barMaxWidth:10},{name:"目标人数",type:"bar",data:people, barMaxWidth:10}]
             charts.xBarChart("targetChart",chartData)
 
             // $('#leftSide').html(template('homepageLeftSideTemp', data));
@@ -352,13 +352,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });
         },
         'getDisease': function(){
-            $("#leftTabs").removeClass("hide");
-            // $("#leftOperation").addClass("hide");
-            // $("#sevenStepsTab").addClass("hide");
-            $("#leftTabs").find("span.disease").addClass("active").siblings().removeClass("active")
 
             //右侧--------------------start
-            //右侧--------------------start
+            //右侧--------------------end
+
+            //左侧--------------------start
             var data={
                 disease:[
                     {name:"高血压",percent:"16%"},
@@ -376,10 +374,21 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 ],
 
             };
-            $('#rightSide').html(template('povertyRightSideTemp_disease', data));
+            $('#leftSide').html(template('healthLeftSideTemp', data));
+            $(".progressLi").each(function(){
+                var length = $(this).find("p:eq(0)").text().split("").length;
+                if(length>5){
+                    $(this).find("p:eq(0)").css("font-size",".9vw");
+                    $(this).find("p").css("line-height","1vw");
+                }
+                var percent = $(this).find("p:eq(1)").text();
+                progressBar.generate(this,percent);
+            })
             var diseaseStructure = {
-                legend:["高血压","脑血管病","糖尿病","冠心病","脑梗","布病","类风湿性关节炎","关节病","胆囊炎","心肌病","肺结核","腰间盘突出","其他"],
-                color:['#abfb06','#1ff4be','#c4572e','#387b14','#cb4345','#a96969','#40bfec','#c73983','#0786ef','#fde101'],
+                // legend:["高血压","脑血管病","糖尿病","冠心病","脑梗","布病","类风湿性关节炎","关节病","胆囊炎","心肌病","肺结核","腰间盘突出","其他"],
+                color:['#72cbf6','#5fc4f6','#4fbdf5','#3cb7f6','#30b2f6','#23abf6','#1ba2ef','#1991d4','#1784c1','#1578ae','#136d9e','#116794','#105e88'],
+                center:["45%","45%"],
+                radius:["30%","50%"],
                 data:[
                     {value:532, name:'高血压'},
                     {value:275, name:'脑血管病'},
@@ -397,42 +406,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 ],
                 total:"3356"
             }
-            charts.pieChart("diseaseStructureChart",true,diseaseStructure);
-            var diseaseIncidence = {
-                color:['#ff5232','#1996e6'],
-                data:[{value:3356, name:'发生',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'center',
-                            formatter: "{d}%",
-                            textStyle: {
-                                fontSize: '11',
-                                fontWeight: 'lighter',
-                                color: '#fff'
-                            }
-                        }
-                    }
-                },
-                    {value:324444, name:'未发生'}],
-                radius: ['50%', '70%'],
-                center:["50%","50%"]
-            };
-            charts.pieChart("diseaseIncidenceChart",false,diseaseIncidence)
-            //右侧--------------------end
+            charts.labelPie("diseaseStructureChart",diseaseStructure);
+            var chartData_x = ["高血压","糖尿病","结核病","重症精神病"];
+            var charData_y = ['2212','2212','2212','2212']
+            chart.barChart("keyPopulationChart",chartData_x,charData_y);
 
-            //左侧--------------------start
-            api.getPoorFamilyLeft();
-            /*$.getJSON("../js/json/povertyFamily/poorFamily.json",function(data){
-                data["huorren"] = switchFlag || 1;
-                $('#leftSide').html(template('povertyLeftSideTemp', data));
-            });*/
-
-
-            $(".progressLi").each(function(){
-                var percent = $(this).find(".percent").text();
-                progressBar.generate($(this),percent);
-            })
             //左侧--------------------end
 
             //底部--------------------start
@@ -650,8 +628,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             }else if($(this).hasClass("production")){//产业扶贫
 
-            }else if($(this).hasClass("goverment")){//党建促脱贫
+            }else if($(this).hasClass("government")){//党建促脱贫
+
             }else if($(this).hasClass("health")){//健康脱贫
+                api.getDisease();
 
             }else if($(this).hasClass("ecology")){//生态脱贫
 

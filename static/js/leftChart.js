@@ -68,7 +68,7 @@ define(['echarts'],function(echarts){
                     fontSize: 10
                 },
                 right: 0,
-                show: titleBool
+                show: false
             },
             color: ['#3398DB'],
             tooltip : {
@@ -86,7 +86,7 @@ define(['echarts'],function(echarts){
                 right: '2%',
                 bottom: '3%',
                 height: '80%',
-                // width: "100%",
+                //width: "100%",
                 containLabel: true
             },
             xAxis : [

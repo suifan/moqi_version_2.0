@@ -2827,7 +2827,7 @@
         <div id="logout">退出</div>
         <ul id="tab">
             <li class="homepage active">首页</li>
-            <li class="goverment">党建促脱贫</li>
+            <li class="government">党建促脱贫</li>
             <li class="production">产业扶贫</li>
             <li class="health">健康扶贫</li>
             <li class="relocate">异地搬迁</li>
@@ -2985,46 +2985,46 @@
     </div>
 </script>
 <!--大病结构模板-->
-<script id="povertyRightSideTemp_disease" type="text/html">
-    <div class="section" id="seriousDisease">
-        <div class="header">
-            <h2>大病排行</h2>
-        </div>
-        <div class="content">
-            <ul>
-                {{each disease as disease}}
-                <li class="progressLi">
-                    <p>{{disease.name}}</p>
-                    <p class="percent">{{disease.percent}}</p>
-                    <div class="progressBar pg_blue">
-                        <div class="progressBarBg"></div>
-                        <div class="progressBarBar"></div>
-                    </div>
-                </li>
-                {{/each}}
+<!--<script id="povertyRightSideTemp_disease" type="text/html">-->
+    <!--<div class="section" id="seriousDisease">-->
+        <!--<div class="header">-->
+            <!--<h2>大病排行</h2>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+            <!--<ul>-->
+                <!--{{each disease as disease}}-->
+                <!--<li class="progressLi">-->
+                    <!--<p>{{disease.name}}</p>-->
+                    <!--<p class="percent">{{disease.percent}}</p>-->
+                    <!--<div class="progressBar pg_blue">-->
+                        <!--<div class="progressBarBg"></div>-->
+                        <!--<div class="progressBarBar"></div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--{{/each}}-->
 
-            </ul>
+            <!--</ul>-->
 
-        </div>
-    </div>
-    <div class="section" id="diseaseStructure">
-        <div class="header">
-            <h2>大病结构</h2>
-        </div>
-        <div class="content">
-            <div id="diseaseStructureChart"></div>
-        </div>
-    </div>
-    <div class="section" id="diseaseIncidence">
-        <div class="header">
-            <h2>大病发生率</h2>
-        </div>
-        <div class="content">
-            <div id="diseaseIncidenceChart"></div>
-            <p>大病发生率</p>
-        </div>
-    </div>
-</script>
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="section" id="diseaseStructure">-->
+        <!--<div class="header">-->
+            <!--<h2>大病结构</h2>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+            <!--<div id="diseaseStructureChart"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="section" id="diseaseIncidence">-->
+        <!--<div class="header">-->
+            <!--<h2>大病发生率</h2>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+            <!--<div id="diseaseIncidenceChart"></div>-->
+            <!--<p>大病发生率</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
 <!--贫困结构模板-->
 <script id="povertyRightSideTemp_poverty" type="text/html">
     <div class="section" id="povertyStructure">
@@ -3178,7 +3178,7 @@
     </div>
     <div class="section">
         <div class="header">
-            <h2>脱贫目标（目标数量/完成数量）</h2>
+            <h2>脱贫目标（目标户数/目标人数）</h2>
         </div>
         <div class="content">
             <div id="targetChart"></div>
@@ -3379,6 +3379,54 @@
 
         </div>
     </div>
+</script>
+<!--健康扶贫左侧模板-->
+<script id="healthLeftSideTemp" type="text/html">
+    <div class="section">
+        <div class="header">
+            <h2>因病致（返）贫统计</h2>
+        </div>
+        <div class="content">
+            <ul>
+                <li>因病致（返）贫：<span>255</span></li>
+                <li>占比：<span>40.5%</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section" id="diseaseStructure">
+        <div class="header">
+            <h2>主要病种统计</h2>
+        </div>
+        <div class="content">
+            <div class="diseaseStructureChartDiv">
+                <div id="diseaseStructureChart"></div>
+                <span>3356</span>
+            </div>
+            <ul>
+                {{each disease as disease}}
+                <li class="progressLi">
+                    <p>{{disease.name}}</p>
+                    <p class="percent">{{disease.percent}}</p>
+                    <div class="progressBar pg_blue">
+                        <div class="progressBarBg"></div>
+                        <div class="progressBarBar"></div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="section" id="seriousDisease">
+        <div class="header">
+            <h2>重点人群统计</h2>
+        </div>
+        <div class="content">
+            <div id="keyPopulationChart"></div>
+
+        </div>
+    </div>
+
+
 </script>
 <!--左侧模板 end-->
 <!--底部模板 start-->

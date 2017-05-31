@@ -653,3 +653,24 @@ table tr:nth-child(even) td{
     letter-spacing:.1vw;
     padding: 1vw;
 }
+
+.diseaseStructureChartDiv{
+    background: rgba(255,255,255,.1);
+    margin: 0 .3vw;
+    position: relative;
+}
+
+#diseaseStructure .content {
+    padding: .5vw 0.1vw;
+}
+
+.diseaseStructureChartDiv span{
+    position: absolute;
+    top: 43%;
+    left: 40%;
+}
+
+#keyPopulationChart{
+    width:90%;
+    height:10vw;
+}

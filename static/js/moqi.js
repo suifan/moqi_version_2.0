@@ -48,6 +48,13 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
         });
     }
+    var sideResize = function(){
+        var height = $("header").height();
+        var clientHeight = $(window).height();
+        var margin = +$("#rightSide").css("margin-top").slice(0,-2);
+        var sideHeight= clientHeight-height-margin;
+        $("#rightSide,#leftSide").height(sideHeight-2);
+    }
 
     // 数据加载
     var api = {
@@ -608,6 +615,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
     };
     $(function(){
+        //左右两侧高度适应屏幕
+        sideResize();
+        window.onresize = function(){
+            sideResize();
+        }
         //加载倒计时
         countDown.countDown("2018/1/1");
         //刷新时触发首页点击事件
@@ -678,11 +690,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }
         });
 
-        var height = $("header").height();
-        var clientHeight = $(window).height();
-        var margin = +$("#rightSide").css("margin-top").slice(0,-2);
-        var sideHeight= clientHeight-height-margin;
-        $("#rightSide,#leftSide").height(sideHeight-2);
     })
 
 

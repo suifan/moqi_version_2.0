@@ -238,7 +238,56 @@ define(['echarts'],function(echarts){
         );
         resize_window(labelPieChart);
     };
-
+    /**
+     * 显示label和labelline饼图(针对健康扶贫右侧)
+     * @param id : string 图表容器
+     * @param pieData : object
+     * @pieData.color : 颜色(可以为array)
+     * @pieData.data  : 数据
+     */
+    var labelPieChart = function(id,pieData) {
+        var labelPieChart = echarts.init(document.getElementById(id))
+        labelPieChart.setOption(
+            {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}:{c}"
+                },
+                color: pieData.color,
+                series: [
+                    {
+                        type:'pie',
+                        center:pieData.center||["50%","60%"],
+                        radius: ['35%', '60%'],
+                        avoidLabelOverlap: true,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'outside',
+                                textStyle: {
+                                    color:'#fff'
+                                },
+                                formatter:pieData.formatter || "{b}:{c}"
+                            },
+                            emphasis: {
+                                show: true
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: true,
+                                lineStyle: {
+                                    color:'#fff'
+                                }
+                            }
+                        },
+                        data:pieData.data
+                    }
+                ]
+            }
+        );
+        resize_window(labelPieChart);
+    };
 
 
     /**
@@ -301,7 +350,78 @@ define(['echarts'],function(echarts){
             }
         );
         resize_window(chart);
-    }
+    };
+    /**
+     * 折线图
+     * @param id : string 图表容器
+     * @param pieData : object
+     * @pieData.color : 颜色(可以为array)
+     * @pieData.data  : 数据
+     * @pieData.yAxisData : Y轴坐标轴字段
+     */
+    var lineChart = function(id,barData){
+        var chart = echarts.init(document.getElementById(id));
+        chart.setOption(
+            {
+                title: {
+                    text: '本周签约医生签约数量                        单位:人',
+                    textStyle:{
+                        color:'#fff',
+                        fontSize:'12px'
+                    }
+                },
+                grid: {
+                    top:40,
+                    left: 20,
+                    height: '50%'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis:  {
+                    axisLine:{
+                        lineStyle:{
+                            color:'#666'
+                        }
+                    },
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一','周二','周三','周四','周五']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine:{
+                        lineStyle:{
+                            color:'#666'
+                        }
+                    },
+                    splitLine: {
+                        show:false
+                    },
+                    axisTick: {
+                        show:false
+                    },
+                    axisLabel: {
+                        show:true
+                    }
+                },
+                series: [
+                    {
+                        name:'最高气温',
+                        type:'line',
+                        data:[0, 11, 15, 13, 12],
+                        lineStyle: {
+                            normal:{
+                                color: '#2fd819',
+                                width: 1
+                            }
+                        }
+                    }
+                ]
+            }
+        );
+        resize_window(chart);
+    };
 
 
     /**
@@ -319,6 +439,8 @@ define(['echarts'],function(echarts){
         'gauge':gauge,
         'labelPie':labelPie,
         'fullPieChart':fullPieChart,
-        'xBarChart':xBarChart
+        'xBarChart':xBarChart,
+        'labelPieChart':labelPieChart,
+        'lineChart':lineChart
     }
 })

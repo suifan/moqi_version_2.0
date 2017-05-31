@@ -104,7 +104,21 @@
     font-size:.9vw;
     padding: 0 .1vw;
 }
-
+#seriousDisease .content-top {
+    height: 11vw;
+}
+#seriousDisease .content p {
+    position: relative;
+    top: 4.6vw;
+    left: 6vw;
+    width: 10vw;
+    font-size: 1vw;
+}
+#seriousDisease .content-bottom {
+    height: 6vw;
+    width: 10vw;
+    float: right;
+}
 #diseaseStructureChart{
     height: 15vw;
     width: 100%;

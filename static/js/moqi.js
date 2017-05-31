@@ -352,11 +352,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });
         },
         'getDisease': function(){
-
-            //右侧--------------------start
-            //右侧--------------------end
-
-            //左侧--------------------start
+            // $("#leftTabs").removeClass("hide");
+            // $("#leftOperation").addClass("hide");
+            // $("#sevenStepsTab").addClass("hide");
+            // $("#leftTabs").find("span.disease").addClass("active").siblings().removeClass("active")
+            //左侧------start
             var data={
                 disease:[
                     {name:"高血压",percent:"16%"},
@@ -410,6 +410,52 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             var chartData_x = ["高血压","糖尿病","结核病","重症精神病"];
             var charData_y = ['2212','2212','2212','2212']
             chart.barChart("keyPopulationChart",chartData_x,charData_y);
+            //右侧---------end
+            //右侧--------------------start
+            $('#rightSide').html(template('povertyRightSideTemp_disease', {}));
+            var diseaseStructure = {
+                color:['#3cb7f6','#23abf6','#1991d4','#1578ae','#136d9e','#105e88'],
+                data:[
+                    {value:532, name:'五人小组'},
+                    {value:275, name:'家医团队'},
+                    {value:191, name:'健康家人'},
+                    {value:164, name:'专科医生'},
+                    {value:117, name:'帮扶干部'},
+                    {value:69, name:'村支书'}
+                ],
+            };
+            charts.labelPieChart("fiveGroupSumChart",diseaseStructure);
+            chart.pieChart("fiveGroupCoverRate","#1fa9f4","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%');
+            /*var diseaseIncidence = {
+                color:['#ff5232','#1996e6','#ff5232','#1996e6'],
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '11',
+                            color: '#fff'
+                        }
+                    }
+                },
+                data:[{value:3356, name:'发生'},{value:3356, name:'发生'},{value:3356, name:'发生'},{value:3356, name:'发生'}],
+                radius: ['50%', '70%'],
+                center:["50%","50%"]
+            };*/
+            var diseaseIncidence = {
+                color:['#abfb06','#1ff4be','#c4572e','#387b14'],
+                data:[
+                    {value:532, name:'五人小组'},
+                    {value:275, name:'家医团队'},
+                    {value:191, name:'健康家人'},
+                    {value:164, name:'专科医生'}
+                ],
+                radius: ['50%', '70%'],
+                center:["50%","50%"],
+                formatter:"{b}\n{c}\n({d}%)"
+            };
+            charts.labelPieChart("diseaseStructureChart",diseaseIncidence)
+            charts.lineChart("diseaseIncidenceChart");
+            //右侧--------------------end
 
             //左侧--------------------end
 
@@ -435,6 +481,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //底部--------------------end
 
         },//大病结构方法
+        'getHealth': function(){
+
+        },
         'getEducation':function(){
             $.getJSON("../js/json/povertyFamily/education.json",function(data){
                 $('#rightSide').html(template('povertyRightSideTemp_education', data[area]));
@@ -703,7 +752,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             "goBack":function(){
                 $('#map-goBack').on('click', function(event) {
                     event.preventDefault();
-                    /* Act on the event */                  
+                    /* Act on the event */
                     area = "moqi";
                     mapApi.showMap("moqi");
                     mapApi.getData();
@@ -842,7 +891,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             case "首页":
                                 api.getHomePage();
                                 break;
-                            case "五人小组":
+                            case "产业扶贫":
                                 api.getFiveGroup();
                                 break;
                             case "贫困家庭":
@@ -888,7 +937,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                     oSvg.on('click', '.validMap', function(event) {
                         event.stopPropagation();
-                       
+
                             //如果没有当前id;未选中镇
                             mapApi.hoverLock = false;
                             //oSvg.find('.validMap').css('fill', mapApi.outColor);
@@ -960,7 +1009,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                         }
                                     });
                             })
-                        
+
                     });
 
 

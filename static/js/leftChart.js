@@ -21,7 +21,7 @@ define(['echarts'],function(echarts){
                 {
                     name:'',
                     type:'pie',
-                    radius: ['65%', '100%'],
+                    radius: ['60%', '80%'],
                     avoidLabelOverlap: false,
                     hoverAnimation:false,
                     label: {

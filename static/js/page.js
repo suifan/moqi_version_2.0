@@ -13,7 +13,8 @@ define(['jquery','template'],function($,template){
 
     var page = function(data,tempId,place,num){
         var _data={};
-        var length =Math.ceil( data.length/num);
+        if(!data)return;
+        var length =Math.ceil(data.length/num);
         var pageList = [];
         pageList.push("<li><</li>");
         for(var i=0;i<length;i++){

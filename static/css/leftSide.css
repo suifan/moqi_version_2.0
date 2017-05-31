@@ -339,7 +339,7 @@ span.span-active {
     width: 24%;
 }
 .per-top div:nth-child(3) {
-    width: 38%;
+    width: 12%;
 }
 .per-right .per-top div:nth-child(2) {
     width: 18%;
@@ -373,6 +373,15 @@ span.span-active {
     height: 100%;
     padding: 0 1vw;
     /*overflow: auto;*/
+}
+.per-right.card td em {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #22dc22;
+    vertical-align: middle;
+    /* border: none; */
+    border-radius: 3px;
 }
 .per-right.card section {
     height: 14vw;

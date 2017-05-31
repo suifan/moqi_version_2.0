@@ -346,7 +346,7 @@ div.jbox .jbox-container {
     position: absolute;
     margin-top: 0.6vw;
     margin-left: 0.4vw;
-    cursor: pointer;
+    cursor: move;
 }
 
  option{
@@ -357,7 +357,7 @@ ul.page {
 }
  .page li{
      display: inline-block;
-     margin: 0 .4vw;
+     padding: 0 .4vw;
      cursor: pointer;
      font-size: 1vw;
  }

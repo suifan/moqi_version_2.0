@@ -3411,14 +3411,14 @@
 <script id = "helpCardTemp" type="text/html">
     <div class="per-left">
         <div class="per-top">
-            <!--<div class="per-lefttop">
+            <p class="per-title">患者信息</p>
+            <div style="width: 100%; background: #fff; height:3px;"></div>
+            <div class="per-lefttop">
                 <div class="per-img">
                     <img src="../images/default_head_img.png">
                 </div>
                 <p>{{name}}</p>
-            </div>-->
-            <p class="per-title">患者信息</p>
-            <div style="width: 100%; background: #fff; height:3px;"></div>
+            </div>
             <div class="per-leftmid">
                 <ul>
                     <li>姓名：<span>{{"张某某"}}</span>&nbsp;&nbsp;&nbsp;性别：{{"男"}}</li>
@@ -3518,7 +3518,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="" alt=""></td>
+                        <td><em></em></td>
                         <td>{{"张某某"}}</td>
                         <td>{{"男"}}</td>
                         <td>{{"扶贫管理处"}}</td>
@@ -3526,7 +3526,7 @@
                         <td>{{"村支书"}}</td>
                     </tr>
                     <tr>
-                        <td><img src="" alt=""></td>
+                        <td><em></em></td>
                         <td>{{"张某某"}}</td>
                         <td>{{"男"}}</td>
                         <td>{{"扶贫管理处"}}</td>
@@ -3534,7 +3534,7 @@
                         <td>{{"村支书"}}</td>
                     </tr>
                     <tr>
-                        <td><img src="" alt=""></td>
+                        <td><em></em></td>
                         <td>{{"张某某"}}</td>
                         <td>{{"男"}}</td>
                         <td>{{"扶贫管理处"}}</td>
@@ -3542,7 +3542,7 @@
                         <td>{{"村支书"}}</td>
                     </tr>
                     <tr>
-                        <td><img src="" alt=""></td>
+                        <td><em></em></td>
                         <td>{{"张某某"}}</td>
                         <td>{{"男"}}</td>
                         <td>{{"扶贫管理处"}}</td>
@@ -3810,11 +3810,9 @@
 <script id = "selectTown" type="text/html">
     <div class="select-switch">
         <select name="selectTown">
-            <option value="1">莫力达瓦达翰尔族自治旗</option>
-            <option value="2">汉古尔镇</option>
-            <option value="3">尼尔基镇</option>
-            <option value="4">希尔图镇</option>
-            <option value="5">宝山镇</option>
+            {{each totalList as list}}
+                <option value="{{list.id}}">{{list.name}}</option>
+            {{/each}}
         </select>
         <em class="down-angle"></em>
     </div>

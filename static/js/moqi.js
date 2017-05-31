@@ -632,32 +632,32 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             mapApi.getData();
         })
         //切换头部标签
-        // $("#tab").on("click","li", function(){
-        //
-        //     //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
-        //         if (!$(this).attr('class')) {
-        //             return;
-        //         }
-        //     //---暂时代码
-        //     var activeBool = $(this).hasClass("active");
-        //     if(!activeBool){
-        //         $("#rightSide").empty();
-        //         $(this).addClass("active");
-        //         $(this).siblings("li").removeClass("active")
-        //     }
-        //     if($(this).hasClass("homepage")){//点击首页按钮
-        //         api.getHomePage(area);
-        //
-        //     }else if($(this).hasClass("poverty")){//点击贫困家庭按钮
-        //             api.getDisease();
-        //
-        //     }else if($(this).hasClass("fivePeople")){//---------------点击五人小组按钮----------------
-        //         api.getFiveGroup(area);
-        //     }else{
-        //         $("#leftTabs").addClass("hide");
-        //
-        //     }
-        // });
+        $("#tab").on("click","li", function(){
+
+            //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
+                if (!$(this).attr('class')) {
+                    return;
+                }
+            //---暂时代码
+            var activeBool = $(this).hasClass("active");
+            if(!activeBool){
+                $("#rightSide").empty();
+                $(this).addClass("active");
+                $(this).siblings("li").removeClass("active")
+            }
+            if($(this).hasClass("homepage")){//点击首页按钮
+                api.getHomePage(area);
+
+            }else if($(this).hasClass("poverty")){//点击贫困家庭按钮
+                    api.getDisease();
+
+            }else if($(this).hasClass("fivePeople")){//---------------点击五人小组按钮----------------
+                api.getFiveGroup(area);
+            }else{
+                $("#leftTabs").addClass("hide");
+
+            }
+        });
         //贫困家庭右侧栏tab切换
         $("#leftTabs").on("click","span",function(){
             if(!$(this).hasClass("active")){
@@ -910,23 +910,32 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                 $.getJSON("../js/json/mapPeopleDetail.json",function(res){
                                     var data={};
                                     var _data = data.data = res[area][mapApi.curr_path_id];
-                                    // var totalList = data.list;
+                                    data.totalList = res[area].list;
                                     var membersTemp = template("villageTemp", data);
-                                    var titleHtml = template("selectTown",{});
+                                    var titleHtml = template("selectTown",data);
                                     var html = titleHtml +"<div>"+membersTemp+"</div>";
                                         html += "<ul class='page'></ul>";
                                     $.jBox(html, { title: "", buttons: {}, border: 0, opacity: 0.4 });
                                     // document.getElementsByClassName('jbox-content')[1].innerHTML = html;
+                                    document.getElementsByTagName('body')[0].style.padding = "0";
                                     // 获取表格容器
                                     var container = $('.jbox-content>div').eq(1);
                                     jpage.page(_data,"villageTemp",container,10);
-                                    document.getElementsByTagName('body')[0].style.padding = "0";
-                                    // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                                    //设置弹窗top值
-
+                                    //设置已选中村的option
+                                    $(".select-switch").find("option[value='"+mapApi.curr_path_id+"']").attr("selected","selected");
+                                    //绑定select切换事件
+                                    $(".select-switch select").on("change",function(){
+                                        var curVillage = $(this).val();
+                                        //重置分页
+                                        $(".page").html("");
+                                        var newData = res[area][curVillage];
+                                        var membersTemp = template("villageTemp", newData);
+                                        $('.jbox-content>div').eq(1).html("").html(membersTemp);
+                                        jpage.page(newData,"villageTemp",container,10);
+                                    })
                                     //家庭列表绑定点击事件
-                                    $(".jbox-content>div").on("click","tr",function() {
-                                        var text = $("#tab li.active").text();
+                                    container.on("click","tr",function() {
+                                        var text = $("#tab").find("li.active").text();
                                         var name = $(this).find("td:eq(1)").text();
                                         var family = data.data.filter(function(a) {
                                             return a.name == name;
@@ -958,9 +967,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                         }
                                     });
                             })
-
                         }
-
                     });
 
 

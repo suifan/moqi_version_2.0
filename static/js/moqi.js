@@ -778,17 +778,18 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                       //鼠标点击地图
                     oSvg.on("click", ".validMap", function(event) {
                         event.stopPropagation();
-                        if (mapApi.curr_path_id) {
+                        if (mapApi.curr_path_id==this.id) {
                             //如果有当前id 已选中某镇
-                            if (mapApi.curr_path_id != this.id) {
-                                //oSvg.find(".validMap").css("fill", mapApi.outColor);
-                                mapApi.curr_path_id = false;
-                                area = "moqi";
-                                mapApi.getData();
-                                $(".map-links").removeClass("show");
-                                mapApi.hoverLock = true;
-                                return false;
-                            }
+                            // if (mapApi.curr_path_id != this.id) {
+                            //     //oSvg.find(".validMap").css("fill", mapApi.outColor);
+                            //     mapApi.curr_path_id = false;
+                            //     area = "moqi";
+                            //     mapApi.getData();
+                            //     $(".map-links").removeClass("show");
+                            //     mapApi.hoverLock = true;
+                            //     return false;
+                            // }
+                            return;
                         } else {
                             //如果没有当前id;未选中镇
                             mapApi.hoverLock = false;

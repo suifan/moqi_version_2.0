@@ -908,16 +908,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                     oSvg.on('click', '.validMap', function(event) {
                         event.stopPropagation();
-                        if (mapApi.curr_path_id&&mapApi.curr_path_id != this.id) {
-                            //如果有当前id 已选中某镇
-                            
-                                //oSvg.find('.validMap').css('fill', mapApi.outColor);
-                                mapApi.curr_path_id = false;
-                                $(".map-tips").removeClass('show');
-                                mapApi.hoverLock = true;
-                                
-                            
-                        } else {
+                       
                             //如果没有当前id;未选中镇
                             mapApi.hoverLock = false;
                             //oSvg.find('.validMap').css('fill', mapApi.outColor);
@@ -989,7 +980,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                         }
                                     });
                             })
-                        }
+                        
                     });
 
 

@@ -713,6 +713,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             "init": function() {
                 mapApi.getMap($("#moqi"));
                 mapApi.goBack();
+                //mapApi.poorRate();
             },
 
             // 返回莫旗大地图
@@ -1015,7 +1016,28 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     mapApi.curr_path_id=false;
                 },
 
+            "poorRate":function(){
+                    var poordata={
+                        "nierjizhen":"1%",
+                        "baoshanzhen":"3%",
+                        "dengteke":"5%",
+                        "xiwaertuzhen":"11%",
+                    }
+                    for (var key in poordata) {
 
+                        console.log("1%"<0.03);
+
+                        if(parseInt(poordata[key])<=1){
+                            $('#'+key).addClass('colorL');
+                        }else if(parseInt(poordata[key])>=5){
+                            $('#'+key).addClass('colorL');
+                           // alert(key);
+                        }else{
+                            //$('#'+key).addClass('colorL');
+                            console.log(key);
+                        }
+                    }
+            },
         }; //mapApi
         //初始化地图方法；
         mapApi.init();

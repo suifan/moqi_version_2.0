@@ -359,7 +359,7 @@ define(['echarts'],function(echarts){
      * @pieData.data  : 数据
      * @pieData.yAxisData : Y轴坐标轴字段
      */
-    var lineChart = function(id,barData){
+    var lineChart = function(id,data){
         var chart = echarts.init(document.getElementById(id));
         chart.setOption(
             {
@@ -372,13 +372,14 @@ define(['echarts'],function(echarts){
                 },
                 grid: {
                     top:40,
-                    left: 20,
+                    left: 40,
                     height: '50%'
                 },
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    formatter: '{b}<br/>签约数量：{c}'
                 },
-                xAxis:  {
+                xAxis: {
                     axisLine:{
                         lineStyle:{
                             color:'#666'
@@ -386,7 +387,7 @@ define(['echarts'],function(echarts){
                     },
                     type: 'category',
                     boundaryGap: false,
-                    data: ['周一','周二','周三','周四','周五']
+                    data: data.xArr
                 },
                 yAxis: {
                     type: 'value',
@@ -407,9 +408,9 @@ define(['echarts'],function(echarts){
                 },
                 series: [
                     {
-                        name:'最高气温',
+                        name:'签约数量',
                         type:'line',
-                        data:[0, 11, 15, 13, 12],
+                        data:data.yArr,
                         lineStyle: {
                             normal:{
                                 color: '#2fd819',

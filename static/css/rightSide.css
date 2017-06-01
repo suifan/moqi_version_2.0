@@ -104,17 +104,21 @@
     font-size:.9vw;
     padding: 0 .1vw;
 }
-#seriousDisease .content-top {
+#seriousDiseaseRight .content-top {
     height: 11vw;
 }
-#seriousDisease .content p {
+#seriousDiseaseRight .content p {
     position: relative;
     top: 4.6vw;
     left: 6vw;
     width: 10vw;
     font-size: 1vw;
 }
-#seriousDisease .content-bottom {
+#seriousDiseaseRight .content>div {
+    background: rgba(255,255,255,.1);
+    overflow: hidden;
+}
+#seriousDiseaseRight .content-bottom {
     height: 6vw;
     width: 10vw;
     float: right;
@@ -123,6 +127,15 @@
     height: 15vw;
     width: 100%;
 }
+#diseaseStructureChartRight{
+    height: 15vw;
+    width: 100%;
+}
+#diseaseStructureRight .content>div {
+    /*height: 12vw;*/
+    background: rgba(255,255,255,.1);
+}
+
 #diseaseIncidence .content p{
     font-weight: bold;
     line-height: 9vw;
@@ -130,6 +143,10 @@
     font-size: 1.1vw;
     display: inline-block;
 
+}
+#diseaseIncidence .content>div{
+    background: rgba(255,255,255,.1);
+    overflow: hidden;
 }
 #diseaseIncidenceChart{
     height: 9vw;

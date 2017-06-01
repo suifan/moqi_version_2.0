@@ -408,12 +408,14 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }
             charts.labelPie("diseaseStructureChart",diseaseStructure);
             var chartData_x = ["高血压","糖尿病","结核病","重症精神病"];
-            var charData_y = ['2212','2212','2212','2212']
+            var charData_y = ['2212','2212','2212','2212'];
             chart.barChart("keyPopulationChart",chartData_x,charData_y);
+
             //右侧---------end
             //右侧--------------------start
+            //五人小组统计
             $('#rightSide').html(template('povertyRightSideTemp_disease', {}));
-            var diseaseStructure = {
+            var structure = {
                 color:['#3cb7f6','#23abf6','#1991d4','#1578ae','#136d9e','#105e88'],
                 data:[
                     {value:532, name:'五人小组'},
@@ -424,8 +426,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     {value:69, name:'村支书'}
                 ],
             };
-            charts.labelPieChart("fiveGroupSumChart",diseaseStructure);
-            chart.pieChart("fiveGroupCoverRate","#1fa9f4","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%');
+            charts.labelPieChart("fiveGroupSumChart",structure);
+            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%');
             /*var diseaseIncidence = {
                 color:['#ff5232','#1996e6','#ff5232','#1996e6'],
                 label: {
@@ -441,7 +443,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 radius: ['50%', '70%'],
                 center:["50%","50%"]
             };*/
-            var diseaseIncidence = {
+            var documentSum = {
                 color:['#abfb06','#1ff4be','#c4572e','#387b14'],
                 data:[
                     {value:532, name:'五人小组'},
@@ -453,8 +455,32 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 center:["50%","50%"],
                 formatter:"{b}\n{c}\n({d}%)"
             };
-            charts.labelPieChart("diseaseStructureChart",diseaseIncidence)
-            charts.lineChart("diseaseIncidenceChart");
+            charts.labelPieChart("diseaseStructureChartRight",documentSum);
+            $.ajax({
+                type:'GET',
+                url:'http://api.homedoctor.grdoc.org/government/get-this-week-sign',
+                dataType:'json',
+                data:{
+                    province:'内蒙古',
+                    city:'呼伦贝尔',
+                    region:'莫力达瓦达斡尔族自治旗'
+                },
+                success:function(res){
+                    var lineData = {};
+                    if(res){
+                        var _data= res.data;
+                        var xArr = [];
+                        var yArr = [];
+                        for(var i=0;i<_data.length;i++){
+                            xArr.push(_data[i].date);
+                            yArr.push(_data[i].signing_total_number);
+                        }
+                        lineData.xArr = xArr;
+                        lineData.yArr = yArr;
+                        charts.lineChart("diseaseIncidenceChart",lineData);
+                    }
+                }
+            })
             //右侧--------------------end
 
             //左侧--------------------end

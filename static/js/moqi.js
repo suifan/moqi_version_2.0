@@ -228,7 +228,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 data.list = res.povertyNews["moqi"];
                 $('.bottom').html(template('rebuildTemp', {}));
             });
-            //扶贫动态按钮点击事件
+            //易地动态按钮点击事件
             $(".bottom-head").on("click",function(){
                 var $this = $(this).siblings(".bottom-content");
                 $this.slideToggle(function(){
@@ -457,7 +457,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             var chartData_x = ["高血压","糖尿病","结核病","重症精神病"];
             var charData_y = ['2212','2212','2212','2212'];
             chart.barChart("keyPopulationChart",chartData_x,charData_y);
-
             //右侧---------end
             //右侧--------------------start
             //五人小组统计
@@ -581,7 +580,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------start
             //获取首页左侧数据
             $('#leftSide').html(template('educationLeftSideTemp',{}));
-            chart.barChart("annualBar",["11","22","33"],[100,200,300])
+            var dataObj = {
+                xArr:["2016年","2017年","2018年"],
+                data:[100,200,300],
+                titleBool:true
+            };
+            chart.blueBarChart("annualBar",dataObj)
             /*$.ajaxSettings.async = false;
             var dataLeft={},targetChart={};
             $.getJSON("../js/json/homePage/basicInfoV2.json",function(res){
@@ -833,6 +837,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
+                $("#whole").hide();
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
@@ -840,10 +845,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }else if($(this).hasClass("government")){//党建促脱贫
 
             }else if($(this).hasClass("health")){//健康脱贫
+                $(".mapBox").show();
+                $("#leftSide").show();
+                $("#rightSide").show();
+                $("#whole").hide();
                 api.getDisease();
             }else if($(this).hasClass("ecology")){//生态脱贫
 
             }else if($(this).hasClass("education")){//教育脱贫
+                $("#leftSide").show();
+                $("#whole").hide();
                 api.getEducation();
             }else if($(this).hasClass("doudi")){//兜底脱贫
                 api.getFiveGroup();

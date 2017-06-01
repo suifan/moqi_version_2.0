@@ -4,7 +4,7 @@
 #leftSide .header h2 {
     display: inline-block;
 }
-/*教育脱贫*/
+/*教育扶贫----end----*/
 #leftSide .content.goverment-help {
 
 }
@@ -15,12 +15,56 @@
 #govermentHelpChart {
     height: 14vw;
 }
+#govermentHelpChart>div {
+    height: 14vw;
+    width: 14vw;
+    background: #0fc2e4;
+    border-radius: 7vw;
+    margin: 0 auto;
+    text-align: center;
+}
+#govermentHelpChart>div p {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1.4vw;
+}
+#rightContent {
+    position: relative;
+    left: 3vw;
+}
+.rightContent-title {
+    width: 62vw;
+    background: #000;
+    padding: 1vw;
+    overflow: hidden;
+    /* margin-left: 2vw; */
+}
+.rightContent-body {
+    width: 62vw;
+    height: 26vw;
+    background: blue;
+    overflow: hidden;
+    padding: 1vw;
+    margin-top: 1vw;
+}
+.rightContent-title>div {
+    display: inline-block;
+    border-radius: 4px;
+    float: left;
+    background: #0068b7;
+    margin: .4vw;
+    padding: .2vw;
+    color: #efefef;
+}
 .annual-bar {
     background: rgba(255,255,255,.1);
 }
 #annualBar {
     height: 10vw;
 }
+/*教育扶贫----end----*/
 .switch-head {
     display: inline-block;
     position: absolute;

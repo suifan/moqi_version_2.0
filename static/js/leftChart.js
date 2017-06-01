@@ -170,21 +170,21 @@ define(['echarts'],function(echarts){
     /**
      * 教育统计条形图
      * @param id
-     * @param data
+     * @param obj chart结构参数
      */
-    var barChart = function(id,dataArr){
+    var blueBarChart = function(id,obj){
         var barchart = echarts.init(document.getElementById(id));
         // var towns = ["尼尔基镇", "西瓦尔图镇", "拉杜尔鄂温族乡","拉杜尔鄂","拉杜", "拉杜克民族乡", "反政府武装", "西瓦尔图镇", "拉杜尔鄂乡", "拉杜克民族乡", "反政府武装","伊拉克", "美国", "北京", "登特办事处", "坤米尔", "办事粗"];
         barchart.setOption({
             title : {
-                text: '年总额(单位：万)',
+                text: '总额(单位：万元)',
                 textAlign:'left',
                 textStyle:{
-                    color:'#fff',
+                    color:'#1287b3',
                     fontSize: 10
                 },
-                right: 0,
-                show: dataArr.titleBool
+                left: 0,
+                show: obj.titleBool
             },
             color: ['#3398DB'],
             tooltip : {
@@ -208,10 +208,10 @@ define(['echarts'],function(echarts){
             xAxis : [
                 {
                     type : 'category',
-                    data : towns,
+                    data : obj.xArr,
                     axisLabel: {
                         textStyle: {
-                            color: "#fff"
+                            color: "#1287b3"
                         },
                         interval:0,
                         formatter: function (val) {
@@ -222,6 +222,16 @@ define(['echarts'],function(echarts){
                             }
                             return val;
                         }
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle:{
+                            color:'#1287b3',
+                            width:2
+                        }
+                    },
+                    axisTick: {
+                        show: false
                     }
                 }
             ],
@@ -236,13 +246,18 @@ define(['echarts'],function(echarts){
                         show: false
                     },
                     axisLine: {
-                        show: false,
+                        show: true,
+                        lineStyle:{
+                            color:'#1287b3',
+                            width:2
+                        }
                     },
                     splitLine: {
                         lineStyle: {
-                            color: "#3a4146",
+                            color: "#1287b3",
                             width: 1
-                        }
+                        },
+                        show:false
                     }
                 }
             ],
@@ -254,7 +269,7 @@ define(['echarts'],function(echarts){
                     label: {
                         normal: {
                             show: true,
-                            position: 'inside'
+                            position: 'top'
                         }
                     },
                     itemStyle: {
@@ -271,7 +286,7 @@ define(['echarts'],function(echarts){
                             color: []
                         }
                     },
-                    data:data
+                    data:obj.data
                 }
             ]
         })
@@ -402,6 +417,7 @@ define(['echarts'],function(echarts){
     return {
         'pieChart': pieChart,
         'barChart': barChart,
-        'poorChart': outPovertyChart
+        'poorChart': outPovertyChart,
+        'blueBarChart':blueBarChart
     }
 })

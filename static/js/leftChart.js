@@ -56,6 +56,13 @@ define(['echarts'],function(echarts){
         });
         resize_window(pieChart);
     };
+    /**
+     * 底部条形图
+     * @param id
+     * @param towns
+     * @param data
+     * @param titleBool
+     */
     var barChart = function(id,towns,data,titleBool){
         var barchart = echarts.init(document.getElementById(id));
         // var towns = ["尼尔基镇", "西瓦尔图镇", "拉杜尔鄂温族乡","拉杜尔鄂","拉杜", "拉杜克民族乡", "反政府武装", "西瓦尔图镇", "拉杜尔鄂乡", "拉杜克民族乡", "反政府武装","伊拉克", "美国", "北京", "登特办事处", "坤米尔", "办事粗"];
@@ -159,7 +166,116 @@ define(['echarts'],function(echarts){
                 }
             ]
         })
-    }
+    };
+    /**
+     * 教育统计条形图
+     * @param id
+     * @param data
+     */
+    var barChart = function(id,dataArr){
+        var barchart = echarts.init(document.getElementById(id));
+        // var towns = ["尼尔基镇", "西瓦尔图镇", "拉杜尔鄂温族乡","拉杜尔鄂","拉杜", "拉杜克民族乡", "反政府武装", "西瓦尔图镇", "拉杜尔鄂乡", "拉杜克民族乡", "反政府武装","伊拉克", "美国", "北京", "登特办事处", "坤米尔", "办事粗"];
+        barchart.setOption({
+            title : {
+                text: '年总额(单位：万)',
+                textAlign:'left',
+                textStyle:{
+                    color:'#fff',
+                    fontSize: 10
+                },
+                right: 0,
+                show: dataArr.titleBool
+            },
+            color: ['#3398DB'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                formatter: function (params) {
+                    var tar = params[0];
+                    return tar.name + ':' + tar.data;
+                }
+            },
+            grid: {
+                left: '0%',
+                right: '2%',
+                bottom: '3%',
+                height: '80%',
+                //width: "100%",
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : towns,
+                    axisLabel: {
+                        textStyle: {
+                            color: "#fff"
+                        },
+                        interval:0,
+                        formatter: function (val) {
+                            //return val.name.replace(/(.{5})/g,'$1\n'); // 让series 中的文字进行换行
+                            if (val.length > 4) {
+                                var _val = val.substring(0, 5) + "\n"+val.substring(5);  // 让series 中的文字超出5个显示...
+                                return _val;
+                            }
+                            return val;
+                        }
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    show : true,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLabel: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "#3a4146",
+                            width: 1
+                        }
+                    }
+                }
+            ],
+            series : [
+                {
+                    name:'',
+                    type:'bar',
+                    barWidth: '60%',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 1, 0, 0,
+                                [
+                                    {offset: 0, color: '#1287b3'},//颜色参数
+                                    {offset: 1, color: '#0ed1f1'}
+                                ]
+                            )
+                        },
+                        emphasis: {
+                            color: []
+                        }
+                    },
+                    data:data
+                }
+            ]
+        })
+    };
     var outPovertyChart = function(id,data){
         var barchart = echarts.init(document.querySelector("#jbox #"+id));
         barchart.setOption({

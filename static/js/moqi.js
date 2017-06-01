@@ -146,6 +146,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             chart.barChart("poverty_status",["因病","因学","因灾","缺土地","缺水","缺技术","缺劳力","缺资金","交通条件落后","自身动力不足"],[111,222,333,222,111,111,222,333,444,223]);
         },
         'getFiveGroup': function(switchFlag){
+            //产业扶贫底部
             $("#leftTabs").addClass("hide");
             // $("#leftOperation").addClass("hide");
             // $("#sevenStepsTab").removeClass("hide");
@@ -153,7 +154,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $.getJSON("../js/json/fiveGroup/fivegroup_right.json",function(res){
                 var data = res[area];
                 $('#rightSide').html(template('sevenStepsRightSideTemp', data));
-
                 charts.gauge("putOnRecordChart",{value:data.healthPoint,color:'#83ea43',dataValue:data.healthPoint*100});
                 charts.gauge("diagnosisChart",{value:data.diagnosisPoint,color:'#fd8320',dataValue:data.diagnosisPoint*100});
                 charts.labelPie("healthChart",{color:["#f84c24","#fde101","#83d130","#0786ef"],data:data.healthDetail});
@@ -173,7 +173,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $.getJSON("../js/json/fiveGroup/helpDynamic.json",function(res){
                 var data={};
                 data.list = res.povertyNews["moqi"];
-                $('.bottom').html(template('helpDynamicTemp', data));
+                $('.bottom').html(template('rebuildTemp', {}));
             });
             //扶贫动态按钮点击事件
             $(".bottom-head").on("click",function(){
@@ -181,10 +181,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $this.slideToggle(function(){
                     var showBool = $this.is(":visible");
                     if(!showBool&&window.timeOut){
-                        clearTimeout(timeOut);
+                        // clearTimeout(timeOut);
                     }else{
-                        api.slide("slideBox","box-wrapper");
+                        // api.slide("slideBox","box-wrapper");
                         // chart.barChart("doctorSign");
+                    }
+                    $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                    if($(".bottom-head").hasClass("active")){
+                        $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                    }else{
+                        $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
                     }
                 });
             });
@@ -192,7 +198,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //弹窗部分代码
 
             //建档情况
-            $("#openDoc").on("click", function () {
+            /*$("#openDoc").on("click", function () {
                 var $pop = api.openPopWindow("建档情况");
                 $.getJSON("../js/json/fiveGroup/recordJbox.json",function(res){
                     if(res&&res[area]){
@@ -273,7 +279,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         charts.pieChart('docChart',true,docData)
                     }
                 });
-            });
+            });*/
             //个人中心
             /*$("#openPerinfo").on("click", function () {
                 $.jBox('', {title: "李茜茜", buttons: {}, border: 0, opacity: 0.4});
@@ -288,7 +294,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 document.getElementsByClassName('jbox-content')[0].innerHTML = html;
             })*/
             //村贫困家庭表单
-            $("#openPoorInfo").on("click", function () {
+            /*$("#openPoorInfo").on("click", function () {
                 $.jBox('', {title: "", buttons: {}, border: 0, opacity: 0.4});
                 document.getElementsByTagName('body')[0].style.padding="0";
                 // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
@@ -299,7 +305,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 title.style.textAlign ="left";
                 var html = template('personalTemp',{});
                 document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-            })
+            })*/
         },
         'getFiveLeft': function(switchFlag){
             $.getJSON("../js/json/fiveGroup/fivegroup_left.json",function(res){
@@ -351,7 +357,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             });
         },
-        'getDisease': function(){
+        'getDisease': function(){//健康扶贫模块
             // $("#leftTabs").removeClass("hide");
             // $("#leftOperation").addClass("hide");
             // $("#sevenStepsTab").addClass("hide");
@@ -386,7 +392,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             })
             var diseaseStructure = {
                 // legend:["高血压","脑血管病","糖尿病","冠心病","脑梗","布病","类风湿性关节炎","关节病","胆囊炎","心肌病","肺结核","腰间盘突出","其他"],
-                color:['#72cbf6','#5fc4f6','#4fbdf5','#3cb7f6','#30b2f6','#23abf6','#1ba2ef','#1991d4','#1784c1','#1578ae','#136d9e','#116794','#105e88'],
+                color:['#3cb7f6','#1991d4','#1578ae','#116794','#105e88'],
                 center:["45%","45%"],
                 radius:["30%","50%"],
                 data:[
@@ -394,15 +400,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     {value:275, name:'脑血管病'},
                     {value:191, name:'糖尿病'},
                     {value:164, name:'冠心病'},
-                    {value:117, name:'脑梗'},
-                    {value:69, name:'布病'},
-                    {value:63, name:'类风湿性关节炎'},
-                    {value:57, name:'关节病'},
-                    {value:46, name:'胆囊炎'},
-                    {value:43,name:"心肌病"},
-                    {value:43,name:"肺结核"},
-                    {value:36,name:"腰间盘突出"},
-                    {value:1720,name:"其他"}
+                    {value:117, name:'脑梗'}
                 ],
                 total:"3356"
             }
@@ -427,6 +425,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 ],
             };
             charts.labelPieChart("fiveGroupSumChart",structure);
+            //五人小组覆盖率
             chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%');
             /*var diseaseIncidence = {
                 color:['#ff5232','#1996e6','#ff5232','#1996e6'],
@@ -486,7 +485,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------end
 
             //底部--------------------start
-            $.getJSON("../js/json/fiveGroup/helpDynamic.json",function(res){
+            /*$.getJSON("../js/json/fiveGroup/helpDynamic.json",function(res){
                 var data={};
                 data.list = res.povertyNews["moqi"];
                 $('.bottom').html(template('helpDynamicTemp', data));
@@ -503,7 +502,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         // chart.barChart("doctorSign");
                     }
                 });
-            });
+            });*/
             //底部--------------------end
 
         },//大病结构方法
@@ -511,7 +510,91 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
         },
         'getEducation':function(){
-            $.getJSON("../js/json/povertyFamily/education.json",function(data){
+            $(".mapBox").hide();
+            $("#rightSide").hide();
+            // $("#leftTabs").addClass("hide");
+            //右侧--------------------start
+            /*$.getJSON("../js/json/homePage/dutyHost.json",function(data){
+                if(data) {
+                    $('#rightSide').html(template('homepageRightSideTemp', data[area]));
+                    //进度条生成
+                    $("#performance").find(".progressBar").each(function(){
+                        var percent = $(this).find(".progressRate").text();
+                        progressBar.generate($(this),percent);
+                    })
+                }
+                $(".command").viewer();
+                $(".management").viewer();
+            })*/
+
+            //右侧--------------------end
+
+            //左侧--------------------start
+            //获取首页左侧数据
+            $('#leftSide').html(template('educationLeftSideTemp',{}));
+            chart.barChart("annualBar",["11","22","33"],[100,200,300])
+            /*$.ajaxSettings.async = false;
+            var dataLeft={},targetChart={};
+            $.getJSON("../js/json/homePage/basicInfoV2.json",function(res){
+                dataLeft['basicInfo']=res.basic_info[area];
+            });
+            $.getJSON("../js/json/homePage/targetV2.json",function(res){
+                targetChart=res.overcome_poverty_aim[area].aim;
+            });
+            $('#leftSide').html(template('homepageLeftSideTemp',dataLeft));
+            var chartData={};
+            chartData.color=["#1fa9f4","#0cb871"];
+            chartData.yAxisData = [2017,2018,2019];
+            var people = [],family = [];
+            for(var i=0,length=targetChart.length;i<length;i++){
+                family.push(targetChart[i].house_num);
+                people.push(targetChart[i].person_num);
+            }
+            chartData.data=[{name:"目标户数",type:"bar",data:family, barMaxWidth:10},{name:"目标人数",type:"bar",data:people, barMaxWidth:10}]
+            charts.xBarChart("targetChart",chartData)*/
+
+            // $('#leftSide').html(template('homepageLeftSideTemp', data));
+
+            //左侧--------------------end
+
+            //底部--------------------start
+            $('.bottom').html(template('povertyStatus', {}));
+            // bottomBind();
+            //家医签约按钮点击事件
+            $(".bottom-head").on("click",function(){
+                var $this = $(this).siblings(".bottom-content");
+                $this.slideToggle(function(){
+                    var showBool = $this.is(":visible");
+                    if(!showBool&&window.timeOut){
+                        clearTimeout(timeOut);
+                    }else{
+                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                        if($(".bottom-head").hasClass("active")){
+                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                        }else{
+                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                        }
+                        api.slide("slideBox_r","box-wrapper",1900);
+                        api.getPovertyDistribution();
+                    }
+                });
+            });
+            //贫困状况切换标题
+            $(".bottom-header ul").on("click","li", function(){
+                var activeBool = $(this).hasClass("click-active");
+                if(!activeBool){
+                    $(this).addClass("click-active");
+                    $(this).siblings("li").removeClass("click-active");
+                    if($(this).hasClass("povertyDistribution")){
+                        api.getPovertyDistribution();
+                    }else {
+                        api.getPovertyCauses();
+                    }
+                }
+            });
+            //底部--------------------end
+        },
+            /*$.getJSON("../js/json/povertyFamily/education.json",function(data){
                 $('#rightSide').html(template('povertyRightSideTemp_education', data[area]));
                 var eduData = {
                     legend:['学龄前儿童', '小学', '初中', '高中', '大专及以上', '文盲及半文盲'],
@@ -527,8 +610,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
                 charts.fullPieChart("educationStructureChart",eduData)
             });
-
-        },
+*/
         'getSex':function(){
             $.getJSON("../js/json/povertyFamily/sex.json",function(data){
                 if(data){
@@ -707,17 +789,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             }else if($(this).hasClass("health")){//健康脱贫
                 api.getDisease();
-
             }else if($(this).hasClass("ecology")){//生态脱贫
 
             }else if($(this).hasClass("education")){//教育脱贫
-
+                api.getEducation();
             }else if($(this).hasClass("doudi")){//兜底脱贫
-
+                api.getFiveGroup();
             }
         });
         //贫困家庭右侧栏tab切换
-        $("#leftTabs").on("click","span",function(){
+        /*$("#leftTabs").on("click","span",function(){
             if(!$(this).hasClass("active")){
                 $("#rightSide").empty();
                 $(this).addClass("active").siblings().removeClass("active");
@@ -734,7 +815,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }else if($(this).hasClass("poverty")){//贫困结构
                 api.getPoverty(2);
             }
-        });
+        });*/
 
         $("#rightSide").on("click","#povertyStructure span",function(){
             if(!$(this).hasClass("active")&&$(this).text()=="人"){

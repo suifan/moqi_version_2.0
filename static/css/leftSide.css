@@ -4,6 +4,23 @@
 #leftSide .header h2 {
     display: inline-block;
 }
+/*教育脱贫*/
+#leftSide .content.goverment-help {
+
+}
+.top-title,.bottom-title {
+    text-align: center;
+    margin: 2vw 0;
+}
+#govermentHelpChart {
+    height: 14vw;
+}
+.annual-bar {
+    background: rgba(255,255,255,.1);
+}
+#annualBar {
+    height: 10vw;
+}
 .switch-head {
     display: inline-block;
     position: absolute;

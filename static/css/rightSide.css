@@ -135,7 +135,11 @@
     /*height: 12vw;*/
     background: rgba(255,255,255,.1);
 }
-
+#diseaseStructureChartRight + span {
+    position: absolute;
+    left: 11vw;
+    bottom: 8.6vw;
+}
 #diseaseIncidence .content p{
     font-weight: bold;
     line-height: 9vw;

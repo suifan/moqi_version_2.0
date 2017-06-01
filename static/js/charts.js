@@ -267,7 +267,7 @@ define(['echarts'],function(echarts){
                                 textStyle: {
                                     color:'#fff'
                                 },
-                                formatter:pieData.formatter || "{b}:{c}"
+                                formatter:pieData.formatter || "{b} :  {c}"
                             },
                             emphasis: {
                                 show: true

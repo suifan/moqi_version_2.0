@@ -105,6 +105,24 @@ header{
     margin-left: 1vw;
     margin-right: 1vw;
 }
+
+ #centerSide{
+
+   width: 38%;
+    height: 27.8vw;
+    margin-top: 0;
+    float: left;
+    margin-left: 3.2vw;
+    position: relative;
+    overflow-y: auto;
+  
+ }
+ #productionYieldChart,#productionInvestChart{
+    width: 100%;
+    height:11.2vw;
+ }
+
+
 #rightSide{
     float: right;
 }
@@ -366,6 +384,7 @@ ul.page {
      color: #26adff;
  }
 
+
  .relocateSection{
      width: 40%;
      display: inline-block;
@@ -392,3 +411,4 @@ ul.page {
     width:98%;
     height:12vw;
 }
+

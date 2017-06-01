@@ -213,6 +213,11 @@
     width: 2.7vw;
 }
 
+#productionNumChart {
+    height: 28vw;
+    width: 100%;
+}
+
 #leftTabs span{
     background: url(../images/leftTabs.png) .2vw 0 no-repeat;
     width: 100%;

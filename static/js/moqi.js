@@ -1,4 +1,4 @@
-/**
+    /**
  * Created by Administrator on 2017/5/17.
  */
 require.config({
@@ -577,6 +577,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //底部--------------------end
 
         },//大病结构方法
+
         'getEducation':function(){
             $(".mapBox").hide();
             $("#rightSide").hide();
@@ -594,6 +595,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".command").viewer();
                 $(".management").viewer();
             })*/
+        },
+
+        'getHealth': function(){
+
 
             //右侧--------------------end
 
@@ -777,6 +782,68 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
             })
         },
+        "getProduction":function(){
+            mapApi.mapPlay("none");
+            $('#centerSide').css('display','block');
+
+            //左侧 
+            $('#leftSide').html(template('productionLeftSideTemp', {}));
+
+            var poverty = {
+                legend:["尼尔基镇","宝山镇","西瓦尔图镇","红彦镇","塔温敖宝镇","腾克镇","汉古尔河镇","阿尔拉镇","奎勒河镇",
+                "哈达阳镇","巴彦乡","库如奇乡","杜拉尔乡","登特科办事处","额尔和办事处","卧罗河办事处","坤密尔提办事处"],
+                color:['#ffcf02','#00a7f8','#157dd0','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00'],
+                center:["45%","25%"],
+                radius:["30%","50%"],
+                data:[
+                    {value:532, name:''},
+                    {value:275, name:''},
+                    {value:191, name:''},
+                    {value:164, name:''},
+                    {value:117, name:''},
+                    {value:69, name:''},
+                    {value:63, name:''},
+                    {value:57, name:''},
+                    {value:46, name:''},
+                    {value:43,name:""},
+                    {value:43,name:""},
+                    {value:36,name:""},
+                    {value:1720,name:""}
+                ],
+                total:"3356"
+            }
+            charts.legendPie("productionTotalChart",poverty);
+            //左侧 end
+
+            //右侧 start
+            $('#rightSide').html(template('productionRightSideTemp', {}));
+
+            //右侧 end
+            charts.youChart("productionNumChart");
+
+            //中间 start
+            $('#centerSide').html(template('productionCenterSideTemp', {}));
+            var shouYiData={
+                title:'每户预计收益成效                                                  人民币 :  万元',
+                xNames:['种植养殖', '龙头企业合作社', '电商扶贫', '光伏扶贫'],
+                data:[0.5, 0.3, 0.2, 0.2],
+                 pointName:'收益万元数'
+            };
+             charts.centerChart("productionYieldChart",shouYiData);
+
+                var touZiData={
+                    title:'资金投入                                                                   人民币 :  万元',
+                    xNames:['种植养殖', '龙头企业合作社', '电商扶贫', '光伏扶贫'],
+                    data:[1874.360, 700, 300, 370],
+                    pointName:'投资数'
+                };
+
+             charts.centerChart("productionInvestChart",touZiData);
+            //中间 end
+            
+            
+        },
+
         /**
          * 轮播图方法
          * @param id 容器id
@@ -847,11 +914,17 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 if (!$(this).attr('class')) {
                     return;
                 }
+
             //---暂时代码
             var activeBool = $(this).hasClass("active");
             if(!activeBool){
                 $(this).addClass("active");
                 $(this).siblings("li").removeClass("active")
+            }
+            //map 的显示隐藏
+            if(!$(this).hasClass("production")){
+                mapApi.mapPlay("block");
+                $('#centerSide').css('display','none');
             }
             if($(this).hasClass("homepage")){//点击首页按钮
                 $(".mapBox").show();
@@ -861,7 +934,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
-
+                
+                api.getProduction();
             }else if($(this).hasClass("government")){//党建促脱贫
                 $(".mapBox").show();
                 $("#leftSide").show();
@@ -949,7 +1023,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 mapApi.goBack();
                 //mapApi.poorRate();
             },
-
+            "mapPlay":function(type){
+                //type= "block" || "none";
+                $('.mapBox').css('display',type);
+            },
             // 返回莫旗大地图
             "goBack":function(){
                 $('#map-goBack').on('click', function(event) {

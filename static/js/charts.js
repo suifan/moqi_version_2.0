@@ -238,6 +238,63 @@ define(['echarts'],function(echarts){
         );
         resize_window(labelPieChart);
     };
+
+    var legendPie = function(id,pieData) {
+        var legendPie = echarts.init(document.getElementById(id))
+        legendPie.setOption(
+            {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}<br/>{c}人<br/>{d}%"
+
+                },
+               legend: {
+                                   orient: 'horizontal',
+                                   bottom:'20',
+                                   right:'0',
+                                   itemHeight:'5',
+                                   itemWidth:5,
+                                   width:10,
+                                   textStyle:{
+                                       color:'#fff'
+                                   },
+                                   data:pieData.legend
+                               },
+                color: pieData.color,
+                series: [
+                    {
+                        type:'pie',
+                        center:pieData.center||["50%","60%"],
+                        radius: pieData.radius||['35%', '60%'],
+                        avoidLabelOverlap: true,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'outside',
+                                textStyle: {
+                                    color:'#fff'
+                                },
+                                formatter:"{b}{c}人"
+                            },
+                            emphasis: {
+                                show: true
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: true,
+                                lineStyle: {
+                                    color:'#fff'
+                                }
+                            }
+                        },
+                        data:pieData.data
+                    }
+                ]
+            }
+        );
+        resize_window(legendPie);
+    };
     /**
      * 显示label和labelline饼图(针对健康扶贫右侧)
      * @param id : string 图表容器
@@ -425,6 +482,185 @@ define(['echarts'],function(echarts){
     };
 
 
+    var centerChart = function(id,barData) {
+        var centerChart = echarts.init(document.getElementById(id));
+        centerChart.setOption(
+            {
+
+               title: {
+                       text: barData.title,
+                       
+                       textStyle: {
+                       color: '#00d4ff',
+                       fontStyle: 'normal',
+                       fontWeight: 'normal',
+                       fontFamily: 'sans-serif',
+                       fontSize: 14,
+                       },
+                   },
+
+                color: ['#00d4ff'],
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+
+                    xAxis : [
+                        {
+                            type : 'category',
+                            
+                            //data : ['种植养殖', '龙头企业合作社', '电商扶贫', '光伏扶贫'],
+                             data : barData.xNames,
+                            axisTick: {
+                                show:false,
+                                alignWithLabel: false
+                            },
+                            splitLine: {show:false},
+                             axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        }
+
+
+                        }
+                    ],
+                    yAxis : [
+                        {
+                           
+                            splitLine: {show:false},
+                            axisTick: {
+                                show: false,
+                            },
+                            axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        },
+                            axisLabel:{
+                                            show:false
+                            }
+                        },
+                        {
+                           
+                            splitLine: {show:false},
+                            axisTick: {
+                                show: false,
+                            },
+                            axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        },
+                            axisLabel:{
+                                            show:false
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            //name:'收益万元数',
+                            name:barData.pointName,
+                            type:'bar',
+                            barWidth: '40%',
+                            label:{
+                                normal:{
+                                    show:true,
+                                    position:'top'
+                                }
+                            },
+                            //data:[0.5, 0.3, 0.2, 0.2]
+                            data:barData.data
+
+                        }
+                    ]
+            }
+        );
+        resize_window(centerChart);
+    };
+
+    var youChart = function(id,barData) {
+        var youChart = echarts.init(document.getElementById(id));
+        youChart.setOption(
+            {
+                title: {
+                        text: '合计:5197户,12412人投入2947.36万元，预计每户收益1.2万元',
+                        textStyle: {
+                        color: '#00d4ff',
+                        fontStyle: 'normal',
+                        fontWeight: 'normal',
+                        fontFamily: 'sans-serif',
+                        fontSize: 12,
+                        },
+                    },
+                    color: ['#00d4ff'],
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    legend: {
+                        data: ['201年', '212年']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'value',
+                          splitLine: {show:false},
+                           axisTick: {
+                                show: false,
+                            },
+                        axisLine: {
+                                       lineStyle: {
+                                           color: '#3398DB'
+                                       }
+                                   },
+                        axisLabel:{
+                                            show:false
+                            },
+                        boundaryGap: [0, 0.01]
+                    },
+                    yAxis: {
+                        type: 'category',
+                         axisTick: {
+                                show: false,
+                            },
+                        data:['种植养殖', '龙头企业', '电商扶贫', '光伏扶贫'],
+                        axisLine: {
+                                       lineStyle: {
+                                           color: '#3398DB'
+                                       }
+                                   }
+                    },
+                    series: [
+                        {
+                            name: '',
+                            type: 'bar',
+                            barWidth: '40%',
+                            data: [182, 234, 290, 302]
+                        },
+                        
+                    ]
+            }
+        );
+        resize_window(youChart);
+    };
+
+
     /**
      * 轴线和bar同色的柱状图
      * @param id : string 图表容器
@@ -528,8 +764,15 @@ define(['echarts'],function(echarts){
         'labelPie':labelPie,
         'fullPieChart':fullPieChart,
         'xBarChart':xBarChart,
+        'legendPie':legendPie,
+        'centerChart':centerChart,
         'labelPieChart':labelPieChart,
+
         'lineChart':lineChart,
-        'colorLineChart':colorLineChart
+        'colorLineChart':colorLineChart,
+
+        'youChart':youChart,
+        'lineChart':lineChart
+
     }
 })

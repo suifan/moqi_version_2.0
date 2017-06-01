@@ -233,7 +233,7 @@ span.span-active {
     -o-transition: width 2s;
     transition: width 2s;
 }*/
-.second-sec .progress-title {
+.second-sec .progress-title { 
     display: inline-block;
     padding: 0 .3vw;
     color: #d4e4ff;
@@ -736,6 +736,7 @@ table tr:nth-child(even) td{
     height:10vw;
 }
 
+
 #basicBuilding p{
     text-align: center;
     color: #b6b6b6;
@@ -745,4 +746,9 @@ table tr:nth-child(even) td{
 #basicBuilding .content>div{
     background: rgba(255,255,255,.1);
     height:12vw;
+}
+#productionTotalChart {
+    height: 28vw;
+    width: 100%;
+
 }

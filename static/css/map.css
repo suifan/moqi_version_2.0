@@ -8,7 +8,8 @@
  }
  
  .body-bg {
-     background: url('../images/bg_img2.jpg') no-repeat center center;
+    /* background: url('../images/bg_img2.jpg') no-repeat center center;*/
+    background: url('../images/bg_img3.jpg') no-repeat center center;
      -webkit-background-size: 100%;
      height: 100vh;
  }

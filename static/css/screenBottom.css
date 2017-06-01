@@ -212,3 +212,21 @@
     float: left;
     overflow: hidden;
 }
+/*教育动态底部start*/
+#eduSlideBox .box-item {
+    width: 10vw;
+    height: 12.4vw;
+    display: table;
+    float: left;
+    margin: 0 2vw;
+}
+#eduSlideBox {
+    width: 86.8%;
+    padding: 1.72vw 0;
+    height: 12.4vw;
+    letter-spacing: 1.2px;
+    margin: 0 auto;
+    overflow: hidden;
+    float: none;
+}
+/*教育动态底部end*/

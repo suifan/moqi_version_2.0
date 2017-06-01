@@ -108,7 +108,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //底部--------------------start
             $('.bottom').html(template('povertyStatus', {}));
             // bottomBind();
-            //家医签约按钮点击事件
+            //底部按钮点击事件
             $(".bottom-head").on("click",function(){
                 var $this = $(this).siblings(".bottom-content");
                 $this.slideToggle(function(){
@@ -577,7 +577,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //底部--------------------end
 
         },//大病结构方法
-
         'getEducation':function(){
             $(".mapBox").hide();
             $("#rightSide").hide();
@@ -595,11 +594,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".command").viewer();
                 $(".management").viewer();
             })*/
-        },
-
-        'getHealth': function(){
-
-
+            $("#rightContent").html(template("educationRightSideTemp",{}));
+            $(".rightContent-title").on("click","div",function(){
+                var checkedBool = $(this).hasClass("active");
+                if(!checkedBool){
+                    $(this).addClass("active").siblings("div").removeClass("active");
+                }else{
+                    return;
+                }
+            });
+            $(".bottom").html("").html(template("eduHelpTemp",{}));
             //右侧--------------------end
 
             //左侧--------------------start
@@ -636,7 +640,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------end
 
             //底部--------------------start
-            $('.bottom').html(template('povertyStatus', {}));
+            // $('.bottom').html(template('povertyStatus', {}));
             // bottomBind();
             //家医签约按钮点击事件
             $(".bottom-head").on("click",function(){
@@ -646,14 +650,14 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
-                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                        // $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                         if($(".bottom-head").hasClass("active")){
                             $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
                         }else{
                             $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
                         }
-                        api.slide("slideBox_r","box-wrapper",1900);
-                        api.getPovertyDistribution();
+                        api.slide("eduSlideBox","box-wrapper",1900,7);
+                        // api.getPovertyDistribution();
                     }
                 });
             });
@@ -786,7 +790,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             mapApi.mapPlay("none");
             $('#centerSide').css('display','block');
 
-            //左侧 
+            //左侧
             $('#leftSide').html(template('productionLeftSideTemp', {}));
 
             var poverty = {
@@ -840,8 +844,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
              charts.centerChart("productionInvestChart",touZiData);
             //中间 end
-            
-            
+
+
         },
 
         /**
@@ -914,7 +918,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 if (!$(this).attr('class')) {
                     return;
                 }
-
             //---暂时代码
             var activeBool = $(this).hasClass("active");
             if(!activeBool){
@@ -927,14 +930,15 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $('#centerSide').css('display','none');
             }
             if($(this).hasClass("homepage")){//点击首页按钮
+                $("body>div").hide();
+                $(".bottom").show();
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
-                $("#whole").hide();
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
-                
+
                 api.getProduction();
             }else if($(this).hasClass("government")){//党建促脱贫
                 $(".mapBox").show();
@@ -944,26 +948,27 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getGovernment();
 
             }else if($(this).hasClass("health")){//健康脱贫
+                $("body>div").hide();
+                $(".bottom").show();
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
-                $("#whole").hide();
                 api.getDisease();
             }else if($(this).hasClass("ecology")){//生态脱贫
 
             }else if($(this).hasClass("education")){//教育脱贫
+                $("body>div").hide();
+                $(".bottom").show();
                 $("#leftSide").show();
-                $("#whole").hide();
+                $("#rightContent").show();
                 api.getEducation();
             }else if($(this).hasClass("doudi")){//兜底脱贫
                 api.getFiveGroup();
             }else if($(this).hasClass("relocate")){
-                $(".mapBox").hide();
-                $("#leftSide").hide();
-                $("#rightSide").hide();
-                $("#whole").show()
+                $("body>div").hide();
+                $("#whole").show();
+                $(".bottom").show();
                 api.getRelocate();
-
             }
         });
         //贫困家庭右侧栏tab切换

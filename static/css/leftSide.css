@@ -735,3 +735,14 @@ table tr:nth-child(even) td{
     width:90%;
     height:10vw;
 }
+
+#basicBuilding p{
+    text-align: center;
+    color: #b6b6b6;
+    line-height: 1.4vw;
+}
+
+#basicBuilding .content>div{
+    background: rgba(255,255,255,.1);
+    height:12vw;
+}

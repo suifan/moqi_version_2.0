@@ -1,110 +1,110 @@
 {
   "basic_info": {
     "moqi":{
-      "house_num": "12184",
-      "person_num": "4915",
+      "house_num": "4915",
+      "person_num": "12184",
       "cause_by_disease": "39.1%",
       "cause_by_field": "41.14%"
     },
     "nierjizhen":{
-      "house_num": "2160",
-      "person_num": "852",
+      "house_num": "852",
+      "person_num": "2160",
       "cause_by_disease": "41.1%",
       "cause_by_field": "42.17%"
     },
     "hongyanzhen":{
-      "house_num": "534",
-      "person_num": "257",
+      "house_num": "257",
+      "person_num": "534",
       "cause_by_disease": "48.2%",
       "cause_by_field": "50.82%"
     },
     "xiwaertuzhen":{
-      "house_num": "454",
-      "person_num": "192",
+      "house_num": "192",
+      "person_num": "454",
       "cause_by_disease": "30.0%",
       "cause_by_field": "32.23%"
     },
     "baoshanzhen":{
-      "house_num": "691",
-      "person_num": "285",
+      "house_num": "285",
+      "person_num": "691",
       "cause_by_disease": "52.2%",
       "cause_by_field": "52.53%"
     },
     "tawenaobaozhen":{
-      "house_num": "691",
-      "person_num": "234",
+      "house_num": "234",
+      "person_num": "691",
       "cause_by_disease": "21.1%",
       "cause_by_field": "25.28%"
     },
     "tengkezhen":{
-      "house_num": "1253",
-      "person_num": "457",
+      "house_num": "457",
+      "person_num": "1253",
       "cause_by_disease": "30.8%",
       "cause_by_field": "30.88%"
     },
     "bayanxiang":{
-      "house_num": "679",
-      "person_num": "334",
+      "house_num": "334",
+      "person_num": "679",
       "cause_by_disease": "39.5%",
       "cause_by_field": "39.76%"
     },
     "aerlazhen":{
-      "house_num": "286",
-      "person_num": "112",
+      "house_num": "112",
+      "person_num": "286",
       "cause_by_disease": "31.2%",
       "cause_by_field": "36.71%"
     },
     "dulaerxiang":{
-      "house_num": "179",
-      "person_num": "75",
+      "house_num": "75",
+      "person_num": "179",
       "cause_by_disease": "54.6%",
       "cause_by_field": "55.30%"
     },
     "hanguerhezhen":{
-      "house_num": "1020",
-      "person_num": "395",
+      "house_num": "395",
+      "person_num": "1020",
       "cause_by_disease": "30.1%",
       "cause_by_field": "31.07%"
     },
     "hadayangzhen":{
-      "house_num": "493",
-      "person_num": "189",
+      "house_num": "189",
+      "person_num": "493",
       "cause_by_disease": "30.1%",
       "cause_by_field": "29.41%"
     },
     "kuilehezhen":{
-      "house_num": "922",
-      "person_num": "349",
+      "house_num": "349",
+      "person_num": "922",
       "cause_by_disease": "32.0%",
       "cause_by_field": "31.56%"
     },
     "kuruquxiang":{
-      "house_num": "235",
-      "person_num": "94",
+      "house_num": "94",
+      "person_num": "235",
       "cause_by_disease": "56.3%",
       "cause_by_field": "54.04%"
     },
     "dengtekebanshichu":{
-      "house_num": "956",
-      "person_num": "394",
+      "house_num": "394",
+      "person_num": "956",
       "cause_by_disease": "31.4%",
       "cause_by_field": "30.75%"
     },
     "eerhebanshichu":{
-      "house_num": "582",
-      "person_num": "271",
+      "house_num": "271",
+      "person_num": "582",
       "cause_by_disease": "42.8%",
       "cause_by_field": "40.72%"
     },
     "woluohebanshichu":{
-      "house_num": "784",
-      "person_num": "266",
+      "house_num": "266",
+      "person_num": "784",
       "cause_by_disease": "25.5%",
       "cause_by_field": "27.04%"
     },
     "kunmierdibanshichu":{
-      "house_num": "342",
-      "person_num": "159",
+      "house_num": "159",
+      "person_num": "342",
       "cause_by_disease": "32.7%",
       "cause_by_field": "33.33%"
     }

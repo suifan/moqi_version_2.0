@@ -122,7 +122,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         }else{
                             $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
                         }
-                        api.slide("slideBox_r","box-wrapper",1900);
+                        // api.slide("slideBox_r","box-wrapper",1900);
                         api.getPovertyDistribution();
                     }
                 });
@@ -144,6 +144,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         },
         'getRelocate':function(){
             $("#whole").show().html(template('relocateTemp', {}));
+            $(".bottom").show().html(template('rebuildTemp', {}));
             var firstData = {
                 color:'#57d454',
                 title:'总量：2908 户',
@@ -188,9 +189,31 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 interval:1000
             }
             charts.colorLineChart("centerFundChart",fourthData);
+            $(".bottom-head").on("click",function(){
+                var $this = $(this).siblings(".bottom-content");
+                $this.slideToggle(function(){
+                    var showBool = $this.is(":visible");
+                    if(!showBool&&window.timeOut){
+                        // clearTimeout(timeOut);
+                    }else{
+                        api.slide("rebuildSlideBox", "box-wrapper", 1900,3);
+                    }
+                    $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                    if($(".bottom-head").hasClass("active")){
+                        $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                    }else{
+                        $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                    }
+                });
+            });
 
 
 
+
+
+        },
+        'getGovernment':function(){
+            $("#leftSide").html(template('governmentTemp_left', {}))
         },
         'getPovertyDistribution':function(){
             chart.barChart("poverty_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,222,333,222,111,111,222,333,444,223,554,323,1234,343,234,778,334]);
@@ -554,9 +577,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //底部--------------------end
 
         },//大病结构方法
-        'getHealth': function(){
-
-        },
         'getEducation':function(){
             $(".mapBox").hide();
             $("#rightSide").hide();
@@ -762,13 +782,13 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
          * @param id 容器id
          * @param wrapper 滚动元素父标签
          */
-        'slide':function(id,wrapper,time){
+        'slide':function(id,wrapper,time,num){
             var timeGap = time || 2200;
             var outerBox = $("#"+id);
             var innerBoxArr = outerBox.children("."+wrapper).children();
             var leng = innerBoxArr.length;
             // outerBox.children().animate({left:0},"fast")
-            if(leng<3)return;
+            if(leng<=num)return;
             // var i=1;
             var leftFlag = 0;
             var perWidth = innerBoxArr[0].offsetWidth;
@@ -843,6 +863,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }else if($(this).hasClass("production")){//产业扶贫
 
             }else if($(this).hasClass("government")){//党建促脱贫
+                $(".mapBox").show();
+                $("#leftSide").show();
+                $("#rightSide").show();
+                $("#whole").hide();
+                api.getGovernment();
 
             }else if($(this).hasClass("health")){//健康脱贫
                 $(".mapBox").show();
@@ -862,6 +887,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".mapBox").hide();
                 $("#leftSide").hide();
                 $("#rightSide").hide();
+                $("#whole").show()
                 api.getRelocate();
 
             }

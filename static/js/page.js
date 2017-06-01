@@ -21,11 +21,10 @@ define(['jquery','template'],function($,template){
             pageList.push("<li>"+(i+1)+"</li>");
         }
         pageList.push("<li>></li>");
-        $(".page").append(pageList.join(""));
-        $(".page li:eq(1)").addClass("curPage");
+        $(".page").append(pageList.join("")).find("li:eq(1)").addClass("curPage");
         _data.data= Array.prototype.slice.call(data,0,num);
         var html = template(tempId, _data);
-        $(place).html(html)
+        $(place).html(html);
         $(".page").on("click","li",function(){
             var pageNum =Math.ceil(data.length/num);
             var val = $(this).text();

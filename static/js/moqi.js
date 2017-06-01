@@ -938,13 +938,13 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
-
                 api.getProduction();
             }else if($(this).hasClass("government")){//党建促脱贫
+                $("body>div").hide();
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
-                $("#whole").hide();
+                // $("#whole").hide();
                 api.getGovernment();
 
             }else if($(this).hasClass("health")){//健康脱贫
@@ -955,7 +955,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $("#rightSide").show();
                 api.getDisease();
             }else if($(this).hasClass("ecology")){//生态脱贫
-
+                $("body>div").hide();
             }else if($(this).hasClass("education")){//教育脱贫
                 $("body>div").hide();
                 $(".bottom").show();
@@ -963,7 +963,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $("#rightContent").show();
                 api.getEducation();
             }else if($(this).hasClass("doudi")){//兜底脱贫
-                api.getFiveGroup();
+                $("body>div").hide();
+                // api.getFiveGroup();
             }else if($(this).hasClass("relocate")){
                 $("body>div").hide();
                 $("#whole").show();

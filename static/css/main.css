@@ -365,3 +365,30 @@ ul.page {
  .page .curPage{
      color: #26adff;
  }
+
+ .relocateSection{
+     width: 40%;
+     display: inline-block;
+     margin-bottom: .5vw;
+     margin-right: .5vw;
+     margin-left: .5vw;
+     text-align: left;
+ }
+ #whole{
+     text-align:center
+     
+ }
+.relocateSection p{
+    font-size: .9vw;
+    height: 2.8vw;
+    line-height: 1.3vw;
+}
+
+.relocateSection .content>div{
+    background: rgba(255,255,255,.1);
+
+}
+.relocateSection .content>div>div{
+    width:98%;
+    height:12vw;
+}

@@ -2814,7 +2814,7 @@
         <li class="government">党建促脱贫</li>
         <li class="production">产业扶贫</li>
         <li class="health">健康扶贫</li>
-        <li class="relocate">异地搬迁</li>
+        <li class="relocate">易地搬迁</li>
         <li class="ecology">生态扶贫</li>
         <li class="education">教育扶贫</li>
         <li class="doudi">兜底扶贫</li>
@@ -2839,9 +2839,14 @@
 <!--<div id="leftOperation"></div>&lt;!&ndash;首页左侧收起&ndash;&gt;-->
 <div id="rightSide"></div>
 <!--right end-->
+<!--left start-->
 <!--<div class="left-btn"></div>-->
 <div id="leftSide"></div>
 <!--left end-->
+<!--whole start-->
+<div id="whole"></div>
+<!--whole end-->
+
 <div class="bottom"></div>
 <!--家医签约-->
 <script src="../lib/require.js" data-main="../js/moqi"></script>
@@ -2878,6 +2883,7 @@
             <h2>指挥体系</h2>
         </div>
         <div class="content">
+            <img src="../images/homePage_commandV2.png" class="command_show" alt="指挥体系">
             <img src="../images/organization.png" class="command" alt="指挥体系">
         </div>
     </div>
@@ -3141,7 +3147,7 @@
 <!--左侧模板 start-->
 <!--首页模板-->
 <script id="homepageLeftSideTemp" type="text/html">
-    <div class="section" class="basicInfo">
+    <div class="section" id="basicInfo">
         <div class="header">
             <h2>基本情况</h2>
         </div>
@@ -4120,6 +4126,46 @@
 <!--jbox标题里的select模板 end-->
 <!--弹窗模板 end-->
 <!--弹窗模板 end-->
+
+<script id="relocateTemp" type="text/html">
+    <div class="section relocateSection" id="houseRebuild">
+        <div class="header">
+            <h2>贫困户危房改造目标</h2>
+        </div>
+        <div class="content">
+            <p>2098户5106人，建筑面11.7万平方米，投资1.73亿元</p>
+            <div>
+                <div id="targetNumChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section relocateSection" id="centerBudget">
+        <div class="header">
+            <h2>中央预算内异地搬迁项目</h2>
+        </div>
+        <div class="content">
+            <p>完成情况：2016年已完成222户，627人，已完成投资2717万元；2017年计划完成679户，1762人，计划投资7637万元。</p>
+            <div>
+                <div id="centerNumChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section relocateSection" id="houseRebuild_down">
+        <div class="content">
+            <div>
+                <div id="targetFundChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section relocateSection" id="centerBudget_down">
+        <div class="content">
+            <div>
+                <div id="centerFundChart"></div>
+            </div>
+        </div>
+    </div>
+
+</script>
 </body>
 
 </html>

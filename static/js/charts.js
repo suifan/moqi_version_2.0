@@ -426,6 +426,93 @@ define(['echarts'],function(echarts){
 
 
     /**
+     * 轴线和bar同色的柱状图
+     * @param id : string 图表容器
+     * @param pieData : object
+     * @pieData.color : 颜色(可以为array)
+     * @pieData.data  : 数据
+     * @pieData.xAxisData : X轴坐标轴字段
+     */
+    var colorLineChart = function(id,data){
+        var chart = echarts.init(document.getElementById(id));
+        chart.setOption(
+            {
+                title:{
+                    text:data.title,
+                    textStyle:{
+                        color:data.color,
+                        fontSize:12,
+                        fontWeight:'normal'
+                    },
+                    right:'-5',
+                    top:'0'
+                },
+                color: [data.color],
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                        type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    },
+                    formatter:"{b}：{c}"+data.unit
+                },
+                grid: {
+                    left: '3%',
+                    right: '10%',
+                    top:'20%',
+                    bottom: '5%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        name:data.xName,
+                        data : data.xAxisData,
+                        axisTick: {
+                            alignWithLabel: true
+                        },
+                        axisLine:{
+                            lineStyle:{
+                                color:data.color,
+                                width:2
+                            }
+                        }
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        name:data.yName,
+                        interval:data.interval,
+                        min:0,
+                        axisLine:{
+                            lineStyle:{
+                                color:data.color,
+                                width:2
+                            }
+                        },
+                        splitLine:{show:false}
+                    }
+                ],
+                series : [
+                    {
+                        type:'bar',
+                        barWidth: '18%',
+                        data:data.data,
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter:"{c}"+data.unit,
+                                position:"top"
+                            }
+                        }
+                    }
+                ]
+            }
+        );
+        resize_window(chart);
+    };
+
+    /**
      * 重置浏览器窗口图表随之变化
      * @param Chart 图表
      */
@@ -442,6 +529,7 @@ define(['echarts'],function(echarts){
         'fullPieChart':fullPieChart,
         'xBarChart':xBarChart,
         'labelPieChart':labelPieChart,
-        'lineChart':lineChart
+        'lineChart':lineChart,
+        'colorLineChart':colorLineChart
     }
 })

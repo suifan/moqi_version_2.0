@@ -60,6 +60,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     var api = {
         'getHomePage': function(){
             // $("#leftTabs").addClass("hide");
+            $(".mapBox").show();
+            $("#leftSide").show();
+            $("#rightSide").show();
             //右侧--------------------start
             $.getJSON("../js/json/homePage/dutyHost.json",function(data){
                 if(data) {
@@ -138,6 +141,56 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
             });
             //底部--------------------end
+        },
+        'getRelocate':function(){
+            $("#whole").show().html(template('relocateTemp', {}));
+            var firstData = {
+                color:'#57d454',
+                title:'总量：2908 户',
+                data:[1990,1018],
+                xAxisData:['2016年','2017年'],
+                unit:"户",
+                xName:'时间',
+                yName:'数量',
+                interval:700
+            }
+            charts.colorLineChart("targetNumChart",firstData);
+            var secondData = {
+                color:'#03b8fd',
+                title:'总量：901 户',
+                data:[222,182,265,232],
+                xAxisData:['2016年','2017年','2018年','2019年'],
+                unit:"户",
+                xName:'时间',
+                yName:'数量',
+                interval:150
+            }
+            charts.colorLineChart("centerNumChart",secondData);
+            var thirdData = {
+                color:'#fbe603',
+                title:'总量：1.73 亿',
+                data:[1.64,0.09],
+                xAxisData:['2016年','2017年'],
+                unit:"亿",
+                xName:'时间',
+                yName:'资金',
+                interval:1
+            }
+            charts.colorLineChart("targetFundChart",thirdData);
+            var fourthData = {
+                color:'#fc8a03',
+                title:'总投入：10354 万',
+                data:[2717,2275,2763,2599],
+                xAxisData:['2016年','2017年','2018年','2019年'],
+                unit:"万",
+                xName:'时间',
+                yName:'额度',
+                interval:1000
+            }
+            charts.colorLineChart("centerFundChart",fourthData);
+
+
+
         },
         'getPovertyDistribution':function(){
             chart.barChart("poverty_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,222,333,222,111,111,222,333,444,223,554,323,1234,343,234,778,334]);
@@ -357,11 +410,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             });
         },
-        'getDisease': function(){//健康扶贫模块
-            // $("#leftTabs").removeClass("hide");
-            // $("#leftOperation").addClass("hide");
-            // $("#sevenStepsTab").addClass("hide");
-            // $("#leftTabs").find("span.disease").addClass("active").siblings().removeClass("active")
+        'getDisease': function(){
             //左侧------start
             var data={
                 disease:[
@@ -781,6 +830,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(this).siblings("li").removeClass("active")
             }
             if($(this).hasClass("homepage")){//点击首页按钮
+                $(".mapBox").show();
+                $("#leftSide").show();
+                $("#rightSide").show();
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
@@ -795,6 +847,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getEducation();
             }else if($(this).hasClass("doudi")){//兜底脱贫
                 api.getFiveGroup();
+            }else if($(this).hasClass("relocate")){
+                $(".mapBox").hide();
+                $("#leftSide").hide();
+                $("#rightSide").hide();
+                api.getRelocate();
+
             }
         });
         //贫困家庭右侧栏tab切换

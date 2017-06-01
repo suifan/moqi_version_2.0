@@ -321,3 +321,9 @@ li.progressLi p {
     margin-top: .4vw;
     min-width: initial;
 }
+
+.command{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+}

@@ -72,6 +72,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     //进度条生成
                     $("#performance").find(".progressBar").each(function(){
                         var percent = $(this).find(".progressRate").text();
+                        if(percent.substr(-1)!=="%"){
+                            percent = percent.slice(0,-1)+"%"
+                        }
                         progressBar.generate($(this),percent);
                     })
                 }

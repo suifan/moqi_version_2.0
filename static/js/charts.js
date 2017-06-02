@@ -274,7 +274,7 @@ define(['echarts'],function(echarts){
                                 textStyle: {
                                     color:'#fff'
                                 },
-                                formatter:"{c}人"
+                                formatter:"{c}"
                             },
                             emphasis: {
                                 show: true
@@ -712,6 +712,8 @@ define(['echarts'],function(echarts){
         resize_window(centerChart);
     };
 
+
+
     var youChart = function(id,barData) {
         var youChart = echarts.init(document.getElementById(id));
         youChart.setOption(
@@ -822,6 +824,8 @@ define(['echarts'],function(echarts){
     };
 
 
+
+
     /**
      * 轴线和bar同色的柱状图
      * @param id : string 图表容器
@@ -909,6 +913,111 @@ define(['echarts'],function(echarts){
         resize_window(chart);
     };
 
+     var treeChart = function(id,barData) {
+        var treeChart = echarts.init(document.getElementById(id));
+        treeChart.setOption(
+            {
+
+               title: {
+                       text: barData.title,
+                       
+                       textStyle: {
+                       color: '#00d4ff',
+                       fontStyle: 'normal',
+                       fontWeight: 'normal',
+                       fontFamily: 'sans-serif',
+                       fontSize: 14,
+                       },
+                   },
+
+                color: ['#00d4ff'],
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+
+                    xAxis : [
+                        {
+                            type : 'category',
+                            
+                            //data : ['种植养殖', '龙头企业合作社', '电商扶贫', '光伏扶贫'],
+                             data : barData.xNames,
+                            axisTick: {
+                                show:false,
+                                alignWithLabel: false
+                            },
+                            splitLine: {show:false},
+                             axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        }
+
+
+                        }
+                    ],
+                    yAxis : [
+                        {
+                           
+                            splitLine: {show:false},
+                            axisTick: {
+                                show: false,
+                            },
+                            axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        },
+                            axisLabel:{
+                                            show:false
+                            }
+                        },
+                        {
+                           
+                            splitLine: {show:false},
+                            axisTick: {
+                                show: false,
+                            },
+                            axisLine: {
+                                            lineStyle: {
+                                                color: '#3398DB'
+                                            }
+                                        },
+                            axisLabel:{
+                                            show:false
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            //name:'收益万元数',
+                            name:barData.pointName,
+                            type:'bar',
+                            barWidth: '40%',
+                            label:{
+                                normal:{
+                                    show:true,
+                                    position:'top'
+                                }
+                            },
+                            //data:[0.5, 0.3, 0.2, 0.2]
+                            data:barData.data
+
+                        }
+                    ]
+            }
+        );
+        resize_window(treeChart);
+    };
     /**
      * 重置浏览器窗口图表随之变化
      * @param Chart 图表
@@ -931,7 +1040,10 @@ define(['echarts'],function(echarts){
 
         'lineChart':lineChart,
         'colorLineChart':colorLineChart,
+
         'doubleLineChart':doubleLineChart,
+        'treeChart':treeChart,
+
         'youChart':youChart,
         'lineChart':lineChart
 

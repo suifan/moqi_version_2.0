@@ -7,7 +7,11 @@
 ::-webkit-scrollbar-thumb:vertical:hover{background: #20407b}
 ::-webkit-scrollbar-thumb:horizontal:hover{background: #20407b}
 /*滚动条 end*/
-
+.clearfix:before, .clearfix:after, .container:before, .container:after, .modal-footer:before, .modal-footer:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after, .container:after, .modal-footer:after { clear: both; }
 /*头部 start*/
 header{
     background: url(../images/moqiSpriteV2.png) 0 0 no-repeat;
@@ -413,4 +417,76 @@ ul.page {
     width:98%;
     height:12vw;
 }
+.ecologyLeft .treeImgList li{
+    float: left;
+    width: 50%;
+    position: relative;
+    text-align: center;
+}
+.ecologyLeft .treeImgList li img{
+    display: inline-block;
+    
+    width: 75%;
+    position: relative;
+}
+.ecologyLeft .treeImgList .tree-p{
+    width: 80%;
+    border:1px solid #11b2c6;
+    background-color:  rgba(204, 204, 204, 0.28);
+    line-height: 2;
+    margin:0 auto;
+}
+
+.whiteBg2{
+    background: rgba(255,255,255,.1);
+    padding:1vw .5vw;
+
+    
+}
+.tree-p{
+    text-align: center;
+} 
+.whiteBg2 .tree-p{
+    font-size: 130%;
+    text-align: left;
+    padding-left: 2vw;
+    margin-bottom: 0.5vw;
+}
+.greenTxt{
+    color:#8fc320;  
+}
+.fSize2{
+    font-size: 150%;
+}
+.ecologyCenter{
+    width: 68%;
+    
+    margin:0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -786,6 +786,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
             })
         },
+<<<<<<< Updated upstream
         "getfallback":function(){
             mapApi.mapPlay("none");
             $('#centerSide').css('display','block');
@@ -871,6 +872,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });
             //底部end
         },
+
+        //产业扶贫相关方法
+
         "getProduction":function(){
             mapApi.mapPlay("none");
             $('#centerSide').css('display','block');
@@ -937,6 +941,13 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
 
         },
+        //生态扶贫相关方法
+        'getEcology':function(){
+
+            $('#leftSide').html(template('ecologyLeftTemp', {}));
+            $('#rightSide').html(template('ecologyRightTemp', {}));
+            $('#centerSide').html(template('ecologyCenterTemp', {}));
+        },
 
         /**
          * 轮播图方法
@@ -989,7 +1000,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         window.onresize = function(){
 
             sideResize();
-        }
+        };;
         //加载倒计时
         countDown.countDown("2018/1/1");
         //刷新时触发首页点击事件
@@ -1051,6 +1062,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getDisease();
             }else if($(this).hasClass("ecology")){//生态脱贫
                 $("body>div").hide();
+                $(".bottom").show();
+                $('#centerSide').show();
+                $("#leftSide").show();
+                $("#rightSide").show();
+                api.getEcology();
             }else if($(this).hasClass("education")){//教育脱贫
                 $("body>div").hide();
                 $(".bottom").show();

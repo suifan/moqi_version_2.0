@@ -799,8 +799,8 @@ table tr:nth-child(even) td{
 .vertical-imgs ul li {
     width: 14vw;
     height: 8.6vw;
-    background: #333;
-    margin: 1vw auto;
+    background: rgba(255, 255, 255, 0);
+    margin: .6vw auto;
 }
 .vertical-imgs ul li img {
     margin: 0;

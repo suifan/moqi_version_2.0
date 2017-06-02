@@ -392,65 +392,68 @@ define(['echarts'], function(echarts) {
      */
     var lineChart = function(id, data) {
         var chart = echarts.init(document.getElementById(id));
-        chart.setOption({
-            title: {
-                text: data.title || '本周签约医生签约数量                        单位:人',
-                textStyle: {
-                    color: '#fff',
-                    fontSize: '12px'
-                }
-            },
-            grid: data.grid,
-            tooltip: data.tooltip,
-            xAxis: {
-                axisLine: {
-                    lineStyle: {
-                        color: data.axisLabelColor || '#666',
-                        width: data.axisLineWidth || 1
+        chart.setOption(
+            {
+                title: {
+                    text: data.title||'本周签约医生签约数量                        单位:人',
+                    textStyle:{
+                        color:'#fff',
+                        fontSize:'12px'
                     }
                 },
-                type: 'category',
-                boundaryGap: true,
-                data: data.xArr
-            },
-            yAxis: {
-                type: 'value',
-                axisLine: {
-                    lineStyle: {
-                        color: data.axisLabelColor || '#666',
-                        width: data.axisLineWidth || 1
-                    }
-                },
-                splitLine: {
-                    show: false
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLabel: {
-                    show: true,
-                    textStyle: data.axisLabelColor || "#666"
-                }
-            },
-            series: [{
-                name: '签约数量',
-                type: 'line',
-                data: data.yArr,
-                lineStyle: {
-                    normal: {
-                        color: data.axisLabelColor || '#2fd819',
-                        width: data.axisLineWidth || 1
-                    }
-                },
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'top',
-                        textStyle: {
-                            color: data.axisLabelColor || "#fff"
+                grid: data.grid,
+                tooltip: data.tooltip,
+                xAxis: {
+                    axisLine:{
+                        lineStyle:{
+                            color:data.axisLabelColor||'#d0d0d0',
+                            width:data.axisLineWidth||1
                         }
+                    },
+                    type: 'category',
+                    boundaryGap: true,
+                    data: data.xArr
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine:{
+                        lineStyle:{
+                            color:data.axisLabelColor||'#d0d0d0',
+                            width:data.axisLineWidth||1
+                        }
+                    },
+                    splitLine: {
+                        show:false
+                    },
+                    axisTick: {
+                        show:false
+                    },
+                    axisLabel: {
+                        show:false,
+                        textStyle:data.axisLabelColor||"#d0d0d0"
                     }
-                }
+                },
+                series: [
+                    {
+                        name:'签约数量',
+                        type:'line',
+                        data:data.yArr,
+                        lineStyle: {
+                            normal:{
+                                color: data.axisLabelColor||'#2fd819',
+                                width: data.axisLineWidth||1
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: data.axisLabelColor||"#fff"
+                                }
+                            }
+                    }
+
             }]
         });
         resize_window(chart);

@@ -134,7 +134,7 @@
     border: 1px solid #465b77;
 }
 .item-img img {
-    width: 8.2vw;
+    width: 10vw;
     margin: 0;
 }
 
@@ -235,4 +235,49 @@
     margin: 0 auto;
     overflow: hidden;
     float: none;
+}
+/*产业动态*/
+#productionSlideBox {
+    width: 94%;
+    margin: 0 auto;
+    float: none;
+    overflow: hidden;
+}
+#productionSlideBox .box-item {
+    width: 28vw;
+}
+#productionSlideBox .item-img.title {
+    width: 3vw;
+    background: rgba(50, 102, 195, 0.65);
+    letter-spacing: 1vw;
+    font-size: .8vw;
+    text-align: center;
+    /*vertical-align: middle;*/
+    line-height: .9vw;
+}
+#productionSlideBox .item-img {
+    height: 6.6vw;
+}
+#productionSlideBox .item-img.blank {
+    height: 2vw;
+    width: 3vw;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+#productionSlideBox .item-img.bottom-title {
+    height: 4vw;
+    background: none;
+    border: none;
+    font-size: .8vw;
+    text-align: left;
+    line-height: 1vw;
+    margin-bottom: 0;
+}
+#productionSlideBox .item-img.title p {
+    width: 1vw;
+    /* margin: 0 auto; */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }

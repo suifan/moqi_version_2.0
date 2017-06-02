@@ -60,6 +60,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     var api = {
         'getHomePage': function(){
             // $("#leftTabs").addClass("hide");
+            $("body>div").hide();
+            $(".bottom").show();
             $(".mapBox").show();
             $("#leftSide").show();
             $("#rightSide").show();
@@ -502,7 +504,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             };
             charts.labelPieChart("fiveGroupSumChart",structure);
             //五人小组覆盖率
-            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%',"\n完成率");
+            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'66.7%',"\n完成率");
             /*var diseaseIncidence = {
                 color:['#ff5232','#1996e6','#ff5232','#1996e6'],
                 label: {
@@ -612,8 +614,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //获取首页左侧数据
             $('#leftSide').html(template('educationLeftSideTemp',{}));
             var dataObj = {
-                xArr:["2016年","2017年","2018年"],
-                data:[100,200,300],
+                xArr:["2016年","2017年"],
+                data:[155.23,232.86],
                 titleBool:true
             };
             chart.blueBarChart("annualBar",dataObj)
@@ -938,8 +940,26 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
              charts.centerChart("productionInvestChart",touZiData);
             //中间 end
-
-
+            // 底部 start
+            $(".bottom").show().html(template('productionBottomTemp', {}));
+            $(".bottom-head").on("click",function(){
+                var $this = $(this).siblings(".bottom-content");
+                $this.slideToggle(function(){
+                    var showBool = $this.is(":visible");
+                    if(!showBool&&window.timeOut){
+                        clearTimeout(timeOut);
+                    }else{
+                        api.slide("rebuildSlideBox", "box-wrapper", 1900,3);
+                    }
+                    $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                    if($(".bottom-head").hasClass("active")){
+                        $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                    }else{
+                        $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                    }
+                });
+            });
+            //底部 end
         },
         //生态扶贫相关方法
         'getEcology':function(){
@@ -1048,13 +1068,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $('#centerSide').hide();
             }
             if($(this).hasClass("homepage")){//点击首页按钮
-                $("body>div").hide();
-                $(".bottom").show();
-                $(".mapBox").show();
-                $("#leftSide").show();
-                $("#rightSide").show();
                 api.getHomePage(area);
-
             }else if($(this).hasClass("production")){//产业扶贫
                 $("body>div").hide();
                 $(".bottom").show();

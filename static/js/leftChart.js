@@ -7,12 +7,12 @@ require.config({
     }
 });
 define(['echarts'],function(echarts){
-    var pieChart = function(id, color1,color2,dataArr,percent){
+    var pieChart = function(id, color1,color2,dataArr,percent,label){
         var pieChart = echarts.init(document.getElementById(id));
         pieChart.setOption({
             tooltip: {
                 trigger: 'item',
-                formatter: "{b}:{d}%",//单位参数
+                formatter: "{b}\n{d}%",//单位参数
                 padding: [2, 4],
                 confine: true
             },
@@ -28,15 +28,12 @@ define(['echarts'],function(echarts){
                         normal: {
                             show: true,
                             position: 'center',
-                            formatter:percent+"\n完成率",
+                            formatter:percent+(label?label:""),
                             textStyle: {
                                 fontSize: '12',
                                 fontWeight: 'normal',
                                 color:color1
                             }
-                        },
-                        emphasis: {
-                            show:false
                         }
                     },
                     data: dataArr,

@@ -332,3 +332,7 @@ li.progressLi p {
     opacity: 0;
     top: 0;
 }
+
+#workTrends .content>div{
+    height:20vw;
+}

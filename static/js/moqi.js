@@ -213,7 +213,17 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
         },
         'getGovernment':function(){
-            $("#leftSide").html(template('governmentTemp_left', {}))
+            $("#leftSide").html(template('governmentTemp_left', {}));
+            chart.pieChart("satisfactionChart","#8fc31f","#1b9deb",[{"value":18},{"value":1000}],'98.2%');
+            chart.pieChart("attendanceChart","#8fc31f","#1b9deb",[{"value":18},{"value":1000}],'98.2%');
+            chart.pieChart("resumptionChart","#1b9deb","#1b9deb",[{"value":100}],'100',"户");
+            chart.pieChart("disciplineChart","#1b9deb","#1b9deb",[{"value":100}],'100','户');
+            $("#rightSide").html(template('governmentTemp_right', {}));
+            chart.pieChart("secretaryChart","#1b9deb","#1b9deb",[{"value":100}],'220','人');
+            chart.pieChart("workTeamChart","#1b9deb","#1b9deb",[{"value":100}],'64',"支");
+            chart.pieChart("cadreChart","#1b9deb","#1b9deb",[{"value":100}],'220','人');
+
+
         },
         'getPovertyDistribution':function(){
             chart.barChart("poverty_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,222,333,222,111,111,222,333,444,223,554,323,1234,343,234,778,334]);
@@ -497,7 +507,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             };
             charts.labelPieChart("fiveGroupSumChart",structure);
             //五人小组覆盖率
-            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%');
+            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%',"\n完成率");
             /*var diseaseIncidence = {
                 color:['#ff5232','#1996e6','#ff5232','#1996e6'],
                 label: {
@@ -943,6 +953,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 api.getHomePage(area);
 
             }else if($(this).hasClass("production")){//产业扶贫
+                $("body>div").hide();
+                $(".bottom").show();
+                $(".mapBox").show();
+                $("#leftSide").show();
+                $("#rightSide").show();
                 api.getProduction();
             }else if($(this).hasClass("government")){//党建促脱贫
                 $("body>div").hide();

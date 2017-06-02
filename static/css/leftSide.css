@@ -258,7 +258,7 @@ span.span-active {
     -o-transition: width 2s;
     transition: width 2s;
 }*/
-.second-sec .progress-title { 
+.second-sec .progress-title {
     display: inline-block;
     padding: 0 .3vw;
     color: #d4e4ff;
@@ -768,12 +768,72 @@ table tr:nth-child(even) td{
     line-height: 1.4vw;
 }
 
-#basicBuilding .content>div{
+.whiteBg{
     background: rgba(255,255,255,.1);
+    padding:.5vw;
     height:12vw;
+}
+#buzhidao .content>div{
+    height:8vw;
 }
 #productionTotalChart {
     height: 28vw;
     width: 100%;
 
+}
+
+#buzhidao .team{
+    background: url(../images/basicBuild.png) no-repeat;
+    background-size: 97%;
+    height: 12vw;
+    width: 24vw;
+    position: relative;
+}
+#buzhidao .team span{
+    position: absolute;
+    top: 5.7vw;
+    display: inline-block;
+    width: 4vw;
+    text-align: center;
+}
+#buzhidao .team .blue{
+    color: #67c7fc;
+}
+#buzhidao .team .red{
+    color: #fda179;
+    left: 4.4vw;
+}
+#buzhidao .team .green{
+    color: #a2fc6c;
+    left: 8.8vw;
+}
+#buzhidao .team .yellow{
+    color: #f8ec04;
+    left: 13.2vw;
+}
+
+#satisfactionChart{
+    height: 6vw;
+    width: 6vw;
+    top: 2vw;
+    left: 17.5vw;
+}
+
+#supervision .content>div,
+#helpPower .content>div{
+    display: flex;
+    justify-content: center;
+    height:7.5vw;
+}
+
+#supervision .content>div>div,
+#helpPower .content>div>div{
+    width:7vw;
+    text-align: center;
+
+}
+
+.threeCharts{
+    width:100%;
+    height:7vw;
 }

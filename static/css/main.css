@@ -104,6 +104,8 @@ header{
     overflow-y: auto;
     margin-left: 1vw;
     margin-right: 1vw;
+    overflow-x: hidden;
+    font-size:1vw;
 }
 
  #centerSide{

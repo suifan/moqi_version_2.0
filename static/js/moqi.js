@@ -949,8 +949,19 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $('#rightSide').html(template('ecologyRightTemp', {}));
 
             $('#centerSide').html(template('ecologyCenterTemp', {}));
-            charts.treeChart("protectTreeChart",{});
-            charts.treeChart("returnTreeChart",{});
+
+            var protectData={
+                yName:'护林面积 (亩)',
+                data:[3001,3605]   
+            };
+            var returnData={
+                yName:'还林面积 (亩)',
+                data:[3001,3605]   
+            };
+
+            charts.treeChart("protectTreeChart",protectData);
+
+            charts.treeChart("returnTreeChart",returnData);
 
 
         },

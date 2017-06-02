@@ -464,10 +464,10 @@ ul.page {
 
 #protectTreeChart,#returnTreeChart{
     height:24vw;
-    background-color: pink;
+    /*background-color: pink;*/
 }
 
-#protectTreeChart{
+#returnTreeChart{
      margin-top: 3.6vw;
 }
 

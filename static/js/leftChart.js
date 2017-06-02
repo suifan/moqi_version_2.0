@@ -154,9 +154,6 @@ define(['echarts'],function(echarts){
                                     {offset: 1, color: '#0ed1f1'}
                                 ]
                             )
-                        },
-                        emphasis: {
-                            color: []
                         }
                     },
                     data:data

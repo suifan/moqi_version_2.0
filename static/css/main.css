@@ -440,8 +440,7 @@ ul.page {
 .whiteBg2{
     background: rgba(255,255,255,.1);
     padding:1vw .5vw;
-
-    
+  
 }
 .tree-p{
     text-align: center;
@@ -459,10 +458,10 @@ ul.page {
     font-size: 150%;
 }
 .ecologyCenter{
-    width: 68%;
-    
+    width: 68%; 
     margin:0 auto;
 }
+
 
 
 

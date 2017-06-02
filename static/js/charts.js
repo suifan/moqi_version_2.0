@@ -612,6 +612,12 @@ define(['echarts'],function(echarts){
                     legend: {
                         data: ['201年', '212年']
                     },
+                    label:{
+                                    normal:{
+                                        show:true,
+                                        position:'bottom'
+                                    }
+                                 },
                     grid: {
                         left: '3%',
                         right: '4%',

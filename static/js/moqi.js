@@ -78,6 +78,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".command").viewer();
                 $(".management").viewer();
             })
+            $("#rightSide").on("click","div",function(){
+                if($(this).attr("id","performance"))
+               $(".government").trigger("click");
+            });
 
             //右侧--------------------end
 
@@ -504,22 +508,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             };
             charts.labelPieChart("fiveGroupSumChart",structure);
             //五人小组覆盖率
-            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'66.7%',"\n完成率");
-            /*var diseaseIncidence = {
-                color:['#ff5232','#1996e6','#ff5232','#1996e6'],
-                label: {
-                    normal: {
-                        show: true,
-                        textStyle: {
-                            fontSize: '11',
-                            color: '#fff'
-                        }
-                    }
-                },
-                data:[{value:3356, name:'发生'},{value:3356, name:'发生'},{value:3356, name:'发生'},{value:3356, name:'发生'}],
-                radius: ['50%', '70%'],
-                center:["50%","50%"]
-            };*/
+            chart.pieChart("fiveGroupCoverRate","#abfb06","#4b586d",[{"value":100,"name":'已完成'},{"value":200,"name":'未完成'}],'90%',"\n完成率");
             var documentSum = {
                 color:['#abfb06','#1ff4be','#c4572e','#387b14'],
                 data:[
@@ -572,12 +561,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //左侧--------------------end
 
             //底部--------------------start
-            /*$.getJSON("../js/json/fiveGroup/helpDynamic.json",function(res){
-                var data={};
-                data.list = res.povertyNews["moqi"];
-                $('.bottom').html(template('helpDynamicTemp', data));
-            });
-            //家医签约按钮点击事件
+            $('.bottom').html(template('helpingStatus', {}));
             $(".bottom-head").on("click",function(){
                 var $this = $(this).siblings(".bottom-content");
                 $this.slideToggle(function(){
@@ -585,14 +569,40 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
-                        api.slide("slideBox","box-wrapper");
-                        // chart.barChart("doctorSign");
+                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                        if($(".bottom-head").hasClass("active")){
+                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                        }else{
+                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                        }
+                        // api.slide("slideBox_r","box-wrapper",1900);
+                        api.getDiseasePoor();
                     }
                 });
-            });*/
+            });
+
+            $(".bottom-header ul").on("click","li", function(){
+                var activeBool = $(this).hasClass("click-active");
+                if(!activeBool){
+                    $(this).addClass("click-active");
+                    $(this).siblings("li").removeClass("click-active");
+                    if($(this).hasClass("diseasePoor")){
+                        api.getDiseasePoor();
+                    }else {
+                        api.getFivePeopleGroupNum();
+                    }
+                }
+            });
             //底部--------------------end
 
         },//健康扶贫
+        'getDiseasePoor':function(){
+            chart.barChart("helping_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+        },
+        'getFivePeopleGroupNum':function(){
+            chart.barChart("helping_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+
+        },
         'getEducation':function(){
             $(".mapBox").hide();
             $("#rightSide").hide();
@@ -1086,7 +1096,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             }else if($(this).hasClass("health")){//健康脱贫
                 $("body>div").hide();
-                // $(".bottom").show();
+                $(".bottom").show();
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
@@ -1282,7 +1292,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         // var txt = $("#tab div.active").text();
                         $("#areaSelectInHeader").val(area);
                        mapApi.getData();
-                       
+
                                     var _id = '#' + mapApi.curr_path_id+'Svg';
                                     $(_id).addClass('show');
                                     mapApi.getSubMap($(_id));
@@ -1293,7 +1303,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                         }
                         //改变当前选择区域
-                        
+
                         //打开督导组成员弹窗
                         $(".links-list li").eq(1).unbind("click").on("click", function() {
                             $.getJSON("../js/json/superVisorGroup.json",function(res){
@@ -1383,7 +1393,11 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             //村贫困家庭表单
                             // $.jBox('', { title: "", buttons: {}, border: 0, opacity: 0.4 });
                             // $.getJSON("../js/json/map_peopleList.json",function(res){
-                                $.getJSON("../js/json/mapPeopleDetail.json",function(res){
+                            $.getJSON("../js/json/mapPeopleDetail.json",function(res){
+                            //     $.ajax({
+                            //         type: "GET",
+                            //         url: url
+                            //     }).done(function(res){
                                     var data={};
                                     var _data = data.data = res[area][mapApi.curr_path_id];
                                     data.totalList = res[area].list;

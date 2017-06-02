@@ -321,7 +321,7 @@ li.progressLi p {
     text-align: center;
     font-size: 1vw;
     line-height: 1.1vw;
-    padding: .5vw 0vw 0vw 0vw;
+    padding: .5vw 0 0 0;
     margin-left: .4vw;
     margin-top: .4vw;
     min-width: initial;
@@ -334,5 +334,49 @@ li.progressLi p {
 }
 
 #workTrends .content>div{
-    height:20vw;
+    max-height:20vw;
+    overflow-y: auto;
+    height:auto;
+}
+
+#workTrends img{
+    width: 30%;
+    height: 5vw;
+    float: left;
+}
+.workTrend{
+    border-top: 1px solid #375f9a;
+}
+.workTrend:first-child{
+    border:none
+}
+.workTrend p span:first-child{
+    float: left;
+}
+.workTrend p span:last-child{
+    float: right;
+}
+.workTrend:after,.workTrend>div p:after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    height:0;
+    clear: both;
+}
+
+.workTrend>div{
+    padding:.5vw;
+    line-height: 1.1vw;
+    margin-left: 38%;
+}
+
+.workTrend>div>span{
+    text-indent: 1.8vw;
+    font-size: .9vw;
+    display: inline-block;
+}
+.workTrend>div p{
+    margin-bottom: .4vw;
+    display: inline-block;
+    width: 100%;
 }

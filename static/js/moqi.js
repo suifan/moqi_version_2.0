@@ -945,8 +945,14 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         'getEcology':function(){
 
             $('#leftSide').html(template('ecologyLeftTemp', {}));
+
             $('#rightSide').html(template('ecologyRightTemp', {}));
+
             $('#centerSide').html(template('ecologyCenterTemp', {}));
+            charts.treeChart("protectTreeChart",{});
+            charts.treeChart("returnTreeChart",{});
+
+
         },
 
         /**

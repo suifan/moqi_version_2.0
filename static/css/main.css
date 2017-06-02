@@ -115,7 +115,7 @@ header{
  #centerSide{
 
    width: 38%;
-    height: 27.8vw;
+   
     margin-top: 0;
     float: left;
     margin-left: 3.2vw;
@@ -462,9 +462,14 @@ ul.page {
     margin:0 auto;
 }
 
+#protectTreeChart,#returnTreeChart{
+    height:24vw;
+    background-color: pink;
+}
 
-
-
+#protectTreeChart{
+     margin-top: 3.6vw;
+}
 
 
 

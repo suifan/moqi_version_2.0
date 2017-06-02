@@ -918,56 +918,45 @@ define(['echarts'],function(echarts){
         treeChart.setOption(
             {
 
-               title: {
-                       text: barData.title,
-                       
-                       textStyle: {
-                       color: '#00d4ff',
-                       fontStyle: 'normal',
-                       fontWeight: 'normal',
-                       fontFamily: 'sans-serif',
-                       fontSize: 14,
-                       },
-                   },
-
-                color: ['#00d4ff'],
-                    tooltip : {
-                        trigger: 'axis',
-                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                        }
-                    },
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-
-                    xAxis : [
-                        {
-                            type : 'category',
-                            
-                            //data : ['种植养殖', '龙头企业合作社', '电商扶贫', '光伏扶贫'],
-                             data : barData.xNames,
-                            axisTick: {
-                                show:false,
-                                alignWithLabel: false
-                            },
-                            splitLine: {show:false},
-                             axisLine: {
-                                            lineStyle: {
-                                                color: '#3398DB'
-                                            }
-                                        }
-
-
-                        }
-                    ],
-                    yAxis : [
-                        {
-                           
-                            splitLine: {show:false},
+               color: ['#3398DB'],
+                 tooltip : {
+                     trigger: 'axis',
+                     axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                         type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                     }
+                 },
+                 grid: {
+                     left: '3%',
+                     right: '4%',
+                     bottom: '3%',
+                     containLabel: true
+                 },
+                 xAxis : [
+                     {
+                         type : 'category',
+                         data : ['2016', '2017'],
+                         splitLine: {show:false},
+                         axisTick: {
+                             show: false,
+                         },
+                         axisLine: {
+                                         lineStyle: {
+                                             color: '#3398DB'
+                                         }
+                                     },
+                         axisLabel:{
+                                         //show:false
+                                         textStyle: {
+                                             color: '#3398DB',
+                                             fontSize:16
+                                         }
+                         }
+                     }
+                 ],
+                 yAxis : [
+                     {    name:'护林面积 (亩)',
+                          //type : 'value',
+                          splitLine: {show:false},
                             axisTick: {
                                 show: false,
                             },
@@ -979,41 +968,16 @@ define(['echarts'],function(echarts){
                             axisLabel:{
                                             show:false
                             }
-                        },
-                        {
-                           
-                            splitLine: {show:false},
-                            axisTick: {
-                                show: false,
-                            },
-                            axisLine: {
-                                            lineStyle: {
-                                                color: '#3398DB'
-                                            }
-                                        },
-                            axisLabel:{
-                                            show:false
-                            }
-                        }
-                    ],
-                    series : [
-
-                        {
-                            //name:'收益万元数',
-                            name:barData.pointName,
-                            type:'bar',
-                            barWidth: '40%',
-                            label:{
-                                normal:{
-                                    show:true,
-                                    position:'top'
-                                }
-                            },
-                            //data:[0.5, 0.3, 0.2, 0.2]
-                            data:barData.data
-
-                        }
-                    ]
+                     }
+                 ],
+                 series : [
+                     {
+                         name:'',
+                         type:'bar',
+                         barWidth: '60%',
+                         data:[10, 52]
+                     }
+                 ]
             }
         );
         resize_window(treeChart);

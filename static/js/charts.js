@@ -950,6 +950,16 @@ define(['echarts'], function(echarts) {
                         color: []
                     }
                 },
+                markLine : {
+                lineStyle: {
+                    normal: {
+                        type: 'dashed'
+                    }
+                },
+                data : [
+                    [{type : 'min'}, {type : 'max'}]
+                ]
+                 },
                 barWidth: '60%',
                 data: barData.data
             }]
@@ -985,5 +995,5 @@ define(['echarts'], function(echarts) {
         'youChart': youChart,
         'lineChart': lineChart
 
-    }
-})
+    };
+});

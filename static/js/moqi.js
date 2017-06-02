@@ -652,9 +652,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     }else{
                         // $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                         if($(".bottom-head").hasClass("active")){
-                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png");
                         }else{
-                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png");
                         }
                         api.slide("eduSlideBox","box-wrapper",1900,7);
                         // api.getPovertyDistribution();
@@ -1263,6 +1263,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                     event.preventDefault();
                                     mapApi.curr_svg.removeClass('show');
                                     $(".map-links").removeClass('show');
+
+                                    area = mapApi.curr_path_id;
+                        // var txt = $("#tab div.active").text();
+                        $("#areaSelectInHeader").val(area);
+                       mapApi.getData();
+                       
                                     var _id = '#' + mapApi.curr_path_id+'Svg';
                                     $(_id).addClass('show');
                                     mapApi.getSubMap($(_id));
@@ -1273,10 +1279,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                         }
                         //改变当前选择区域
-                        area = mapApi.curr_path_id;
-                        // var txt = $("#tab div.active").text();
-                        $("#areaSelectInHeader").val(area);
-                        mapApi.getData();
+                        
                         //打开督导组成员弹窗
                         $(".links-list li").eq(1).unbind("click").on("click", function() {
                             $.getJSON("../js/json/superVisorGroup.json",function(res){

@@ -251,10 +251,10 @@ define(['echarts'],function(echarts){
                legend: {
                                    orient: 'horizontal',
                                    bottom:'20',
-                                   right:'0',
+                                   //left:'0',
                                    itemHeight:'5',
                                    itemWidth:5,
-                                   width:10,
+                                  // width:10,
                                    textStyle:{
                                        color:'#fff'
                                    },
@@ -274,7 +274,7 @@ define(['echarts'],function(echarts){
                                 textStyle: {
                                     color:'#fff'
                                 },
-                                formatter:"{b}{c}人"
+                                formatter:"{c}人"
                             },
                             emphasis: {
                                 show: true
@@ -593,7 +593,7 @@ define(['echarts'],function(echarts){
         youChart.setOption(
             {
                 title: {
-                        text: '合计:5197户,12412人投入2947.36万元，预计每户收益1.2万元',
+                        text: '合计:5197户,12412人投入2947.36万元',
                         textStyle: {
                         color: '#00d4ff',
                         fontStyle: 'normal',
@@ -610,12 +610,21 @@ define(['echarts'],function(echarts){
                         }
                     },
                     legend: {
-                        data: ['201年', '212年']
+                        orient: 'vertical',
+                                x: '20%',
+                                y:'25%',
+                                itemGap:66,
+                                textStyle:{
+                                    color:'#fff',
+                                },
+                                itemWidth:16,
+                                //backgroundColor:'#f00',
+                        data: ['3901户,9677人投入1874.36万元', '888','777','666']
                     },
                     label:{
                                     normal:{
-                                        show:true,
-                                        position:'bottom'
+                                       // show:true,
+                                        position:'right'
                                     }
                                  },
                     grid: {
@@ -659,7 +668,29 @@ define(['echarts'],function(echarts){
                             barWidth: '40%',
                             data: [182, 234, 290, 302]
                         },
-                        
+                        {
+                            name: '3901户,9677人投入1874.36万元',
+                            type: 'bar',
+                            //barWidth: '40%',
+                            //data: [182, 234, 290, 302]
+                        },
+                        {
+                            name: '888',
+                            type: 'bar',
+                            //barWidth: '40%',
+                            //data: [182, 234, 290, 302]
+                        },
+                        {
+                            name: '777',
+                            type: 'bar',
+                            //ata: [182, 234, 290, 302]
+                        },
+                        {
+                            name: '666',
+                            type: 'bar',
+                            
+                            //data: [182, 234, 290, 302]
+                        },
                     ]
             }
         );

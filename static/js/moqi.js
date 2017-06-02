@@ -794,25 +794,30 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $('#leftSide').html(template('productionLeftSideTemp', {}));
 
             var poverty = {
-                legend:["尼尔基镇","宝山镇","西瓦尔图镇","红彦镇","塔温敖宝镇","腾克镇","汉古尔河镇","阿尔拉镇","奎勒河镇",
-                "哈达阳镇","巴彦乡","库如奇乡","杜拉尔乡","登特科办事处","额尔和办事处","卧罗河办事处","坤密尔提办事处"],
+                legend:["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],
                 color:['#ffcf02','#00a7f8','#157dd0','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00'],
-                center:["45%","25%"],
-                radius:["30%","50%"],
+                center:["50%","30%"],
+                radius:["25%","45%"],
                 data:[
-                    {value:532, name:''},
-                    {value:275, name:''},
-                    {value:191, name:''},
-                    {value:164, name:''},
-                    {value:117, name:''},
-                    {value:69, name:''},
-                    {value:63, name:''},
-                    {value:57, name:''},
-                    {value:46, name:''},
-                    {value:43,name:""},
-                    {value:43,name:""},
-                    {value:36,name:""},
-                    {value:1720,name:""}
+                    {value:532, name:'尼尔基镇'},
+                    {value:275, name:'红彦镇'},
+                    {value:191, name:'宝山镇'},
+                    {value:164, name:'西瓦尔图镇'},
+                    {value:117, name:'塔温敖宝镇'},
+                    {value:117, name:'腾克镇'},
+                    {value:63, name:'巴彦鄂温克民族乡'},
+                    {value:57, name:'阿拉尔镇'},
+                    {value:117, name:'哈达阳镇'},
+                    {value:43,name:"拉杜尔鄂温克民族乡"},
+                    {value:43,name:"汉古尔河镇"},
+                    {value:117,name:"奎勒河镇"},
+                    {value:170,name:"库如奇乡"},
+                     {value:36,name:"登特科办事处"},
+                     {value:120,name:"额尔和办事处"},
+                    {value:170,name:"坤密尔提办事处"},
+                     {value:36,name:"卧罗河办事处"},
+                    
+                     
                 ],
                 total:"3356"
             }
@@ -927,7 +932,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             //map 的显示隐藏
             if(!$(this).hasClass("production")){
                 mapApi.mapPlay("block");
-                $('#centerSide').css('display','none');
+                $('#centerSide').hide();
             }
             if($(this).hasClass("homepage")){//点击首页按钮
                 $("body>div").hide();

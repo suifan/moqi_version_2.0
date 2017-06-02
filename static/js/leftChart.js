@@ -88,7 +88,7 @@ define(['echarts'],function(echarts){
             grid: {
                 left: '0%',
                 right: '2%',
-                bottom: '3%',
+                bottom: '2%',
                 height: '80%',
                 //width: "100%",
                 containLabel: true
@@ -142,7 +142,10 @@ define(['echarts'],function(echarts){
                     label: {
                         normal: {
                             show: true,
-                            position: 'inside'
+                            position: 'top',
+                            textStyle: {
+                                color:"#fff"
+                            }
                         }
                     },
                     itemStyle: {

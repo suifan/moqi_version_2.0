@@ -230,3 +230,9 @@
     float: none;
 }
 /*教育动态底部end*/
+#rebuildSlideBox {
+    width: 84%;
+    margin: 0 auto;
+    overflow: hidden;
+    float: none;
+}

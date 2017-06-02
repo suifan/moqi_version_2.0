@@ -411,46 +411,39 @@ define(['echarts'],function(echarts){
     /**
      * 折线图
      * @param id : string 图表容器
-     * @param pieData : object
-     * @pieData.color : 颜色(可以为array)
-     * @pieData.data  : 数据
-     * @pieData.yAxisData : Y轴坐标轴字段
+     * @data.xArr : X轴数据
+     * @data.yArr  : Y轴数据
      */
     var lineChart = function(id,data){
         var chart = echarts.init(document.getElementById(id));
         chart.setOption(
             {
                 title: {
-                    text: '本周签约医生签约数量                        单位:人',
+                    text: data.title||'本周签约医生签约数量                        单位:人',
                     textStyle:{
                         color:'#fff',
                         fontSize:'12px'
                     }
                 },
-                grid: {
-                    top:40,
-                    left: 40,
-                    height: '50%'
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    formatter: '{b}<br/>签约数量：{c}'
-                },
+                grid: data.grid,
+                tooltip: data.tooltip,
                 xAxis: {
                     axisLine:{
                         lineStyle:{
-                            color:'#666'
+                            color:data.axisLabelColor||'#666',
+                            width:data.axisLineWidth||1
                         }
                     },
                     type: 'category',
-                    boundaryGap: false,
+                    boundaryGap: true,
                     data: data.xArr
                 },
                 yAxis: {
                     type: 'value',
                     axisLine:{
                         lineStyle:{
-                            color:'#666'
+                            color:data.axisLabelColor||'#666',
+                            width:data.axisLineWidth||1
                         }
                     },
                     splitLine: {
@@ -460,7 +453,8 @@ define(['echarts'],function(echarts){
                         show:false
                     },
                     axisLabel: {
-                        show:true
+                        show:true,
+                        textStyle:data.axisLabelColor||"#666"
                     }
                 },
                 series: [
@@ -470,8 +464,17 @@ define(['echarts'],function(echarts){
                         data:data.yArr,
                         lineStyle: {
                             normal:{
-                                color: '#2fd819',
-                                width: 1
+                                color: data.axisLabelColor||'#2fd819',
+                                width: data.axisLineWidth||1
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: data.axisLabelColor||"#fff"
+                                }
                             }
                         }
                     }
@@ -480,8 +483,129 @@ define(['echarts'],function(echarts){
         );
         resize_window(chart);
     };
-
-
+    /**
+     * 双折线图（生态扶贫）
+     * @param id : string 图表容器
+     * @data.xArr : X轴数据
+     * @data.yArr  : Y轴数据
+     */
+    var doubleLineChart= function(id,data){
+        var chart = echarts.init(document.getElementById(id));
+        chart.setOption(
+            {
+                title: {
+                    text: '资金增长',
+                    textStyle:{
+                        color:'#fff',
+                        fontSize:'12px'
+                    }
+                },
+                grid: {
+                    top:40,
+                    left: 10,
+                    right: 10,
+                    height: '80%'
+                },
+                color: ["#fff","#6ce6fe"],
+                legend: {
+                    data: [{
+                        name: '低保标准',
+                        textStyle: {
+                            color: "#fff"
+                        }
+                    }, {
+                        name: '扶贫保障标准',
+                        textStyle: {
+                            color: "#6ce6fe"
+                        }
+                    }],
+                    right: 0
+                },
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    },
+                    formatter: '{b}<br/>签约数量：{c}'
+                },
+                xAxis: {
+                    axisLine:{
+                        lineStyle:{
+                            color:'#6ce6fe',
+                            width: 2
+                        }
+                    },
+                    type: 'category',
+                    boundaryGap: true,
+                    data: data.xArr
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine:{
+                        lineStyle:{
+                            color:'#6ce6fe',
+                            width: 2
+                        }
+                    },
+                    splitLine: {
+                        show:false
+                    },
+                    axisTick: {
+                        show:false
+                    },
+                    axisLabel: {
+                        show:false
+                    }
+                },
+                series: [
+                    {
+                        name:'扶贫保障标准',
+                        type:'line',
+                        data:data.yArr,
+                        lineStyle: {
+                            normal:{
+                                color: '#6ce6fe',
+                                width: 2
+                            }
+                        },
+                        label: {
+                        normal: {
+                            show: true,
+                            position: 'bottom',
+                            textStyle: {
+                                color: "#6ce6fe"
+                            }
+                        }
+                    },
+                    },
+                    {
+                        name:'低保标准',
+                        type:'line',
+                        data:data.yArrs,
+                        lineStyle: {
+                            normal:{
+                                color: '#fff',
+                                width: 2
+                            }
+                        },
+                        label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                color: "#fff"
+                            }
+                        }
+                    }
+                    }
+                ]
+            }
+        );
+        resize_window(chart);
+    };
     var centerChart = function(id,barData) {
         var centerChart = echarts.init(document.getElementById(id));
         centerChart.setOption(
@@ -807,7 +931,7 @@ define(['echarts'],function(echarts){
 
         'lineChart':lineChart,
         'colorLineChart':colorLineChart,
-
+        'doubleLineChart':doubleLineChart,
         'youChart':youChart,
         'lineChart':lineChart
 

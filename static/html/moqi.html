@@ -2817,7 +2817,7 @@
         <li class="relocate">易地搬迁</li>
         <li class="ecology">生态扶贫</li>
         <li class="education">教育扶贫</li>
-        <li class="doudi">兜底扶贫</li>
+        <li class="fallback">兜底扶贫</li>
     </ul>
     <div id="countDownDiv">
         <span class="day"></span>
@@ -2850,21 +2850,13 @@
 
 
 
-
 <!--<div class="left-btn"></div>-->
-
-<!--<div class="left-btn"
-></div>-->
-
 
 
 <div id="whole"></div>
 <!--left end-->
 <div id="centerSide"></div>
-
-<div class="bottom"></div> 
-
-
+<div class="bottom"></div>
 <!--家医签约-->
 <script src="../lib/require.js" data-main="../js/moqi"></script>
 <!--地图模板 start-->
@@ -3197,105 +3189,8 @@
         </div>
     </div>
 </script>
-<!--教育扶贫左侧模板-->
-<script id="educationLeftSideTemp" type="text/html">
-    <div class="section" class="basicInfo">
-        <div class="header">
-            <h2>教育扶贫补贴</h2>
-        </div>
-        <div class="content goverment-help">
-            <div class="top-title">补贴总额: <span>331.5</span>万元</div>
-            <div id="govermentHelpChart">
-                <div>
-                    <p>
-                        <span><em>902</em>人/</span>
-                        <br>
-                        <em><span>331.15</span>万元</em>
-                    </p>
-                </div>
-            </div>
-            <div class="bottom-title">2017年教育扶贫人数/额度</div>
-            <div class="annual-bar">
-                <div id="annualBar"></div>
-            </div>
-        </div>
-    </div>
-</script>
-<!--教育扶贫右侧模板-->
-<script id="educationRightSideTemp" type="text/html">
-    <div class="rightContent-title">
-        <div class="active">尼尔基镇</div>
-        <div>登特科镇</div>
-        <div>红彦镇</div>
-        <div>宝山镇</div>
-        <div>额尔和</div>
-        <div>哈达阳镇</div>
-        <div>阿尔拉镇</div>
-        <div>坤密尔提</div>
-        <div>奎勒河镇</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-    </div>
-    <div class="rightContent-body">
-        <table>
-            <thead>
-            <tr>
-                <th>行政村</th>
-                <th>人数</th>
-                <th>金额（万元）</th>
-                <th>大学</th>
-                <th>中学</th>
-                <th>小学</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>腾克镇</td>
-                <td>3</td>
-                <td>11</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>腾克镇</td>
-                <td>3</td>
-                <td>11</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>腾克镇</td>
-                <td>3</td>
-                <td>11</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>腾克镇</td>
-                <td>3</td>
-                <td>11</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>腾克镇</td>
-                <td>3</td>
-                <td>11</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</script>
+<!--右侧-模板 end-->
+<!--左侧模板 start-->
 <!--五人小组模板-->
 <script id="fiveLeftSideTemp" type="text/html">
     <div class="section five-group">
@@ -3478,6 +3373,146 @@
 
         </div>
     </div>
+</script>
+<!--首页模板-->
+<script id="homepageLeftSideTemp" type="text/html">
+    <div class="section" id="basicInfo">
+        <div class="header">
+            <h2>基本情况</h2>
+        </div>
+        <div class="content">
+            <ul>
+                <li>贫困家庭： <span>{{basicInfo.house_num}}</span> 户</li>
+                <li>贫困人口： <span>{{basicInfo.person_num}}</span> 人</li>
+                <li>因病致贫（返贫）家庭比例： <span>{{basicInfo.cause_by_disease}}</span> </li>
+                <li>因缺土地致贫比例： <span>{{basicInfo.cause_by_field}}</span> </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="header">
+            <h2>脱贫目标（目标户数/目标人数）</h2>
+        </div>
+        <div class="content">
+            <div id="targetChart"></div>
+
+        </div>
+    </div>
+    <div class="section" id="thinking">
+        <div class="header">
+            <!--<span class="goToDetail"></span>-->
+            <h2>工作思路</h2>
+        </div>
+        <div class="content">
+            <div>
+                没有健康就没有小康。扶贫就是扶持生产力。扶贫一个重要方式就是增收，增收就是产业化，节支就是社会保障扶贫。脱贫攻坚是社会化工程，扶贫工作是社会工作，社会性工作是动态性极强的，这个动态性决定我们的工作必须靠信息化支撑。因为管人，对动态性的工作进行管理必须要依靠信息化支撑，正是因为动态的精准的需要才必须分类施治，分类施策，同时扶贫这个全社会性的工作要综合施策。扶贫工作就是扶持生产力，生产力的发展劳动资料要进行流转确权，劳动工具进入合作社，劳动者是决定性要素，这三者构成经济基础。经济基础这种变革和要求变化需要对上层建筑——党建提出新的要求，要抓党建促脱贫，这是经济基础与上层建筑的关系。            </div>
+
+        </div>
+    </div>
+</script>
+<!--教育扶贫左侧模板-->
+<script id="educationLeftSideTemp" type="text/html">
+    <div class="section" class="basicInfo">
+        <div class="header">
+            <h2>教育扶贫补贴</h2>
+        </div>
+        <div class="content goverment-help">
+            <div class="top-title">补贴总额: <span>331.5</span>万元</div>
+            <div id="govermentHelpChart">
+                <div>
+                    <p>
+                        <span><em>902</em>人/</span>
+                        <br>
+                        <em><span>331.15</span>万元</em>
+                    </p>
+                </div>
+            </div>
+            <div class="bottom-title">2017年教育扶贫人数/额度</div>
+            <div class="annual-bar">
+                <div id="annualBar"></div>
+            </div>
+        </div>
+    </div>
+</script>
+<!--教育扶贫右侧模板-->
+<script id="educationRightSideTemp" type="text/html">
+    <div class="rightContent-title">
+        <div class="active">尼尔基镇</div>
+        <div>登特科镇</div>
+        <div>红彦镇</div>
+        <div>宝山镇</div>
+        <div>额尔和</div>
+        <div>哈达阳镇</div>
+        <div>阿尔拉镇</div>
+        <div>坤密尔提</div>
+        <div>奎勒河镇</div>
+        <div>坤密尔提</div>
+        <div>坤密尔提</div>
+        <div>坤密尔提</div>
+        <div>坤密尔提</div>
+        <div>坤密尔提</div>
+    </div>
+    <div class="rightContent-body">
+        <table>
+            <thead>
+            <tr>
+                <th>行政村</th>
+                <th>人数</th>
+                <th>金额（万元）</th>
+                <th>大学</th>
+                <th>中学</th>
+                <th>小学</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</script>
+<!--教育扶贫右侧表格模板-->
+<script id="educationRightSideTableTemp" type="text/html">
+                <tr>
+                    <td>腾克镇</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>腾克镇</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>腾克镇</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>腾克镇</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>腾克镇</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
 </script>
 <!--健康扶贫左侧模板-->
 <script id="healthLeftSideTemp" type="text/html">
@@ -3738,6 +3773,16 @@
             <!--<div class="bottom-left"><h6>最新扶贫纪事</h6></div>-->
             <div id="eduSlideBox" class="bottom-right">
                 <div class="box-wrapper">
+                    <div class="box-item">
+                        <div class="box-right">
+                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="box-item">
+                        <div class="box-right">
+                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                        </div>
+                    </div>
                     <div class="box-item">
                         <div class="box-right">
                             <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
@@ -4289,7 +4334,6 @@
     </div>
 </script>
 
-
 <!--产业扶贫左侧模板-->
 <script id="productionLeftSideTemp" type="text/html">
     <div class="section">
@@ -4327,6 +4371,68 @@
         </div>
     </div>
 </script>
+
+<!--兜底扶贫左侧模板-->
+<script id="fallbackLeftSideTemp" type="text/html">
+    <div class="section">
+        <div class="header">
+            <h2>兜底扶贫总人口 ： <span>350</span>人</h2>
+        </div>
+        <div class="content">
+            <div id="fallbackTotalChart"></div>
+        </div>
+    </div>
+</script>
+<!--兜底扶贫右侧模板-->
+<script id="fallbackRightSideTemp" type="text/html">
+    <div class="section">
+        <div class="header">
+            <h2>扶贫动态</h2>
+        </div>
+        <div class="content fallback">
+            <div class="vertical-imgs">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</script>
+<!--兜底扶贫中间模板-->
+<script id="fallbackCenterSideTemp" type="text/html">
+    <div class="section fallback">
+        <div class="content">
+            <div id="fallbackYieldChart"></div>
+        </div>
+    </div>
+    <div class="section fallback">
+        <div class="content">
+            <div id="fallbackInvestChart"></div>
+        </div>
+    </div>
+</script>
+<!--兜底底部模板-->
+<script id="fallbackBottomTemp" type="text/html">
+    <div class="bottom-head" >
+        <span>各乡镇人员数量分布</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
+    </div>
+    <div class="bottom-content" style="display: none;">
+<!--        <div class="bottom-header">
+            <ul>
+                <li class="povertyDistribution click-active">贫困户分布</li>
+                <li class="povertyCauses">致贫原因</li>
+            </ul>
+        </div>-->
+        <div class="bottom-body" id = "fallback_status"></div>
+    </div>
+</script>
+
 <!--村贫困家庭弹窗模板-->
 <script id = "villageTemp" type="text/html">
     <!--<div class="select-switch">

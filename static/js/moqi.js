@@ -194,7 +194,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $this.slideToggle(function(){
                     var showBool = $this.is(":visible");
                     if(!showBool&&window.timeOut){
-                        // clearTimeout(timeOut);
+                        clearTimeout(timeOut);
                     }else{
                         api.slide("rebuildSlideBox", "box-wrapper", 1900,3);
                     }
@@ -206,11 +206,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     }
                 });
             });
-
-
-
-
-
         },
         'getGovernment':function(){
             $("#leftSide").html(template('governmentTemp_left', {}));
@@ -557,6 +552,15 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                         }
                         lineData.xArr = xArr;
                         lineData.yArr = yArr;
+                        lineData.grid = {
+                            top:40,
+                            left: 40,
+                            height: '50%'
+                        };
+                        lineData.tooltip = {
+                            trigger: 'axis',
+                            formatter: '{b}<br/>签约数量：{c}'
+                        };
                         charts.lineChart("diseaseIncidenceChart",lineData);
                     }
                 }
@@ -586,25 +590,13 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             });*/
             //底部--------------------end
 
-        },//大病结构方法
+        },//健康扶贫
         'getEducation':function(){
             $(".mapBox").hide();
             $("#rightSide").hide();
             // $("#leftTabs").addClass("hide");
             //右侧--------------------start
-            /*$.getJSON("../js/json/homePage/dutyHost.json",function(data){
-                if(data) {
-                    $('#rightSide').html(template('homepageRightSideTemp', data[area]));
-                    //进度条生成
-                    $("#performance").find(".progressBar").each(function(){
-                        var percent = $(this).find(".progressRate").text();
-                        progressBar.generate($(this),percent);
-                    })
-                }
-                $(".command").viewer();
-                $(".management").viewer();
-            })*/
-            $("#rightContent").html(template("educationRightSideTemp",{}));
+            $("#rightContent").html(template("educationRightSideTemp",{})).find("tbody").html(template("educationRightSideTableTemp",{}));;
             $(".rightContent-title").on("click","div",function(){
                 var checkedBool = $(this).hasClass("active");
                 if(!checkedBool){
@@ -644,9 +636,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }
             chartData.data=[{name:"目标户数",type:"bar",data:family, barMaxWidth:10},{name:"目标人数",type:"bar",data:people, barMaxWidth:10}]
             charts.xBarChart("targetChart",chartData)*/
-
             // $('#leftSide').html(template('homepageLeftSideTemp', data));
-
             //左侧--------------------end
 
             //底部--------------------start
@@ -796,6 +786,91 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
             })
         },
+        "getfallback":function(){
+            mapApi.mapPlay("none");
+            $('#centerSide').css('display','block');
+
+            //左侧
+            $('#leftSide').html(template('fallbackLeftSideTemp', {}));
+            // charts.legendPie("productionTotalChart",poverty);
+            var dataObj={
+                xArr : ["2015","2016","2017"],
+                yArrs : [3100,3100,3800],
+                yArr : [2855,2896,2951]
+            };
+            charts.doubleLineChart("fallbackTotalChart",dataObj);
+            //左侧 end
+
+            //右侧 start
+            $('#rightSide').html(template('fallbackRightSideTemp', {}));
+
+            //右侧 end
+            // charts.youChart("fallbackNumChart");
+
+            //中间 start
+            $('#centerSide').html(template('fallbackCenterSideTemp', {}));
+            var shouYiData = {
+                xArr: ['2015','2016','2017'],
+                yArr: [7546,6794,5271],
+                title: "人数",
+                axisLineWidth: 2,
+                yLabelShow: false,
+                axisLabelColor: "#6ce6fe",
+                grid: {
+                    top:40,
+                    left: 40,
+                    height: '60%'
+                },
+                tooltip:{
+                    trigger: 'axis',
+                    formatter: '{b}<br/>人数：{c}'
+                },
+            };
+            charts.lineChart("fallbackYieldChart",shouYiData);
+            var touZiData = {
+                xArr: ['2015','2016','2017'],
+                yArr: [2600,2800,2900],
+                title: "资金",
+                axisLineWidth: 2,
+                yLabelShow: false,
+                axisLabelColor: "#6ce6fe",
+                grid: {
+                    top:40,
+                    left: 40,
+                    height: '60%'
+                },
+                tooltip:{
+                    trigger: 'axis',
+                    formatter: '{b}<br/>资金：{c}'
+                },
+            };;
+
+            charts.lineChart("fallbackInvestChart",touZiData);
+            //中间 end
+            //底部 start
+            $('.bottom').html("").html(template('fallbackBottomTemp', {}));
+            // bottomBind();
+            //底部按钮点击事件
+            $(".bottom-head").on("click",function(){
+                var $this = $(this).siblings(".bottom-content");
+                $this.slideToggle(function(){
+                    var showBool = $this.is(":visible");
+                    if(!showBool&&window.timeOut){
+                        // clearTimeout(timeOut);
+                    }else{
+                        // $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                        if($(".bottom-head").hasClass("active")){
+                            $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                        }else{
+                            $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                        }
+                        // api.slide("slideBox_r","box-wrapper",1900);
+                        chart.barChart("fallback_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[881,402,291,192,184,457,334,112,271,75,395,354,94,2698,218,159,233]);
+                    }
+                });
+            });
+            //底部end
+        },
         "getProduction":function(){
             mapApi.mapPlay("none");
             $('#centerSide').css('display','block');
@@ -826,8 +901,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                      {value:120,name:"额尔和办事处"},
                     {value:170,name:"坤密尔提办事处"},
                      {value:36,name:"卧罗河办事处"},
-                    
-                     
+
+
                 ],
                 total:"3356"
             }
@@ -969,7 +1044,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             }else if($(this).hasClass("health")){//健康脱贫
                 $("body>div").hide();
-                $(".bottom").show();
+                // $(".bottom").show();
                 $(".mapBox").show();
                 $("#leftSide").show();
                 $("#rightSide").show();
@@ -982,8 +1057,12 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $("#leftSide").show();
                 $("#rightContent").show();
                 api.getEducation();
-            }else if($(this).hasClass("doudi")){//兜底脱贫
+            }else if($(this).hasClass("fallback")){//兜底脱贫
                 $("body>div").hide();
+                $("#leftSide").show();
+                $("#rightSide").show();
+                $(".bottom").show();
+                api.getfallback();
                 // api.getFiveGroup();
             }else if($(this).hasClass("relocate")){
                 $("body>div").hide();

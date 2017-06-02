@@ -786,7 +786,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 }
             })
         },
-<<<<<<< Updated upstream
+
         "getfallback":function(){
             mapApi.mapPlay("none");
             $('#centerSide').css('display','block');

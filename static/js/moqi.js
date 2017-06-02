@@ -1369,7 +1369,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                         var $pop = $.jBox('', { title: name, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByTagName('body')[0].style.padding = "0";
                                         $pop.find("#jbox").css("top", "2.6vw");
-                                        if(text == "产业扶贫"){//****************************************************
+                                        if(text == "健康扶贫"){
                                             var cardHtml = template('helpCardTemp',{} );
                                             document.getElementsByClassName('jbox-content')[1].innerHTML = cardHtml;
                                             //绑定图片放大事件
@@ -1386,7 +1386,6 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                                                 $popOther.find(".physexam-record img").viewer();
                                             })
                                         }else {
-
                                             document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp',family[0] );
                                             chart.barChart("fupinBar",[2016,2017,2018,2019],[520,120,685,520],true);
                                             chart.barChart("profitBar",[2016,2017,2018,2019],[520,120,685,520],true);

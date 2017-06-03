@@ -377,6 +377,11 @@ li.progressLi p {
     text-indent: 1.8vw;
     font-size: .9vw;
     display: inline-block;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .workTrend>div p{
     margin-bottom: .4vw;

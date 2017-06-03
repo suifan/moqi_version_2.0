@@ -1,0 +1,1948 @@
+[
+    {
+        "town": "巴彦鄂温克民族乡",
+        "list": [
+            {
+                "village": "巴彦街村委会",
+                "num": "29.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "达尔滨村委会",
+                "num": "21.",
+                "non_school": "19",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "达拉滨村委会",
+                "num": "37.",
+                "non_school": "32",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "葛根台村委会",
+                "num": "33.",
+                "non_school": "30",
+                "before": "1",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "良田村委会",
+                "num": "68.",
+                "non_school": "65",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "龙泉村委会",
+                "num": "77.",
+                "non_school": "76",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "满都胡浅",
+                "num": "49.",
+                "non_school": "45",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "2"
+            },
+            {
+                "village": "平安村委会",
+                "num": "33.",
+                "non_school": "33",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "清泉村委会",
+                "num": "67.",
+                "non_school": "63",
+                "before": "1",
+                "primary": "0",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "萨玛街村委会",
+                "num": "39.",
+                "non_school": "34",
+                "before": "2",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "三合发村委会",
+                "num": "21.",
+                "non_school": "17",
+                "before": "0",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "石头沟村委会",
+                "num": "50.",
+                "non_school": "48",
+                "before": "1",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "同心村委会",
+                "num": "36.",
+                "non_school": "33",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "乌如根塔拉村委会",
+                "num": "45.",
+                "non_school": "42",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "兴农村委会",
+                "num": "27.",
+                "non_school": "26",
+                "before": "1",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "友良村委会",
+                "num": "6.",
+                "non_school": "6",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "讷莫日浅村委会",
+                "num": "41.",
+                "non_school": "41",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "宝山镇",
+        "list": [
+            {
+                "village": "宝龙泉村委会",
+                "num": "38.",
+                "non_school": "35",
+                "before": "0",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "宝山村委会",
+                "num": "61.",
+                "non_school": "53",
+                "before": "1",
+                "primary": "2",
+                "middle": "5",
+                "high": "0"
+            },
+            {
+                "village": "宝山社区居民委员会",
+                "num": "15.",
+                "non_school": "10",
+                "before": "0",
+                "primary": "2",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "福德村委会",
+                "num": "21.",
+                "non_school": "18",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "福民村委会",
+                "num": "24.",
+                "non_school": "19",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "2"
+            },
+            {
+                "village": "福兴村委会",
+                "num": "31.",
+                "non_school": "29",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "后福民村委会",
+                "num": "208.",
+                "non_school": "179",
+                "before": "2",
+                "primary": "13",
+                "middle": "12",
+                "high": "2"
+            },
+            {
+                "village": "贾气口子村委会",
+                "num": "28.",
+                "non_school": "21",
+                "before": "0",
+                "primary": "3",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "巨泉山村委会",
+                "num": "36.",
+                "non_school": "28",
+                "before": "0",
+                "primary": "4",
+                "middle": "2",
+                "high": "2"
+            },
+            {
+                "village": "太平川村委会",
+                "num": "12.",
+                "non_school": "12",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "太平岗村委会",
+                "num": "4.",
+                "non_school": "4",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "太平桥村委会",
+                "num": "42.",
+                "non_school": "38",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "太裕春村委会",
+                "num": "29.",
+                "non_school": "26",
+                "before": "1",
+                "primary": "0",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "万发村委会",
+                "num": "27.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "五家子村委会",
+                "num": "17.",
+                "non_school": "13",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "五马架村委会",
+                "num": "31.",
+                "non_school": "28",
+                "before": "0",
+                "primary": "2",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "西宝山村委会",
+                "num": "33.",
+                "non_school": "30",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "小泉子村委会",
+                "num": "21.",
+                "non_school": "19",
+                "before": "1",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "兴安村委会",
+                "num": "28.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "登特科镇",
+        "list": [
+            {
+                "village": "阿彦浅村委会",
+                "num": "211.",
+                "non_school": "197",
+                "before": "4",
+                "primary": "5",
+                "middle": "2",
+                "high": "3"
+            },
+            {
+                "village": "安民村委会",
+                "num": "59.",
+                "non_school": "58",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "白桦山村委会",
+                "num": "17.",
+                "non_school": "16",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "北石场村委会",
+                "num": "89.",
+                "non_school": "83",
+                "before": "0",
+                "primary": "1",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "长发村委会",
+                "num": "56.",
+                "non_school": "47",
+                "before": "0",
+                "primary": "5",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "登特科村委会",
+                "num": "244.",
+                "non_school": "210",
+                "before": "5",
+                "primary": "22",
+                "middle": "6",
+                "high": "1"
+            },
+            {
+                "village": "多西浅村委会",
+                "num": "80.",
+                "non_school": "60",
+                "before": "1",
+                "primary": "14",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "钢铁村委会",
+                "num": "60.",
+                "non_school": "50",
+                "before": "2",
+                "primary": "5",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "郭尼村委会",
+                "num": "131.",
+                "non_school": "110",
+                "before": "5",
+                "primary": "11",
+                "middle": "5",
+                "high": "0"
+            },
+            {
+                "village": "民族村委会",
+                "num": "21.",
+                "non_school": "17",
+                "before": "0",
+                "primary": "4",
+                "middle": "0",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "杜拉尔鄂温克民族乡",
+        "list": [
+            {
+                "village": "查哈阳村委会",
+                "num": "18.",
+                "non_school": "11",
+                "before": "3",
+                "primary": "2",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "初鲁格奇村委会",
+                "num": "36.",
+                "non_school": "30",
+                "before": "5",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "杜克塔尔村委会",
+                "num": "16.",
+                "non_school": "11",
+                "before": "2",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "后沃尔奇村委会",
+                "num": "16.",
+                "non_school": "13",
+                "before": "1",
+                "primary": "0",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "尼西空海拉尔松村委会",
+                "num": "10.",
+                "non_school": "7",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "前沃尔奇村委会",
+                "num": "26.",
+                "non_school": "19",
+                "before": "1",
+                "primary": "2",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "特吾浅村委会",
+                "num": "2.",
+                "non_school": "2",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "瓦西格奇村委会",
+                "num": "31.",
+                "non_school": "24",
+                "before": "4",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "吾都海拉松村委会",
+                "num": "16.",
+                "non_school": "15",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "西沃尔奇村委会",
+                "num": "8.",
+                "non_school": "6",
+                "before": "1",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "哈达阳镇",
+        "list": [
+            {
+                "village": "东胜村委会",
+                "num": "48.",
+                "non_school": "42",
+                "before": "2",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "额尔和村委会",
+                "num": "64.",
+                "non_school": "56",
+                "before": "1",
+                "primary": "6",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "哈布奇村委会",
+                "num": "186.",
+                "non_school": "148",
+                "before": "8",
+                "primary": "14",
+                "middle": "16",
+                "high": "0"
+            },
+            {
+                "village": "哈达阳村委会",
+                "num": "229.",
+                "non_school": "204",
+                "before": "2",
+                "primary": "10",
+                "middle": "8",
+                "high": "5"
+            },
+            {
+                "village": "哈列图村委会",
+                "num": "103.",
+                "non_school": "91",
+                "before": "2",
+                "primary": "5",
+                "middle": "5",
+                "high": "0"
+            },
+            {
+                "village": "蒋屯村委会",
+                "num": "24.",
+                "non_school": "22",
+                "before": "0",
+                "primary": "2",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "李屯村委会",
+                "num": "32.",
+                "non_school": "31",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "柳屯村委会",
+                "num": "55.",
+                "non_school": "42",
+                "before": "7",
+                "primary": "3",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "平阳村委会",
+                "num": "17.",
+                "non_school": "15",
+                "before": "0",
+                "primary": "2",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "全胜村委会",
+                "num": "39.",
+                "non_school": "34",
+                "before": "1",
+                "primary": "4",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "双哈村委会",
+                "num": "54.",
+                "non_school": "42",
+                "before": "4",
+                "primary": "4",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "双河村委会",
+                "num": "45.",
+                "non_school": "42",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "双胜村委会",
+                "num": "36.",
+                "non_school": "35",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "团山子村委会",
+                "num": "10.",
+                "non_school": "7",
+                "before": "0",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "苇塘沟村委会",
+                "num": "77.",
+                "non_school": "70",
+                "before": "1",
+                "primary": "3",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "小黑山村委会",
+                "num": "28.",
+                "non_school": "26",
+                "before": "1",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "新胜村委会",
+                "num": "30.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "伊哈里村委会",
+                "num": "12.",
+                "non_school": "11",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "宜和德村委会",
+                "num": "92.",
+                "non_school": "83",
+                "before": "0",
+                "primary": "8",
+                "middle": "1",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "汉古尔河镇",
+        "list": [
+            {
+                "village": "北坤浅村委会",
+                "num": "115.",
+                "non_school": "104",
+                "before": "4",
+                "primary": "4",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "朝阳村委会",
+                "num": "49.",
+                "non_school": "44",
+                "before": "1",
+                "primary": "1",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "东坤浅村委会",
+                "num": "53.",
+                "non_school": "50",
+                "before": "2",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "东诺敏村委会",
+                "num": "134.",
+                "non_school": "110",
+                "before": "6",
+                "primary": "3",
+                "middle": "9",
+                "high": "6"
+            },
+            {
+                "village": "额尔根浅村委会",
+                "num": "33.",
+                "non_school": "24",
+                "before": "5",
+                "primary": "4",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "汉古尔河村委会",
+                "num": "88.",
+                "non_school": "75",
+                "before": "2",
+                "primary": "6",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "南坤浅村委会",
+                "num": "61.",
+                "non_school": "53",
+                "before": "2",
+                "primary": "4",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "三合村委会",
+                "num": "63.",
+                "non_school": "59",
+                "before": "1",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "胜利村委会",
+                "num": "132.",
+                "non_school": "110",
+                "before": "2",
+                "primary": "12",
+                "middle": "5",
+                "high": "3"
+            },
+            {
+                "village": "乌兰村委会",
+                "num": "29.",
+                "non_school": "25",
+                "before": "1",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "西坤浅村委会",
+                "num": "79.",
+                "non_school": "54",
+                "before": "3",
+                "primary": "15",
+                "middle": "4",
+                "high": "3"
+            },
+            {
+                "village": "西诺敏村委会",
+                "num": "149.",
+                "non_school": "117",
+                "before": "5",
+                "primary": "11",
+                "middle": "13",
+                "high": "3"
+            },
+            {
+                "village": "小都尔本村委会",
+                "num": "35.",
+                "non_school": "30",
+                "before": "2",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "红彦镇",
+        "list": [
+            {
+                "village": "红升村委会",
+                "num": "31.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "红彦村委会",
+                "num": "25.",
+                "non_school": "22",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "拉抛村委会",
+                "num": "9.",
+                "non_school": "5",
+                "before": "3",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "南阳村委会",
+                "num": "23.",
+                "non_school": "21",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "欧富村委会",
+                "num": "9.",
+                "non_school": "9",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "山口村委会",
+                "num": "43.",
+                "non_school": "40",
+                "before": "1",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "石头河子村委会",
+                "num": "18.",
+                "non_school": "18",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "水磨沟村委会",
+                "num": "53.",
+                "non_school": "42",
+                "before": "1",
+                "primary": "6",
+                "middle": "2",
+                "high": "2"
+            },
+            {
+                "village": "松木哨村委会",
+                "num": "29.",
+                "non_school": "27",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "铁东社区居民委员会",
+                "num": "38.",
+                "non_school": "28",
+                "before": "1",
+                "primary": "4",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "铁西社区居民委员会",
+                "num": "59.",
+                "non_school": "51",
+                "before": "0",
+                "primary": "3",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "团结村委会",
+                "num": "24.",
+                "non_school": "23",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "新多金村委会",
+                "num": "43.",
+                "non_school": "40",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "新哈力浅村委会",
+                "num": "15.",
+                "non_school": "12",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "新立村委会",
+                "num": "66.",
+                "non_school": "55",
+                "before": "0",
+                "primary": "6",
+                "middle": "3",
+                "high": "2"
+            },
+            {
+                "village": "杨木山村委会",
+                "num": "58.",
+                "non_school": "54",
+                "before": "1",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "库如奇乡",
+        "list": [
+            {
+                "village": "巴格达瓦村委会",
+                "num": "58.",
+                "non_school": "52",
+                "before": "2",
+                "primary": "2",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "黑山村委会",
+                "num": "13.",
+                "non_school": "11",
+                "before": "1",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "呼兰韶热村委会",
+                "num": "35.",
+                "non_school": "28",
+                "before": "2",
+                "primary": "3",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "库如奇村委会",
+                "num": "87.",
+                "non_school": "65",
+                "before": "10",
+                "primary": "8",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "库如奇河村委会",
+                "num": "26.",
+                "non_school": "22",
+                "before": "0",
+                "primary": "0",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "新肯布拉尔村委会",
+                "num": "8.",
+                "non_school": "4",
+                "before": "1",
+                "primary": "0",
+                "middle": "1",
+                "high": "2"
+            },
+            {
+                "village": "伊威达瓦村委会",
+                "num": "8.",
+                "non_school": "6",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "奎勒河镇",
+        "list": [
+            {
+                "village": "北方村委会",
+                "num": "81.",
+                "non_school": "69",
+                "before": "3",
+                "primary": "7",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "北兴村委会",
+                "num": "92.",
+                "non_school": "80",
+                "before": "3",
+                "primary": "5",
+                "middle": "2",
+                "high": "2"
+            },
+            {
+                "village": "富强村委会",
+                "num": "49.",
+                "non_school": "48",
+                "before": "1",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "合力村委会",
+                "num": "68.",
+                "non_school": "66",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "奎勒河村委会",
+                "num": "140.",
+                "non_school": "129",
+                "before": "3",
+                "primary": "6",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "奎勒河社区居民委员会",
+                "num": "12.",
+                "non_school": "11",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "利民村委会",
+                "num": "143.",
+                "non_school": "134",
+                "before": "3",
+                "primary": "2",
+                "middle": "1",
+                "high": "3"
+            },
+            {
+                "village": "龙山村委会",
+                "num": "84.",
+                "non_school": "76",
+                "before": "0",
+                "primary": "4",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "乾安村委会",
+                "num": "68.",
+                "non_school": "64",
+                "before": "2",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "兴北村委会",
+                "num": "101.",
+                "non_school": "87",
+                "before": "2",
+                "primary": "3",
+                "middle": "6",
+                "high": "3"
+            },
+            {
+                "village": "扎如木台村委会",
+                "num": "19.",
+                "non_school": "17",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "振兴村委会",
+                "num": "77.",
+                "non_school": "67",
+                "before": "4",
+                "primary": "1",
+                "middle": "2",
+                "high": "3"
+            }
+        ]
+    },
+    {
+        "town": "尼尔基镇",
+        "list": [
+            {
+                "village": "毕台村委会",
+                "num": "124.",
+                "non_school": "106",
+                "before": "5",
+                "primary": "7",
+                "middle": "6",
+                "high": "0"
+            },
+            {
+                "village": "博克图村委会",
+                "num": "91.",
+                "non_school": "77",
+                "before": "1",
+                "primary": "12",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "博荣村委会",
+                "num": "11.",
+                "non_school": "10",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "布西社区居民委员会",
+                "num": "15.",
+                "non_school": "14",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "东升村委会",
+                "num": "86.",
+                "non_school": "73",
+                "before": "1",
+                "primary": "9",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "丰华村委会",
+                "num": "231.",
+                "non_school": "197",
+                "before": "8",
+                "primary": "14",
+                "middle": "11",
+                "high": "1"
+            },
+            {
+                "village": "哈力浅村委会",
+                "num": "105.",
+                "non_school": "83",
+                "before": "6",
+                "primary": "12",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "红星村委会",
+                "num": "65.",
+                "non_school": "50",
+                "before": "4",
+                "primary": "10",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "后兴农村委会",
+                "num": "94.",
+                "non_school": "71",
+                "before": "1",
+                "primary": "10",
+                "middle": "6",
+                "high": "6"
+            },
+            {
+                "village": "绘图莫丁村委会",
+                "num": "150.",
+                "non_school": "140",
+                "before": "2",
+                "primary": "3",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "龙兴村委会",
+                "num": "82.",
+                "non_school": "75",
+                "before": "1",
+                "primary": "0",
+                "middle": "5",
+                "high": "1"
+            },
+            {
+                "village": "慕仁社区居民委员会",
+                "num": "6.",
+                "non_school": "3",
+                "before": "1",
+                "primary": "2",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "七家子村委会",
+                "num": "29.",
+                "non_school": "26",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "前巨仁村委会",
+                "num": "169.",
+                "non_school": "145",
+                "before": "5",
+                "primary": "12",
+                "middle": "5",
+                "high": "2"
+            },
+            {
+                "village": "前兴农村委会",
+                "num": "27.",
+                "non_school": "26",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "双龙泉村委会",
+                "num": "29.",
+                "non_school": "23",
+                "before": "2",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "万宝山村委会",
+                "num": "128.",
+                "non_school": "116",
+                "before": "0",
+                "primary": "9",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "乌尔科村委会",
+                "num": "82.",
+                "non_school": "76",
+                "before": "1",
+                "primary": "3",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "乌尔阔社区居民委员会",
+                "num": "19.",
+                "non_school": "16",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "西博荣村委会",
+                "num": "27.",
+                "non_school": "21",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "西拉金村委会",
+                "num": "128.",
+                "non_school": "103",
+                "before": "1",
+                "primary": "6",
+                "middle": "15",
+                "high": "3"
+            },
+            {
+                "village": "向阳村委会",
+                "num": "80.",
+                "non_school": "78",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "兴隆泉村委会",
+                "num": "148.",
+                "non_school": "126",
+                "before": "7",
+                "primary": "12",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "雅克萨社区居民委员会",
+                "num": "12.",
+                "non_school": "11",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "依兰社区居民委员会",
+                "num": "13.",
+                "non_school": "10",
+                "before": "0",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "宜卧奇村委会",
+                "num": "96.",
+                "non_school": "91",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "永合发村委会",
+                "num": "175.",
+                "non_school": "155",
+                "before": "0",
+                "primary": "8",
+                "middle": "9",
+                "high": "3"
+            }
+        ]
+    },
+    {
+        "town": "塔温敖宝镇",
+        "list": [
+            {
+                "village": "楚万山村委会",
+                "num": "45.",
+                "non_school": "38",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "2"
+            },
+            {
+                "village": "达也扎德村委会",
+                "num": "49.",
+                "non_school": "39",
+                "before": "4",
+                "primary": "2",
+                "middle": "2",
+                "high": "2"
+            },
+            {
+                "village": "大门庄村委会",
+                "num": "17.",
+                "non_school": "17",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "大斡斯门村委会",
+                "num": "101.",
+                "non_school": "94",
+                "before": "0",
+                "primary": "6",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "德日斯克村委会",
+                "num": "73.",
+                "non_school": "68",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "丰收村委会",
+                "num": "83.",
+                "non_school": "73",
+                "before": "3",
+                "primary": "5",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "福盛村委会",
+                "num": "5.",
+                "non_school": "3",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "富民村委会",
+                "num": "35.",
+                "non_school": "27",
+                "before": "4",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "甘楞村委会",
+                "num": "96.",
+                "non_school": "82",
+                "before": "1",
+                "primary": "10",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "霍日里绰罗村委会",
+                "num": "49.",
+                "non_school": "44",
+                "before": "0",
+                "primary": "3",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "霍日其坎村委会",
+                "num": "36.",
+                "non_school": "30",
+                "before": "0",
+                "primary": "3",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "龙河村委会",
+                "num": "16.",
+                "non_school": "14",
+                "before": "1",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "民兴村委会",
+                "num": "24.",
+                "non_school": "19",
+                "before": "1",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "奇安哈德村委会",
+                "num": "46.",
+                "non_school": "42",
+                "before": "0",
+                "primary": "4",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "前进村委会",
+                "num": "108.",
+                "non_school": "96",
+                "before": "0",
+                "primary": "5",
+                "middle": "5",
+                "high": "2"
+            },
+            {
+                "village": "双青山村委会",
+                "num": "8.",
+                "non_school": "5",
+                "before": "1",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "顺斯提村委会",
+                "num": "5.",
+                "non_school": "5",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "塔北村委会",
+                "num": "31.",
+                "non_school": "29",
+                "before": "0",
+                "primary": "1",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "塔温敖宝村委会",
+                "num": "16.",
+                "non_school": "13",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "万山庄村委会",
+                "num": "27.",
+                "non_school": "22",
+                "before": "1",
+                "primary": "2",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "斡斯门村委会",
+                "num": "128.",
+                "non_school": "114",
+                "before": "2",
+                "primary": "8",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "卧罗河村委会",
+                "num": "75.",
+                "non_school": "67",
+                "before": "2",
+                "primary": "1",
+                "middle": "4",
+                "high": "1"
+            },
+            {
+                "village": "五宝山社区居民村委会",
+                "num": "15.",
+                "non_school": "13",
+                "before": "1",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "新肯西拉金村委会",
+                "num": "44.",
+                "non_school": "42",
+                "before": "0",
+                "primary": "2",
+                "middle": "0",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "腾克镇",
+        "list": [
+            {
+                "village": "巴卡哈里村委会",
+                "num": "58.",
+                "non_school": "48",
+                "before": "3",
+                "primary": "6",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "东伊必奇村委会",
+                "num": "103.",
+                "non_school": "85",
+                "before": "2",
+                "primary": "11",
+                "middle": "5",
+                "high": "0"
+            },
+            {
+                "village": "怪勒村委会",
+                "num": "155.",
+                "non_school": "115",
+                "before": "6",
+                "primary": "24",
+                "middle": "10",
+                "high": "0"
+            },
+            {
+                "village": "郭恩河村委会",
+                "num": "99.",
+                "non_school": "82",
+                "before": "5",
+                "primary": "9",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "郭恩奇坎村委会",
+                "num": "53.",
+                "non_school": "44",
+                "before": "0",
+                "primary": "5",
+                "middle": "0",
+                "high": "4"
+            },
+            {
+                "village": "霍日里村委会",
+                "num": "59.",
+                "non_school": "48",
+                "before": "1",
+                "primary": "7",
+                "middle": "2",
+                "high": "1"
+            },
+            {
+                "village": "卡布楚村委会",
+                "num": "126.",
+                "non_school": "115",
+                "before": "3",
+                "primary": "6",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "库木尔肯村委会",
+                "num": "33.",
+                "non_school": "28",
+                "before": "0",
+                "primary": "3",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "塔兴村委会",
+                "num": "42.",
+                "non_school": "37",
+                "before": "2",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "特莫呼珠村委会",
+                "num": "62.",
+                "non_school": "58",
+                "before": "1",
+                "primary": "3",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "腾克村委会",
+                "num": "121.",
+                "non_school": "95",
+                "before": "3",
+                "primary": "19",
+                "middle": "3",
+                "high": "1"
+            },
+            {
+                "village": "提古拉村委会",
+                "num": "133.",
+                "non_school": "106",
+                "before": "7",
+                "primary": "16",
+                "middle": "0",
+                "high": "4"
+            },
+            {
+                "village": "西伊必奇村委会",
+                "num": "22.",
+                "non_school": "16",
+                "before": "0",
+                "primary": "4",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "依兰台村委会",
+                "num": "114.",
+                "non_school": "80",
+                "before": "8",
+                "primary": "22",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "宜斯坎村委会",
+                "num": "49.",
+                "non_school": "37",
+                "before": "3",
+                "primary": "8",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "扎罗梅村委会",
+                "num": "24.",
+                "non_school": "21",
+                "before": "0",
+                "primary": "1",
+                "middle": "2",
+                "high": "0"
+            }
+        ]
+    },
+    {
+        "town": "西瓦尔图镇",
+        "list": [
+            {
+                "village": "北林泉村委会",
+                "num": "43.",
+                "non_school": "32",
+                "before": "7",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "长新村委会",
+                "num": "128.",
+                "non_school": "114",
+                "before": "1",
+                "primary": "9",
+                "middle": "4",
+                "high": "0"
+            },
+            {
+                "village": "大库木尔村委会",
+                "num": "40.",
+                "non_school": "30",
+                "before": "0",
+                "primary": "8",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "二龙山村委会",
+                "num": "36.",
+                "non_school": "32",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "1"
+            },
+            {
+                "village": "古山子村委会",
+                "num": "45.",
+                "non_school": "45",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "九龙泉村委会",
+                "num": "45.",
+                "non_school": "44",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "1"
+            },
+            {
+                "village": "巨龙泉村委会",
+                "num": "9.",
+                "non_school": "8",
+                "before": "0",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "坤密尔提村委会",
+                "num": "21.",
+                "non_school": "20",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "民巨川村委会",
+                "num": "4.",
+                "non_school": "4",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "七间房村委会",
+                "num": "18.",
+                "non_school": "15",
+                "before": "0",
+                "primary": "2",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "青背村委会",
+                "num": "61.",
+                "non_school": "55",
+                "before": "2",
+                "primary": "3",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "双龙堡村委会",
+                "num": "15.",
+                "non_school": "15",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "西瓦尔图村委会",
+                "num": "6.",
+                "non_school": "5",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "0"
+            },
+            {
+                "village": "新发村委会",
+                "num": "11.",
+                "non_school": "11",
+                "before": "0",
+                "primary": "0",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "新农村村委会",
+                "num": "20.",
+                "non_school": "18",
+                "before": "0",
+                "primary": "0",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "兴隆村委会",
+                "num": "97.",
+                "non_school": "91",
+                "before": "0",
+                "primary": "4",
+                "middle": "2",
+                "high": "0"
+            },
+            {
+                "village": "兴泉村委会",
+                "num": "71.",
+                "non_school": "67",
+                "before": "3",
+                "primary": "1",
+                "middle": "0",
+                "high": "0"
+            },
+            {
+                "village": "永安村委会",
+                "num": "107.",
+                "non_school": "98",
+                "before": "0",
+                "primary": "6",
+                "middle": "3",
+                "high": "0"
+            },
+            {
+                "village": "卓络尼村委会",
+                "num": "19.",
+                "non_school": "17",
+                "before": "0",
+                "primary": "0",
+                "middle": "1",
+                "high": "1"
+            }
+        ]
+    }
+]

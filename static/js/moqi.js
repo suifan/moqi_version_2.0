@@ -1514,14 +1514,24 @@
                             "top": y - mapApi.dis_h / 1.5,
                         }).addClass("show");
 
-                        $('#partyHome')//党员家按钮//
-                        $('#partyLeader')//干部按钮
-                        $('#partyVillageClub')//党村委会按钮
+                        //党员家按钮//
+                         $('#partyHome').on('click', function(event) {
+                             event.preventDefault();
 
+                             
+                             
+                         });
+                         //干部按钮
+                        $('#partyLeader').on('click', function(event) {
+                            event.preventDefault();
+                            /* Act on the event */
+                        });
+                        //党村委会按钮
+                        $('#partyVillageClub').on('click',function(event) {
+                            event.preventDefault();
+                            /* Act on the event */
+                        });
 
-
-
-                        //getHouseList(data);
                     }else{
 
                     }

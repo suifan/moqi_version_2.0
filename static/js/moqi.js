@@ -231,6 +231,25 @@
                 chart.pieChart("secretaryChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '220', '人');
                 chart.pieChart("workTeamChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '64', "支");
                 chart.pieChart("cadreChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '220', '人');
+                $('.bottom').html(template('governmentTemp_bottom', {}));
+                // bottomBind();
+                //底部按钮点击事件
+                $(".bottom-head").on("click", function() {
+                    var $this = $(this).siblings(".bottom-content");
+                    $this.slideToggle(function() {
+                        var showBool = $this.is(":visible");
+                        if (!showBool && window.timeOut) {
+                            clearTimeout(timeOut);
+                        } else {
+                            $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                            if ($(".bottom-head").hasClass("active")) {
+                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
+                            } else {
+                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
+                            }
+                        }
+                    });
+                });
 
 
             },
@@ -1146,6 +1165,7 @@
                     $("body>div").hide();
                     $(".mapBox").show();
                     $("#leftSide").show();
+                    $(".bottom").show();
                     $("#rightSide").show();
                     // $("#whole").hide();
                     api.getGovernment();

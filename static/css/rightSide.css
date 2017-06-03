@@ -419,3 +419,21 @@ li.progressLi p {
     line-height: 3vw;
     width: 49%;
 }
+
+.governmentBottom .bottom-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.governmentBottom .bottomItem{
+    width: 25vw;
+    text-align: center;
+}
+.governmentBottom img{
+    width:9vw;
+}
+
+.governmentBottom p{
+    font-size: .5vw;
+}

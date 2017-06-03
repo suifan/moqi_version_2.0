@@ -831,6 +831,7 @@ table tr:nth-child(even) td{
 #buzhidao .team .green{
     color: #a2fc6c;
     left: 8.8vw;
+    font-size: .5vw;
 }
 #buzhidao .team .yellow{
     color: #f8ec04;

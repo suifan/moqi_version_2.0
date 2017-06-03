@@ -3825,7 +3825,7 @@
                         </div>
                         {{if data.pic.length}}
                         <div class="box-right">
-                            {{each data.pic as pic}}
+                            {{each data.pic as pic}} 
                             <div class="item-img"><img src="..{{pic}}" alt=""></div>
                             {{/each}}
                         </div>
@@ -3835,6 +3835,22 @@
                 </div>
             </div>
         </div>
+    </div>
+</script> 
+<!-- 生态扶贫底部 -->
+<script id="ecologyHard" type="text/html">
+    <div class="bottom-head" >
+        <span>生态扶贫困难户分布</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
+    </div>
+    <div class="bottom-content" style="display: none;">
+        <div class="bottom-header">
+            <ul>
+                <li class="totalFamily click-active">总户数</li>
+                <li class="totalPeople">总人数</li>
+                <li class="plantNum">种植地亩数</li>
+            </ul>
+        </div>
+        <div class="bottom-body" id = "ecologyHardchart"></div>
     </div>
 </script>
 <!--莫旗简介-->

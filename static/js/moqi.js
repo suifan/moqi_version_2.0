@@ -229,6 +229,15 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
 
         },
+        'getEcologyTotalFamily':function(){
+            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+        },
+        'getEcologyTotalPeople':function(){
+            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[222,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+        },
+        'getEcologyplantNum':function(){
+            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[333,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+        },
         'getPovertyDistribution':function(){
             chart.barChart("poverty_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
@@ -924,7 +933,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
                 ],
                 total:"3356"
-            }
+            };
             charts.legendPie("productionTotalChart",poverty);
             //左侧 end
 
@@ -996,7 +1005,44 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
             charts.treeChart("returnTreeChart",returnData);
 
-
+            //底部--------------------start
+                    $('.bottom').html(template('ecologyHard', {}));
+                    // bottomBind();
+                    //底部按钮点击事件
+                    $(".bottom-head").on("click",function(){
+                        var $this = $(this).siblings(".bottom-content");
+                        $this.slideToggle(function(){
+                            var showBool = $this.is(":visible");
+                            if(!showBool&&window.timeOut){
+                                clearTimeout(timeOut);
+                            }else{
+                                $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
+                                if($(".bottom-head").hasClass("active")){
+                                    $(".bottom-head").removeClass("active").find("img").attr("src","../images/up_arrow.png")
+                                }else{
+                                    $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
+                                }
+                                
+                                api.getEcologyTotalFamily();
+                            }
+                        });
+                    });
+                    //贫困状况切换标题
+                    $(".bottom-header ul").on("click","li", function(){
+                        var activeBool = $(this).hasClass("click-active");
+                        if(!activeBool){
+                            $(this).addClass("click-active");
+                            $(this).siblings("li").removeClass("click-active");
+                             if($(this).hasClass("totalFamily")){
+                                api.getEcologyTotalFamily();
+                            }else if($(this).hasClass("totalPeople")){
+                                api.getEcologyTotalPeople();
+                            }else{
+                                api.getEcologyplantNum();
+                            }
+                        }
+                    });
+                    //底部--------------------end
         },
 
         /**

@@ -392,67 +392,65 @@ define(['echarts'], function(echarts) {
      */
     var lineChart = function(id, data) {
         var chart = echarts.init(document.getElementById(id));
-        chart.setOption(
-            {
-                title: {
-                    text: data.title||'本周签约医生签约数量                        单位:人',
-                    textStyle:{
-                        color:'#fff',
-                        fontSize:'12px'
+        chart.setOption({
+            title: {
+                text: data.title || '本周签约医生签约数量                        单位:人',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '12px'
+                }
+            },
+            grid: data.grid,
+            tooltip: data.tooltip,
+            xAxis: {
+                axisLine: {
+                    lineStyle: {
+                        color: data.axisLabelColor || '#d0d0d0',
+                        width: data.axisLineWidth || 1
                     }
                 },
-                grid: data.grid,
-                tooltip: data.tooltip,
-                xAxis: {
-                    axisLine:{
-                        lineStyle:{
-                            color:data.axisLabelColor||'#d0d0d0',
-                            width:data.axisLineWidth||1
+                type: 'category',
+                boundaryGap: true,
+                data: data.xArr
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: data.axisLabelColor || '#d0d0d0',
+                        width: data.axisLineWidth || 1
+                    }
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                    textStyle: data.axisLabelColor || "#d0d0d0"
+                }
+            },
+            series: [{
+                name: '签约数量',
+                type: 'line',
+                data: data.yArr,
+                lineStyle: {
+                    normal: {
+                        color: data.axisLabelColor || '#2fd819',
+                        width: data.axisLineWidth || 1
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: data.axisLabelColor || "#fff"
                         }
-                    },
-                    type: 'category',
-                    boundaryGap: true,
-                    data: data.xArr
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLine:{
-                        lineStyle:{
-                            color:data.axisLabelColor||'#d0d0d0',
-                            width:data.axisLineWidth||1
-                        }
-                    },
-                    splitLine: {
-                        show:false
-                    },
-                    axisTick: {
-                        show:false
-                    },
-                    axisLabel: {
-                        show:false,
-                        textStyle:data.axisLabelColor||"#d0d0d0"
                     }
-                },
-                series: [
-                    {
-                        name:'签约数量',
-                        type:'line',
-                        data:data.yArr,
-                        lineStyle: {
-                            normal:{
-                                color: data.axisLabelColor||'#2fd819',
-                                width: data.axisLineWidth||1
-                            }
-                        },
-                        label: {
-                            normal: {
-                                show: true,
-                                position: 'top',
-                                textStyle: {
-                                    color: data.axisLabelColor||"#fff"
-                                }
-                            }
-                    }
+                }
 
             }]
         });
@@ -639,7 +637,7 @@ define(['echarts'], function(echarts) {
                     show: false
                 }
             }, {
-
+                name: '人民币:万元',
                 splitLine: { show: false },
                 axisTick: {
                     show: false,
@@ -681,7 +679,7 @@ define(['echarts'], function(echarts) {
         var youChart = echarts.init(document.getElementById(id));
         youChart.setOption({
             title: {
-                text: '合计:5197户,12412人投入2947.36万元',
+                text: '合计:5197户,12412人投入2947.36万元,预计每户收益1.2万元',
                 textStyle: {
                     color: '#00d4ff',
                     fontStyle: 'normal',
@@ -695,7 +693,8 @@ define(['echarts'], function(echarts) {
                 trigger: 'axis',
                 axisPointer: {
                     type: 'shadow'
-                }
+                },
+                formatter: "{b}<br/>{c}户"
             },
             legend: {
                 orient: 'vertical',
@@ -707,12 +706,13 @@ define(['echarts'], function(echarts) {
                 },
                 itemWidth: 16,
                 //backgroundColor:'#f00',
-                data: ['3901户,9677人投入1874.36万元', '888', '777', '666']
+                data: ['3901户,9677人投入1874.36万元', '231户，551人 投入3万元', '120户，300人 投入3万元', '5197户，1884人 投入370万元']
             },
             label: {
                 normal: {
                     // show:true,
-                    position: 'right'
+                    position: 'right',
+
                 }
             },
             grid: {
@@ -753,23 +753,23 @@ define(['echarts'], function(echarts) {
                 name: '',
                 type: 'bar',
                 barWidth: '40%',
-                data: [182, 234, 290, 302]
+                data: [5197, 120, 231, 9677]
             }, {
                 name: '3901户,9677人投入1874.36万元',
                 type: 'bar',
                 //barWidth: '40%',
                 //data: [182, 234, 290, 302]
             }, {
-                name: '888',
+                name: '231户，551人 投入3万元',
                 type: 'bar',
                 //barWidth: '40%',
                 //data: [182, 234, 290, 302]
             }, {
-                name: '777',
+                name: '120户，300人 投入3万元',
                 type: 'bar',
                 //ata: [182, 234, 290, 302]
             }, {
-                name: '666',
+                name: '5197户，1884人 投入370万元',
                 type: 'bar',
 
                 //data: [182, 234, 290, 302]
@@ -923,10 +923,10 @@ define(['echarts'], function(echarts) {
                 axisTick: {
                     show: false,
                 },
-                nameLocation:'middle',
-                nameRotate:"90",
-                nameTextStyle:{
-                    fontSize:16
+                nameLocation: 'middle',
+                nameRotate: "90",
+                nameTextStyle: {
+                    fontSize: 16
                 },
                 axisLine: {
                     lineStyle: {
@@ -953,16 +953,17 @@ define(['echarts'], function(echarts) {
                         color: []
                     }
                 },
-                markLine : {
-                lineStyle: {
-                    normal: {
-                        type: 'dashed'
-                    }
+                markLine: {
+                    lineStyle: {
+                        normal: {
+                            color: '#f8ec04',
+                            type: 'solid'
+                        }
+                    },
+                    data: [
+                        [3000,3601.5]
+                    ]
                 },
-                data : [
-                    [{type : 'min'}, {type : 'max'}]
-                ]
-                 },
                 barWidth: '60%',
                 data: barData.data
             }]

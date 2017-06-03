@@ -1513,6 +1513,15 @@
                             "left": x - mapApi.dis_w,
                             "top": y - mapApi.dis_h / 1.5,
                         }).addClass("show");
+
+                        $('#partyHome')//党员家按钮//
+                        $('#partyLeader')//干部按钮
+                        $('#partyVillageClub')//党村委会按钮
+
+
+
+
+                        //getHouseList(data);
                     }else{
 
                     }

@@ -1445,74 +1445,103 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             var x = event.pageX || event.clientX + mapApi.scrollX;
                             var y = event.pageY || event.clientY + mapApi.scrollY;
                             mapApi.curr_path_id = this.id;
-
-                            //村贫困家庭表单
-                            // $.jBox('', { title: "", buttons: {}, border: 0, opacity: 0.4 });
-                            // $.getJSON("../js/json/map_peopleList.json",function(res){
-                            $.getJSON("../js/json/mapPeopleDetail.json",function(res){
-                            //     $.ajax({
-                            //         type: "GET",
-                            //         url: url
-                            //     }).done(function(res){
-                                    var data={};
-                                    var _data = data.data = res[area][mapApi.curr_path_id];
-                                    data.totalList = res[area].list;
-                                    var membersTemp = template("villageTemp", data);
-                                    var titleHtml = template("selectTown",data);
-                                    var html = titleHtml +"<div>"+membersTemp+"</div>";
-                                        html += "<ul class='page'></ul>";
-                                    $.jBox(html, { title: "", buttons: {}, border: 0, opacity: 0.4 });
-                                    // document.getElementsByClassName('jbox-content')[1].innerHTML = html;
-                                    document.getElementsByTagName('body')[0].style.padding = "0";
-                                    // 获取表格容器
-                                    var container = $('.jbox-content>div').eq(1);
-                                    jpage.page(_data,"villageTemp",container,10);
-                                    //设置已选中村的option
-                                    $(".select-switch").find("option[value='"+mapApi.curr_path_id+"']").attr("selected","selected");
-                                    //绑定select切换事件
-                                    $(".select-switch select").on("change",function(){
-                                        var curVillage = $(this).val();
-                                        //重置分页
-                                        $(".page").html("");
-                                        var newData = res[area][curVillage];
-                                        var membersTemp = template("villageTemp", newData);
-                                        $('.jbox-content>div').eq(1).html("").html(membersTemp);
-                                        jpage.page(newData,"villageTemp",container,10);
-                                    })
-                                    //家庭列表绑定点击事件
-                                    container.on("click","tr",function() {
-                                        var text = $("#tab").find("li.active").text();
-                                        var name = $(this).find("td:eq(1)").text();
-                                        var family = data.data.filter(function(a) {
-                                            return a.name == name;
-                                        });
-                                        var $pop = $.jBox('', { title: name, buttons: {}, border: 0, opacity: 0.4 });
+                            //获取当前顶部选中页签
+                            var text = $("#tab").find("li.active").text();
+                            //数据变量
+                            var res = "";
+                            var area = "西瓦尔图镇";
+                            var curr_path_id = "兴隆村";
+                            //请求贫困家庭列表数据
+                            if(text == "健康扶贫"){
+                                $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area +"&village="+ curr_path_id,function (data) {
+                                    // res = data;
+                                    getHouseList(data);
+                                    // console.log(data);
+                                })
+                            }else if(text == "首页") {
+                                $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area +"&village="+ curr_path_id,function (data) {
+                                    // res = data;
+                                    getHouseList(data);
+                                    // console.log(data);
+                                })
+                            }else{
+                                //党建部分代码
+                            }
+                        /**
+                         * 打开户列表的方法
+                         */
+                        function getHouseList(res){
+                            var membersTemp = template("villageTemp", res);
+                            var titleHtml = template("selectTown",{});
+                            var html = titleHtml +"<div>"+membersTemp+"</div>";
+                            html += "<ul class='page'></ul>";
+                            $.jBox(html, { title: "", buttons: {}, border: 0, opacity: 0.4 });
+                            document.getElementsByTagName('body')[0].style.padding = "0";
+                            // 获取表格容器
+                            var container = $('.jbox-content>div').eq(1);
+                            jpage.page(res.data,"villageTemp",container,10);
+                            //设置已选中村的option
+                            $(".select-switch").find("option[value='"+mapApi.curr_path_id+"']").attr("selected","selected");
+                            //绑定select切换事件
+                            $(".select-switch select").on("change",function(){
+                                var curVillage = $(this).val();
+                                //重置分页
+                                $(".page").html("");
+                                var newData = res[area][curVillage];
+                                var membersTemp = template("villageTemp", newData);
+                                $('.jbox-content>div').eq(1).html("").html(membersTemp);
+                                jpage.page(newData,"villageTemp",container,10);
+                            });
+                            //家庭列表绑定点击事件
+                            container.on("click","tr",function() {
+                                var text = $("#tab").find("li.active").text();
+                                var name = $(this).find("td:eq(1)").text();
+                                var userId = $(this).attr("id");
+                                /*var family = res.data.filter(function(a) {
+                                    return a.name == name;
+                                });*/
+                                var $pop = $.jBox('', { title: name, buttons: {}, border: 0, opacity: 0.4 });
+                                document.getElementsByTagName('body')[0].style.padding = "0";
+                                $pop.find("#jbox").css("top", "2.6vw");
+                                if(text == "健康扶贫"){
+                                    getHelpPoor(userId, 1);
+                                    //绑定图片放大事件
+                                    $(".physexam-record img").viewer();
+                                    //绑定家庭成员点击事件
+                                    $pop.find(".per-mid tbody").on("click","tr", function(){
+                                        var member = $(this).children("td").eq(0).text();
+                                        var memberId = $(this).attr("id");
+                                        var $popOther = $.jBox('', { title: member, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByTagName('body')[0].style.padding = "0";
-                                        $pop.find("#jbox").css("top", "2.6vw");
-                                        if(text == "健康扶贫"){
-                                            var cardHtml = template('helpCardTemp',{} );
-                                            document.getElementsByClassName('jbox-content')[1].innerHTML = cardHtml;
-                                            //绑定图片放大事件
-                                            $(".physexam-record img").viewer();
-                                            //绑定家庭成员点击事件
-                                            $pop.find(".per-mid tbody").on("click","tr", function(){
-                                                var member = $(this).children("td").eq(0).text();
-                                                var $popOther = $.jBox('', { title: member, buttons: {}, border: 0, opacity: 0.4 });
-                                                document.getElementsByTagName('body')[0].style.padding = "0";
-                                                $popOther.find("#jbox").css("top", "2.6vw");
-                                                var html = template('helpCardTemp',{} );
-                                                document.getElementsByClassName('jbox-content')[2].innerHTML = html;
-                                                //绑定图片放大事件
-                                                $popOther.find(".physexam-record img").viewer();
-                                            })
-                                        }else {
-                                            document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp',family[0] );
-                                            chart.barChart("fupinBar",[2016,2017,2018,2019],[520,120,685,520],true);
-                                            chart.barChart("profitBar",[2016,2017,2018,2019],[520,120,685,520],true);
-                                        }
+                                        $popOther.find("#jbox").css("top", "2.6vw");
+                                        getHelpPoor(memberId, 2);
+                                        //绑定图片放大事件
+                                        $popOther.find(".physexam-record img").viewer();
+                                    })
+                                }else if(text == "首页") {
+                                    $.get("http://moqi.test.grdoc.org/api/people/list?id="+userId, function(data){
+                                        document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp',data);
+                                        chart.barChart("fupinBar",[2016,2017,2018,2019],[520,120,685,520],true);
+                                        chart.barChart("profitBar",[2016,2017,2018,2019],[520,120,685,520],true);
                                     });
-                            })
-
+                                }else {
+                                    //党建弹窗点击
+                                }
+                            });
+                        };
+                        /**
+                         * 获取扶贫卡数据
+                         * id 用户id
+                         * index 第几个弹窗
+                         */
+                        function getHelpPoor(id,index){
+                            //获取扶贫卡数据
+                            $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + id,function(res){
+                                var cardHtml = template('helpCardTemp',res.data);
+                                // console.log(res.data.physical_exam_records);
+                                document.getElementsByClassName('jbox-content')[index].innerHTML = cardHtml;
+                            });
+                        }
                     });
 
 

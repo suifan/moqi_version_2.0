@@ -83,8 +83,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                 $(".management").viewer();
             })
             $("#rightSide").on("click","div",function(){
-                if($(this).attr("id","performance"))
-               $(".government").trigger("click");
+                if($(this).attr("id")=="performance") {
+                    $(".government").trigger("click");
+                }
             });
 
             //右侧--------------------end
@@ -240,11 +241,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             chart.barChart("ecologyHardchart",townNameList,[333,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getPovertyDistribution':function(){
-            chart.barChart("poverty_status",townNameList,[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            //chart.barChart("poverty_status",["登特科办事处","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[968,600,454,286,2222,452,679,706,179,934,235,1253,1020,581,342,680]);
+            chart.barChart("poverty_status",["登特科办事处","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[402,271,192,112,881,184,334,291,75,354,94,457,395,218,159,233]);
+
         },
         'getPovertyCauses':function(){
-            chart.barChart("poverty_status",["因病","因灾","因学","因残","缺土地","缺资金","缺技术","缺劳力","缺水","自身发展动力不足","交通条件落后"],[9990,2882,372,1349,10374,3806,688,774,22,524,116]);
+            // chart.barChart("poverty_status",["因病","因灾","因学","因残","缺土地","缺资金","缺技术","缺劳力","缺水","自身发展动力不足","交通条件落后"],[9990,2882,372,1349,10374,3806,688,774,22,524,116]);
+            chart.barChart("poverty_status",["因病","因灾","因学","缺土地","缺资金","缺技术","缺劳力","缺水","自身发展动力不足","交通条件落后"],[1989,265,33,1904,428,97,132,2,56,3]);
+
         },
+
         'getFiveGroup': function(switchFlag){
             //产业扶贫底部
             $("#leftTabs").addClass("hide");
@@ -1566,4 +1572,4 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     
     //地图模块js ---------end----------
 
-}); 
+});

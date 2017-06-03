@@ -54,8 +54,9 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
         var margin = +$("#rightSide").css("margin-top").slice(0,-2);
         var sideHeight= clientHeight-height-margin;
         $("#rightSide,#leftSide").height(sideHeight-2);
-    }
-
+    };
+    //莫旗全镇名字数据  多次用到定义全局变量;
+    var townNameList=["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"];
     // 数据加载
     var api = {
         'getHomePage': function(){
@@ -230,16 +231,16 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
         },
         'getEcologyTotalFamily':function(){
-            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[111,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("ecologyHardchart",townNameList,[111,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getEcologyTotalPeople':function(){
-            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[222,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("ecologyHardchart",townNameList,[222,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getEcologyplantNum':function(){
-            chart.barChart("ecologyHardchart",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[333,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("ecologyHardchart",townNameList,[333,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getPovertyDistribution':function(){
-            chart.barChart("poverty_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("poverty_status",townNameList,[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getPovertyCauses':function(){
             chart.barChart("poverty_status",["因病","因灾","因学","因残","缺土地","缺资金","缺技术","缺劳力","缺水","自身发展动力不足","交通条件落后"],[9990,2882,372,1349,10374,3806,688,774,22,524,116]);
@@ -609,10 +610,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
 
         },//健康扶贫
         'getDiseasePoor':function(){
-            chart.barChart("helping_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("helping_status",townNameList,[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
         },
         'getFivePeopleGroupNum':function(){
-            chart.barChart("helping_status",["登特科镇","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
+            chart.barChart("helping_status",townNameList,[1952,2276,2022,2785,1072,5622,2580,1639,1628,587,2045,931,2351,3407,0,0,0]);
 
         },
         'getEducation':function(){
@@ -890,7 +891,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             $(".bottom-head").addClass("active").find("img").attr("src","../images/down_arrow.png")
                         }
                         // api.slide("slideBox_r","box-wrapper",1900);
-                        chart.barChart("fallback_status",["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[881,402,291,192,184,457,334,112,271,75,395,354,94,2698,218,159,233]);
+                        chart.barChart("fallback_status",townNameList,[881,402,291,192,184,457,334,112,271,75,395,354,94,2698,218,159,233]);
                     }
                 });
             });
@@ -907,7 +908,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $('#leftSide').html(template('productionLeftSideTemp', {}));
 
             var poverty = {
-                legend:["尼尔基镇","红彦镇","宝山镇","西瓦尔图镇","塔温敖宝镇","腾克镇","巴彦鄂温克民族乡","阿拉尔镇","哈达阳镇","拉杜尔鄂温克民族乡","汉古尔河镇","奎勒河镇","库如奇乡","登特科办事处","额尔和办事处","坤密尔提办事处","卧罗河办事处"],
+                legend:townNameList,
                 color:['#ffcf02','#00a7f8','#157dd0','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00','#f87309','#a4a5a6','#ffc200','#157dd0','#54b645','#155c94','#b35c24','#a27f00'],
                 center:["50%","30%"],
                 radius:["25%","45%"],
@@ -1565,4 +1566,4 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
     
     //地图模块js ---------end----------
 
-});
+}); 

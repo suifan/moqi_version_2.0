@@ -220,8 +220,8 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             $("#leftSide").html(template('governmentTemp_left', {}));
             chart.pieChart("satisfactionChart","#8fc31f","#1b9deb",[{"value":18},{"value":1000}],'98.2%');
             chart.pieChart("attendanceChart","#8fc31f","#1b9deb",[{"value":18},{"value":1000}],'98.2%');
-            chart.pieChart("resumptionChart","#1b9deb","#1b9deb",[{"value":100}],'100',"户");
-            chart.pieChart("disciplineChart","#1b9deb","#1b9deb",[{"value":100}],'100','户');
+            chart.pieChart("resumptionChart","#1b9deb","#1b9deb",[{"value":100}],'100',"分");
+            chart.pieChart("disciplineChart","#1b9deb","#1b9deb",[{"value":100}],'100','分');
             $("#rightSide").html(template('governmentTemp_right', {}));
             chart.pieChart("secretaryChart","#1b9deb","#1b9deb",[{"value":100}],'220','人');
             chart.pieChart("workTeamChart","#1b9deb","#1b9deb",[{"value":100}],'64',"支");
@@ -501,7 +501,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
             }
             charts.labelPie("diseaseStructureChart",diseaseStructure);
             var chartData_x = ["高血压","糖尿病","结核病","重症精神病"];
-            var charData_y = ['2212','2212','2212','2212'];
+            var charData_y = ['565','195','67','82'];
             chart.barChart("keyPopulationChart",chartData_x,charData_y);
             //右侧---------end
             //右侧--------------------start

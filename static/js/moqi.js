@@ -972,7 +972,7 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                     if(!showBool&&window.timeOut){
                         clearTimeout(timeOut);
                     }else{
-                        api.slide("rebuildSlideBox", "box-wrapper", 1900,3);
+                        api.slide("productionSlideBox", "box-wrapper", 1900,3);
                     }
                     $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                     if($(".bottom-head").hasClass("active")){
@@ -1385,10 +1385,10 @@ require(['jquery','migrate','template','chart','charts','jbox','progressBar','co
                             case "首页":
                                 api.getHomePage();
                                 break;
-                            case "产业扶贫":
-                                api.getFiveGroup();
+                            case "党建促脱贫":
+                                api.getGovernment();
                                 break;
-                            case "贫困家庭":
+                            case "健康扶贫":
                                 api.getDisease();
                                 break;
                         }

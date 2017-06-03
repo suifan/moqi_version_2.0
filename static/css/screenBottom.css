@@ -72,7 +72,7 @@
     height: 12.4vw;
     display: table;
     float: left;
-    margin: 0 2vw;
+    padding: 0 2vw;
 }
 .box-item>div {
     display: table-cell;
@@ -134,7 +134,7 @@
     border: 1px solid #465b77;
 }
 .item-img img {
-    width: 10vw;
+    width: 11vw;
     margin: 0;
 }
 

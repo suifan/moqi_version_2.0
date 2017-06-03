@@ -1266,8 +1266,8 @@
                     <circle class="cir cir-in" cx="942.2" cy="905.4" r="5.4" />
                     <text transform="matrix(1 0 0 1 931 932.6099)" class="st1">长新村</text>
                 </g>
-                <g id="xinfaxun" class='color_a validMap'>
-                    <path id='' class='xinfaxunPath' d="M839,948c1.1,1.3,2,2.8,3.3,4c2.5,2.3,6,4,7.7,6.8c10.3,15.9,25.3,24,43.3,27.5c8.8,1.7,9.3,1.9,28.4-3.7
+                <g id="xinfacun" class='color_a validMap'>
+                    <path id='' class='xinfacunPath' d="M839,948c1.1,1.3,2,2.8,3.3,4c2.5,2.3,6,4,7.7,6.8c10.3,15.9,25.3,24,43.3,27.5c8.8,1.7,9.3,1.9,28.4-3.7
                                 c0.3,0.6,1,1.3,1,2c0.2,8.6,5,13.4,12.7,16.4c8.2,3.2,7.8,11.6,9.9,18.3c0.2,0.6-1.1,1.8-1.8,2.6c-1.9,2.4-5,4.5-5.7,7.2
                                 c-1.3,5.1-4.8,8.2-8,11.7c-1.9,2-3.2,4.5-5,6.7c-0.8,1-2.1,2-3.3,2.3c-6.8,1.2-9.5,7.3-4.7,12.3c3.8,3.8,4.1,6.2,0,10
                                 c-3.2,3-2.7,6.9,0.1,10.3c1.5,1.9,3.2,3.6,5.5,6.2c-2.1,0.6-3.2,1.2-4.4,1.3c-10.2,0.4-19.3,2.5-24.4,12.9
@@ -2877,7 +2877,18 @@
     <div class="map-content">
         <ul class="links-list">
             <li><a id="changeMap" class="" href="javascript:;">进入{{townName}}</a></li>
-            <li><a href="javascript:;">查看督导组成员</span></a></li>
+            <!-- <li><a href="javascript:;">查看督导组成员</span></a></li> -->
+        </ul>
+    </div>
+    <div class="map-sanjiao"></div>
+</script>
+<!-- 党建促脱贫浮窗模板 -->
+<script id="mapPartyClickTemp" type="text/html">
+    <div class="map-content">
+        <ul class="links-list">
+            <li><a id="partyHome" class="" href="javascript:;">党员家</a></li>
+            <li><a id="partyLeader" class="" href="javascript:;">干部</a></li>
+            <li><a id="partyVillageClub" class="" href="javascript:;">党村委会</a></li>
         </ul>
     </div>
     <div class="map-sanjiao"></div>
@@ -3840,7 +3851,7 @@
 <!-- 生态扶贫底部 -->
 <script id="ecologyHard" type="text/html">
     <div class="bottom-head" >
-        <span>生态扶贫困难户分布</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
+        <span>生态扶贫分布</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
     </div>
     <div class="bottom-content" style="display: none;">
         <div class="bottom-header">
@@ -4030,28 +4041,28 @@
                 <div class="per-img">
                     <img src="../images/default_head_img.png">
                 </div>
-                <p>{{name}}</p>
+                <!--<p>{{name}}</p>-->
             </div>
             <div class="per-leftmid">
                 <ul>
-                    <li>姓名：<span>{{"张某某"}}</span>&nbsp;&nbsp;&nbsp;性别：{{"男"}}</li>
-                    <li>身份证号：<span>{{"14565658987458"}}</span></li>
-                    <li>住址：<span>{{"北京市朝阳区朝阳镇朝阳村"}}</span></li>
-                    <li>类别：<span>{{"完全恢复劳动能力"}}</span></li>
-                    <li>疾病名称：<span>{{"糖尿病"}}</span></li>
-                    <li>计划救治年份：<span>{{"2017年"}}</span></li>
-                    <li>救治情况：<span>{{"正在救治"}}</span></li>
+                    <li>姓名：<span>{{name}}</span>&nbsp;&nbsp;&nbsp;性别：{{gender}}</li>
+                    <li>身份证号：<span>{{}}</span></li>
+                    <li>住址：<span>{{address}}</span></li>
+                    <li>类别：<span>{{}}</span></li>
+                    <li>疾病名称：<span>{{disease_name}}</span></li>
+                    <li>计划救治年份：<span>{{plan_cure_year}}</span></li>
+                    <li>救治情况：<span>{{cure_status}}</span></li>
                 </ul>
             </div>
             <div class="per-leftbtm">
                 <ul>
-                    <li>年龄：<span>{{32}}</span></li>
-                    <li>手机号：<span>{{12564589587}}</span></li>
-                    <li>脱贫属性：<span>已脱贫</span></li>
+                    <li>年龄：<span>{{age}}</span></li>
+                    <li>手机号：<span>{{phone}}</span></li>
+                    <li>脱贫属性：<span>{{poverty_over_property}}</span></li>
                     <li><span>&nbsp;</span></li>
-                    <li>诊断机构：<span>{{"北京大学第三附属医院"}}</span></li>
-                    <li>治疗机构：<span>{{"北京大学第三附属医院"}}</span></li>
-                    <li>治疗情况：<span>{{"好转"}}</span></li>
+                    <li>诊断机构：<span>{{diagnose_organ}}</span></li>
+                    <li>治疗机构：<span>{{cure_organ}}</span></li>
+                    <li>治疗情况：<span>{{therapeutic_effect}}</span></li>
                 </ul>
             </div>
         </div>
@@ -4070,34 +4081,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"父子"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"无"}}</td>
+                    {{each members as mem}}
+                    <tr id = "{{mem.id}}">
+                        <td>{{mem.name}}</td>
+                        <td>{{mem.gender}}</td>
+                        <td>{{mem.relation}}</td>
+                        <td>{{mem.phone}}</td>
+                        <td>{{mem.health}}</td>
                     </tr>
-                    <tr>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"父子"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"无"}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"父子"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"无"}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"父子"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"无"}}</td>
-                    </tr>
+                    {{/each}}
                     </tbody>
                 </table>
             </div>
@@ -4106,10 +4098,9 @@
             <p class="per-title">体检记录</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="physexam-record">
-                <div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496147226460&di=a5fc6860e7c12d45f9d6ea43cbc69e76&imgtype=0&src=http%3A%2F%2Fstatic3.photo.sina.com.cn%2Fbmiddle%2F553dfdb14d2f98a116e02" alt=""></div>
-                <div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496147226460&di=a5fc6860e7c12d45f9d6ea43cbc69e76&imgtype=0&src=http%3A%2F%2Fstatic3.photo.sina.com.cn%2Fbmiddle%2F553dfdb14d2f98a116e02" alt=""></div>
-                <div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496147226460&di=a5fc6860e7c12d45f9d6ea43cbc69e76&imgtype=0&src=http%3A%2F%2Fstatic3.photo.sina.com.cn%2Fbmiddle%2F553dfdb14d2f98a116e02" alt=""></div>
-                <div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496147226460&di=a5fc6860e7c12d45f9d6ea43cbc69e76&imgtype=0&src=http%3A%2F%2Fstatic3.photo.sina.com.cn%2Fbmiddle%2F553dfdb14d2f98a116e02" alt=""></div>
+                {{each physical_exam_records as pic}}
+                    <div><img src="{{pic}}" alt=""></div>
+                {{/each}}
             </div>
         </div>
     </div>
@@ -4130,38 +4121,16 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {{each five_group as five}}
                     <tr>
                         <td><em></em></td>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"扶贫管理处"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"村支书"}}</td>
+                        <td>{{five.name}}</td>
+                        <td>{{five.gender}}</td>
+                        <td>{{five.org_name||""}}</td>
+                        <td>{{five.phone}}</td>
+                        <td>{{five.identity}}</td>
                     </tr>
-                    <tr>
-                        <td><em></em></td>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"扶贫管理处"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"村支书"}}</td>
-                    </tr>
-                    <tr>
-                        <td><em></em></td>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"扶贫管理处"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"村支书"}}</td>
-                    </tr>
-                    <tr>
-                        <td><em></em></td>
-                        <td>{{"张某某"}}</td>
-                        <td>{{"男"}}</td>
-                        <td>{{"扶贫管理处"}}</td>
-                        <td>{{"12545896598"}}</td>
-                        <td>{{"村支书"}}</td>
-                    </tr>
+                    {{/each}}
                     </tbody>
                 </table>
             </div>
@@ -4169,20 +4138,15 @@
         <section class="help-method">
             <p class="per-title">治疗方案</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
+            {{each therapeutic_schedule as cure}}
             <div class="cure-plan">
-                <div>疾病名称：<span>{{"糖尿病"}}</span></div>
+                <div>疾病名称：<span>{{cure.name}}</span></div>
                 <div>
                     <div class="cure-title">治疗方案：</div>
-                    <div class="cure-info"><span>磺酰脲类药物治疗宜从小剂量开始，于早餐前1/2小时服用，根据血糖，参考尿糖，需要时每周增加剂量一次，可改为每日2次，直至取得效果。在病情较重者也可从每日2次服药开始</span></div>
+                    <div class="cure-info"><span>{{cure.schedule}}</span></div>
                 </div>
             </div>
-            <div class="cure-plan">
-                <div>疾病名称：<span>{{"糖尿病"}}</span></div>
-                <div>
-                    <div class="cure-title">治疗方案：</div>
-                    <div class="cure-info"><span>磺酰脲类药物治疗宜从小剂量开始，于早餐前1/2小时服用，根据血糖，参考尿糖，需要时每周增加剂量一次</span></div>
-                </div>
-            </div>
+            {{/each}}
         </section>
         <section class="fupin-bar">
             <p class="per-title">健康基金</p>
@@ -4198,15 +4162,7 @@
                     <tbody>
                     <tr>
                         <td>{{1}}</td>
-                        <td>{{"5000万"}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{2}}</td>
-                        <td>{{"3000万"}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{3}}</td>
-                        <td>{{"200万"}}</td>
+                        <td>{{"暂无"}}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -4520,19 +4476,19 @@
                 </thead>
                 <tbody>
                 {{each data as data}}
-                <tr>
+                <tr id="{{data.id}}">
                     <td>{{$index+1}}</td>
-                    <td>{{data.name}}</td>
-                    <td>{{data.sfz}}</td>
-                    <td>{{data.mobile}}</td>
-                    <td>{{}}</td>
-                    <td>{{}}</td>
-                    <td>{{}}</td>
-                    <td>{{data.doctor}}</td>
-                    <td>{{data.bfzrr}}</td>
-                    <td>{{}}</td>
-                    <td>{{}}</td>
-                    <td>{{}}</td>
+                    <td>{{data.name|| ''}}</td>
+                    <td>{{data.idnum}}</td>
+                    <td>{{data.phone}}</td>
+                    <td>{{data.poor_reason}}</td>
+                    <td>{{data.poor_property}}</td>
+                    <td>{{data.people_num}}</td>
+                    <td>{{data.responsible_doctor_name|| ''}}</td>
+                    <td>{{data.help_cadre_name|| ''}}</td>
+                    <td>{{data.help_cadre_num}}</td>
+                    <td>{{data.village_secretary_name || ''}}</td>
+                    <td>{{data.poverty_over_property}}</td>
                 </tr>
                 {{/each}}
                 </tbody>
@@ -4614,7 +4570,7 @@
                    <img src="../images/tree/zhenzi.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt '>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt '>3333.9万亩</span>榛子林</p>
                </div>
            </li>
            <li>
@@ -4622,7 +4578,7 @@
                    <img src="../images/tree/shaji.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt'>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt'>24044.8万亩</span>榛子林</p>
                </div>
            </li>
            <li>
@@ -4630,7 +4586,7 @@
                    <img src="../images/tree/shengtailin.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt'>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt'>18333.3万亩</span>榛子林</p>
                </div>
            </li>
            <li>
@@ -4638,7 +4594,7 @@
                    <img src="../images/tree/shaguo.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt'>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt'>24044.8万亩</span>榛子林</p>
                </div>
            </li>
            <li>
@@ -4646,7 +4602,7 @@
                    <img src="../images/tree/zhongcaoyao.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt'>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt'>299万亩</span>榛子林</p>
                </div>
            </li>
            <li>
@@ -4654,7 +4610,7 @@
                    <img src="../images/tree/qita.png" alt="树图片">
                </div>
                <div>
-                   <p class="tree-p"> <span class='greenTxt'>2433万亩</span>榛子林</p>
+                   <p class="tree-p"> <span class='greenTxt'>604.4万亩</span>榛子林</p>
                </div>
            </li>
        </ul>

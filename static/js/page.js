@@ -9,8 +9,6 @@
 
 
 define(['jquery','template'],function($,template){
-
-
     var page = function(data,tempId,place,num){
         var _data={};
         if(!data)return;

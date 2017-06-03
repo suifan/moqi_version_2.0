@@ -429,6 +429,7 @@ li.progressLi p {
 .governmentBottom .bottomItem{
     width: 25vw;
     text-align: center;
+    position: relative;
 }
 .governmentBottom img{
     width:9vw;
@@ -436,4 +437,13 @@ li.progressLi p {
 
 .governmentBottom p{
     font-size: .5vw;
+}
+
+.governmentBottom .files{
+    height: 13vw;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    top: .8vw;
+    left: 8vw;
 }

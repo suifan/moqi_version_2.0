@@ -34,7 +34,7 @@
         //当前所选区域对应的全局变量
         var area = "moqi";
         //图片浏览插件option设置
-        $.fn.viewer.setDefaults({ navbar: false, title: false });
+        $.fn.viewer.setDefaults({ title: false });
         //由于贫困家庭与首页共用签约，提取公共部分
         /**
          * 家医签约点击方法，暂时不做保存筛选条件的处理
@@ -210,7 +210,7 @@
                         if (!showBool && window.timeOut) {
                             clearTimeout(timeOut);
                         } else {
-                            api.slide("rebuildSlideBox", "box-wrapper", 1900, 3);
+                            // api.slide("rebuildSlideBox", "box-wrapper", 1900, 3);
                         }
                         $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                         if ($(".bottom-head").hasClass("active")) {
@@ -247,6 +247,9 @@
                             } else {
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
                             }
+
+                            $(".fileOne").viewer();
+                            $(".file1").viewer();
                         }
                     });
                 });

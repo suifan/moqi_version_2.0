@@ -249,6 +249,8 @@
                             }
 
                             $(".fileOne").viewer();
+                            $(".fileTwo").viewer();
+                            $(".fileFour").viewer();
                             $(".file1").viewer();
                         }
                     });

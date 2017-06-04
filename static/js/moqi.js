@@ -1303,10 +1303,6 @@
             },
             //初始化 首页地图
             "getMap": function(oSvg) { //获取县地图
-
-
-
-
                 mapApi.curr_svg = oSvg;
                 if (mapApi.curr_svg) {
                     // console.log(mapType)

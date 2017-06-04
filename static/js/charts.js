@@ -442,6 +442,7 @@ define(['echarts'], function(echarts) {
                         width: data.axisLineWidth || 1
                     }
                 },
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 label: {
                     normal: {
                         show: true,
@@ -536,6 +537,7 @@ define(['echarts'], function(echarts) {
                 name: '扶贫保障标准',
                 type: 'line',
                 data: data.yArr,
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
                         color: '#6ce6fe',
@@ -555,6 +557,7 @@ define(['echarts'], function(echarts) {
                 name: '低保标准',
                 type: 'line',
                 data: data.yArrs,
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
                         color: '#fff',
@@ -869,10 +872,18 @@ define(['echarts'], function(echarts) {
                 trigger: 'axis',
                 axisPointer: { // 坐标轴指示器，坐标轴触发有效
                     type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                }
+                },
+                formatter: "{b}<br/>{c}户"
             },
+            // tooltip: {
+            //     trigger: 'axis',
+            //     axisPointer: {
+            //         type: 'shadow'
+            //     },
+            //     formatter: "{b}<br/>{c}户"
+            // },
             grid: {
-                left: '3%',
+                left: '15%',
                 right: '4%',
                 bottom: '3%',
                 containLabel: true
@@ -883,7 +894,8 @@ define(['echarts'], function(echarts) {
                     position: 'top',
                     textStyle: {
                         fontSize: 18
-                    }
+                    },
+                    formatter: "{c}万亩"
 
                 },
                 emphasis: {
@@ -923,9 +935,10 @@ define(['echarts'], function(echarts) {
                 axisTick: {
                     show: false,
                 },
-                nameLocation: 'middle',
-                nameRotate: "90",
+                nameLocation: 'end',
+                nameRotate: "0",
                 nameTextStyle: {
+                    left:'20%',
                     fontSize: 16
                 },
                 axisLine: {

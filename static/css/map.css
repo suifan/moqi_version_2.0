@@ -117,7 +117,7 @@
      /*background-color: yellow;*/
      width: 100%;
      display: none;
- } 
+ }  
  
  path {
      stroke: #436082;
@@ -132,9 +132,15 @@
 
  svg .st1 {
      fill: #fff;
+     font-size: 110%; 
  }
  
- 
+ .baoshanzhenSvg .st1{
+    font-size: 50%;
+ }
+ .dengtekebanshichuSvg .st1{
+    font-size: 70%;
+ }
  .moqiSvg .st1 {
      font-size: 50px;
      fill: #fff;

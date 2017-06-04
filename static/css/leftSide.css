@@ -425,7 +425,10 @@ span.span-active {
     width: 24%;
 }
 .per-top div:nth-child(3) {
-    width: 12%;
+    width: 38%;
+}
+.per-top div:nth-child(3).help {
+    width: 15%;
 }
 .per-right .per-top div:nth-child(2) {
     width: 18%;

@@ -699,23 +699,24 @@ define(['echarts'], function(echarts) {
                 },
                 formatter: "{b}<br/>{c}户"
             },
-            legend: {
-                orient: 'vertical',
-                x: '20%',
-                y: '25%',
-                itemGap: 66,
-                textStyle: {
-                    color: '#fff',
-                },
-                itemWidth: 16,
-                //backgroundColor:'#f00',
-                data: ['3901户,9677人投入1874.36万元', '231户，551人 投入3万元', '120户，300人 投入3万元', '5197户，1884人 投入370万元']
-            },
+            // legend: {
+            //     orient: 'vertical',
+            //     x: '20%',
+            //     y: '25%',
+            //     itemGap: 66,
+            //     textStyle: {
+            //         color: '#fff',
+            //     },
+            //     itemWidth: 16,
+            //     //backgroundColor:'#f00',
+            //     data: ['3901户,9677人投入1874.36万元', '231户，551人 投入3万元', '120户，300人 投入3万元', '5197户，1884人 投入370万元']
+            // },
             label: {
                 normal: {
-                    // show:true,
-                    position: 'right',
-
+                    show:true,
+                    position: 'bottom',
+                    offset:['30','40'],
+                    formatter: "{b}:{c}户"
                 }
             },
             grid: {
@@ -730,7 +731,7 @@ define(['echarts'], function(echarts) {
                 axisTick: {
                     show: false,
                 },
-                axisLine: {
+                axisLine: { 
                     lineStyle: {
                         color: '#3398DB'
                     }
@@ -745,7 +746,7 @@ define(['echarts'], function(echarts) {
                 axisTick: {
                     show: false,
                 },
-                data: ['种植养殖', '龙头企业', '电商扶贫', '光伏扶贫'],
+                data: ['光伏扶贫', '电商扶贫' ,'龙头企业', '种植养殖'],
                 axisLine: {
                     lineStyle: {
                         color: '#3398DB'
@@ -753,10 +754,21 @@ define(['echarts'], function(echarts) {
                 }
             },
             series: [{
+                label:{
+                    normal:{
+                        show:true,
+                        position:'bottom',
+                        offset:[43,0],
+                        textStyle:{
+                            color:'#fff'
+                        }
+                    }
+                },
                 name: '',
                 type: 'bar',
                 barWidth: '40%',
-                data: [5197, 120, 231, 9677]
+                data:[5197, 120, 231, 3091]
+
             }, {
                 name: '3901户,9677人投入1874.36万元',
                 type: 'bar',

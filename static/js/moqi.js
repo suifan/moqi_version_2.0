@@ -638,10 +638,10 @@
 
             }, //健康扶贫
             'getDiseasePoor': function() {
-                chart.barChart("helping_status", townNameList, [1952, 2276, 2022, 2785, 1072, 5622, 2580, 1639, 1628, 587, 2045, 931, 2351, 3407, 0, 0, 0]);
+                chart.barChart("helping_status", townNameList, [1110, 270, 153, 147, 200, 75, 438, 34, 262, 82, 668, 258, 124, 532, 245, 164, 171]);
             },
             'getFivePeopleGroupNum': function() {
-                chart.barChart("helping_status", townNameList, [1952, 2276, 2022, 2785, 1072, 5622, 2580, 1639, 1628, 587, 2045, 931, 2351, 3407, 0, 0, 0]);
+                chart.barChart("helping_status", townNameList, [252, 88, 76, 54, 43, 23, 109, 9, 45, 23, 122, 56, 25, 134, 45, 38,43]);
 
             },
             'getEducation': function() {

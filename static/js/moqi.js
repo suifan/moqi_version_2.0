@@ -1626,8 +1626,8 @@
                             } else if (text == "首页") {
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
-                                    chart.barChart("fupinBar", [2016, 2017, 2018, 2019], [520, 120, 685, 520], true);
-                                    chart.barChart("profitBar", [2016, 2017, 2018, 2019], [520, 120, 685, 520], true);
+                                    chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [520, 120, 685, 520,0], true);
+                                    chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [520, 685], true);
                                 });
                             } else {
                                 //党建弹窗点击

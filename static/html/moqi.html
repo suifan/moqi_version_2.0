@@ -3432,11 +3432,10 @@
             <tr>
                 <th>行政村</th>
                 <th>人数</th>
-                <th>非在校生</th>
-                <th>学前教育</th>
                 <th>小学</th>
                 <th>中学</th>
                 <th>大专以上</th>
+                <th>金额（元）</th>
             </tr>
             </thead>
             <tbody>
@@ -3451,11 +3450,10 @@
     <tr>
         <td>{{data.village}}</td>
         <td>{{data.num}}</td>
-        <td>{{data.non_school}}</td>
-        <td>{{data.before}}</td>
         <td>{{data.primary}}</td>
         <td>{{data.middle}}</td>
         <td>{{data.high}}</td>
+        <td>{{data.amount}}</td>
     </tr>
     {{/each}}
 </script>
@@ -3944,9 +3942,15 @@
     <div class="per-left">
         <div class="per-top">
             <div class="per-lefttop">
+                {{if !avatar}}
                 <div class="per-img">
                     <img src="../images/default_head_img.png">
                 </div>
+                {{else}}
+                <div class="per-img" style="background: url('{{avatar}}');background-size: 100%;">
+                    <img src="">
+                </div>
+                {{/if}}
                 <p>{{name}}</p>
             </div>
             <div class="per-leftmid">

@@ -10,18 +10,21 @@
 }
 .top-title,.bottom-title {
     text-align: center;
-    margin: 2vw 0;
+    margin: 3vw 0;
+    font-size: 1.6vw;
 }
 #govermentHelpChart {
     height: 14vw;
+    margin: 5.3vw 0;
 }
 #govermentHelpChart>div {
     height: 14vw;
     width: 14vw;
-    background: #0fc2e4;
+    background: rgba(15, 194, 228, 0.6);
     border-radius: 7vw;
     margin: 0 auto;
     text-align: center;
+    font-size: 1.2vw;
 }
 #govermentHelpChart>div p {
     position: relative;

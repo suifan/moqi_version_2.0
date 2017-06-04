@@ -538,26 +538,26 @@
                 //五人小组统计
                 $('#rightSide').html(template('povertyRightSideTemp_disease', {}));
                 var structure = {
-                    color: ['#3cb7f6', '#23abf6', '#1991d4', '#1578ae', '#136d9e', '#105e88'],
+                    color: ['#3cb7f6','#1991d4', '#1578ae', '#136d9e', '#105e88'],
                     data: [
-                        { value: 532, name: '五人小组' },
-                        { value: 275, name: '家医团队' },
-                        { value: 191, name: '健康家人' },
-                        { value: 164, name: '专科医生' },
-                        { value: 117, name: '帮扶干部' },
-                        { value: 69, name: '村支书' }
+                        { value: 284, name: '家医团队' },
+                        { value: 552, name: '健康家人' },
+                        { value: 3, name: '专科医生' },
+                        { value: 56, name: '帮扶干部' },
+                        { value: 17, name: '村支书' }
                     ],
                 };
                 charts.labelPieChart("fiveGroupSumChart", structure);
                 //五人小组覆盖率
-                chart.pieChart("fiveGroupCoverRate", "#abfb06", "#4b586d", [{ "value": 100, "name": '已完成' }, { "value": 200, "name": '未完成' }], '90%', "\n完成率");
+                chart.pieChart("fiveGroupCoverRate", "#abfb06", "#4b586d", [{ "value": 100, "name": '已完成' }, { "value": 200, "name": '未完成' }], '33.3%', "\n完成率");
+                //体检建档
                 var documentSum = {
-                    color: ['#abfb06', '#1ff4be', '#c4572e', '#387b14'],
+                    color: ['#fff100', '#63c727', '#1fa9f4', '#e9733f'],
                     data: [
-                        { value: 532, name: '五人小组' },
-                        { value: 275, name: '家医团队' },
-                        { value: 191, name: '健康家人' },
-                        { value: 164, name: '专科医生' }
+                        { value: 322, name: '完全丧失劳动能力' },
+                        { value: 788, name: '完全恢复劳动能力' },
+                        { value: 1886, name: '健康人群' },
+                        { value: 5861, name: '部分恢复劳动能力' }
                     ],
                     radius: ['50%', '70%'],
                     center: ["50%", "50%"],
@@ -683,7 +683,7 @@
                     data: [155.23, 500],
                     titleBool: true
                 };
-                chart.blueBarChart("annualBar", dataObj)
+                // chart.blueBarChart("annualBar", dataObj)
                 //左侧--------------------end
 
                 //底部--------------------start
@@ -1243,6 +1243,7 @@
             "curr_svg": false, //当前显示地图对象
             "hoverLock": true, //hover事件开关；
             "curr_path_id": false, //当前选中path对象id;
+            "curr_path_name":"",//当前选中path对象的name
             "Next_map_name": null,
             "scrollX": document.documentElement.scrollLeft || document.body.scrollLeft,
             "scrollY": document.documentElement.scrollTop || document.body.scrollTop,
@@ -1366,11 +1367,11 @@
                         //如果没有当前id;未选中镇
                         mapApi.hoverLock = false;
                         //oSvg.find(".validMap").css("fill", mapApi.outColor);
-
                         //this.style.fill = mapApi.inColor;
                         var x = event.pageX || event.clientX + mapApi.scrollX;
                         var y = event.pageY || event.clientY + mapApi.scrollY;
                         mapApi.curr_path_id = this.id;
+                        // 改变当前选中区域名称
                         area_name = $(this).attr("data-name");
                         // console.log(area_name);
                         $(".map-tips").removeClass("show");
@@ -1380,10 +1381,6 @@
                         $.getJSON("../js/json/map_hover.json", function(res) {
                             //var target = event.target.id;
                             var data = res.povertyStructure[target];
-
-
-
-
                             $(".map-links").html(template("mapClickTemp", data)).css({
                                 "left": x - mapApi.dis_w,
                                 "top": y - mapApi.dis_h / 1.5,
@@ -1475,7 +1472,6 @@
                 }
 
                 oSvg.on("mouseover", '.validMap', function(event) {
-
                     if (mapApi.hoverLock) {
                         //$(this).addClass('map-hover');
                         //oSvg.find('.validMap').css('fill', mapApi.outColor);
@@ -1501,26 +1497,26 @@
                     var x = event.pageX || event.clientX + mapApi.scrollX;
                     var y = event.pageY || event.clientY + mapApi.scrollY;
                     mapApi.curr_path_id = this.id;
+                    mapApi.curr_path_name = $(this).attr("data-name");
 
                     //获取当前顶部选中页签
                     var text = $("#tab").find("li.active").text();
 
-
                     //数据变量
-                    var res = "";
-                    var area = "西瓦尔图镇";
-                    var curr_path_name = "兴隆村";
+                    // var res = "";
+                    // var area = "西瓦尔图镇";
+                    // var curr_path_name = "兴隆村";
                     //请求贫困家庭列表数据
                     if (text == "健康扶贫") {
-                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area + "&village=" + curr_path_name, function(data) {
+                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
                             // res = data;
-                            getHouseList(data,curr_path_name);
+                            getHouseList(data,mapApi.curr_path_name);
                             // console.log(data);
                         })
                     } else if (text == "首页") {
-                        $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area + "&village=" + curr_path_name, function(data) {
+                        $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
                             // res = data;
-                            getHouseList(data,curr_path_name);
+                            getHouseList(data,mapApi.curr_path_name);
                             // console.log(data);
                         })
                     } else if(text == "党建促脱贫"){
@@ -1547,6 +1543,18 @@
                         $('#partyLeader').on('click', function(event) {
                             event.preventDefault();
                             /* Act on the event */
+                            $.getJSON("../js/json/cadre.json",function(res){
+                                var membersTemp = template("cadreTemp", res.data);
+                                var titleHtml = template("selectTown", {});
+                                var html = titleHtml + "<div>" + membersTemp + "</div>";
+                                //分页容器
+                                html += "<ul class='page'></ul>";
+                                $.jBox(html, { title: "干部", buttons: {}, border: 0, opacity: 0.4 });
+                                document.getElementsByTagName('body')[0].style.padding = "0";
+                                // 获取表格容器
+                                var container = $('.jbox-content>div').eq(1);
+                                jpage.page(res.data, "cadreTemp", container, 10);
+                            });
                         });
                         //党村委会按钮
                         $('#partyVillageClub').on('click',function(event) {
@@ -1591,6 +1599,7 @@
                         container.on("click", "tr", function() {
                             var text = $("#tab").find("li.active").text();
                             var name = $(this).find("td:eq(1)").text();
+
                             var userId = $(this).attr("id");
                             /*var family = res.data.filter(function(a) {
                                 return a.name == name;
@@ -1621,6 +1630,11 @@
                                 });
                             } else {
                                 //党建弹窗点击
+                                $.getJSON("../js/json/partyMember.json",function(res){
+                                    var cadreHtml = template('partyMemberInfo', res[name]);
+                                    // console.log(res.data.physical_exam_records);
+                                    document.getElementsByClassName('jbox-content')[1].innerHTML = cadreHtml;
+                                })
                             }
                         });
                     };

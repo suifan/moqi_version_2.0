@@ -28,7 +28,7 @@ define(['echarts'],function(echarts){
                         normal: {
                             show: true,
                             position: 'center',
-                            formatter:percent+(label?label:""),
+                            formatter: percent||"{d}"+(label?label:""),
                             textStyle: {
                                 fontSize: '12',
                                 fontWeight: 'normal',

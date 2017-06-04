@@ -1373,6 +1373,8 @@
                         // console.log(area_name);
                         $(".map-tips").removeClass("show");
                         var target = this.id;
+                        // alert(this.id);
+                        // alert($(this).attr('data-name'));
                         $.getJSON("../js/json/map_hover.json", function(res) {
                             //var target = event.target.id;
                             var data = res.povertyStructure[target];
@@ -1414,7 +1416,8 @@
                     //打开督导组成员弹窗
                     $(".links-list li").eq(1).unbind("click").on("click", function() {
                         $.getJSON("../js/json/superVisorGroup.json", function(res) {
-                            var data = res[area];
+                            var data = res[mapApi.curr_path_id];
+                            //alert(area);
                             var membersTemp = template("members", data);
                             $.jBox(membersTemp, { title: "督导组成员", buttons: {}, border: 0, opacity: 0.4 });
                         })

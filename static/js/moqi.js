@@ -645,7 +645,7 @@
 
 
             'getFivePeopleGroupNum': function() {
-                chart.barChart("helping_status", townNameList, [353,124,150,59,50,141,132,35,57,41,119,112,53,124,116,51,48]);
+                chart.barChart("helping_status", townNameList, [44,32,33,23,12,13,34,11,4,3,9,13,7,4,17,5,3]);
 
             },
             'getEducation': function() {

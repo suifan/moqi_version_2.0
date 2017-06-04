@@ -33,6 +33,7 @@
     require(['jquery', 'migrate', 'template', 'chart', 'charts', 'jbox', 'progressBar', 'countDown', 'viewer', 'page'], function($, migrate, template, chart, charts, jbox, progressBar, countDown, viewer, jpage) {
         //当前所选区域对应的全局变量
         var area = "moqi";
+        var area_name = "";
         //图片浏览插件option设置
         $.fn.viewer.setDefaults({ navbar: false, title: false });
         //由于贫困家庭与首页共用签约，提取公共部分
@@ -649,11 +650,22 @@
                 $("#rightSide").hide();
                 // $("#leftTabs").addClass("hide");
                 //右侧--------------------start
-                $("#rightContent").html(template("educationRightSideTemp", {})).find("tbody").html(template("educationRightSideTableTemp", {}));;
+                //存储全部数据，方便获取
+                var totalData = {};
+                var cur_data = {};
+                var current_county = "尼尔基镇";
+                $.getJSON("../js/json/education.json",function(res){
+                    totalData = res;
+                    cur_data.list = res[current_county];
+                    $("#rightContent").html(template("educationRightSideTemp",{})).find("tbody").html(template("educationRightSideTableTemp", cur_data));
+                });
                 $(".rightContent-title").on("click", "div", function() {
                     var checkedBool = $(this).hasClass("active");
                     if (!checkedBool) {
+                        current_county = $(this).text();
                         $(this).addClass("active").siblings("div").removeClass("active");
+                        cur_data.list = totalData[current_county];
+                        $("#rightContent").find("tbody").html("").html(template("educationRightSideTableTemp", cur_data));
                     } else {
                         return;
                     }
@@ -666,31 +678,11 @@
                 $('#leftSide').html(template('educationLeftSideTemp', {}));
                 var dataObj = {
                     xArr: ["2016年", "2017年"],
-                    data: [500, 500],
+                    data: [155.23, 500],
                     titleBool: true
                 };
                 chart.blueBarChart("annualBar", dataObj)
-                    /*$.ajaxSettings.async = false;
-                    var dataLeft={},targetChart={};
-                    $.getJSON("../js/json/homePage/basicInfoV2.json",function(res){
-                        dataLeft['basicInfo']=res.basic_info[area];
-                    });
-                    $.getJSON("../js/json/homePage/targetV2.json",function(res){
-                        targetChart=res.overcome_poverty_aim[area].aim;
-                    });
-                    $('#leftSide').html(template('homepageLeftSideTemp',dataLeft));
-                    var chartData={};
-                    chartData.color=["#1fa9f4","#0cb871"];
-                    chartData.yAxisData = [2017,2018,2019];
-                    var people = [],family = [];
-                    for(var i=0,length=targetChart.length;i<length;i++){
-                        family.push(targetChart[i].house_num);
-                        people.push(targetChart[i].person_num);
-                    }
-                    chartData.data=[{name:"目标户数",type:"bar",data:family, barMaxWidth:10},{name:"目标人数",type:"bar",data:people, barMaxWidth:10}]
-                    charts.xBarChart("targetChart",chartData)*/
-                    // $('#leftSide').html(template('homepageLeftSideTemp', data));
-                    //左侧--------------------end
+                //左侧--------------------end
 
                 //底部--------------------start
                 // $('.bottom').html(template('povertyStatus', {}));
@@ -1377,10 +1369,12 @@
                         var x = event.pageX || event.clientX + mapApi.scrollX;
                         var y = event.pageY || event.clientY + mapApi.scrollY;
                         mapApi.curr_path_id = this.id;
-
-                        // console.log(this.id);
+                        area_name = $(this).attr("data-name");
+                        // console.log(area_name);
                         $(".map-tips").removeClass("show");
                         var target = this.id;
+                        // alert(this.id);
+                        // alert($(this).attr('data-name'));
                         $.getJSON("../js/json/map_hover.json", function(res) {
                             //var target = event.target.id;
                             var data = res.povertyStructure[target];
@@ -1422,7 +1416,8 @@
                     //打开督导组成员弹窗
                     $(".links-list li").eq(1).unbind("click").on("click", function() {
                         $.getJSON("../js/json/superVisorGroup.json", function(res) {
-                            var data = res[area];
+                            var data = res[mapApi.curr_path_id];
+                            //alert(area);
                             var membersTemp = template("members", data);
                             $.jBox(membersTemp, { title: "督导组成员", buttons: {}, border: 0, opacity: 0.4 });
                         })

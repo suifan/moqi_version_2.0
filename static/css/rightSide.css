@@ -449,3 +449,7 @@ li.progressLi p {
     top: .8vw;
     left: 8vw;
 }
+
+#basicBuilding .content{
+    position:relative;
+}

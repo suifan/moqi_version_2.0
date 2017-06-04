@@ -1022,7 +1022,7 @@
                     data: [15, 16]
                 };
                 var returnData = {
-                    yName: '退耕还林面积',
+                    yName: '累计还林面积',
                     data: [0.92, 10.89]
                 };
 

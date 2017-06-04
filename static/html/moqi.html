@@ -24,7 +24,7 @@
     <div class='map-links flo-box '></div>
     <div id='svgBox' class="svgBox ">
         <!-- 莫旗县 地图 moqixian -->
-        <svg id='moqi' class='moqiSvg show' data-nameame='莫旗' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-400 250 3400 3600" xml:space="preserve">
+        <svg id='moqi' class='moqiSvg show' data-name='莫旗' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-400 250 3400 3600" xml:space="preserve">
                 <g id="hanguerhezhen" class='validMap st1 color_a colorM' data-name='汉古尔河镇'>
                     <path id='hanguerhezhenPath' class='' d="M1329.1,2734.8c1.5,1.1,2.8,2.4,4.2,3c0.8,0.3,2.3,0,3-0.6c3.2-3.1,7.3-2.8,11.2-3.6c0.2,1.8,0.7,3.3,0.5,4.8
                                     c-0.2,2.6,1.2,3.1,3.2,3.3c2.2,0.3,2.3-1.5,3-2.7c1.2-2.3,1.9-5.1,3.8-6.6c1.5-1.4,4.3-1.3,6.6-1.9c0.7,4.6,1,8.7,2.1,12.5
@@ -3389,13 +3389,13 @@
             <h2>教育扶贫补贴</h2>
         </div>
         <div class="content goverment-help">
-            <div class="top-title">补贴总额: <span>331.5</span>万元</div>
+            <div class="top-title">补贴总额: <span>500</span>万元</div>
             <div id="govermentHelpChart">
                 <div>
                     <p>
                         <span><em>902</em>人/</span>
                         <br>
-                        <em><span>331.15</span>万元</em>
+                        <em><span>500</span>万元</em>
                     </p>
                 </div>
             </div>
@@ -3418,11 +3418,13 @@
         <div>阿尔拉镇</div>
         <div>坤密尔提</div>
         <div>奎勒河镇</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
-        <div>坤密尔提</div>
+        <div>库如奇乡</div>
+        <div>腾克镇</div>
+        <div>西瓦尔图镇</div>
+        <div>塔温敖宝镇</div>
+        <div>汉古尔河镇</div>
+        <div>杜拉尔鄂温克民族乡</div>
+        <div>巴彦鄂温克民族乡</div>
     </div>
     <div class="rightContent-body">
         <table>
@@ -3430,10 +3432,11 @@
             <tr>
                 <th>行政村</th>
                 <th>人数</th>
-                <th>金额（万元）</th>
-                <th>大学</th>
-                <th>中学</th>
+                <th>非在校生</th>
+                <th>学前教育</th>
                 <th>小学</th>
+                <th>中学</th>
+                <th>大专以上</th>
             </tr>
             </thead>
             <tbody>
@@ -3444,46 +3447,17 @@
 </script>
 <!--教育扶贫右侧表格模板-->
 <script id="educationRightSideTableTemp" type="text/html">
-                <tr>
-                    <td>腾克镇</td>
-                    <td>3</td>
-                    <td>11</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>腾克镇</td>
-                    <td>3</td>
-                    <td>11</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>腾克镇</td>
-                    <td>3</td>
-                    <td>11</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>腾克镇</td>
-                    <td>3</td>
-                    <td>11</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>腾克镇</td>
-                    <td>3</td>
-                    <td>11</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>20</td>
-                </tr>
+    {{each list as data}}
+    <tr>
+        <td>{{data.village}}</td>
+        <td>{{data.num}}</td>
+        <td>{{data.non_school}}</td>
+        <td>{{data.before}}</td>
+        <td>{{data.primary}}</td>
+        <td>{{data.middle}}</td>
+        <td>{{data.high}}</td>
+    </tr>
+    {{/each}}
 </script>
 <!--健康扶贫左侧模板-->
 <script id="healthLeftSideTemp" type="text/html">

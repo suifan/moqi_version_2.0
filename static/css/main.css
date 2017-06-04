@@ -201,8 +201,9 @@ img{
     display: inline-block;
     height: 2.5vw;
     line-height: 2.5vw;
-    min-width: 11.5vw;
+    min-width: 9.5vw;
     color: #b6b6b6;
+    margin-left: 1vw;
 }
 
 

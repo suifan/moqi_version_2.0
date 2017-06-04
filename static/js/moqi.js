@@ -641,8 +641,10 @@
             'getDiseasePoor': function() {
                 chart.barChart("helping_status", townNameList, [1110, 270, 153, 147, 200, 75, 438, 34, 262, 82, 668, 258, 124, 532, 245, 164, 171]);
             },
+
+
             'getFivePeopleGroupNum': function() {
-                chart.barChart("helping_status", townNameList, [252, 88, 76, 54, 43, 23, 109, 9, 45, 23, 122, 56, 25, 134, 45, 38,43]);
+                chart.barChart("helping_status", townNameList, [353,124,150,59,50,141,132,35,57,41,119,112,53,124,116,51,48]);
 
             },
             'getEducation': function() {

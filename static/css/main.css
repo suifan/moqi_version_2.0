@@ -3,9 +3,9 @@
 /*滚动条 start*/
 ::-webkit-scrollbar {width: 5px;height:6px;}
 ::-webkit-scrollbar-track-piece{background-color: #4b586d;margin: -2px;}
-::-webkit-scrollbar-thumb{background: #20407b;min-height: 150px;min-width: 150px;border-radius: 10px;}
-::-webkit-scrollbar-thumb:vertical:hover{background: #20407b}
-::-webkit-scrollbar-thumb:horizontal:hover{background: #20407b}
+::-webkit-scrollbar-thumb{background: #e4e4e4;min-height: 150px;min-width: 150px;border-radius: 10px;}
+::-webkit-scrollbar-thumb:vertical:hover{background: #e4e4e4}
+::-webkit-scrollbar-thumb:horizontal:hover{background: #e4e4e4}
 /*滚动条 end*/
 .clearfix:before, .clearfix:after, .container:before, .container:after, .modal-footer:before, .modal-footer:after {
     display: table;

@@ -541,16 +541,16 @@
                 var structure = {
                     color: ['#3cb7f6','#1991d4', '#1578ae', '#136d9e', '#105e88'],
                     data: [
-                        { value: 284, name: '家医团队' },
-                        { value: 552, name: '健康家人' },
-                        { value: 3, name: '专科医生' },
-                        { value: 56, name: '帮扶干部' },
-                        { value: 17, name: '村支书' }
+                        { value: 267, name: '家医团队' },
+                        { value: 3718, name: '健康家人' },
+                        { value: 223, name: '专科医生' },
+                        { value: 326, name: '帮扶干部' },
+                        { value: 220, name: '村支书' }
                     ],
                 };
                 charts.labelPieChart("fiveGroupSumChart", structure);
                 //五人小组覆盖率
-                chart.pieChart("fiveGroupCoverRate", "#abfb06", "#4b586d", [{ "value": 100, "name": '已完成' }, { "value": 200, "name": '未完成' }], '33.3%', "\n完成率");
+                chart.pieChart("fiveGroupCoverRate", "#abfb06", "#4b586d", [{ "value": 47.92, "name": '已完成' }, { "value": 52.08, "name": '未完成' }], '47.92%', "\n完成率");
                 //体检建档
                 var documentSum = {
                     color: ['#fff100', '#63c727', '#1fa9f4', '#e9733f'],
@@ -558,7 +558,7 @@
                         { value: 615, name: '完全丧失劳动能力' },
                         { value: 864, name: '完全恢复劳动能力' },
                         { value: 3718, name: '健康人群' },
-                        { value: 1703, name: '部分恢复劳动能力' }
+                        { value: 1073, name: '部分恢复劳动能力' }
                     ],
                     radius: ['50%', '70%'],
                     center: ["50%", "50%"],
@@ -859,7 +859,7 @@
                 var shouYiData = {
                     xArr: ['2015', '2016', '2017'],
                     yArr: [7546, 6794, 5271],
-                    title: "人数",
+                    title: "低保贫困户人口  （单位：人）",
                     axisLineWidth: 2,
                     yLabelShow: false,
                     axisLabelColor: "#6ce6fe",
@@ -877,7 +877,7 @@
                 var touZiData = {
                     xArr: ['2015', '2016', '2017'],
                     yArr: [2600, 2800, 2900],
-                    title: "资金",
+                    title: "低保贫困户人均标准  （单位：元）",
                     axisLineWidth: 2,
                     yLabelShow: false,
                     axisLabelColor: "#6ce6fe",
@@ -912,7 +912,7 @@
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
                             }
                             // api.slide("slideBox_r","box-wrapper",1900);
-                            chart.barChart("fallback_status", townNameList, [2222, 543, 706, 454, 452, 1253, 678, 286, 581, 179, 1021, 934, 235, 968, 600, 342, 680]);
+                            chart.barChart("fallback_status", townNameList, [771, 407, 706, 228, 113, 554, 578, 217, 218, 119, 138, 541, 70, 258, 547, 25, 87]);
                         }
                     });
                 });

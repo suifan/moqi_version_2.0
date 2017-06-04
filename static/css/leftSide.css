@@ -49,7 +49,7 @@
     width: 64vw;
     max-height: 26vw;
     background: blue;
-    overflow: hidden;
+    overflow-y: auto;
     /*padding: 1vw;*/
     margin-top: 1vw;
 }
@@ -360,7 +360,7 @@ span.span-active {
     font-size: .8vw;
 }
 .per-top>div {
-    height: 12vw;
+    height: 13vw;
     padding: 0 1.2vw;
     float: left;
     line-height: 1.4vw;
@@ -837,7 +837,7 @@ table tr:nth-child(even) td{
 #buzhidao .team .green{
     color: #a2fc6c;
     left: 8.8vw;
-    font-size: .5vw;
+    font-size: 1vw;
 }
 #buzhidao .team .yellow{
     color: #f8ec04;

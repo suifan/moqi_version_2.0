@@ -31,7 +31,7 @@ define(['echarts'],function(echarts){
                             position: 'center',
                             formatter: percent||"{d}"+(label?label:""),
                             textStyle: {
-                                fontSize: '12',
+                                fontSize: '14',
                                 fontWeight: 'normal',
                                 color:color1
                             }

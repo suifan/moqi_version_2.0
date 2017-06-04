@@ -448,7 +448,8 @@ define(['echarts'], function(echarts) {
                         show: true,
                         position: 'top',
                         textStyle: {
-                            color: data.axisLabelColor || "#fff"
+                            color: data.axisLabelColor || "#fff",
+                            fontSize: "16"
                         }
                     }
                 }
@@ -467,29 +468,31 @@ define(['echarts'], function(echarts) {
         var chart = echarts.init(document.getElementById(id));
         chart.setOption({
             title: {
-                text: '资金增长',
+                text: '资金增长（单位：元）',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '12px'
+                    fontSize: '12'
                 }
             },
             grid: {
-                top: 40,
+                top: 50,
                 left: 10,
                 right: 10,
                 height: '80%'
             },
-            color: ["#fff", "#6ce6fe"],
+            color: [ "#6ce6fe","#fff"],
             legend: {
                 data: [{
                     name: '低保标准',
                     textStyle: {
-                        color: "#fff"
+                        color: "#fff",
+                        fontSize:"10"
                     }
                 }, {
                     name: '扶贫保障标准',
                     textStyle: {
-                        color: "#6ce6fe"
+                        color: "#6ce6fe",
+                        fontSize:"10"
                     }
                 }],
                 right: 0
@@ -549,7 +552,8 @@ define(['echarts'], function(echarts) {
                         show: true,
                         position: 'bottom',
                         textStyle: {
-                            color: "#6ce6fe"
+                            color: "#6ce6fe",
+                            fontSize: "16"
                         }
                     }
                 },
@@ -569,7 +573,8 @@ define(['echarts'], function(echarts) {
                         show: true,
                         position: 'top',
                         textStyle: {
-                            color: "#fff"
+                            color: "#fff",
+                            fontSize: "16"
                         }
                     }
                 }

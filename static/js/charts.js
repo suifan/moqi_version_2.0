@@ -442,6 +442,7 @@ define(['echarts'], function(echarts) {
                         width: data.axisLineWidth || 1
                     }
                 },
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 label: {
                     normal: {
                         show: true,
@@ -536,6 +537,7 @@ define(['echarts'], function(echarts) {
                 name: '扶贫保障标准',
                 type: 'line',
                 data: data.yArr,
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
                         color: '#6ce6fe',
@@ -555,6 +557,7 @@ define(['echarts'], function(echarts) {
                 name: '低保标准',
                 type: 'line',
                 data: data.yArrs,
+                areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
                         color: '#fff',

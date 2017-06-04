@@ -1512,18 +1512,18 @@
                     //数据变量
                     var res = "";
                     var area = "西瓦尔图镇";
-                    var curr_path_id = "兴隆村";
+                    var curr_path_name = "兴隆村";
                     //请求贫困家庭列表数据
                     if (text == "健康扶贫") {
-                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area + "&village=" + curr_path_id, function(data) {
+                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area + "&village=" + curr_path_name, function(data) {
                             // res = data;
-                            getHouseList(data,"胜利村");
+                            getHouseList(data,curr_path_name);
                             // console.log(data);
                         })
                     } else if (text == "首页") {
-                        $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area + "&village=" + curr_path_id, function(data) {
+                        $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area + "&village=" + curr_path_name, function(data) {
                             // res = data;
-                            getHouseList(data,"胜利村");
+                            getHouseList(data,curr_path_name);
                             // console.log(data);
                         })
                     } else if(text == "党建促脱贫"){

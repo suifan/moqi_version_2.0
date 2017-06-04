@@ -869,10 +869,18 @@ define(['echarts'], function(echarts) {
                 trigger: 'axis',
                 axisPointer: { // 坐标轴指示器，坐标轴触发有效
                     type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                }
+                },
+                formatter: "{b}<br/>{c}户"
             },
+            // tooltip: {
+            //     trigger: 'axis',
+            //     axisPointer: {
+            //         type: 'shadow'
+            //     },
+            //     formatter: "{b}<br/>{c}户"
+            // },
             grid: {
-                left: '3%',
+                left: '15%',
                 right: '4%',
                 bottom: '3%',
                 containLabel: true
@@ -883,7 +891,8 @@ define(['echarts'], function(echarts) {
                     position: 'top',
                     textStyle: {
                         fontSize: 18
-                    }
+                    },
+                    formatter: "{c}万亩"
 
                 },
                 emphasis: {
@@ -923,9 +932,10 @@ define(['echarts'], function(echarts) {
                 axisTick: {
                     show: false,
                 },
-                nameLocation: 'middle',
-                nameRotate: "90",
+                nameLocation: 'end',
+                nameRotate: "0",
                 nameTextStyle: {
+                    left:'20%',
                     fontSize: 16
                 },
                 axisLine: {

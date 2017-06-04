@@ -2,7 +2,7 @@
      * Created by Administrator on 2017/5/17.
      */
     require.config({
-        baseUrl: "",
+        baseUrl: "", 
         paths: {
             "jquery": "../lib/jquery-2.2.1.min",
             "migrate": "../lib/jquery-migrate-1.2.1",
@@ -34,7 +34,7 @@
         //当前所选区域对应的全局变量
         var area = "moqi";
         //图片浏览插件option设置
-        $.fn.viewer.setDefaults({ title: false });
+        $.fn.viewer.setDefaults({ navbar: false, title: false });
         //由于贫困家庭与首页共用签约，提取公共部分
         /**
          * 家医签约点击方法，暂时不做保存筛选条件的处理
@@ -57,7 +57,7 @@
             $("#rightSide,#leftSide").height(sideHeight - 2);
         };
         //莫旗全镇名字数据  多次用到定义全局变量;
-        var townNameList = ["尼尔基镇", "红彦镇", "宝山镇", "西瓦尔图镇", "塔温敖宝镇", "腾克镇", "巴彦鄂温克民族乡", "阿拉尔镇", "哈达阳镇", "拉杜尔鄂温克民族乡", "汉古尔河镇", "奎勒河镇", "库如奇乡", "登特科办事处", "额尔和办事处", "坤密尔提办事处", "卧罗河办事处"];
+        var townNameList = ["尼尔基镇", "红彦镇", "宝山镇", "西瓦尔图镇", "塔温敖宝镇", "腾克镇", "巴彦鄂温克民族乡", "阿尔拉镇", "哈达阳镇", "拉杜尔鄂温克民族乡", "汉古尔河镇", "奎勒河镇", "库如奇乡", "登特科办事处", "额尔和办事处", "坤密尔提办事处", "卧罗河办事处"];
         // 数据加载
         var api = {
             'getHomePage': function() {
@@ -210,7 +210,7 @@
                         if (!showBool && window.timeOut) {
                             clearTimeout(timeOut);
                         } else {
-                            // api.slide("rebuildSlideBox", "box-wrapper", 1900, 3);
+                            api.slide("rebuildSlideBox", "box-wrapper", 1900, 3);
                         }
                         $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                         if ($(".bottom-head").hasClass("active")) {
@@ -243,15 +243,10 @@
                         } else {
                             $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                             if ($(".bottom-head").hasClass("active")) {
-                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
+                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png");
                             } else {
-                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
+                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
-
-                            $(".fileOne").viewer();
-                            $(".fileTwo").viewer();
-                            $(".fileFour").viewer();
-                            $(".file1").viewer();
                         }
                     });
                 });
@@ -259,13 +254,13 @@
 
             },
             'getEcologyTotalFamily': function() {
-                chart.barChart("ecologyHardchart", townNameList, [111, 2276, 2022, 2785, 1072, 5622, 2580, 1639, 1628, 587, 2045, 931, 2351, 3407, 0, 0, 0]);
+                chart.barChart("ecologyHardchart", townNameList, [5, 32, 299, 49, 95, 340, 186, 126, 32, 94, 96, 26, 16, 13, 10, 89, 92]);
             },
             'getEcologyTotalPeople': function() {
-                chart.barChart("ecologyHardchart", townNameList, [222, 2276, 2022, 2785, 1072, 5622, 2580, 1639, 1628, 587, 2045, 931, 2351, 3407, 0, 0, 0]);
+                chart.barChart("ecologyHardchart", townNameList, [11, 66, 766, 49, 95, 340, 186, 333, 97, 94, 266, 69, 31, 32, 100, 180, 294]);
             },
             'getEcologyplantNum': function() {
-                chart.barChart("ecologyHardchart", townNameList, [333, 2276, 2022, 2785, 1072, 5622, 2580, 1639, 1628, 587, 2045, 931, 2351, 3407, 0, 0, 0]);
+                chart.barChart("ecologyHardchart", townNameList, [79, 140, 300, 220, 245, 560, 295.5, 165, 100, 200, 180, 220, 140, 180, 265, 160, 152]);
             },
             'getPovertyDistribution': function() {
                 //chart.barChart("poverty_status",["登特科办事处","哈达阳镇","西瓦尔图镇","阿尔拉镇","尼尔基镇","塔温敖宝镇","巴彦鄂温克民族乡","宝山镇","杜拉尔鄂温克民族乡","奎勒河镇","库如奇乡","腾克镇","汉古尔河镇","额尔和办事处","坤密尔提办事处","卧罗河办事处"],[968,600,454,286,2222,452,679,706,179,934,235,1253,1020,581,342,680]);
@@ -1023,12 +1018,12 @@
                 $('#centerSide').html(template('ecologyCenterTemp', {}));
 
                 var protectData = {
-                    yName: '护林面积 (亩)',
-                    data: [3001, 3601.5]
+                    yName: '护林面积 ',
+                    data: [15, 16]
                 };
                 var returnData = {
-                    yName: '还林面积 (亩)',
-                    data: [3001, 3601.5]
+                    yName: '退耕还林面积',
+                    data: [0.92, 10.89]
                 };
 
                 charts.treeChart("protectTreeChart", protectData);
@@ -1289,7 +1284,7 @@
                 if (claName == 'government') {
                     canWorkList = ['hanguerhezhen', 'shenglicun'];
                 } else {
-                    canWorkList = ['hanguerhezhen', 'nierjizhen', "baoshanzhen", "dengtekebanshichu", "xiwaertuzhen", "aerlazhen", 'fuxingcun', 'xiaoquanzicun', 'xinglongcun', 'xinfacun', 'xiangyangcun', 'shuanglongquancun', 'shenglicun', 'dongkunqiancun', 'madangqiancun', 'aerlacun', 'beishichangcun', 'minzucun'];
+                    canWorkList = ['hanguerhezhen', 'nierjizhen', "baoshanzhen", "dengtekebanshichu", "xiwaertuzhen", "aerlazhen", 'fuxingcun', 'xiaoquanzicun', 'xinglongcun', 'xinfacun', 'xiangyangcun', 'shuanglongquancun', 'shenglicun', 'dongkunqiancun', 'madangqiancun', 'aerlacun', 'guonicun', 'minzucun'];
                 }
 
                 $.each(canWorkList, function(index, val) {

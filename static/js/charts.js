@@ -502,7 +502,7 @@ define(['echarts'], function(echarts) {
                         backgroundColor: '#6a7985'
                     }
                 },
-                formatter: '{b}<br/>签约数量：{c}'
+                formatter: '{b}<br/>金额：{c}'
             },
             xAxis: {
                 axisLine: {

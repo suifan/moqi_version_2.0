@@ -555,7 +555,7 @@ span.span-active {
 }
 .artical-img div {
     display: inline-block;
-    background: #333;
+    /*background: #333;*/
     height: 6.8vw;
     width: 24%;
     overflow: hidden;

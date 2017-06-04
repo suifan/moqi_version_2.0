@@ -1487,7 +1487,7 @@
                     }
                 });
 
-                oSvg.on('click', '.validMap', function(event) {
+                oSvg.unbind("click").on('click', '.validMap', function(event) {
                     event.stopPropagation();
 
                     //如果没有当前id;未选中镇

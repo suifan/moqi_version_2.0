@@ -666,7 +666,7 @@
                 $('#leftSide').html(template('educationLeftSideTemp', {}));
                 var dataObj = {
                     xArr: ["2016年", "2017年"],
-                    data: [155.23, 232.86],
+                    data: [500, 500],
                     titleBool: true
                 };
                 chart.blueBarChart("annualBar", dataObj)
@@ -1256,11 +1256,11 @@
             "dis_h": 195, //
             "$cheangeMap": $("#changeMap"), //进入地图按钮
             "inColor": "#1d4b99", //地图选中区域颜色
-            "outColor": "#1b2769", //地图可点击区域默认颜色 
+            "outColor": "#1b2769", //地图可点击区域默认颜色
             "currTab": '', //当前地图对象的 页面头标签 在init()中获得；
 
             "init": function(id, claName) {
-                mapApi.currTab = $("#tab").find("li.active").text(), //当前地图对象的 页面头标签 
+                mapApi.currTab = $("#tab").find("li.active").text(), //当前地图对象的 页面头标签
 
                     $('svg').removeClass('show');
                 $("#" + id).addClass('show');
@@ -1271,7 +1271,6 @@
                 mapApi.canWork(claName);
 
                 mapApi.goBack();
-
                 //mapApi.poorRate();
             },
             /*
@@ -1518,13 +1517,13 @@
                     if (text == "健康扶贫") {
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area + "&village=" + curr_path_id, function(data) {
                             // res = data;
-                            getHouseList(data);
+                            getHouseList(data,"胜利村");
                             // console.log(data);
                         })
                     } else if (text == "首页") {
                         $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area + "&village=" + curr_path_id, function(data) {
                             // res = data;
-                            getHouseList(data);
+                            getHouseList(data,"胜利村");
                             // console.log(data);
                         })
                     } else if(text == "党建促脱贫"){
@@ -1535,13 +1534,19 @@
                         }).addClass("show");
 
                         //党员家按钮//
-                         $('#partyHome').on('click', function(event) {
-                             event.preventDefault();
-
-                             
-                             
-                         });
-                         //干部按钮
+                        $('#partyHome').on('click', function(event) {
+                            event.preventDefault();
+                            $.getJSON("../js/json/partyMember.json",function(res){
+                                var _data = {};
+                                var list = [];
+                                for(var p in res){
+                                    list.push(res[p]);
+                                }
+                                _data.data = list;
+                                getHouseList(_data,"党员家","partyFamilyTemp");
+                            });
+                        });
+                        //干部按钮
                         $('#partyLeader').on('click', function(event) {
                             event.preventDefault();
                             /* Act on the event */
@@ -1551,23 +1556,28 @@
                             event.preventDefault();
                             /* Act on the event */
                         });
-
                     }else{
 
                     }
                     /**
                      * 打开户列表的方法
+                     * @param res 数据
+                     * @param title 弹窗标题
+                     * @param title 党员家列表模板or村户列表
                      */
-                    function getHouseList(res) {
-                        var membersTemp = template("villageTemp", res);
+                    function getHouseList(res,title,temp) {
+                        //temp为党员家列表
+                        var _temp = temp||"villageTemp";
+                        var membersTemp = template(_temp, res);
                         var titleHtml = template("selectTown", {});
                         var html = titleHtml + "<div>" + membersTemp + "</div>";
+                        //分页容器
                         html += "<ul class='page'></ul>";
-                        $.jBox(html, { title: "", buttons: {}, border: 0, opacity: 0.4 });
+                        $.jBox(html, { title: title, buttons: {}, border: 0, opacity: 0.4 });
                         document.getElementsByTagName('body')[0].style.padding = "0";
                         // 获取表格容器
                         var container = $('.jbox-content>div').eq(1);
-                        jpage.page(res.data, "villageTemp", container, 10);
+                        jpage.page(res.data, _temp, container, 10);
                         //设置已选中村的option
                         $(".select-switch").find("option[value='" + mapApi.curr_path_id + "']").attr("selected", "selected");
                         //绑定select切换事件
@@ -1607,8 +1617,8 @@
                                     $popOther.find(".physexam-record img").viewer();
                                 })
                             } else if (text == "首页") {
-                                $.get("http://moqi.test.grdoc.org/api/people/list?id=" + userId, function(data) {
-                                    document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', data);
+                                $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
+                                    document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
                                     chart.barChart("fupinBar", [2016, 2017, 2018, 2019], [520, 120, 685, 520], true);
                                     chart.barChart("profitBar", [2016, 2017, 2018, 2019], [520, 120, 685, 520], true);
                                 });

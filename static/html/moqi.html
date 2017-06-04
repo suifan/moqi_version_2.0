@@ -3537,12 +3537,12 @@
 <script id="governmentTemp_left" type="text/html">
     <div class="section" id="basicBuilding">
         <div class="header">
-            <h2>基层党建</h2>
+            <h2>党建促脱贫总体目标</h2>
         </div>
         <div class="content">
             <div class="whiteBg">
-                <p>实现两不愁，三保障</p>
-                <p>确保 <span>6275</span> 户贫困户和 <span>15283</span>名贫困人口稳定脱贫</p>
+                <p>实现“两不愁，三保障”</p>
+                <p>确保 <span>4909</span> 户贫困户和 <span>12134</span>名贫困人口稳定脱贫</p>
             </div>
         </div>
     </div>
@@ -3818,7 +3818,7 @@
 <script id="eduHelpTemp" type="text/html">
     <div class="bottom">
         <div class="bottom-head">
-            <span>教育状态</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
+            <span>教育动态</span><span>&nbsp;&nbsp;&nbsp;</span><img src="../images/up_arrow.png" alt="">
         </div>
         <div class="bottom-content" style="display: none;">
             <!--<div class="bottom-left"><h6>最新扶贫纪事</h6></div>-->
@@ -3978,79 +3978,43 @@
             <div class="per-leftmid">
                 <ul>
                     <li>性别：<span>{{sex}}</span></li>
-                    <li>电话：<span>{{mobile}}</span></li>
-                    <li>所属村：<span>{{ssc}}</span></li>
-                    <li>民族：<span>{{mz}}</span></li>
-                    <li>健康情况：<span>{{jkqk}}</span></li>
-                    <li>劳动能力：<span>{{ldnl}}</span></li>
+                    <li>电话：<span>{{phone}}</span></li>
+                    <li>所属村：<span>{{village}}</span></li>
+                    <li>民族：<span>{{nation}}</span></li>
+                    <li>健康情况：<span>{{health}}</span></li>
+                    <li>劳动能力：<span>{{labor}}</span></li>
                 </ul>
             </div>
             <div class="per-leftbtm">
                 <ul>
-                    <li>身份证号：<span>{{sfz}}</span></li>
-                    <li>银行卡号：<span>{{bankNo}}</span></li>
-                    <li>贫困属性：<span>一般贫困户</span></li>
-                    <li>脱贫属性：<span>已脱贫</span></li>
-                    <li>主要致(返)贫原因：<span>重大疾病</span></li>
+                    <li>身份证号：<span>{{idnum}}</span></li>
+                    <li>银行卡号：<span>{{bank_card_id}}</span></li>
+                    <li>贫困属性：<span>{{poor_property}}</span></li>
+                    <li>脱贫属性：<span>{{poverty_over_property}}</span></li>
+                    <li>主要致(返)贫原因：<span>{{}}</span></li>
                     <li>
                         <p>年收入（元）</p>
-                        <p class="annual-money">224,565,231</p>
+                        <p class="annual-money">{{income}}</p>
                     </li>
                 </ul>
             </div>
         </div>
-        <!--<div class="per-mid">
-            <p class="per-title">家庭成员</p>
-            <div style="width: 100%; background: -webkit-linear-gradient(top,#5d6874,#333f4c); height:3px;"></div>
-            <div class="family-list">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>与户主关系</th>
-                        <th>联系电话</th>
-                        <th>劳动能力</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {{each otherFamily as family}}
-                    <tr>
-                        <td>{{family.name}}</td>
-                        <td>{{family.sex}}</td>
-                        <td>{{family.yhzgx}}</td>
-                        <td>{{}}</td>
-                        <td>{{family.ldnl}}</td>
-                    </tr>
-                    {{/each}}
-
-                    </tbody>
-                </table>
-            </div>
-        </div>-->
         <div class="per-btm">
             <p class="per-title">帮扶记录</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <article>
-                {{if bfjl!==""}}
                 <h6 class="bfjl">第一次帮扶</h6>
-                <p><span>{{bfzrr}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{}}</em></p>
-                <!--<p>-->
-                <!--2017年5月10日，天气晴朗，我们开始了第一次精准扶贫的救援工作，工作进展的很顺利，我们一进村就看见姚向渠家的几件破旧不堪的衣服，他洋洋洒洒的躺在院子的破椅子上晒着太阳，看见我们就立马起了身，欢迎我们的到来。姚向渠，患有先天性残疾，右脚比左脚小了特别多。走起路来特别不方便。看见她的屋子，让我想起来一句话叫做“家徒四壁”，这句话放在她的身上，丝毫都没有夸张……</p>-->
-                <!--<div class="artical-img">-->
-                <!--<div><img src="../images/default_head_img.png"></div>-->
-                <!--<div><img src="../images/default_head_img.png"></div>-->
-                <!--<div><img src="../images/default_head_img.png"></div>-->
-                <!--<div><img src="../images/default_head_img.png"></div>-->
-                <!--</div>-->
-                <p>{{bfjl}}</p>
-                {{if img!==""}}
+                <p><span>{{help.once_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.once_help.theme}}</em></p>
+                <p>{{help.once_help.content}}</p>
+                <h6 class="bfjl">第二次帮扶</h6>
+                <p><span>{{help.second_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.second_help.theme}}</em></p>
+                <p>{{help.second_help.content}}</p>
+                {{if poverty_relief_images}}
                 <div class="artical-img">
-                    {{each img as img}}
+                    {{each poverty_relief_images as img}}
                     <div><img width="100%" src="{{img}}"></div>
                     {{/each}}
                 </div>
-                {{/if}}
                 {{/if}}
             </article>
         </div>
@@ -4060,8 +4024,8 @@
             <p class="per-title">分类信息</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="check-container">
-                <div><input type="checkbox" id="checkbox_a1" class="chk_1" style="display: none;" checked = "checked" disabled><label for="checkbox_a1"></label><span>完全恢复劳动能力</span></div>
-                <div><input type="checkbox" id="checkbox_a2" class="chk_1" style="display: none;" disabled><label for="checkbox_a2"></label><span>部分恢复劳动能力</span></div>
+                <div><input type="checkbox" id="checkbox_a1" class="chk_1" style="display: none;" checked disabled><label for="checkbox_a1"></label><span>完全恢复劳动能力</span></div>
+                <div><input type="checkbox" id="checkbox_a2" class="chk_1" style="display: none;" checked disabled><label for="checkbox_a2"></label><span>部分恢复劳动能力</span></div>
                 <div><input type="checkbox" id="checkbox_a3" class="chk_1" style="display: none;" disabled><label for="checkbox_a3"></label><span>完全丧失劳动能力</span></div>
                 <div><input type="checkbox" id="checkbox_a4" class="chk_1" style="display: none;" disabled><label for="checkbox_a4"></label><span>健康贫困户</span></div>
             </div>
@@ -4070,12 +4034,12 @@
             <p class="per-title">帮扶措施</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="check-container">
-                <div><input type="checkbox" id="checkbox_a5" class="chk_1" style="display: none;" checked = "checked" disabled><label for="checkbox_a5"></label><span>健康扶贫</span></div>
-                <div><input type="checkbox" id="checkbox_a6" class="chk_1" style="display: none;" disabled><label for="checkbox_a6"></label><span>生态扶贫</span></div>
-                <div><input type="checkbox" id="checkbox_a7" class="chk_1" style="display: none;" disabled><label for="checkbox_a7"></label><span>产业扶贫</span></div>
-                <div><input type="checkbox" id="checkbox_a8" class="chk_1" style="display: none;" disabled><label for="checkbox_a8"></label><span>易地搬迁</span></div>
-                <div><input type="checkbox" id="checkbox_a9" class="chk_1" style="display: none;" disabled><label for="checkbox_a9"></label><span>教育扶贫</span></div>
-                <div><input type="checkbox" id="checkbox_a10" class="chk_1" style="display: none;" disabled><label for="checkbox_a10"></label><span>兜底扶贫</span></div>
+                <div><input type="checkbox" id="checkbox_a5" class="chk_1" style="display: none;" {{help_measures==2?"checked":""}} disabled><label for="checkbox_a5"></label><span>健康扶贫</span></div>
+                <div><input type="checkbox" id="checkbox_a6" class="chk_1" style="display: none;" {{help_measures==4?"checked":""}} disabled><label for="checkbox_a6"></label><span>生态扶贫</span></div>
+                <div><input type="checkbox" id="checkbox_a7" class="chk_1" style="display: none;" {{help_measures==1?"checked":""}} disabled><label for="checkbox_a7"></label><span>产业扶贫</span></div>
+                <div><input type="checkbox" id="checkbox_a8" class="chk_1" style="display: none;" {{help_measures==3?"checked":""}} disabled><label for="checkbox_a8"></label><span>易地搬迁</span></div>
+                <div><input type="checkbox" id="checkbox_a9" class="chk_1" style="display: none;" {{help_measures==5?"checked":""}} disabled><label for="checkbox_a9"></label><span>教育扶贫</span></div>
+                <div><input type="checkbox" id="checkbox_a10" class="chk_1" style="display: none;" {{help_measures==6?"checked":""}} disabled><label for="checkbox_a10"></label><span>兜底扶贫</span></div>
             </div>
         </section>
         <section class="fupin-bar">
@@ -4099,9 +4063,9 @@
         <div class="per-top">
             <p class="per-title">患者信息</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
-            <div class="per-lefttop">
+            <div class="per-lefttop help">
                 <div class="per-img">
-                    <img src="../images/default_head_img.png">
+                    <img src="{{avatar||'../images/default_head_img.png'}}">
                 </div>
                 <!--<p>{{name}}</p>-->
             </div>
@@ -4468,6 +4432,13 @@
                     <li><img src="../images/poverty/fallback_help_1.png" alt=""></li>
                     <li><img src="../images/poverty/fallback_help_2.png" alt=""></li>
                     <li><img src="../images/poverty/fallback_help_3.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_4.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_5.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_6.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_7.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_8.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_9.png" alt=""></li>
+                    <li><img src="../images/poverty/fallback_help_10.png" alt=""></li>
                 </ul>
             </div>
         </div>
@@ -4571,36 +4542,38 @@
                     <th>民族</th>
                     <th>出生日期</th>
                     <th>年龄</th>
-                    <th>籍贯</th>
+                    <!--<th>籍贯</th>-->
                     <th>工作岗位</th>
-                    <th>最高学历</th>
+                    <!--<th>最高学历</th>-->
                     <th>联系方式</th>
-                    <th>身份证号</th>
+                    <!--<th>身份证号</th>-->
                     <th>所在党支部</th>
                     <th>入党日期</th>
-                    <th>转正日期</th>
+                    <!--<th>转正日期</th>-->
                     <th>党龄</th>
                     <th>党内职务</th>
                 </tr>
                 </thead>
                 <tbody>
+                {{each data as value}}
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>0</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                    <td>15</td>
+                    <td>{{value.name}}</td>
+                    <td>{{value.sex}}</td>
+                    <td>{{value.nation}}</td>
+                    <td>{{value.birthday}}</td>
+                    <td>{{value.age}}</td>
+                    <!--<td>{{value.place_origin}}</td>-->
+                    <td>{{value.work}}</td>
+                    <!--<td>{{value.highest_education}}</td>-->
+                    <td>{{value.phone}}</td>
+                    <!--<td>{{value.idnum}}</td>-->
+                    <td>{{value.party_branch}}</td>
+                    <td>{{value.join_party_date}}</td>
+                    <!--<td>{{value.date_completion}}</td>-->
+                    <td>{{value.party_standing}}</td>
+                    <td>{{value.inner_party_post}}</td>
                 </tr>
+                {{/each}}
                 </tbody>
             </table>
         </div>
@@ -4713,7 +4686,7 @@
             <option value="{{list.id}}">{{list.name}}</option>
             {{/each}}
         </select>
-        <em class="down-angle"></em>
+        <!--<em class="down-angle"></em>-->
     </div>
 </script>
 <!--jbox标题里的select模板 end-->

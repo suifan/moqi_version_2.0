@@ -58,7 +58,7 @@
             $("#rightSide,#leftSide").height(sideHeight - 2);
         };
         //莫旗全镇名字数据  多次用到定义全局变量;
-        var townNameList = ["尼尔基镇", "红彦镇", "宝山镇", "西瓦尔图镇", "塔温敖宝镇", "腾克镇", "巴彦鄂温克民族乡", "阿尔拉镇", "哈达阳镇", "拉杜尔鄂温克民族乡", "汉古尔河镇", "奎勒河镇", "库如奇乡", "登特科办事处", "额尔和办事处", "坤密尔提办事处", "卧罗河办事处"];
+        var townNameList = ["尼尔基镇", "红彦镇", "宝山镇", "西瓦尔图镇", "塔温敖宝镇", "腾克镇", "巴彦鄂温克民族乡", "阿尔拉镇", "哈达阳镇", "杜拉尔鄂温克民族乡", "汉古尔河镇", "奎勒河镇", "库如奇乡", "登特科办事处", "额尔和办事处", "坤密尔提办事处", "卧罗河办事处"];
         // 数据加载
         var api = {
             'getHomePage': function() {
@@ -554,10 +554,10 @@
                 var documentSum = {
                     color: ['#fff100', '#63c727', '#1fa9f4', '#e9733f'],
                     data: [
-                        { value: 322, name: '完全丧失劳动能力' },
-                        { value: 788, name: '完全恢复劳动能力' },
-                        { value: 1886, name: '健康人群' },
-                        { value: 5861, name: '部分恢复劳动能力' }
+                        { value: 615, name: '完全丧失劳动能力' },
+                        { value: 864, name: '完全恢复劳动能力' },
+                        { value: 3718, name: '健康人群' },
+                        { value: 1703, name: '部分恢复劳动能力' }
                     ],
                     radius: ['50%', '70%'],
                     center: ["50%", "50%"],
@@ -911,7 +911,7 @@
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
                             }
                             // api.slide("slideBox_r","box-wrapper",1900);
-                            chart.barChart("fallback_status", townNameList, [881, 402, 291, 192, 184, 457, 334, 112, 271, 75, 395, 354, 94, 2698, 218, 159, 233]);
+                            chart.barChart("fallback_status", townNameList, [2222, 543, 706, 454, 452, 1253, 678, 286, 581, 179, 1021, 934, 235, 968, 600, 342, 680]);
                         }
                     });
                 });

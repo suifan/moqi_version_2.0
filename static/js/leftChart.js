@@ -14,7 +14,8 @@ define(['echarts'],function(echarts){
                 trigger: 'item',
                 formatter: "{b}\n{d}%",//单位参数
                 padding: [2, 4],
-                confine: true
+                confine: true,
+                show: false
             },
             color: [color1,color2],
             series: [

@@ -1248,14 +1248,15 @@
             "Next_map_name": null,
             "scrollX": document.documentElement.scrollLeft || document.body.scrollLeft,
             "scrollY": document.documentElement.scrollTop || document.body.scrollTop,
-            "dis_w": 90, //鼠标坐标偏移量
-            "dis_h": 195, //
+            "dis_w": $('.map-tips').width(), //鼠标坐标偏移量
+            "dis_h": $('.map-tips').height(), //
             "$cheangeMap": $("#changeMap"), //进入地图按钮
             "inColor": "#1d4b99", //地图选中区域颜色
             "outColor": "#1b2769", //地图可点击区域默认颜色
             "currTab": '', //当前地图对象的 页面头标签 在init()中获得；
 
             "init": function(id, claName) {
+
                 mapApi.currTab = $("#tab").find("li.active").text(), //当前地图对象的 页面头标签
 
                     $('svg').removeClass('show');
@@ -1338,10 +1339,12 @@
                                 var data = res.povertyStructure[target];
                                 $(".map-tips").html(template("mapHoverTemp", data)).addClass("show")
                                     .css({
-                                        "left": x - mapApi.dis_w,
-                                        "top": y - mapApi.dis_h,
+                                        "left": x - $('.map-tips').width()/2,
+                                        "top": y - $('.map-tips').height()*1.5,
                                     });
                             })
+                        console.log(mapApi.dis_w);
+                         //alert($('.map-tips').width());
                             //console.log($(this).attr("id"));
                     }
                 });
@@ -1365,8 +1368,8 @@
                         mapApi.hoverLock = false;
                         //oSvg.find(".validMap").css("fill", mapApi.outColor);
                         //this.style.fill = mapApi.inColor;
-                        var x = event.pageX || event.clientX + mapApi.scrollX;
-                        var y = event.pageY || event.clientY + mapApi.scrollY;
+                        var x = event.pageX || event.clientX - mapApi.scrollX;
+                        var y = event.pageY || event.clientY - mapApi.scrollY;
                         mapApi.curr_path_id = this.id;
                         // 改变当前选中区域名称
                         area_name = $(this).attr("data-name");
@@ -1379,8 +1382,8 @@
                             //var target = event.target.id;
                             var data = res.povertyStructure[target];
                             $(".map-links").html(template("mapClickTemp", data)).css({
-                                "left": x - mapApi.dis_w,
-                                "top": y - mapApi.dis_h / 1.5,
+                               "left": x - $('.map-links').width()/2,
+                                "top": y - $('.map-links').height()*1.5,
                             }).addClass("show");
 
                             //帮进入下一级地图
@@ -1519,8 +1522,8 @@
                     } else if(text == "党建促脱贫"){
 
                         $(".map-links").html(template("mapPartyClickTemp", {})).css({
-                            "left": x - mapApi.dis_w,
-                            "top": y - mapApi.dis_h / 1.5,
+                            "left": x - $('.map-links').width()/2,
+                             "top": y - $('.map-links').height()*1.5,
                         }).addClass("show");
 
                         //党员家按钮//

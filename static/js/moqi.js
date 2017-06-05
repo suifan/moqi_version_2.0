@@ -250,7 +250,7 @@
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
                             $(".fileOne").viewer();
-                            $(".fileTwo").viewer();
+                            $(".file2").viewer({navbar: true});
                             $(".file3").viewer({navbar: true});
                             $(".file4").viewer({navbar: true});
                         }

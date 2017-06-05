@@ -349,6 +349,7 @@ li.progressLi p {
 }
 .workTrend{
     border-top: 1px solid #375f9a;
+    margin-top: 0.15vw;
 }
 .workTrend:first-child{
     border:none

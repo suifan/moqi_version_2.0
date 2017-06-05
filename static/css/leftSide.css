@@ -787,19 +787,19 @@ table tr:nth-child(even) td{
     height:8vw;
 }
 #productionTotalChart,#fallbackTotalChart,#fallbackNumChart {
-    height: 28vw;
+    height: 33.8vw;
     width: 100%;
 }
 /*兜底扶贫*/
 #fallbackYieldChart, #fallbackInvestChart {
     width: 100%;
-    height: 11.6vw;
+    height: 14.8vw;
 }
 .section.fallback {
     margin-bottom: 0.4vw;
 }
 .content.fallback {
-    height: 28vw;
+    height: 33.8vw;
     overflow-y: auto;
 }
 .vertical-imgs ul li {

@@ -397,7 +397,7 @@ define(['echarts'], function(echarts) {
                 text: data.title || '本周签约医生签约数量                        单位:人',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '12px'
+                    fontSize: '14'
                 }
             },
             grid: data.grid,
@@ -472,14 +472,14 @@ define(['echarts'], function(echarts) {
                 text: '资金增长（单位：元）',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '12'
+                    fontSize: '14'
                 }
             },
             grid: {
-                top: 50,
+                top: 100,
                 left: 10,
                 right: 10,
-                height: '80%'
+                height: '60%'
             },
             color: [ "#6ce6fe","#fff"],
             legend: {
@@ -496,7 +496,8 @@ define(['echarts'], function(echarts) {
                         fontSize:"10"
                     }
                 }],
-                right: 0
+                right: 0,
+                top: 40
             },
             tooltip: {
                 trigger: 'axis',

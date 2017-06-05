@@ -544,7 +544,7 @@
                         { value: 267, name: '家医团队' },
                         { value: 3718, name: '健康家人' },
                         { value: 223, name: '专科医生' },
-                        { value: 326, name: '帮扶干部' },
+                        { value: 2456, name: '帮扶干部' },
                         { value: 220, name: '村支书' }
                     ],
                 };

@@ -3949,7 +3949,7 @@
                     <img src="../images/default_head_img.png">
                 </div>
                 {{else}}
-                <div class="per-img" style="background: url('{{avatar}}');background-size: 100%;">
+                <div class="per-img" style="background: url('{{avatar}}') no-repeat center center;background-size: 130%;">
                     <img src="">
                 </div>
                 {{/if}}
@@ -4044,9 +4044,15 @@
             <p class="per-title">患者信息</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="per-lefttop help">
+                {{if !avatar}}
                 <div class="per-img">
-                    <img src="{{avatar||'../images/default_head_img.png'}}">
+                    <img src="../images/default_head_img.png">
                 </div>
+                {{else}}
+                <div class="per-img" style="background: url('{{avatar}}') no-repeat center center;background-size: 130%;">
+                    <img src="">
+                </div>
+                {{/if}}
                 <!--<p>{{name}}</p>-->
             </div>
             <div class="per-leftmid">

@@ -862,8 +862,8 @@
                 $('#centerSide').html(template('fallbackCenterSideTemp', {}));
                 var shouYiData = {
                     xArr: ['2015', '2016', '2017'],
-                    yArr: [7546, 6794, 5271],
-                    title: "低保贫困户人口  （单位：人）",
+                    yArr: [31.7, 44.45, 43.43],
+                    title: "低保贫困户人口占比",
                     axisLineWidth: 2,
                     yLabelShow: false,
                     axisLabelColor: "#6ce6fe",
@@ -874,13 +874,14 @@
                     },
                     tooltip: {
                         trigger: 'axis',
-                        formatter: '{b}<br/>人数：{c}'
+                        formatter: '{b}<br/>占比：{c}%'
                     },
+                    formatter: "{c}%"
                 };
                 charts.lineChart("fallbackYieldChart", shouYiData);
                 var touZiData = {
                     xArr: ['2015', '2016', '2017'],
-                    yArr: [2600, 2800, 2900],
+                    yArr: [2600, 2800, 2950],
                     title: "低保贫困户人均标准  （单位：元）",
                     axisLineWidth: 2,
                     yLabelShow: false,
@@ -1412,7 +1413,6 @@
                                 mapApi.curr_path_id = false;
                             });
                         })
-
                     }
                     //改变当前选择区域
 
@@ -1474,7 +1474,6 @@
                         /* Act on the event */
                     });
                 }
-
                 oSvg.on("mouseover", '.validMap', function(event) {
                     if (mapApi.hoverLock) {
                         //$(this).addClass('map-hover');
@@ -1490,7 +1489,6 @@
                         // });
                     }
                 });
-
                 oSvg.unbind("click").on('click', '.validMap', function(event) {
                     event.stopPropagation();
 
@@ -1572,7 +1570,7 @@
                      * 打开户列表的方法
                      * @param res 数据
                      * @param title 弹窗标题
-                     * @param title 党员家列表模板or村户列表
+                     * @param temp 党员家列表模板or村户列表
                      */
                     function getHouseList(res,title,temp) {
                         //temp为党员家列表
@@ -1582,7 +1580,7 @@
                         var html = titleHtml + "<div>" + membersTemp + "</div>";
                         //分页容器
                         html += "<ul class='page'></ul>";
-                        $.jBox(html, { title: title, buttons: {}, border: 0, opacity: 0.4 });
+                        $.jBox(html, { title: title+"&nbsp;&nbsp;"+res.data.length+"人", buttons: {}, border: 0, opacity: 0.4 });
                         document.getElementsByTagName('body')[0].style.padding = "0";
                         // 获取表格容器
                         var container = $('.jbox-content>div').eq(1);
@@ -1629,8 +1627,8 @@
                             } else if (text == "首页") {
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
-                                    chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [520, 120, 685, 520,0], true);
-                                    chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [520, 685], true);
+                                    chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
+                                    chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
                                 });
                             } else {
                                 //党建弹窗点击
@@ -1657,8 +1655,6 @@
                     }
 
                 });
-
-
             }, //getSubmap
             //切换地图公共方法 mapApi.showMap
             //传入地图 id
@@ -1711,9 +1707,6 @@
         }; //mapApi
         //初始化地图方法；
         mapApi.init("moqi", "homePage");
-
-
-
         //地图模块js ---------end----------
 
     });

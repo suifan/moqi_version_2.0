@@ -450,7 +450,8 @@ define(['echarts'], function(echarts) {
                         textStyle: {
                             color: data.axisLabelColor || "#fff",
                             fontSize: "16"
-                        }
+                        },
+                        formatter:data.formatter||"{c}"
                     }
                 }
 

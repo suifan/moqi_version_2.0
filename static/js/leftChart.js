@@ -29,7 +29,7 @@ define(['echarts'],function(echarts){
                         normal: {
                             show: true,
                             position: 'center',
-                            formatter: percent||"{d}"+(label?label:""),
+                            formatter: percent+(label?label:"")||"{d}"+(label?label:""),
                             textStyle: {
                                 fontSize: '14',
                                 fontWeight: 'normal',

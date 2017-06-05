@@ -251,8 +251,8 @@
                             }
                             $(".fileOne").viewer();
                             $(".fileTwo").viewer();
-                            $(".file1").viewer({navbar: true});
-                            $(".fileFour").viewer();
+                            $(".file3").viewer({navbar: true});
+                            $(".file4").viewer({navbar: true});
                         }
                     });
                 });

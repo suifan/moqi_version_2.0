@@ -1600,7 +1600,7 @@
                             jpage.page(newData, "villageTemp", container, 10);
                         });
                         //家庭列表绑定点击事件
-                        container.find("tbody").on("click", "tr", function() {
+                        container.on("click", "tbody tr", function() {
                             var text = $("#tab").find("li.active").text();
                             var name = $(this).find("td:eq(1)").text();
 

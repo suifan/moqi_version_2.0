@@ -249,6 +249,10 @@
                             } else {
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
+                            $(".fileOne").viewer();
+                            $(".fileTwo").viewer();
+                            $(".file1").viewer({navbar: true});
+                            $(".fileFour").viewer();
                         }
                     });
                 });

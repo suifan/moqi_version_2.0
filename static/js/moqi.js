@@ -230,7 +230,7 @@
                 chart.pieChart("disciplineChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', '分');
                 $("#rightSide").html(template('governmentTemp_right', {}));
                 chart.pieChart("secretaryChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '220', '人');
-                chart.pieChart("workTeamChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '64', "支");
+                chart.pieChart("workTeamChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '55', "支");
                 chart.pieChart("cadreChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '440', '人');
                 $('.bottom').html(template('governmentTemp_bottom', {}));
                 $(".command").viewer();

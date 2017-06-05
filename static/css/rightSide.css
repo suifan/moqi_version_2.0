@@ -418,9 +418,10 @@ li.progressLi p {
 
 .memberInfo p{
     display: inline-block;
-    line-height: 3vw;
+    line-height: 2vw;
     width: 44%;
     margin: 0 1vw;
+    font-size: 1vw;
 }
 
 .governmentBottom .bottom-content{

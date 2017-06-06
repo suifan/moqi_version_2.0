@@ -287,6 +287,14 @@ define(['echarts'], function(echarts) {
     var labelPieChart = function(id, pieData) {
         var labelPieChart = echarts.init(document.getElementById(id))
         labelPieChart.setOption({
+            title:{
+                text:pieData.title,
+                show:pieData.titleShow,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '12'
+                }
+            },
             tooltip: {
                 trigger: 'item',
                 formatter: "{b}:{c}"
@@ -295,14 +303,15 @@ define(['echarts'], function(echarts) {
             series: [{
                 type: 'pie',
                 center: pieData.center || ["50%", "60%"],
-                radius: ['35%', '60%'],
+                radius: pieData.radius || ['35%', '60%'],
                 avoidLabelOverlap: true,
                 label: {
                     normal: {
                         show: true,
                         position: 'outside',
                         textStyle: {
-                            color: '#fff'
+                            color: '#fff',
+                            fontSize: '10'
                         },
                         formatter: pieData.formatter || "{b} :  {c}"
                     },
@@ -315,7 +324,9 @@ define(['echarts'], function(echarts) {
                         show: true,
                         lineStyle: {
                             color: '#fff'
-                        }
+                        },
+                        length: 12,
+                        length2: 8
                     }
                 },
                 data: pieData.data
@@ -397,9 +408,10 @@ define(['echarts'], function(echarts) {
                 text: data.title || '本周签约医生签约数量                        单位:人',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '12px'
+                    fontSize: '14'
                 }
             },
+            color:["#fff"],
             grid: data.grid,
             tooltip: data.tooltip,
             xAxis: {
@@ -450,7 +462,8 @@ define(['echarts'], function(echarts) {
                         textStyle: {
                             color: data.axisLabelColor || "#fff",
                             fontSize: "16"
-                        }
+                        },
+                        formatter:data.formatter||"{c}"
                     }
                 }
 
@@ -471,31 +484,32 @@ define(['echarts'], function(echarts) {
                 text: '资金增长（单位：元）',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '12'
+                    fontSize: '14'
                 }
             },
             grid: {
-                top: 50,
+                top: 100,
                 left: 10,
                 right: 10,
-                height: '80%'
+                height: '60%'
             },
-            color: [ "#6ce6fe","#fff"],
+            color: ["#fff"],
             legend: {
                 data: [{
                     name: '低保标准',
                     textStyle: {
                         color: "#fff",
-                        fontSize:"10"
+                        fontSize:"12"
                     }
                 }, {
                     name: '扶贫保障标准',
                     textStyle: {
-                        color: "#6ce6fe",
-                        fontSize:"10"
+                        color: "#5cd25b",
+                        fontSize:"12"
                     }
                 }],
-                right: 0
+                right: 0,
+                top: 40
             },
             tooltip: {
                 trigger: 'axis',
@@ -510,7 +524,7 @@ define(['echarts'], function(echarts) {
             xAxis: {
                 axisLine: {
                     lineStyle: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -522,7 +536,7 @@ define(['echarts'], function(echarts) {
                 type: 'value',
                 axisLine: {
                     lineStyle: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -543,7 +557,7 @@ define(['echarts'], function(echarts) {
                 areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -552,7 +566,7 @@ define(['echarts'], function(echarts) {
                         show: true,
                         position: 'bottom',
                         textStyle: {
-                            color: "#6ce6fe",
+                            color: "#5cd25b",
                             fontSize: "16"
                         }
                     }

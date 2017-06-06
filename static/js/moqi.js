@@ -62,12 +62,6 @@
         // 数据加载
         var api = {
             'getHomePage': function() {
-                // $("#leftTabs").addClass("hide");
-                $("body>div").hide();
-                $(".bottom").show();
-                $(".mapBox").show();
-                $("#leftSide").show();
-                $("#rightSide").show();
                 //右侧--------------------start
                 $.getJSON("../js/json/homePage/dutyHost.json", function(data) {
                     if (data) {
@@ -76,10 +70,10 @@
                         $("#performance").find(".progressBar").each(function() {
                             var percent = $(this).find(".progressRate").text();
                             if (percent.substr(-1) !== "%") {
-                                percent = percent.slice(0, -1) + "%"
+                                percent = percent.slice(0, -1) + "%";
                             }
                             progressBar.generate($(this), percent);
-                        })
+                        });
                     }
                     $(".command").viewer();
                     $(".management").viewer();
@@ -89,7 +83,6 @@
                         $(".government").trigger("click");
                     }
                 });
-
                 //右侧--------------------end
 
                 //左侧--------------------start
@@ -115,14 +108,9 @@
                 }
                 chartData.data = [{ name: "目标户数", type: "bar", data: family, barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: people, barMaxWidth: 10 }]
                 charts.xBarChart("targetChart", chartData)
-
-                // $('#leftSide').html(template('homepageLeftSideTemp', data));
-
                 //左侧--------------------end
-
                 //底部--------------------start
                 $('.bottom').html(template('povertyStatus', {}));
-                // bottomBind();
                 //底部按钮点击事件
                 $(".bottom-head").on("click", function() {
                     var $this = $(this).siblings(".bottom-content");
@@ -133,11 +121,10 @@
                         } else {
                             $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                             if ($(".bottom-head").hasClass("active")) {
-                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
+                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png");
                             } else {
-                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
+                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
-                            // api.slide("slideBox_r","box-wrapper",1900);
                             api.getPovertyDistribution();
                         }
                     });
@@ -230,8 +217,8 @@
                 chart.pieChart("disciplineChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', '分');
                 $("#rightSide").html(template('governmentTemp_right', {}));
                 chart.pieChart("secretaryChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '220', '人');
-                chart.pieChart("workTeamChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '64', "支");
-                chart.pieChart("cadreChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '440', '人');
+                chart.pieChart("workTeamChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '55', "支");
+                chart.pieChart("cadreChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '1322', '人');
                 $('.bottom').html(template('governmentTemp_bottom', {}));
                 $(".command").viewer();
                 // bottomBind();
@@ -250,9 +237,9 @@
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
                             $(".fileOne").viewer();
-                            $(".fileTwo").viewer();
-                            $(".file1").viewer({navbar: true});
-                            $(".fileFour").viewer();
+                            $(".file2").viewer({navbar: true});
+                            $(".file3").viewer({navbar: true});
+                            $(".file4").viewer({navbar: true});
                         }
                     });
                 });
@@ -277,219 +264,6 @@
                 // chart.barChart("poverty_status",["因病","因灾","因学","因残","缺土地","缺资金","缺技术","缺劳力","缺水","自身发展动力不足","交通条件落后"],[9990,2882,372,1349,10374,3806,688,774,22,524,116]);
                 chart.barChart("poverty_status", ["因病", "因灾", "因学", "缺土地", "缺资金", "缺技术", "缺劳力", "缺水", "自身发展动力不足", "交通条件落后"], [1989, 265, 33, 1904, 428, 97, 132, 2, 56, 3]);
 
-            },
-
-            'getFiveGroup': function(switchFlag) {
-                //产业扶贫底部
-                $("#leftTabs").addClass("hide");
-                // $("#leftOperation").addClass("hide");
-                // $("#sevenStepsTab").removeClass("hide");
-                //右侧--------------------start
-                $.getJSON("../js/json/fiveGroup/fivegroup_right.json", function(res) {
-                    var data = res[area];
-                    $('#rightSide').html(template('sevenStepsRightSideTemp', data));
-                    charts.gauge("putOnRecordChart", { value: data.healthPoint, color: '#83ea43', dataValue: data.healthPoint * 100 });
-                    charts.gauge("diagnosisChart", { value: data.diagnosisPoint, color: '#fd8320', dataValue: data.diagnosisPoint * 100 });
-                    charts.labelPie("healthChart", { color: ["#f84c24", "#fde101", "#83d130", "#0786ef"], data: data.healthDetail });
-                    charts.labelPie("laborChart", { color: ["#f84c24", "#fde101", "#83d130", "#0786ef"], data: data.laborDetail });
-                    charts.gauge("signChart", { value: data.signPoint, color: '#3ad3e1', dataValue: data.signPoint * 100 });
-                    charts.gauge("overcomePovertyChart", { value: data.poorPoint, color: '#e14e35', dataValue: data.poorPoint * 100 });
-                });
-
-
-                //右侧--------------------end
-
-                //左侧--------------------start
-                api.getFiveLeft();
-                //左侧--------------------end
-
-                //底部--------------------start
-                $.getJSON("../js/json/fiveGroup/helpDynamic.json", function(res) {
-                    var data = {};
-                    data.list = res.povertyNews["moqi"];
-                    $('.bottom').html(template('rebuildTemp', {}));
-                });
-                //易地动态按钮点击事件
-                $(".bottom-head").on("click", function() {
-                    var $this = $(this).siblings(".bottom-content");
-                    $this.slideToggle(function() {
-                        var showBool = $this.is(":visible");
-                        if (!showBool && window.timeOut) {
-                            // clearTimeout(timeOut);
-                        } else {
-                            // api.slide("slideBox","box-wrapper");
-                            // chart.barChart("doctorSign");
-                        }
-                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
-                        if ($(".bottom-head").hasClass("active")) {
-                            $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
-                        } else {
-                            $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
-                        }
-                    });
-                });
-                //底部--------------------end
-                //弹窗部分代码
-
-                //建档情况
-                /*$("#openDoc").on("click", function () {
-                    var $pop = api.openPopWindow("建档情况");
-                    $.getJSON("../js/json/fiveGroup/recordJbox.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=1;
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData);
-                        }
-                    });
-                })
-                //脱贫情况
-                $("#openTuopin").on("click", function () {
-                    var $pop = api.openPopWindow("脱贫情况");
-                    $.getJSON("../js/json/fiveGroup/overcomePoverty.json",function(res){
-                        if(res){
-                            $pop.find('.jbox-content').html(template('tuopinTemp',{}));
-                            var townNames=[],andPoor=[],complete=[];
-                            res.forEach(function(item){
-                                townNames.push(item.townName);
-                                andPoor.push(item.andPoor);
-                                complete.push(item.completionHouses);
-                            })
-                            var docData = {townNames:townNames,andPoor:andPoor,complete:complete}
-                            chart.poorChart("poorChart",docData);
-                        }
-                    });
-                })
-                //劳动力情况
-                $("#laborCondition").on("click", function () {
-                    var $pop = api.openPopWindow("劳动力情况");
-                    $.getJSON("../js/json/fiveGroup/labor.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=1;
-                            $pop.find('.jbox-content').html(template('laborTemp',data));
-                            var docData = {color:["#f84c24","#fde101","#83d130","#0786ef"],data:data.dataList}
-                            charts.labelPie('laborWindowChart',docData)
-                        }
-                    });
-                })
-                //诊断情况 与建档情况公用一个模板
-                $("#diagnoseCondition").on("click", function () {
-                    var $pop = api.openPopWindow("诊断情况");
-                    $.getJSON("../js/json/fiveGroup/diagnose.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=3
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData)
-                        }
-                    });
-                });
-                //身体健康状况 与劳动力情况公用一个模板
-                $("#healthCondition").on("click", function () {
-                    var $pop = api.openPopWindow("身体健康情况");
-                    $.getJSON("../js/json/fiveGroup/health.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=2
-                            $pop.find('.jbox-content').html(template('laborTemp',data));
-                            var docData = {color:["#f84c24","#fde101","#83d130","#0786ef"],data:data.dataList}
-                            charts.labelPie('laborWindowChart',docData)
-                        }
-                    });
-
-                });
-                //签约情况 与建档情况公用一个模板     --------------暂时这么写，后续提取公共部分--------------
-                $("#signCondition").on("click", function () {
-                    var $pop = api.openPopWindow("签约情况");
-                    $.getJSON("../js/json/fiveGroup/sign.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=2
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData)
-                        }
-                    });
-                });*/
-                //个人中心
-                /*$("#openPerinfo").on("click", function () {
-                    $.jBox('', {title: "李茜茜", buttons: {}, border: 0, opacity: 0.4});
-                    document.getElementsByTagName('body')[0].style.padding="0";
-                    // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                    //设置弹窗top值
-                    var box = document.getElementById("jbox");
-                    var title = document.getElementsByClassName("jbox-title")[0];
-                    box.style.top = "2.6vw";
-                    title.style.textAlign ="left";
-                    var html = template('personalTemp',{});
-                    document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-                })*/
-                //村贫困家庭表单
-                /*$("#openPoorInfo").on("click", function () {
-                    $.jBox('', {title: "", buttons: {}, border: 0, opacity: 0.4});
-                    document.getElementsByTagName('body')[0].style.padding="0";
-                    // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                    //设置弹窗top值
-                    var box = document.getElementById("jbox");
-                    var title = document.getElementsByClassName("jbox-title")[0];
-                    box.style.top = "2.6vw";
-                    title.style.textAlign ="left";
-                    var html = template('personalTemp',{});
-                    document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-                })*/
-            },
-            'getFiveLeft': function(switchFlag) {
-                $.getJSON("../js/json/fiveGroup/fivegroup_left.json", function(res) {
-                    var data = res[area];
-                    data['huorren'] = switchFlag || 1;
-                    $('#leftSide').html(template('fiveLeftSideTemp', data));
-                    //进度条生成
-                    $(".section-body.second-sec").find(".progressBar").each(function() {
-                        var value = $(this).next("div").children("span").text();
-                        progressBar.generate(this, value);
-                    })
-                });
-                //绑定左侧 人/户 切换点击事件
-                $(".switch-head").on("click", "span", function() {
-                    var activeBool = $(this).hasClass("span-active");
-                    if (!activeBool) {
-                        // $(this).addClass("span-active");
-                        // $(this).siblings("span").removeClass("span-active")
-                        var text = $(this).text();
-                        // var obj = $(".section-body table thead tr").children();
-                        if (text == "户") {
-                            api.getFiveLeft(1);
-                        } else {
-                            api.getFiveLeft(2);
-                        }
-                    }
-
-                });
-            },
-            'getPoorFamilyLeft': function(switchFlag) { //贫困家庭左侧
-                $.getJSON("../js/json/povertyFamily/poorFamily.json", function(data) {
-                    data["huorren"] = switchFlag || 1;
-                    $('#leftSide').html(template('povertyLeftSideTemp', data));
-                });
-                //绑定左侧 人/户 切换点击事件
-                $(".switch-head").on("click", "span", function() {
-                    var activeBool = $(this).hasClass("span-active");
-                    if (!activeBool) {
-                        // $(this).addClass("span-active");
-                        // $(this).siblings("span").removeClass("span-active")
-                        var text = $(this).text();
-                        // var obj = $(".section-body table thead tr").children();
-                        if (text == "户") {
-                            api.getPoorFamilyLeft(1);
-                        } else {
-                            api.getPoorFamilyLeft(2);
-                        }
-                    }
-
-                });
             },
             'getDisease': function() {
                 //左侧------start
@@ -564,7 +338,7 @@
                         { value: 3718, name: '健康人群' },
                         { value: 1073, name: '部分恢复劳动能力' }
                     ],
-                    radius: ['50%', '70%'],
+                    radius: ['40%', '60%'],
                     center: ["50%", "50%"],
                     formatter: "{b}\n{c}\n({d}%)"
                 };
@@ -646,8 +420,6 @@
             'getDiseasePoor': function() {
                 chart.barChart("helping_status", townNameList, [1110, 270, 153, 147, 200, 75, 438, 34, 262, 82, 668, 258, 124, 532, 245, 164, 171]);
             },
-
-
             'getFivePeopleGroupNum': function() {
                 chart.barChart("helping_status", townNameList, [44,32,33,23,12,13,34,11,4,3,9,13,7,4,17,5,3]);
 
@@ -692,8 +464,6 @@
                 //左侧--------------------end
 
                 //底部--------------------start
-                // $('.bottom').html(template('povertyStatus', {}));
-                // bottomBind();
                 //家医签约按钮点击事件
                 $(".bottom-head").on("click", function() {
                     var $this = $(this).siblings(".bottom-content");
@@ -728,100 +498,6 @@
                 });
                 //底部--------------------end
             },
-            /*$.getJSON("../js/json/povertyFamily/education.json",function(data){
-                $('#rightSide').html(template('povertyRightSideTemp_education', data[area]));
-                var eduData = {
-                    legend:['学龄前儿童', '小学', '初中', '高中', '大专及以上', '文盲及半文盲'],
-                    color:['#fde101', '#1ff4be', '#c4572e', '#387b14', '#cb4345', '#a96969', '#40bfec', '#c73983', '#0786ef'],
-                    data:[
-                        {value: data[area].numberOfPreschoolChildren, name: '学龄前儿童'},
-                        {value: data[area].numberOfPrimarySchool, name: '小学'},
-                        {value: data[area].numberOfJuniorMiddleSchool, name: '初中'},
-                        {value: data[area].numberOfHighSchool, name: '高中'},
-                        {value: data[area].numberOfCollegeDegreeOrAbove, name: '大专及以上'},
-                        {value: data[area].numberOfIlliteracy, name: '文盲及半文盲'}
-                    ]
-                }
-                charts.fullPieChart("educationStructureChart",eduData)
-            });
-*/
-            'getSex': function() {
-                $.getJSON("../js/json/povertyFamily/sex.json", function(data) {
-                    if (data) {
-                        var sexData = data.povertyStructure[area];
-                    }
-                    sexData.numberOfMen = (parseInt(sexData.poorCount) - parseInt(sexData.numberOfWomen)) + "";
-                    $('#rightSide').html(template('povertyRightSideTemp_population', sexData));
-                    maleChartData = {
-                        color: ['#c2ff42', '#1996e6'],
-                        data: [{
-                                value: (parseInt(sexData.poorCount) - sexData.numberOfWomen),
-                                name: '男性',
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        position: 'center',
-                                        formatter: "{d}%",
-                                        textStyle: {
-                                            fontSize: '11',
-                                            fontWeight: 'lighter',
-                                            color: '#fff'
-                                        }
-                                    }
-                                }
-                            },
-                            { value: sexData.numberOfWomen, name: '女性' }
-
-                        ],
-                        center: ["50%", "50%"],
-                        radius: ['50%', '70%']
-                    }
-                    charts.pieChart("maleChart", false, maleChartData)
-                    femaleChartData = {
-                        color: ['#fe5b3c', '#1996e6'],
-                        data: [{
-                                value: sexData.numberOfWomen,
-                                name: '女性',
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        position: 'center',
-                                        formatter: "{d}%",
-                                        textStyle: {
-                                            fontSize: '11',
-                                            fontWeight: 'lighter',
-                                            color: '#fff'
-                                        }
-                                    }
-                                }
-                            },
-                            { value: (parseInt(sexData.poorCount) - sexData.numberOfWomen), name: '男性' }
-
-                        ],
-                        center: ["50%", "50%"],
-                        radius: ['50%', '70%']
-                    }
-                    charts.pieChart("femaleChart", false, femaleChartData)
-
-                })
-            },
-            'getPoverty': function(type) {
-                $.getJSON("../js/json/povertyFamily/poorFamilyFrame.json", function(data) {
-                    if (data && data.povertyStructure) {
-                        var poverty = data.povertyStructure;
-                        poverty[area].type = type;
-                        $('#rightSide').html(template('povertyRightSideTemp_poverty', poverty[area]));
-                        charts.labelPie("povertyStructureChart", {
-                            color: ['#fde101', '#1ff4be', '#c4572e'],
-                            data: [
-                                { value: type == 1 ? poverty[area].generalPovertyHouseholds : poverty[area].generalPovertyPopulation, name: "一般贫困户" },
-                                { value: type == 1 ? poverty[area].DBPovertyHouseholds : poverty[area].DBPovertyPopulation, name: "低保贫困户" },
-                                { value: type == 1 ? poverty[area].WBPovertyHouseholds : poverty[area].WBPovertyPopulation, name: "五保贫困户" }
-                            ]
-                        });
-                    }
-                });
-            },
             'getDoctorSign': function(type) {
                 $.getJSON("../js/json/homePage/doctorSign.json", function(data) {
                     if (data) {
@@ -836,7 +512,6 @@
                     }
                 })
             },
-
             "getfallback": function() {
                 mapApi.mapPlay("none");
                 $('#centerSide').css('display', 'block');
@@ -862,11 +537,11 @@
                 $('#centerSide').html(template('fallbackCenterSideTemp', {}));
                 var shouYiData = {
                     xArr: ['2015', '2016', '2017'],
-                    yArr: [7546, 6794, 5271],
-                    title: "低保贫困户人口  （单位：人）",
+                    yArr: [31.7, 44.45, 43.43],
+                    title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
-                    axisLabelColor: "#6ce6fe",
+                    axisLabelColor: "#21b9fa",
                     grid: {
                         top: 40,
                         left: 40,
@@ -874,17 +549,18 @@
                     },
                     tooltip: {
                         trigger: 'axis',
-                        formatter: '{b}<br/>人数：{c}'
+                        formatter: '{b}<br/>占比：{c}%'
                     },
+                    formatter: "{c}%"
                 };
                 charts.lineChart("fallbackYieldChart", shouYiData);
                 var touZiData = {
                     xArr: ['2015', '2016', '2017'],
-                    yArr: [2600, 2800, 2900],
-                    title: "低保贫困户人均标准  （单位：元）",
+                    yArr: [2600, 2800, 2950],
+                    title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
-                    axisLabelColor: "#6ce6fe",
+                    axisLabelColor: "#fa8a25",
                     grid: {
                         top: 40,
                         left: 40,
@@ -922,12 +598,10 @@
                 });
                 //底部end
             },
-
             //产业扶贫相关方法
-
             "getProduction": function() {
                 mapApi.mapPlay("none");
-                $('#centerSide').css('display', 'block');
+                
 
                 //左侧
                 $('#leftSide').html(template('productionLeftSideTemp', {}));
@@ -1009,6 +683,7 @@
             },
             //生态扶贫相关方法
             'getEcology': function() {
+                $(".mapBox").hide();
 
                 $('#leftSide').html(template('ecologyLeftTemp', {}));
 
@@ -1118,9 +793,8 @@
             //左右两侧高度适应屏幕
             sideResize();
             window.onresize = function() {
-
                 sideResize();
-            };;
+            };
             //加载倒计时
             countDown.countDown("2018/1/1");
             //刷新时触发首页点击事件
@@ -1128,50 +802,50 @@
             //绑定右上角区域切换事件
             $("#areaSelectInHeader").on("change", function() {
                     var town = $(this).val();
+
                     area = town;
                     mapApi.showMap(town);
                     mapApi.getData();
-                })
+                });
                 //切换头部标签
             $("#tab").on("click", "li", function() {
-
-                //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
-                if (!$(this).attr('class')) {
-                    return;
-                }
-                //---暂时代码
                 var activeBool = $(this).hasClass("active");
                 if (!activeBool) {
                     $(this).addClass("active");
+
                     $(this).siblings("li").removeClass("active")
+                    $("body>div").hide();
+
+                    $(this).siblings("li").removeClass("active");
+
                 }
                 //map 的显示隐藏
-                if (!$(this).hasClass("production")) {
+                if (!$(this).hasClass("production")&&!$(this).hasClass("relocate")) {
                     mapApi.mapPlay("block");
                     $('#centerSide').hide();
                 }
                 if ($(this).hasClass("homepage")) { //点击首页按钮
+                    $(".bottom").show();
+                    $(".mapBox").show();
+                    $("#leftSide").show();
+                    $("#rightSide").show();
                     api.getHomePage(area);
                     mapApi.init("moqi", "homepage");
                 } else if ($(this).hasClass("production")) { //产业扶贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $(".mapBox").show();
+                    $('#centerSide').show();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     api.getProduction();
                 } else if ($(this).hasClass("government")) { //党建促脱贫
-                    $("body>div").hide();
                     $(".mapBox").show();
                     $("#leftSide").show();
                     $(".bottom").show();
                     $("#rightSide").show();
-                    // $("#whole").hide();
                     api.getGovernment();
                     mapApi.init("moqi", "government");
-
                 } else if ($(this).hasClass("health")) { //健康脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $(".mapBox").show();
                     $("#leftSide").show();
@@ -1179,65 +853,28 @@
                     api.getDisease();
                     mapApi.init("moqi", "health");
                 } else if ($(this).hasClass("ecology")) { //生态脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $('#centerSide').show();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     api.getEcology();
                 } else if ($(this).hasClass("education")) { //教育脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $("#leftSide").show();
                     $("#rightContent").show();
                     api.getEducation();
                 } else if ($(this).hasClass("fallback")) { //兜底脱贫
-                    $("body>div").hide();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     $(".bottom").show();
                     api.getfallback();
-                    // api.getFiveGroup();
                 } else if ($(this).hasClass("relocate")) {
-                    $("body>div").hide();
                     $("#whole").show();
                     $(".bottom").show();
                     api.getRelocate();
                 }
             });
-            //贫困家庭右侧栏tab切换
-            /*$("#leftTabs").on("click","span",function(){
-                if(!$(this).hasClass("active")){
-                    $("#rightSide").empty();
-                    $(this).addClass("active").siblings().removeClass("active");
-
-                }else{
-                    return;
-                }
-                if($(this).hasClass("disease")){//大病结构
-                    api.getDisease();
-                }else if($(this).hasClass("education")){//学历结构
-                    api.getEducation()
-                }else if($(this).hasClass("sex")){//性别结构
-                    api.getSex()
-                }else if($(this).hasClass("poverty")){//贫困结构
-                    api.getPoverty(2);
-                }
-            });*/
-
-            $("#rightSide").on("click", "#povertyStructure span", function() {
-                if (!$(this).hasClass("active") && $(this).text() == "人") {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    api.getPoverty(2)
-                        //ajax
-                } else if (!$(this).hasClass("active") && $(this).text() == "户") {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    $("#povertyTypeRank").find("thead th:eq(1)").text("户数")
-                    api.getPoverty(1)
-                }
-            });
-
-        })
+        });
 
 
 
@@ -1412,7 +1049,6 @@
                                 mapApi.curr_path_id = false;
                             });
                         })
-
                     }
                     //改变当前选择区域
 
@@ -1424,13 +1060,16 @@
                             var membersTemp = template("members", data);
                             $.jBox(membersTemp, { title: "督导组成员", buttons: {}, border: 0, opacity: 0.4 });
                         })
+
                         document.getElementsByTagName("body")[0].style.padding = "0";
                         var title = document.getElementsByClassName("jbox-title")[0];
                         title.style.width = "96%";
+
                         $(".select-switch").on("change", "select", function() {
                             var selected = $(this).children("option:selected").val();
                             var membersTemp = template("members", { data: [{ "duty": "组长", "name": "李骄", "sex": "女", "nation": "汉族", "politic": "党员", "office": "北京", "contect": "13711111111", "remarks": "没有备注" }, { "duty": "副组长", "name": "李天骄", "sex": "女", "nation": "汉族", "politic": "党员", "office": "北京", "contect": "13711111111", "remarks": "没有备注" }] });
                             $("#jbox-content").find("table").remove().append(membersTemp);
+                        
 
                         });
                     });
@@ -1474,7 +1113,6 @@
                         /* Act on the event */
                     });
                 }
-
                 oSvg.on("mouseover", '.validMap', function(event) {
                     if (mapApi.hoverLock) {
                         //$(this).addClass('map-hover');
@@ -1490,7 +1128,6 @@
                         // });
                     }
                 });
-
                 oSvg.unbind("click").on('click', '.validMap', function(event) {
                     event.stopPropagation();
 
@@ -1545,7 +1182,7 @@
                         });
                         //干部按钮
                         $('#partyLeader').on('click', function(event) {
-                            event.preventDefault();
+                            event.preventDefault();  
                             /* Act on the event */
                             $.getJSON("../js/json/cadre.json",function(res){
                                 var membersTemp = template("cadreTemp", res.data);
@@ -1560,10 +1197,53 @@
                                 jpage.page(res.data, "cadreTemp", container, 10);
                             });
                         });
-                        //党村委会按钮
-                        $('#partyVillageClub').on('click',function(event) {
+                        //驻村第一书记工作队按钮
+                        $('#workTeam,#villageCadre').on('click', function(event) {
                             event.preventDefault();
                             /* Act on the event */
+                            //$.getJSON("../js/json/cadre.json",function(res){
+                                var membersTemp = template("workTeamAndCadreTemp", {});
+                                var html = "<div>" + membersTemp + "</div>";
+                                //分页容器
+                                html += "<ul class='page'></ul>";
+                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
+                            if(event.target.id=="workTeam"){
+                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
+                            }
+                                var $pop = $.jBox(html, { title:title, buttons: {}, border: 0, opacity: 0.4 });
+                                document.getElementsByTagName('body')[0].style.padding = "0";
+                                // 获取表格容器
+                                $pop.find(".jbox-title").css({"width":"100%","position":"relative"});
+                                var container = $('.jbox-content>div').eq(1);
+                                //jpage.page(res.data, "cadreTemp", container, 10);
+                                //});
+                        });
+                        //村两委干部工作队按钮
+
+                        //党村委会按钮
+                        $('#partyVillageClub').on('click',function(event) {
+                             $('.hangPai').show();//
+                             $('#hangPai').html(template('hangPaiTemp',{}));
+                             homeClick();
+                            quitHp();
+                            //退出按钮
+                            function quitHp(){
+                                $('.quitHp-btn').on('click', function(event) {
+                                   $('.hangPai').hide();
+                                });
+                            }
+                            //点击房子弹出卡片
+                            function homeClick(){
+                                $('.hPshenglicunSvg').find('.asd').on('click', function(event) {
+                                     var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
+                                    var homeId=$(this).attr('data-Name');
+                                    //获取扶贫卡内容数据
+                                   $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
+                                        var cardHtml = template('helpCardTemp', res.data);
+                                        document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
+                                    });
+                                });
+                            }
                         });
                     }else{
 
@@ -1572,7 +1252,7 @@
                      * 打开户列表的方法
                      * @param res 数据
                      * @param title 弹窗标题
-                     * @param title 党员家列表模板or村户列表
+                     * @param temp 党员家列表模板or村户列表
                      */
                     function getHouseList(res,title,temp) {
                         //temp为党员家列表
@@ -1582,7 +1262,7 @@
                         var html = titleHtml + "<div>" + membersTemp + "</div>";
                         //分页容器
                         html += "<ul class='page'></ul>";
-                        $.jBox(html, { title: title, buttons: {}, border: 0, opacity: 0.4 });
+                        $.jBox(html, { title: title+"&nbsp;&nbsp;"+res.data.length+"人", buttons: {}, border: 0, opacity: 0.4 });
                         document.getElementsByTagName('body')[0].style.padding = "0";
                         // 获取表格容器
                         var container = $('.jbox-content>div').eq(1);
@@ -1600,11 +1280,12 @@
                             jpage.page(newData, "villageTemp", container, 10);
                         });
                         //家庭列表绑定点击事件
-                        container.find("tbody").on("click", "tr", function() {
+                        container.on("click", "tbody tr", function() {
                             var text = $("#tab").find("li.active").text();
                             var name = $(this).find("td:eq(1)").text();
 
                             var userId = $(this).attr("id");
+                            console.log(userId);
                             /*var family = res.data.filter(function(a) {
                                 return a.name == name;
                             });*/
@@ -1629,8 +1310,41 @@
                             } else if (text == "首页") {
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
-                                    chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [520, 120, 685, 520,0], true);
-                                    chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [520, 685], true);
+                                    // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
+                                    // chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
+                                    //家庭收入
+                                    var selfProfit = {
+                                        color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                        data: [
+                                            { value: 1500, name: '其它' },
+                                            { value: 2000, name: '财产' },
+                                            { value: 1000, name: '种植业' },
+                                            { value: 1000, name: '务工' },
+                                            { value: 2000, name: '养殖业' }
+                                        ],
+                                        radius: ['30%', '40%'],
+                                        center: ["50%", "50%"],
+                                        formatter: "{b}\n{c}元\n({d}%)",
+                                        titleShow: true,
+                                        title: "自主性经营收入"
+                                    };
+                                    var transProfit = {
+                                        color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                        data: [
+                                            { value: 1500, name: '其它' },
+                                            { value: 2000, name: '财产' },
+                                            { value: 1000, name: '种植业' },
+                                            { value: 1000, name: '务工' },
+                                            { value: 2000, name: '养殖业' }
+                                        ],
+                                        radius: ['30%', '40%'],
+                                        center: ["50%", "50%"],
+                                        formatter: "{b}\n{c}元\n({d}%)",
+                                        titleShow: true,
+                                        title: "转移性收入"
+                                    };
+                                    charts.labelPieChart("selfProfit", selfProfit);
+                                    charts.labelPieChart("transProfit", transProfit);
                                 });
                             } else {
                                 //党建弹窗点击
@@ -1649,6 +1363,7 @@
                      */
                     function getHelpPoor(id, index) {
                         //获取扶贫卡数据
+                   
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + id, function(res) {
                             var cardHtml = template('helpCardTemp', res.data);
                             // console.log(res.data.physical_exam_records);
@@ -1657,8 +1372,6 @@
                     }
 
                 });
-
-
             }, //getSubmap
             //切换地图公共方法 mapApi.showMap
             //传入地图 id
@@ -1711,9 +1424,6 @@
         }; //mapApi
         //初始化地图方法；
         mapApi.init("moqi", "homePage");
-
-
-
         //地图模块js ---------end----------
 
     });

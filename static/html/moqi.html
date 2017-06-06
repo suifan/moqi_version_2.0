@@ -22,6 +22,11 @@
     </div>
     <div class="map-tips flo-box hide"></div>
     <div class='map-links flo-box '></div>
+
+     <div id="hangPai" class="hangPai">
+
+    </div>
+
     <div id='svgBox' class="svgBox ">
         <!-- 莫旗县 地图 moqixian -->
         <svg id='moqi' class='moqiSvg show' data-name='莫旗' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-400 250 3400 3600" xml:space="preserve">
@@ -2828,31 +2833,12 @@
 </header>
 <!--header end-->
 <!--right start-->
-<!--<div id="leftTabs" class="hide">
-    &lt;!&ndash;贫困家庭左侧tab&ndash;&gt;
-    <span class="disease active"></span>
-    <span class="education"></span>
-    <span class="sex"></span>
-    <span class="poverty"></span>
-</div>-->
-<!--<div id="sevenStepsTab" class="hide"></div>&lt;!&ndash;五人小组左侧tab&ndash;&gt;-->
-<!--<div id="leftOperation"></div>&lt;!&ndash;首页左侧收起&ndash;&gt;-->
-
 <div id="rightSide"></div>
 <!--right end-->
-
 <!--left start-->
-<!--<div class="left-btn"></div>-->
 <div id="leftSide"></div>
 <div id="rightContent"></div>
 <!--left end-->
-
-
-
-
-<!--<div class="left-btn"></div>-->
-
-
 <div id="whole"></div>
 <!--left end-->
 <div id="centerSide"></div>
@@ -2888,13 +2874,14 @@
         <ul class="links-list">
             <li><a id="partyHome" class="partyLinks" href="javascript:;">党员家</a></li>
             <li><a id="partyLeader" class="partyLinks" href="javascript:;">干部</a></li>
-           <!--  <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li> -->
+            <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li>
+            <li><a id="workTeam" class="partyLinks" href="javascript:;">驻村第一书记工作队</a></li>
+            <li><a id="villageCadre" class="partyLinks" href="javascript:;">村两委干部</a></li>
         </ul>
     </div>
     <div class="map-sanjiao"></div>
 </script>
 <!--地图模板 end-->
-<!-- 右侧-模板 start-->
 <!--首页模板 右侧-->
 <script id="homepageRightSideTemp" type="text/html">
     <div class="section" id="command">
@@ -2990,45 +2977,7 @@
         </div>
     </div>
 </script>
-<!--五人小组模板-->
-<script id="sevenStepsRightSideTemp" type="text/html">
-    <div class="section" id="sevenSteps">
-        <div class="header">
-            <h2>扶贫工作方法</h2>
-        </div>
-        <div class="content">
-            <div class="step">
-                <div class="stepTitle" id="openDoc"><span></span>建档情况</div>
-                <div id="putOnRecordChart"></div>
-                <p>健康档案数：{{healthDocument}}人</p>
-            </div>
-            <div class="step">
-                <div class="stepTitle" id="diagnoseCondition"><span></span>诊断情况</div>
-                <div id="diagnosisChart"></div>
-                <p>因病致贫数：{{diagnosisCount}}人</p>
-            </div>
-            <div class="step long">
-                <div class="stepTitle" id="healthCondition"><span></span>身体健康情况</div>
-                <div id="healthChart"></div>
-            </div>
-            <div class="step long">
-                <div class="stepTitle" id="laborCondition"><span></span>劳动力情况</div>
-                <div id="laborChart"></div>
-            </div>
-            <div class="step">
-                <div class="stepTitle" id="signCondition"><span></span>签约情况</div>
-                <div id="signChart"></div>
-                <p>签约居民数：{{signCount}}人</p>
-            </div>
-            <div class="step">
-                <div class="stepTitle" id="openTuopin"><span></span>脱贫情况</div>
-                <div id="overcomePovertyChart"></div>
-                <p>脱贫人数：{{poorCount}}人</p>
-            </div>
-        </div>
-    </div>
-</script>
-<!--五人小组统计模板-->
+<!--健康扶贫右侧模板-->
 <script id="povertyRightSideTemp_disease" type="text/html">
     <div class="section" id="seriousDiseaseRight">
         <div class="header">
@@ -3061,324 +3010,6 @@
             <div>
                 <div id="diseaseIncidenceChart" style="height: 11vw;width: 100%;"></div>
             </div>
-        </div>
-    </div>
-</script>
-<!--贫困结构模板-->
-<script id="povertyRightSideTemp_poverty" type="text/html">
-    <div class="section" id="povertyStructure">
-        <div class="header">
-            <h2>贫困结构</h2>
-        </div>
-        <div class="content">
-            <div id="povertyStructureChart"></div>
-            <div class="sectionTab" id="povertyTab">
-                {{if type==2}}
-                <span class="active">人</span>
-                <span>户</span>
-                {{/if}}
-                {{if type==1}}
-                <span>人</span>
-                <span class="active">户</span>
-                {{/if}}
-            </div>
-        </div>
-    </div>
-    <div class="section" id="povertyTypeRank">
-        <div class="header">
-            <h2>贫困类型排名</h2>
-        </div>
-        <div class="content">
-            <table>
-                <thead>
-                <th>类型</th>
-                <th>{{if type==1}}户数{{else}}人数{{/if}}</th>
-                <th>占比</th>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>一般贫困户</td>
-                    <td>{{type==1?generalPovertyHouseholds:generalPovertyPopulation}}</td>
-                    <td>{{type==1?generalHouseholdsPercentage:generalPopulationPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>低保贫困户</td>
-                    <td>{{type==1?DBPovertyHouseholds:DBPovertyPopulation}}</td>
-                    <td>{{type==1?DBHouseholdsPercentage:DBPopulationPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>五保贫困户</td>
-                    <td>{{type==1?WBPovertyHouseholds:WBPovertyPopulation}}</td>
-                    <td>{{type==1?WBHouseholdsPercentage:WBPopulationPercentage}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</script>
-<!--学历结构模板-->
-<script id="povertyRightSideTemp_education" type="text/html">
-    <div class="section" id="educationStructure">
-        <div class="header">
-            <h2>学历结构</h2>
-        </div>
-        <div class="content">
-            <div id="educationStructureChart"></div>
-            <table>
-                <thead>
-                <th>学历</th>
-                <th>人数</th>
-                <th>占比</th>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>学龄前儿童</td>
-                    <td>{{numberOfPreschoolChildren}}</td>
-                    <td>{{preschoolChildrenPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>小学</td>
-                    <td>{{numberOfPrimarySchool}}</td>
-                    <td>{{primarySchoolPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>初中</td>
-                    <td>{{numberOfJuniorMiddleSchool}}</td>
-                    <td>{{juniorMiddleSchoolPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>高中</td>
-                    <td>{{numberOfHighSchool}}</td>
-                    <td>{{highSchoolPercentage}}</td>
-                </tr>
-                <tr>
-                    <td>大专及以上</td>
-                    <td>{{numberOfCollegeDegreeOrAbove}}</td>
-                    <td>{{collegeDegreeOrAbovePercentage}}</td>
-                </tr>
-                <tr>
-                    <td>文盲半文盲</td>
-                    <td>{{numberOfIlliteracy}}</td>
-                    <td>{{illiteracyPercentage}}</td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-</script>
-<!--人口结构模板-->
-<script id="povertyRightSideTemp_population" type="text/html">
-    <div class="section" id="populationStructure">
-        <div class="header">
-            <h2>人口结构</h2>
-        </div>
-        <div class="content">
-            <div>
-                <div id="maleChart"></div>
-                <p>男（所占比例）</p>
-            </div>
-            <div>
-                <div id="femaleChart"></div>
-                <p>女（所占比例）</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="sexStructure">
-        <div class="header">
-            <h2>性别分类</h2>
-        </div>
-        <div class="content">
-            <p>男（所占人数）</p>
-            <p class="sexCount">{{numberOfMen}}</p>
-            <p>女（所占人数）</p>
-            <p class="sexCount">{{numberOfWomen}}</p>
-        </div>
-    </div>
-</script>
-<!--右侧-模板 end-->
-<!--左侧模板 start-->
-<!--五人小组模板-->
-<script id="fiveLeftSideTemp" type="text/html">
-    <div class="section five-group">
-        <div class="header">
-            <!--<span class="goToDetail"></span>-->
-            <h2>2017年度扶贫任务</h2>
-            {{if huorren==1 }}
-            <div class="switch-head">
-                <span class="span-active">户</span>
-                <span>人</span>
-            </div>
-            {{else if huorren==2}}
-            <div class="switch-head">
-                <span>户</span>
-                <span class="span-active">人</span>
-            </div>
-            {{/if}}
-        </div>
-        <div class="section-body second-sec">
-            {{if huorren == 1}}
-            <ul>
-                <li>
-                    <div class="f-left-top">总体目标</div>
-                    <div class="s-left-header">脱贫目标：<span>{{populationTarget.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{populationTarget.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因病致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{illnessCasuses.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{illnessCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因学致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{studyCasuses.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{studyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因灾致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{disasterCasuses.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{disasterCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">缺技术致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{teachnologyCasuses.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{teachnologyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">缺资金致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{moneyCasuses.poorTarget}}</span>户</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{moneyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-            </ul>
-            {{else if huorren == 2}}
-            <ul>
-                <li>
-                    <div class="f-left-top">总体目标</div>
-                    <div class="s-left-header">脱贫目标：<span>{{populationTarget.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{populationTarget.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因病致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{illnessCasuses.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{illnessCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因学致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{studyCasuses.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{studyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">因灾致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{disasterCasuses.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{disasterCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">缺技术致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{teachnologyCasuses.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{teachnologyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="f-left-top">缺资金致贫</div>
-                    <div class="s-left-header">脱贫目标：<span>{{moneyCasuses.poorTarget}}</span>人</div>
-                    <div class="s-left-bar">
-                        <div class="progressBar pg_blue">
-                            <div class="progressBarBg"></div>
-                            <div class="progressBarBar"></div>
-                        </div>
-                        <div class="progressRate">完成度: <span>{{moneyCasuses.complete}}</span></div>
-                    </div>
-                </li>
-            </ul>
-            {{/if}}
-        </div>
-    </div>
-</script>
-<!--贫困家庭模板-->
-<script id="povertyLeftSideTemp" type="text/html">
-    <div class="section">
-        <div class="header">
-            <h2>2017年度脱贫目标</h2>
-            {{if huorren==1 }}
-            <div class="switch-head">
-                <span class="span-active">户</span>
-                <span>人</span>
-            </div>
-            {{else if huorren==2}}
-            <div class="switch-head">
-                <span>户</span>
-                <span class="span-active">人</span>
-            </div>
-            {{/if}}
-        </div>
-        <div class="section-body">
-
         </div>
     </div>
 </script>
@@ -3467,8 +3098,8 @@
         </div>
         <div class="content">
             <ul>
-                <li>因病致（返）贫户数：<span>1989</span></li>
-                <li>占比：<span>40.52%</span></li>
+                <li style="margin-left: .7vw;">因病致（返）贫户数：<span>1989</span></li>
+                <li style="margin-left: .7vw;">占比：<span>40.52%</span></li>
             </ul>
         </div>
     </div>
@@ -3479,7 +3110,7 @@
         <div class="content">
             <div class="diseaseStructureChartDiv">
                 <div id="diseaseStructureChart"></div>
-                <span>3356</span>
+                <span>2251</span>
             </div>
             <ul>
                 {{each disease as disease}}
@@ -3516,7 +3147,7 @@
                 <p>实现“两不愁，三保障”</p>
                 <p>确保 <span>4909</span> 户贫困户和 <span>12134</span>名贫困人口稳定脱贫</p>
                 <img src="../images/homePage_commandV2.png" class="command_show"alt="">
-                <img src="../images/organization.png" class="command" alt="指挥体系">
+                <img style="height: 13vw;width: 22vw;" src="../images/organization.png" class="command" alt="指挥体系">
             </div>
         </div>
     </div>
@@ -3570,11 +3201,11 @@
                     <div id="secretaryChart" class="threeCharts"></div>
                 </div>
                 <div>
-                    <p>工作队</p>
+                    <p>驻村工作队</p>
                     <div id="workTeamChart" class="threeCharts"></div>
                 </div>
                 <div>
-                    <p>村干部</p>
+                    <p>村两委干部</p>
                     <div id="cadreChart" class="threeCharts"></div>
                 </div>
             </div>
@@ -3632,10 +3263,11 @@
                     <img src="../images/work_info/luchunhua.jpg" alt="工作动态">
                     <div>
                         <p><span>卢春华</span><span style="font-size:.8vw;">2017年5月18日</span></p>
-                        <span>了解贫困户生产生活的困难、春耕情况、‘四种四养‘落实情况。</span>
+                        <span>了解贫困户生产生活的困难、春耕情况、‘四种四养’落实情况。</span>
                     </div>
                 </div>
-                <div class="workTrend">                    <img src="../images/work_info/suling.jpg" alt="工作动态">
+                <div class="workTrend">
+                    <img src="../images/work_info/suling.jpg" alt="工作动态">
                     <div>
                         <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
                         <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
@@ -3657,25 +3289,57 @@
             </div>
             <div class="bottomItem">
                 <img src="../images/document/2.png" class="fileTwo" alt="">
+                <ul class="files file2">
+                    <img src="../images/document/2.png" alt="">
+                    <li><img src="../images/document/2/0001.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0002.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0003.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0004.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0005.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0006.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0007.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0008.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0009.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0010.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0011.jpg" alt=""></li>
+                    <li><img src="../images/document/2/0012.jpg" alt=""></li>
+                </ul>
                 <p>莫旗抓党建促脱贫攻坚工作实施方案</p>
             </div>
             <div class="bottomItem">
                 <img src="../images/document/3.png" class="fileThree" alt="">
-                <ul class="files file1">
+                <ul class="files file3">
                     <img src="../images/document/3.png" alt="">
-                    <li><img src="../images/document/1/1.jpg" alt=""></li>
-                    <li><img src="../images/document/1/2.jpg" alt=""></li>
-                    <li><img src="../images/document/1/3.jpg" alt=""></li>
-                    <li><img src="../images/document/1/4.jpg" alt=""></li>
-                    <li><img src="../images/document/1/5.jpg" alt=""></li>
-                    <li><img src="../images/document/1/6.jpg" alt=""></li>
-                    <li><img src="../images/document/1/7.jpg" alt=""></li>
-                    <li><img src="../images/document/1/8.jpg" alt=""></li>
+                    <li><img src="../images/document/3/1.jpg" alt=""></li>
+                    <li><img src="../images/document/3/2.jpg" alt=""></li>
+                    <li><img src="../images/document/3/3.jpg" alt=""></li>
+                    <li><img src="../images/document/3/4.jpg" alt=""></li>
+                    <li><img src="../images/document/3/5.jpg" alt=""></li>
+                    <li><img src="../images/document/3/6.jpg" alt=""></li>
+                    <li><img src="../images/document/3/7.jpg" alt=""></li>
+                    <li><img src="../images/document/3/8.jpg" alt=""></li>
                 </ul>
                 <p>莫力达瓦达翰尔族自治旗脱贫攻坚驻村干部管理办法（试行）</p>
             </div>
             <div class="bottomItem">
                 <img src="../images/document/4.png" class="fileFour" alt="">
+                <ul class="files file4">
+                    <img src="../images/document/4.png" alt="">
+                    <li><img src="../images/document/4/0001.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0002.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0003.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0004.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0005.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0006.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0007.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0008.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0009.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0010.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0011.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0012.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0013.jpg" alt=""></li>
+                    <li><img src="../images/document/4/0014.jpg" alt=""></li>
+                </ul>
                 <p>莫力达瓦达翰尔族自治旗脱贫攻坚驻村干部考核办法（试行）</p>
             </div>
         </div>
@@ -3788,7 +3452,7 @@
         </div>
     </div>
 </script>
-<!--易地动态模板-->
+<!--教育动态模板-->
 <script id="eduHelpTemp" type="text/html">
     <div class="bottom">
         <div class="bottom-head">
@@ -3813,31 +3477,31 @@
                             <div class="item-img"><img src="../images/poverty/education_2.png" alt=""></div>
                         </div>
                     </div>
-                   <!-- <div class="box-item">
+                    <div class="box-item">
                         <div class="box-right">
-                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                            <div class="item-img"><img src="../images/poverty/education_3.gif" alt=""></div>
                         </div>
                     </div>
                     <div class="box-item">
                         <div class="box-right">
-                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                            <div class="item-img"><img src="../images/poverty/education_4.gif" alt=""></div>
                         </div>
                     </div>
                     <div class="box-item">
                         <div class="box-right">
-                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                            <div class="item-img"><img src="../images/poverty/education_5.gif" alt=""></div>
                         </div>
                     </div>
                     <div class="box-item">
                         <div class="box-right">
-                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                            <div class="item-img"><img src="../images/poverty/education_6.gif" alt=""></div>
                         </div>
                     </div>
                     <div class="box-item">
                         <div class="box-right">
-                            <div class="item-img"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2261288720,1972571591&fm=85&s=BF881263439E7A7F1E3900DF0300C0E0" alt=""></div>
+                            <div class="item-img"><img src="../images/poverty/education_7.gif" alt=""></div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -3949,7 +3613,7 @@
                     <img src="../images/default_head_img.png">
                 </div>
                 {{else}}
-                <div class="per-img" style="background: url('{{avatar}}');background-size: 100%;">
+                <div class="per-img" style="background: url('{{avatar}}') no-repeat center center;background-size: 120%;">
                     <img src="">
                 </div>
                 {{/if}}
@@ -3983,12 +3647,11 @@
             <p class="per-title">帮扶记录</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <article>
-                <h6 class="bfjl">第一次帮扶</h6>
-                <p><span>{{help.once_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.once_help.theme}}</em></p>
-                <p>{{help.once_help.content}}</p>
-                <h6 class="bfjl">第二次帮扶</h6>
-                <p><span>{{help.second_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.second_help.theme}}</em></p>
-                <p>{{help.second_help.content}}</p>
+                {{each help as help}}
+                    <h6 class="bfjl">第&nbsp;{{help.num}}&nbsp;次帮扶</h6>
+                    <p><span>{{help.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.theme}}</em></p>
+                    <p>{{help.content}}</p>
+                {{/each}}
                 {{if poverty_relief_images}}
                 <div class="artical-img">
                     {{each poverty_relief_images as img}}
@@ -4026,13 +3689,40 @@
             <p class="per-title">帮扶收入</p>
             <div style="width: 100%; background: #fff; height: 3px;"></div>
             <div id="fupinBar">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>总扶持金额</th>
+                        <th>房屋及环境改造扶持</th>
+                        <th>健康扶持</th>
+                        <th>教育扶持</th>
+                        <th>异地搬迁扶持</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>27000元</td>
+                        <td>2000元</td>
+                        <td>1000元</td>
+                        <td>4000元</td>
+                        <td>20000元</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
         <section class="profit-bar">
-            <p class="per-title">家庭收入</p>
+            <p class="per-title">家庭收入<span></span></p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div id="profitBar">
-
+                <div>
+                    <div id="selfProfit"></div>
+                    <span>12000元</span>
+                </div>
+                <div>
+                    <div id="transProfit"></div>
+                    <span>12000元</span>
+                </div>
             </div>
         </section>
     </div>
@@ -4044,9 +3734,15 @@
             <p class="per-title">患者信息</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="per-lefttop help">
+                {{if !avatar}}
                 <div class="per-img">
-                    <img src="{{avatar||'../images/default_head_img.png'}}">
+                    <img src="../images/default_head_img.png">
                 </div>
+                {{else}}
+                <div class="per-img" style="background: url('{{avatar}}') no-repeat center center;background-size: 120%;">
+                    <img src="">
+                </div>
+                {{/if}}
                 <!--<p>{{name}}</p>-->
             </div>
             <div class="per-leftmid">
@@ -4405,8 +4101,85 @@
 </script>
 <!--兜底扶贫右侧模板-->
 <script id="fallbackRightSideTemp" type="text/html">
-    <div class="section">
+    <div class="section fallback" id="workTrends">
         <div class="header">
+            <h2>扶贫动态</h2>
+        </div>
+        <div class="content">
+            <div class="whiteBg">
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_1.png" alt="">
+                    <div>
+                        <p><span>吴昊天</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>汉古尔河镇东诺敏村第一书记吴昊天，入户简介四种四养扶贫情况。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_2.png" alt="">
+                    <div>
+                        <p><span>李再忠</span><span style="font-size:.8vw;">2017年5月31日</span></p>
+                        <span>红彦镇政府镇长李再忠同扶贫办工作人员村两委到所包扶水磨沟村贫困户进行产业脱贫验收、查看小搬迁房屋建设走访贫困户。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_3.png" alt="">
+                    <div>
+                        <p><span>甲其口子村党支部</span><span style="font-size:.8vw;">2017年6月1日</span></p>
+                        <span>甲其口子村党支部全体党员在村部召开组织生活会。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_4.png" alt="">
+                    <div>
+                        <p><span>鄂彩生</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>西瓦尔图镇大库木尔村第一书记鄂彩生动员大库木尔村贫困户给扶贫经济林榛子苗木浇水。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_5.png" alt="">
+                    <div>
+                        <p><span>吴昊天</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>东诺敏村驻村第一书记吴昊天到全旗建档立卡贫困户重病患者家里探望，并多方为患者筹集手术资金。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_6.png" alt="">
+                    <div>
+                        <p><span>于军广</span><span style="font-size:.8vw;">2017年6月1日</span></p>
+                        <span>于军广在得知这两个贫困户脱贫资金不足的情况后，自掏腰包，为每户提供创业资金一万元，帮助两家建起圈舍，指引贫困户走上致富路。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_7.png" alt="">
+                    <div>
+                        <p><span>卢春华</span><span style="font-size:.8vw;">2017年5月18日</span></p>
+                        <span>了解贫困户生产生活的困难、春耕情况、‘四种四养’落实情况。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_8.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_9.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_10.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="header">
             <h2>扶贫动态</h2>
         </div>
         <div class="content fallback">
@@ -4424,18 +4197,24 @@
                     <li><img src="../images/poverty/fallback_help_10.png" alt=""></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
 
 </script>
 <!--兜底扶贫中间模板-->
 <script id="fallbackCenterSideTemp" type="text/html">
     <div class="section fallback">
+        <div class="header">
+            <h2>低保贫困户人口占比 </h2>
+        </div>
         <div class="content">
             <div id="fallbackYieldChart"></div>
         </div>
     </div>
     <div class="section fallback">
+        <div class="header">
+            <h2>低保贫困户人均标准 （单位：元）</h2>
+        </div>
         <div class="content">
             <div id="fallbackInvestChart"></div>
         </div>
@@ -4457,26 +4236,14 @@
     </div>
 </script>
 
-
-<!-- 生态扶贫  模板 -->
-
-
-
 <!--村贫困家庭弹窗模板-->
 <script id = "villageTemp" type="text/html">
-    <!--<div class="select-switch">
-        <select name="">
-            <option value="1">张家口镇</option>
-            <option value="2">革镇堡</option>
-        </select>
-        <em class="down-angle"></em>
-    </div>-->
     <div class="tuopin-left doc-left village">
         <div class="family-list">
             <table>
                 <thead>
                 <tr>
-                    <th>序号</th>
+                    <th></th>
                     <th>户主姓名</th>
                     <th>身份证号</th>
                     <th>联系电话</th>
@@ -4493,7 +4260,7 @@
                 <tbody>
                 {{each data as data}}
                 <tr id="{{data.id}}">
-                    <td>{{$index+1}}</td>
+                    <td></td>
                     <td>{{data.name|| ''}}</td>
                     <td>{{data.idnum}}</td>
                     <td>{{data.phone}}</td>
@@ -4512,7 +4279,43 @@
         </div>
     </div>
 </script>
-
+<!--党建 村两委书记、驻村第一书记工作队 弹窗模板-->
+<script id = "workTeamAndCadreTemp" type="text/html">
+    <div class="tuopin-left doc-left village">
+        <div class="family-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>职务</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>民族</th>
+                    <th>出生日期</th>
+                    <th>年龄</th>
+                    <th>联系方式</th>
+                    <th>入党时间</th>
+                    <th>原工作单位及职务</th>
+                    <th>所在党支部</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>duty</td>
+                    <td>name</td>
+                    <td>sex</td>
+                    <td>nation</td>
+                    <td>birthday</td>
+                    <td>age</td>
+                    <td>contect</td>
+                    <td>data</td>
+                    <td>ex-work</td>
+                    <td>party_standing</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
 <!--党建 党员家 弹窗模板-->
 <script id = "partyFamilyTemp" type="text/html">
     <div class="tuopin-left doc-left village">
@@ -4628,10 +4431,6 @@
         </div>
     </div>
 </script>
-<!--指挥体系弹窗模板-->
-<script id = "organizationTemp" type="text/html">
-    <div class="organization"><img src="../images/organization.png" alt=""></div>
-</script>
 <!--督导组成员弹窗模板 start-->
 <script id = "members"type="text/html">
     <table class="thin">
@@ -4679,8 +4478,7 @@
 <!--jbox标题里的select模板 end-->
 <!--弹窗模板 end-->
 
-<!-- 生态扶贫模板 start//////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
+<!-- 生态扶贫模板 start-->
 <script id = "ecologyLeftTemp"  type="text/html">
    <div class="section ecologyLeft ">
        <div class="header">
@@ -4825,6 +4623,68 @@
     </div>
 
 </script>
+
+<!-- 航拍地图的模板 -->
+    <script id="hangPaiTemp" type="text/html">
+        <div class='quitHp-btn'>退出</div>
+        <div class='hp-cont'>
+            <svg id='' class='hPshenglicunSvg' version="1.1" id=x mlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 812 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
+                <style type="text/css">
+                .st0 {
+                    opacity: 0.65;
+                    fill: #020F47;
+                    stroke: #4141F7;
+                    stroke-miterlimit: 10;
+                }
+
+                .st1 {
+                    fill: #0851F4;
+                    stroke: #020F47;
+                    stroke-miterlimit: 10;
+                }
+
+                .st2 {
+                    fill: #0851F4;
+                }
+
+                .st3 {
+                    stroke: #E85A2E;
+                    stroke-width: 0.5;
+                    stroke-miterlimit: 10;
+                }
+
+                .asd {
+                    fill: red;
+                }
+
+                .st4 {
+                    fill: yellow;
+                    stroke: #E85A2E;
+                    stroke-width: 0.5;
+                    stroke-miterlimit: 10;
+                }
+                </style>
+                <g>
+                    <image  xlink:href="../images/shenglicun.png" transform="matrix(0.24 0 0 0.24 -534 -208)">
+                </image>
+                </g>
+                <g>
+                    <circle class="hpCir asd st3" cx="259" cy="286.7" r="3" id='asd' data-Name='592e89bd421aa905bf155f3c' />
+                    <circle class="hpCir st4" cx="259" cy="286.7" r="1.5" />
+
+                    <circle class="hpCir  st3" cx="291.8" cy="267.2" r="3" />
+                    <circle class="hpCir st4" cx="291.8" cy="267.2" r="1.5" />
+
+                    <circle class="hpCir  st3" cx="315.2" cy="236" r="3" />
+                    <circle class="hpCir st4" cx="315.2" cy="236" r="1.5" />
+
+                    <circle class="hpCir  st3" cx="332.5" cy="258" r="3" />
+                    <circle class="hpCir st4" cx="332.5" cy="258" r="1.5" />
+                </g>
+            </svg>
+        </div>
+    </script>
+
 </body>
 
 </html>

@@ -453,9 +453,9 @@ span.span-active {
 .per-right {
     float: right;
     /*background: blue;*/
-    width: 28vw;
+    width: 30vw;
     height: 100%;
-    padding: 0 2vw;
+    padding: 0 1.4vw;
     /*overflow: auto;*/
 }
 .per-right.card {
@@ -515,6 +515,7 @@ span.span-active {
     height: 8vw;
     /*background: blanchedalmond;*/
     margin-top: 1vw;
+    overflow-y: auto;
 }
 .physexam-record > div {
     width: 18%;
@@ -586,17 +587,52 @@ article h6 {
     overflow: auto;
 }
 .per-right .fupin-bar {
-    height: 12vw;
+    height: 8.6vw;
 }
 .per-right .profit-bar {
-    height: 12vw;
+    height: 15.4vw;
+    overflow: hidden;
 }
 #fupinBar,#profitBar {
     width: 100%;
-    height: 72%;
+    height: 30%;
     /*background: black;*/
-    margin-top: .6vw;
+    margin-top: .8vw;
 }
+#fupinBar table {
+    /*display: table;*/
+    width:100%;
+}
+#fupinBar th {
+    background: #2b59ab;
+}
+#fupinBar table th, #fupinBar table td {
+    height: 1vw;
+    padding: .3vw;
+    border: 1px solid #222;
+    text-align: center;
+}
+#profitBar {
+    height: 100%;
+}
+#profitBar>div {
+    width: 49%;
+    height: 80%;
+    display: inline-block;
+    position: relative;
+}
+#profitBar span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: .8vw;
+}
+#selfProfit,#transProfit {
+    width: 100%;
+    height: 100%;
+}
+
 .per-right .per-top ul {
     margin: 0;
     position: relative;
@@ -776,7 +812,7 @@ table tr:nth-child(even) td{
 
 #basicBuilding .content>div{
     background: rgba(255,255,255,.1);
-    height:12vw;
+    height:13vw;
 }
 .whiteBg{
     background: rgba(255,255,255,.1);
@@ -787,19 +823,19 @@ table tr:nth-child(even) td{
     height:8vw;
 }
 #productionTotalChart,#fallbackTotalChart,#fallbackNumChart {
-    height: 28vw;
+    height: 33.8vw;
     width: 100%;
 }
 /*兜底扶贫*/
 #fallbackYieldChart, #fallbackInvestChart {
     width: 100%;
-    height: 11.6vw;
+    height: 12.4vw;;
 }
 .section.fallback {
     margin-bottom: 0.4vw;
 }
 .content.fallback {
-    height: 28vw;
+    height: 33.8vw;
     overflow-y: auto;
 }
 .vertical-imgs ul li {

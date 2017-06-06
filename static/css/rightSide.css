@@ -341,6 +341,11 @@ li.progressLi p {
     overflow-y: auto;
     height:auto;
 }
+#workTrends.fallback .content>div{
+    max-height:32.9vw;
+    overflow-y: auto;
+    height:auto;
+}
 
 #workTrends img{
     width: 30%;
@@ -349,6 +354,7 @@ li.progressLi p {
 }
 .workTrend{
     border-top: 1px solid #375f9a;
+    margin-top: 0.15vw;
 }
 .workTrend:first-child{
     border:none
@@ -417,9 +423,10 @@ li.progressLi p {
 
 .memberInfo p{
     display: inline-block;
-    line-height: 3vw;
+    line-height: 2vw;
     width: 44%;
     margin: 0 1vw;
+    font-size: 1vw;
 }
 
 .governmentBottom .bottom-content{

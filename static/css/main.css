@@ -158,7 +158,7 @@ header{
 }
 
 .section .header h2{
-    color: #b3c6e8;
+    color: #eceef3;;
     font-weight: normal;
     font-size: 1.1vw;
     line-height: 2.4vw;
@@ -473,8 +473,17 @@ ul.page {
 }
 
 
+.jbox-title span{
+    position: absolute;
+    font-weight: normal;
+    top: 0;
+    left: 41%;
+}
 
+.jbox-close {
+    z-index:100;
 
+}
 
 
 

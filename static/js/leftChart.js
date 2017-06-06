@@ -31,7 +31,7 @@ define(['echarts'],function(echarts){
                             position: 'center',
                             formatter: percent+(label?label:"")||"{d}"+(label?label:""),
                             textStyle: {
-                                fontSize: '14',
+                                fontSize: '12',
                                 fontWeight: 'normal',
                                 color:color1
                             }
@@ -79,7 +79,7 @@ define(['echarts'],function(echarts){
             tooltip : {
                 trigger: 'axis',
                 axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                 },
                 formatter: function (params) {
                     var tar = params[0];

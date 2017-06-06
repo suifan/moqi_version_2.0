@@ -22,6 +22,11 @@
     </div>
     <div class="map-tips flo-box hide"></div>
     <div class='map-links flo-box '></div>
+
+     <div id="hangPai" class="hangPai">
+       
+    </div>
+
     <div id='svgBox' class="svgBox ">
         <!-- 莫旗县 地图 moqixian -->
         <svg id='moqi' class='moqiSvg show' data-name='莫旗' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-400 250 3400 3600" xml:space="preserve">
@@ -2869,7 +2874,7 @@
         <ul class="links-list">
             <li><a id="partyHome" class="partyLinks" href="javascript:;">党员家</a></li>
             <li><a id="partyLeader" class="partyLinks" href="javascript:;">干部</a></li>
-           <!--  <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li> -->
+            <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li>
         </ul>
     </div>
     <div class="map-sanjiao"></div>
@@ -4454,7 +4459,7 @@
 </script>
 <!--  生态扶贫模板 end-->
 
-<script id="relocateTemp" type="text/html">
+<script id="relocateTemp" type="text/html">   
     <div class="section relocateSection" id="houseRebuild">
         <div class="header">
             <h2>贫困户危房改造目标</h2>
@@ -4493,6 +4498,68 @@
     </div>
 
 </script>
+
+<!-- 航拍地图的模板 -->
+    <script id="hangPaiTemp" type="text/html">
+        <div class='quitHp-btn'>退出</div>
+        <div class='hp-cont'>
+            <svg id='' class='hPshenglicunSvg' version="1.1" id=x mlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 812 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
+                <style type="text/css">
+                .st0 {
+                    opacity: 0.65;
+                    fill: #020F47;
+                    stroke: #4141F7;
+                    stroke-miterlimit: 10;
+                }
+                
+                .st1 {
+                    fill: #0851F4;
+                    stroke: #020F47;
+                    stroke-miterlimit: 10;
+                }
+                
+                .st2 {
+                    fill: #0851F4;
+                }
+                
+                .st3 {
+                    stroke: #E85A2E;
+                    stroke-width: 0.5;
+                    stroke-miterlimit: 10;
+                }
+                
+                .asd {
+                    fill: red;
+                }
+                
+                .st4 {
+                    fill: yellow;
+                    stroke: #E85A2E;
+                    stroke-width: 0.5;
+                    stroke-miterlimit: 10;
+                }
+                </style>
+                <g>
+                    <image  xlink:href="../images/shenglicun.png" transform="matrix(0.24 0 0 0.24 -534 -208)">
+                </image>
+                </g>
+                <g>
+                    <circle class="hpCir asd st3" cx="259" cy="286.7" r="3" id='asd' data-Name='592e89bd421aa905bf155f3c' />
+                    <circle class="hpCir st4" cx="259" cy="286.7" r="1.5" />
+
+                    <circle class="hpCir  st3" cx="291.8" cy="267.2" r="3" />
+                    <circle class="hpCir st4" cx="291.8" cy="267.2" r="1.5" />
+
+                    <circle class="hpCir  st3" cx="315.2" cy="236" r="3" />
+                    <circle class="hpCir st4" cx="315.2" cy="236" r="1.5" />
+                    
+                    <circle class="hpCir  st3" cx="332.5" cy="258" r="3" />
+                    <circle class="hpCir st4" cx="332.5" cy="258" r="1.5" />
+                </g>
+            </svg>
+        </div>
+    </script>
+
 </body>
 
 </html>

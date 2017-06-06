@@ -1079,13 +1079,16 @@
                             var membersTemp = template("members", data);
                             $.jBox(membersTemp, { title: "督导组成员", buttons: {}, border: 0, opacity: 0.4 });
                         })
+
                         document.getElementsByTagName("body")[0].style.padding = "0";
                         var title = document.getElementsByClassName("jbox-title")[0];
                         title.style.width = "96%";
+
                         $(".select-switch").on("change", "select", function() {
                             var selected = $(this).children("option:selected").val();
                             var membersTemp = template("members", { data: [{ "duty": "组长", "name": "李骄", "sex": "女", "nation": "汉族", "politic": "党员", "office": "北京", "contect": "13711111111", "remarks": "没有备注" }, { "duty": "副组长", "name": "李天骄", "sex": "女", "nation": "汉族", "politic": "党员", "office": "北京", "contect": "13711111111", "remarks": "没有备注" }] });
                             $("#jbox-content").find("table").remove().append(membersTemp);
+                        
 
                         });
                     });
@@ -1198,7 +1201,7 @@
                         });
                         //干部按钮
                         $('#partyLeader').on('click', function(event) {
-                            event.preventDefault();
+                            event.preventDefault();  
                             /* Act on the event */
                             $.getJSON("../js/json/cadre.json",function(res){
                                 var membersTemp = template("cadreTemp", res.data);
@@ -1215,8 +1218,28 @@
                         });
                         //党村委会按钮
                         $('#partyVillageClub').on('click',function(event) {
-                            event.preventDefault();
-                            /* Act on the event */
+                             $('.hangPai').show();//
+                             $('#hangPai').html(template('hangPaiTemp',{}));
+                             homeClick();
+                            quitHp();
+                            //退出按钮
+                            function quitHp(){
+                                $('.quitHp-btn').on('click', function(event) {
+                                   $('.hangPai').hide();
+                                });
+                            }
+                            //点击房子弹出卡片
+                            function homeClick(){
+                                $('.hPshenglicunSvg').find('.asd').on('click', function(event) {
+                                     var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
+                                    var homeId=$(this).attr('data-Name');
+                                    //获取扶贫卡内容数据
+                                   $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
+                                        var cardHtml = template('helpCardTemp', res.data);
+                                        document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
+                                    });
+                                });
+                            }
                         });
                     }else{
 
@@ -1258,6 +1281,7 @@
                             var name = $(this).find("td:eq(1)").text();
 
                             var userId = $(this).attr("id");
+                            console.log(userId);
                             /*var family = res.data.filter(function(a) {
                                 return a.name == name;
                             });*/
@@ -1302,6 +1326,7 @@
                      */
                     function getHelpPoor(id, index) {
                         //获取扶贫卡数据
+                   
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + id, function(res) {
                             var cardHtml = template('helpCardTemp', res.data);
                             // console.log(res.data.physical_exam_records);

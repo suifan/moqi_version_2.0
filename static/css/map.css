@@ -365,7 +365,7 @@
  }
  .hp-cont{
     height: 100%;
-    width: 200%;
+    width: 130%;
    
     
  }
@@ -388,10 +388,54 @@
     cursor: pointer;
  }
 
+.hp-container{
+    position: relative;
+}
 
+.hp-cont .flag_1{
+    fill:rgba(255, 0, 0, 0);
 
-
-
+    r:1%;
+   
+}
+.hp-cont .flag_2{
+    fill:#ec3923;
+    r:0.4%;
+   
+    
+}
+.hp-cont .shan{
+      fill:#ec3923;
+     -webkit-animation: flagWave 3s infinite;
+    
+}
+ @keyframes flagWave{
+     from {
+         fill: rgba(236, 57, 35, 1);
+         stroke-width: 0.2%;
+         stroke: rgba(236, 57, 35, 1);
+         r: 0.1%;
+     }
+     60% {
+         fill: rgba(236, 57, 35, 0.7);
+         stroke: rgba(236, 57, 35, 1);
+         stroke-width: 0.2%;
+     }
+     80% {
+         fill: rgba(236, 57, 35, 0.5);
+         stroke-width: 0.1%;
+         stroke: rgba(236, 57, 35, 1);
+     }
+     to {
+         fill: rgba(236, 57, 35, 0.3);
+         stroke: rgba(236, 57, 35, 1);
+         stroke-width: 0.1%;
+         r: 0.6%;
+     }
+ }
+.seeInfo{
+    cursor: pointer;
+}
 
 
  .hide {

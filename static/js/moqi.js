@@ -278,219 +278,6 @@
                 chart.barChart("poverty_status", ["因病", "因灾", "因学", "缺土地", "缺资金", "缺技术", "缺劳力", "缺水", "自身发展动力不足", "交通条件落后"], [1989, 265, 33, 1904, 428, 97, 132, 2, 56, 3]);
 
             },
-
-            'getFiveGroup': function(switchFlag) {
-                //产业扶贫底部
-                $("#leftTabs").addClass("hide");
-                // $("#leftOperation").addClass("hide");
-                // $("#sevenStepsTab").removeClass("hide");
-                //右侧--------------------start
-                $.getJSON("../js/json/fiveGroup/fivegroup_right.json", function(res) {
-                    var data = res[area];
-                    $('#rightSide').html(template('sevenStepsRightSideTemp', data));
-                    charts.gauge("putOnRecordChart", { value: data.healthPoint, color: '#83ea43', dataValue: data.healthPoint * 100 });
-                    charts.gauge("diagnosisChart", { value: data.diagnosisPoint, color: '#fd8320', dataValue: data.diagnosisPoint * 100 });
-                    charts.labelPie("healthChart", { color: ["#f84c24", "#fde101", "#83d130", "#0786ef"], data: data.healthDetail });
-                    charts.labelPie("laborChart", { color: ["#f84c24", "#fde101", "#83d130", "#0786ef"], data: data.laborDetail });
-                    charts.gauge("signChart", { value: data.signPoint, color: '#3ad3e1', dataValue: data.signPoint * 100 });
-                    charts.gauge("overcomePovertyChart", { value: data.poorPoint, color: '#e14e35', dataValue: data.poorPoint * 100 });
-                });
-
-
-                //右侧--------------------end
-
-                //左侧--------------------start
-                api.getFiveLeft();
-                //左侧--------------------end
-
-                //底部--------------------start
-                $.getJSON("../js/json/fiveGroup/helpDynamic.json", function(res) {
-                    var data = {};
-                    data.list = res.povertyNews["moqi"];
-                    $('.bottom').html(template('rebuildTemp', {}));
-                });
-                //易地动态按钮点击事件
-                $(".bottom-head").on("click", function() {
-                    var $this = $(this).siblings(".bottom-content");
-                    $this.slideToggle(function() {
-                        var showBool = $this.is(":visible");
-                        if (!showBool && window.timeOut) {
-                            // clearTimeout(timeOut);
-                        } else {
-                            // api.slide("slideBox","box-wrapper");
-                            // chart.barChart("doctorSign");
-                        }
-                        $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
-                        if ($(".bottom-head").hasClass("active")) {
-                            $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
-                        } else {
-                            $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
-                        }
-                    });
-                });
-                //底部--------------------end
-                //弹窗部分代码
-
-                //建档情况
-                /*$("#openDoc").on("click", function () {
-                    var $pop = api.openPopWindow("建档情况");
-                    $.getJSON("../js/json/fiveGroup/recordJbox.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=1;
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData);
-                        }
-                    });
-                })
-                //脱贫情况
-                $("#openTuopin").on("click", function () {
-                    var $pop = api.openPopWindow("脱贫情况");
-                    $.getJSON("../js/json/fiveGroup/overcomePoverty.json",function(res){
-                        if(res){
-                            $pop.find('.jbox-content').html(template('tuopinTemp',{}));
-                            var townNames=[],andPoor=[],complete=[];
-                            res.forEach(function(item){
-                                townNames.push(item.townName);
-                                andPoor.push(item.andPoor);
-                                complete.push(item.completionHouses);
-                            })
-                            var docData = {townNames:townNames,andPoor:andPoor,complete:complete}
-                            chart.poorChart("poorChart",docData);
-                        }
-                    });
-                })
-                //劳动力情况
-                $("#laborCondition").on("click", function () {
-                    var $pop = api.openPopWindow("劳动力情况");
-                    $.getJSON("../js/json/fiveGroup/labor.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=1;
-                            $pop.find('.jbox-content').html(template('laborTemp',data));
-                            var docData = {color:["#f84c24","#fde101","#83d130","#0786ef"],data:data.dataList}
-                            charts.labelPie('laborWindowChart',docData)
-                        }
-                    });
-                })
-                //诊断情况 与建档情况公用一个模板
-                $("#diagnoseCondition").on("click", function () {
-                    var $pop = api.openPopWindow("诊断情况");
-                    $.getJSON("../js/json/fiveGroup/diagnose.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=3
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData)
-                        }
-                    });
-                });
-                //身体健康状况 与劳动力情况公用一个模板
-                $("#healthCondition").on("click", function () {
-                    var $pop = api.openPopWindow("身体健康情况");
-                    $.getJSON("../js/json/fiveGroup/health.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=2
-                            $pop.find('.jbox-content').html(template('laborTemp',data));
-                            var docData = {color:["#f84c24","#fde101","#83d130","#0786ef"],data:data.dataList}
-                            charts.labelPie('laborWindowChart',docData)
-                        }
-                    });
-
-                });
-                //签约情况 与建档情况公用一个模板     --------------暂时这么写，后续提取公共部分--------------
-                $("#signCondition").on("click", function () {
-                    var $pop = api.openPopWindow("签约情况");
-                    $.getJSON("../js/json/fiveGroup/sign.json",function(res){
-                        if(res&&res[area]){
-                            var data = res[area];
-                            data.type=2
-                            $pop.find('.jbox-content').html(template('docCreateTemp',data));
-                            var docData = {color:['#fde101', '#1ff4be', '#c4572e'],total:data.pieChart.rate,center:["50%","50%"],data:data.pieChart.dataList}
-                            charts.pieChart('docChart',true,docData)
-                        }
-                    });
-                });*/
-                //个人中心
-                /*$("#openPerinfo").on("click", function () {
-                    $.jBox('', {title: "李茜茜", buttons: {}, border: 0, opacity: 0.4});
-                    document.getElementsByTagName('body')[0].style.padding="0";
-                    // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                    //设置弹窗top值
-                    var box = document.getElementById("jbox");
-                    var title = document.getElementsByClassName("jbox-title")[0];
-                    box.style.top = "2.6vw";
-                    title.style.textAlign ="left";
-                    var html = template('personalTemp',{});
-                    document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-                })*/
-                //村贫困家庭表单
-                /*$("#openPoorInfo").on("click", function () {
-                    $.jBox('', {title: "", buttons: {}, border: 0, opacity: 0.4});
-                    document.getElementsByTagName('body')[0].style.padding="0";
-                    // $.jBox("iframe:../html/perContent.html", {title: "李茜茜", buttons: {}, border: 0, opacity: 0.2})
-                    //设置弹窗top值
-                    var box = document.getElementById("jbox");
-                    var title = document.getElementsByClassName("jbox-title")[0];
-                    box.style.top = "2.6vw";
-                    title.style.textAlign ="left";
-                    var html = template('personalTemp',{});
-                    document.getElementsByClassName('jbox-content')[0].innerHTML = html;
-                })*/
-            },
-            'getFiveLeft': function(switchFlag) {
-                $.getJSON("../js/json/fiveGroup/fivegroup_left.json", function(res) {
-                    var data = res[area];
-                    data['huorren'] = switchFlag || 1;
-                    $('#leftSide').html(template('fiveLeftSideTemp', data));
-                    //进度条生成
-                    $(".section-body.second-sec").find(".progressBar").each(function() {
-                        var value = $(this).next("div").children("span").text();
-                        progressBar.generate(this, value);
-                    })
-                });
-                //绑定左侧 人/户 切换点击事件
-                $(".switch-head").on("click", "span", function() {
-                    var activeBool = $(this).hasClass("span-active");
-                    if (!activeBool) {
-                        // $(this).addClass("span-active");
-                        // $(this).siblings("span").removeClass("span-active")
-                        var text = $(this).text();
-                        // var obj = $(".section-body table thead tr").children();
-                        if (text == "户") {
-                            api.getFiveLeft(1);
-                        } else {
-                            api.getFiveLeft(2);
-                        }
-                    }
-
-                });
-            },
-            'getPoorFamilyLeft': function(switchFlag) { //贫困家庭左侧
-                $.getJSON("../js/json/povertyFamily/poorFamily.json", function(data) {
-                    data["huorren"] = switchFlag || 1;
-                    $('#leftSide').html(template('povertyLeftSideTemp', data));
-                });
-                //绑定左侧 人/户 切换点击事件
-                $(".switch-head").on("click", "span", function() {
-                    var activeBool = $(this).hasClass("span-active");
-                    if (!activeBool) {
-                        // $(this).addClass("span-active");
-                        // $(this).siblings("span").removeClass("span-active")
-                        var text = $(this).text();
-                        // var obj = $(".section-body table thead tr").children();
-                        if (text == "户") {
-                            api.getPoorFamilyLeft(1);
-                        } else {
-                            api.getPoorFamilyLeft(2);
-                        }
-                    }
-
-                });
-            },
             'getDisease': function() {
                 //左侧------start
                 var data = {
@@ -646,8 +433,6 @@
             'getDiseasePoor': function() {
                 chart.barChart("helping_status", townNameList, [1110, 270, 153, 147, 200, 75, 438, 34, 262, 82, 668, 258, 124, 532, 245, 164, 171]);
             },
-
-
             'getFivePeopleGroupNum': function() {
                 chart.barChart("helping_status", townNameList, [44,32,33,23,12,13,34,11,4,3,9,13,7,4,17,5,3]);
 
@@ -728,100 +513,6 @@
                 });
                 //底部--------------------end
             },
-            /*$.getJSON("../js/json/povertyFamily/education.json",function(data){
-                $('#rightSide').html(template('povertyRightSideTemp_education', data[area]));
-                var eduData = {
-                    legend:['学龄前儿童', '小学', '初中', '高中', '大专及以上', '文盲及半文盲'],
-                    color:['#fde101', '#1ff4be', '#c4572e', '#387b14', '#cb4345', '#a96969', '#40bfec', '#c73983', '#0786ef'],
-                    data:[
-                        {value: data[area].numberOfPreschoolChildren, name: '学龄前儿童'},
-                        {value: data[area].numberOfPrimarySchool, name: '小学'},
-                        {value: data[area].numberOfJuniorMiddleSchool, name: '初中'},
-                        {value: data[area].numberOfHighSchool, name: '高中'},
-                        {value: data[area].numberOfCollegeDegreeOrAbove, name: '大专及以上'},
-                        {value: data[area].numberOfIlliteracy, name: '文盲及半文盲'}
-                    ]
-                }
-                charts.fullPieChart("educationStructureChart",eduData)
-            });
-*/
-            'getSex': function() {
-                $.getJSON("../js/json/povertyFamily/sex.json", function(data) {
-                    if (data) {
-                        var sexData = data.povertyStructure[area];
-                    }
-                    sexData.numberOfMen = (parseInt(sexData.poorCount) - parseInt(sexData.numberOfWomen)) + "";
-                    $('#rightSide').html(template('povertyRightSideTemp_population', sexData));
-                    maleChartData = {
-                        color: ['#c2ff42', '#1996e6'],
-                        data: [{
-                                value: (parseInt(sexData.poorCount) - sexData.numberOfWomen),
-                                name: '男性',
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        position: 'center',
-                                        formatter: "{d}%",
-                                        textStyle: {
-                                            fontSize: '11',
-                                            fontWeight: 'lighter',
-                                            color: '#fff'
-                                        }
-                                    }
-                                }
-                            },
-                            { value: sexData.numberOfWomen, name: '女性' }
-
-                        ],
-                        center: ["50%", "50%"],
-                        radius: ['50%', '70%']
-                    }
-                    charts.pieChart("maleChart", false, maleChartData)
-                    femaleChartData = {
-                        color: ['#fe5b3c', '#1996e6'],
-                        data: [{
-                                value: sexData.numberOfWomen,
-                                name: '女性',
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        position: 'center',
-                                        formatter: "{d}%",
-                                        textStyle: {
-                                            fontSize: '11',
-                                            fontWeight: 'lighter',
-                                            color: '#fff'
-                                        }
-                                    }
-                                }
-                            },
-                            { value: (parseInt(sexData.poorCount) - sexData.numberOfWomen), name: '男性' }
-
-                        ],
-                        center: ["50%", "50%"],
-                        radius: ['50%', '70%']
-                    }
-                    charts.pieChart("femaleChart", false, femaleChartData)
-
-                })
-            },
-            'getPoverty': function(type) {
-                $.getJSON("../js/json/povertyFamily/poorFamilyFrame.json", function(data) {
-                    if (data && data.povertyStructure) {
-                        var poverty = data.povertyStructure;
-                        poverty[area].type = type;
-                        $('#rightSide').html(template('povertyRightSideTemp_poverty', poverty[area]));
-                        charts.labelPie("povertyStructureChart", {
-                            color: ['#fde101', '#1ff4be', '#c4572e'],
-                            data: [
-                                { value: type == 1 ? poverty[area].generalPovertyHouseholds : poverty[area].generalPovertyPopulation, name: "一般贫困户" },
-                                { value: type == 1 ? poverty[area].DBPovertyHouseholds : poverty[area].DBPovertyPopulation, name: "低保贫困户" },
-                                { value: type == 1 ? poverty[area].WBPovertyHouseholds : poverty[area].WBPovertyPopulation, name: "五保贫困户" }
-                            ]
-                        });
-                    }
-                });
-            },
             'getDoctorSign': function(type) {
                 $.getJSON("../js/json/homePage/doctorSign.json", function(data) {
                     if (data) {
@@ -836,7 +527,6 @@
                     }
                 })
             },
-
             "getfallback": function() {
                 mapApi.mapPlay("none");
                 $('#centerSide').css('display', 'block');
@@ -923,9 +613,7 @@
                 });
                 //底部end
             },
-
             //产业扶贫相关方法
-
             "getProduction": function() {
                 mapApi.mapPlay("none");
                 $('#centerSide').css('display', 'block');
@@ -1198,7 +886,6 @@
                     $("#rightSide").show();
                     $(".bottom").show();
                     api.getfallback();
-                    // api.getFiveGroup();
                 } else if ($(this).hasClass("relocate")) {
                     $("body>div").hide();
                     $("#whole").show();
@@ -1206,38 +893,6 @@
                     api.getRelocate();
                 }
             });
-            //贫困家庭右侧栏tab切换
-            /*$("#leftTabs").on("click","span",function(){
-                if(!$(this).hasClass("active")){
-                    $("#rightSide").empty();
-                    $(this).addClass("active").siblings().removeClass("active");
-
-                }else{
-                    return;
-                }
-                if($(this).hasClass("disease")){//大病结构
-                    api.getDisease();
-                }else if($(this).hasClass("education")){//学历结构
-                    api.getEducation()
-                }else if($(this).hasClass("sex")){//性别结构
-                    api.getSex()
-                }else if($(this).hasClass("poverty")){//贫困结构
-                    api.getPoverty(2);
-                }
-            });*/
-
-            $("#rightSide").on("click", "#povertyStructure span", function() {
-                if (!$(this).hasClass("active") && $(this).text() == "人") {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    api.getPoverty(2)
-                        //ajax
-                } else if (!$(this).hasClass("active") && $(this).text() == "户") {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    $("#povertyTypeRank").find("thead th:eq(1)").text("户数")
-                    api.getPoverty(1)
-                }
-            });
-
         })
 
 

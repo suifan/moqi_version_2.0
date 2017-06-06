@@ -351,7 +351,7 @@
                         { value: 3718, name: '健康人群' },
                         { value: 1073, name: '部分恢复劳动能力' }
                     ],
-                    radius: ['50%', '70%'],
+                    radius: ['40%', '60%'],
                     center: ["50%", "50%"],
                     formatter: "{b}\n{c}\n({d}%)"
                 };
@@ -553,7 +553,7 @@
                 var shouYiData = {
                     xArr: ['2015', '2016', '2017'],
                     yArr: [31.7, 44.45, 43.43],
-                    title: "低保贫困户人口占比",
+                    title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
                     axisLabelColor: "#6ce6fe",
@@ -572,7 +572,7 @@
                 var touZiData = {
                     xArr: ['2015', '2016', '2017'],
                     yArr: [2600, 2800, 2950],
-                    title: "低保贫困户人均标准  （单位：元）",
+                    title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
                     axisLabelColor: "#6ce6fe",
@@ -1306,8 +1306,41 @@
                             } else if (text == "首页") {
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
-                                    chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
-                                    chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
+                                    // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
+                                    // chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
+                                    //家庭收入
+                                    var selfProfit = {
+                                        color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                        data: [
+                                            { value: 1500, name: '其它' },
+                                            { value: 2000, name: '财产' },
+                                            { value: 1000, name: '种植业' },
+                                            { value: 1000, name: '务工' },
+                                            { value: 2000, name: '养殖业' }
+                                        ],
+                                        radius: ['20%', '30%'],
+                                        center: ["50%", "40%"],
+                                        formatter: "{b}\n{c}元\n({d}%)",
+                                        titleShow: true,
+                                        title: "自主性经营收入"
+                                    };
+                                    var transProfit = {
+                                        color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                        data: [
+                                            { value: 1500, name: '其它' },
+                                            { value: 2000, name: '财产' },
+                                            { value: 1000, name: '种植业' },
+                                            { value: 1000, name: '务工' },
+                                            { value: 2000, name: '养殖业' }
+                                        ],
+                                        radius: ['20%', '30%'],
+                                        center: ["50%", "40%"],
+                                        formatter: "{b}\n{c}元\n({d}%)",
+                                        titleShow: true,
+                                        title: "转移性收入"
+                                    };
+                                    charts.labelPieChart("selfProfit", selfProfit);
+                                    charts.labelPieChart("transProfit", transProfit);
                                 });
                             } else {
                                 //党建弹窗点击

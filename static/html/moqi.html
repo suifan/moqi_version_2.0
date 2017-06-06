@@ -3667,12 +3667,11 @@
             <p class="per-title">帮扶记录</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <article>
-                <h6 class="bfjl">第一次帮扶</h6>
-                <p><span>{{help.once_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.once_help.theme}}</em></p>
-                <p>{{help.once_help.content}}</p>
-                <h6 class="bfjl">第二次帮扶</h6>
-                <p><span>{{help.second_help.help_people}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.second_help.theme}}</em></p>
-                <p>{{help.second_help.content}}</p>
+                {{each help as help}}
+                    <h6 class="bfjl">第&nbsp;{{help.num}}&nbsp;次帮扶</h6>
+                    <p><span>{{help.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>{{help.theme}}</em></p>
+                    <p>{{help.content}}</p>
+                {{/each}}
                 {{if poverty_relief_images}}
                 <div class="artical-img">
                     {{each poverty_relief_images as img}}
@@ -3710,13 +3709,40 @@
             <p class="per-title">帮扶收入</p>
             <div style="width: 100%; background: #fff; height: 3px;"></div>
             <div id="fupinBar">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>总扶持金额</th>
+                        <th>房屋及环境改造扶持</th>
+                        <th>健康扶持</th>
+                        <th>教育扶持</th>
+                        <th>异地搬迁扶持</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>27000元</td>
+                        <td>2000元</td>
+                        <td>1000元</td>
+                        <td>4000元</td>
+                        <td>20000元</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
         <section class="profit-bar">
             <p class="per-title">家庭收入</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div id="profitBar">
-
+                <div>
+                    <div id="selfProfit"></div>
+                    <span>12000</span>
+                </div>
+                <div>
+                    <div id="transProfit"></div>
+                    <span>12000</span>
+                </div>
             </div>
         </section>
     </div>
@@ -4095,8 +4121,85 @@
 </script>
 <!--兜底扶贫右侧模板-->
 <script id="fallbackRightSideTemp" type="text/html">
-    <div class="section">
+    <div class="section fallback" id="workTrends">
         <div class="header">
+            <h2>扶贫动态</h2>
+        </div>
+        <div class="content">
+            <div class="whiteBg">
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_1.png" alt="">
+                    <div>
+                        <p><span>吴昊天</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>汉古尔河镇东诺敏村第一书记吴昊天，入户简介四种四养扶贫情况。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_2.png" alt="">
+                    <div>
+                        <p><span>李再忠</span><span style="font-size:.8vw;">2017年5月31日</span></p>
+                        <span>红彦镇政府镇长李再忠同扶贫办工作人员村两委到所包扶水磨沟村贫困户进行产业脱贫验收、查看小搬迁房屋建设走访贫困户。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_3.png" alt="">
+                    <div>
+                        <p><span>甲其口子村党支部</span><span style="font-size:.8vw;">2017年6月1日</span></p>
+                        <span>甲其口子村党支部全体党员在村部召开组织生活会。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_4.png" alt="">
+                    <div>
+                        <p><span>鄂彩生</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>西瓦尔图镇大库木尔村第一书记鄂彩生动员大库木尔村贫困户给扶贫经济林榛子苗木浇水。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_5.png" alt="">
+                    <div>
+                        <p><span>吴昊天</span><span style="font-size:.8vw;">2017年6月2日</span></p>
+                        <span>东诺敏村驻村第一书记吴昊天到全旗建档立卡贫困户重病患者家里探望，并多方为患者筹集手术资金。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_6.png" alt="">
+                    <div>
+                        <p><span>于军广</span><span style="font-size:.8vw;">2017年6月1日</span></p>
+                        <span>于军广在得知这两个贫困户脱贫资金不足的情况后，自掏腰包，为每户提供创业资金一万元，帮助两家建起圈舍，指引贫困户走上致富路。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_7.png" alt="">
+                    <div>
+                        <p><span>卢春华</span><span style="font-size:.8vw;">2017年5月18日</span></p>
+                        <span>了解贫困户生产生活的困难、春耕情况、‘四种四养’落实情况。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_8.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_9.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+                <div class="workTrend">
+                    <img src="../images/poverty/fallback_help_10.png" alt="">
+                    <div>
+                        <p><span>苏凌</span><span style="font-size:.8vw;">2017年5月17日</span></p>
+                        <span>走访因病致贫典型王桂华，为其脱贫寻找适合他们的产业。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="header">
             <h2>扶贫动态</h2>
         </div>
         <div class="content fallback">
@@ -4114,18 +4217,24 @@
                     <li><img src="../images/poverty/fallback_help_10.png" alt=""></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
 
 </script>
 <!--兜底扶贫中间模板-->
 <script id="fallbackCenterSideTemp" type="text/html">
     <div class="section fallback">
+        <div class="header">
+            <h2>低保贫困户人口占比 </h2>
+        </div>
         <div class="content">
             <div id="fallbackYieldChart"></div>
         </div>
     </div>
     <div class="section fallback">
+        <div class="header">
+            <h2>低保贫困户人均标准 （单位：元）</h2>
+        </div>
         <div class="content">
             <div id="fallbackInvestChart"></div>
         </div>

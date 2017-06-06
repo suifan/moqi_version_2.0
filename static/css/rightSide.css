@@ -341,6 +341,11 @@ li.progressLi p {
     overflow-y: auto;
     height:auto;
 }
+#workTrends.fallback .content>div{
+    max-height:32.9vw;
+    overflow-y: auto;
+    height:auto;
+}
 
 #workTrends img{
     width: 30%;

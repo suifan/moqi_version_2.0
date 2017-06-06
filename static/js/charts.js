@@ -287,6 +287,15 @@ define(['echarts'], function(echarts) {
     var labelPieChart = function(id, pieData) {
         var labelPieChart = echarts.init(document.getElementById(id))
         labelPieChart.setOption({
+            title:{
+                text:pieData.title,
+                show:pieData.titleShow,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '8'
+                },
+                bottom:10
+            },
             tooltip: {
                 trigger: 'item',
                 formatter: "{b}:{c}"
@@ -295,14 +304,15 @@ define(['echarts'], function(echarts) {
             series: [{
                 type: 'pie',
                 center: pieData.center || ["50%", "60%"],
-                radius: ['35%', '60%'],
+                radius: pieData.radius || ['35%', '60%'],
                 avoidLabelOverlap: true,
                 label: {
                     normal: {
                         show: true,
                         position: 'outside',
                         textStyle: {
-                            color: '#fff'
+                            color: '#fff',
+                            fontSize: '6'
                         },
                         formatter: pieData.formatter || "{b} :  {c}"
                     },
@@ -315,7 +325,9 @@ define(['echarts'], function(echarts) {
                         show: true,
                         lineStyle: {
                             color: '#fff'
-                        }
+                        },
+                        length: 10,
+                        length2: 4
                     }
                 },
                 data: pieData.data

@@ -318,6 +318,26 @@ table tr:nth-child(even) td{
 table tr:hover td{
     background: -webkit-linear-gradient(top,#73bcf3,#2773cb);
 }
+
+table.blueTable tbody tr td {
+    background: rgba(73, 123, 210, 0.4);
+    border-color:#1e81a2;
+    color: #d2d2d2;
+}
+
+table.blueTable tbody tr td:first-child {
+    border-left-color:#5f5f5f;
+}
+table.blueTable tbody tr td:last-child {
+    border-right-color:#5f5f5f;
+}
+
+table.blueTable tbody tr:first-child td{
+    border-top-color:#5f5f5f;
+}
+table.blueTable tbody tr:last-child td{
+    border-bottom-color:#5f5f5f;
+}
 /*表格 end*/
 
 .hide{
@@ -482,8 +502,9 @@ ul.page {
 
 .jbox-close {
     z-index:100;
-
 }
+
+
 
 
 

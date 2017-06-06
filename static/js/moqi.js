@@ -1161,11 +1161,17 @@
                             // console.log(data);
                         })
                     } else if(text == "党建促脱贫"){
-
-                        $(".map-links").html(template("mapPartyClickTemp", {})).css({
+                        //modified for 党建点击村时，如果是胜利村则显示四条，其他则只显示两条 by tlw at 20170606 start
+                        $(".map-links").html(template("mapPartyClickTemp", {}));
+                        if(!event.target.parentNode.id=="shenglicun"){
+                            $("#workTeam").parent().hide();
+                            $("#villageCadre").parent().hide();
+                        }
+                        $(".map-links").css({
                             "left": x - $('.map-links').width()/2,
                              "top": y - $('.map-links').height()*1.5,
                         }).addClass("show");
+                        //modified for 党建点击村时，如果是胜利村则显示四条，其他则只显示两条 by tlw at 20170606 end
 
                         //党员家按钮//
                         $('#partyHome').on('click', function(event) {
@@ -1200,23 +1206,28 @@
                         //驻村第一书记工作队按钮
                         $('#workTeam,#villageCadre').on('click', function(event) {
                             event.preventDefault();
+                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
+                            var url=" ../js/json/committee.json"
+                            if(event.target.id=="workTeam"){
+                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
+                                url=" ../js/json/first_secretary.json"
+                            }
                             /* Act on the event */
-                            //$.getJSON("../js/json/cadre.json",function(res){
-                                var membersTemp = template("workTeamAndCadreTemp", {});
+                            $.getJSON(url,function(res){
+                                var data={}
+                                    data.data = res[mapApi.curr_path_name];
+                                if(!data.data){return}
+                                var membersTemp = template("workTeamAndCadreTemp", data);
                                 var html = "<div>" + membersTemp + "</div>";
                                 //分页容器
                                 html += "<ul class='page'></ul>";
-                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
-                            if(event.target.id=="workTeam"){
-                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
-                            }
                                 var $pop = $.jBox(html, { title:title, buttons: {}, border: 0, opacity: 0.4 });
                                 document.getElementsByTagName('body')[0].style.padding = "0";
                                 // 获取表格容器
                                 $pop.find(".jbox-title").css({"width":"100%","position":"relative"});
                                 var container = $('.jbox-content>div').eq(1);
                                 //jpage.page(res.data, "cadreTemp", container, 10);
-                                //});
+                            });
                         });
                         //村两委干部工作队按钮
 

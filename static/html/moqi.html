@@ -2873,7 +2873,7 @@
     <div class="map-content">
         <ul class="links-list">
             <li><a id="partyHome" class="partyLinks" href="javascript:;">党员家</a></li>
-            <li><a id="partyLeader" class="partyLinks" href="javascript:;">干部</a></li>
+            <!--<li><a id="partyLeader" class="partyLinks" href="javascript:;">干部</a></li>-->
             <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li>
             <li><a id="workTeam" class="partyLinks" href="javascript:;">驻村第一书记工作队</a></li>
             <li><a id="villageCadre" class="partyLinks" href="javascript:;">村两委干部</a></li>
@@ -3020,7 +3020,31 @@
             <h2>教育扶贫补贴</h2>
         </div>
         <div class="content goverment-help">
-            <div class="top-title">补贴总额: <span>500</span>万元</div>
+            <table class="blueTable">
+                <tbody>
+                <tr>
+                    <td>学前儿童补助情况</td>
+                    <td>397人</td>
+                    <td>65万元</td>
+                </tr>
+                <tr>
+                    <td>义务教育补助情况</td>
+                    <td>892人</td>
+                    <td>96万元</td>
+                </tr>
+                <tr>
+                    <td>高中教育补助情况</td>
+                    <td>87人</td>
+                    <td>17万元</td>
+                </tr>
+                <tr>
+                    <td>国家补助资金合计</td>
+                    <td>1376人</td>
+                    <td>178万元</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="top-title">教育扶贫基金: <span>500</span>万元</div>
             <div id="govermentHelpChart">
                 <div>
                     <p>
@@ -4372,18 +4396,20 @@
                 </tr>
                 </thead>
                 <tbody>
+                {{each data as data}}
                 <tr>
-                    <td>duty</td>
-                    <td>name</td>
-                    <td>sex</td>
-                    <td>nation</td>
-                    <td>birthday</td>
-                    <td>age</td>
-                    <td>contect</td>
-                    <td>data</td>
-                    <td>ex-work</td>
-                    <td>party_standing</td>
+                    <td>{{data.duty}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.sex}}</td>
+                    <td>{{data.nation}}</td>
+                    <td>{{data.birthday}}</td>
+                    <td>{{data.age}}</td>
+                    <td>{{data.contact}}</td>
+                    <td>{{data.date}}</td>
+                    <td>{{data.ex_work}}</td>
+                    <td>{{data.branch}}</td>
                 </tr>
+                {{/each}}
                 </tbody>
             </table>
         </div>

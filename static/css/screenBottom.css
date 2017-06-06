@@ -72,7 +72,7 @@
     height: 12.4vw;
     display: table;
     float: left;
-    padding: 0 2vw;
+    padding: 0 3vw;
 }
 .box-item>div {
     display: table-cell;
@@ -218,14 +218,14 @@
     height: 12.4vw;
     display: table;
     float: left;
-    margin: 0 2vw;
+    /*margin: 0 2vw;*/
 }
 #eduSlideBox {
-    width: 56.8%;
+    width: 100%;
     padding: 1.72vw 0;
     height: 12.4vw;
     letter-spacing: 1.2px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     overflow: hidden;
     float: none;
 }

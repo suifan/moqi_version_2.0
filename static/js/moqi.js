@@ -556,7 +556,7 @@
                     title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
-                    axisLabelColor: "#6ce6fe",
+                    axisLabelColor: "#21b9fa",
                     grid: {
                         top: 40,
                         left: 40,
@@ -575,7 +575,7 @@
                     title: " ",
                     axisLineWidth: 2,
                     yLabelShow: false,
-                    axisLabelColor: "#6ce6fe",
+                    axisLabelColor: "#fa8a25",
                     grid: {
                         top: 40,
                         left: 40,
@@ -1318,8 +1318,8 @@
                                             { value: 1000, name: '务工' },
                                             { value: 2000, name: '养殖业' }
                                         ],
-                                        radius: ['20%', '30%'],
-                                        center: ["50%", "40%"],
+                                        radius: ['30%', '40%'],
+                                        center: ["50%", "50%"],
                                         formatter: "{b}\n{c}元\n({d}%)",
                                         titleShow: true,
                                         title: "自主性经营收入"
@@ -1333,8 +1333,8 @@
                                             { value: 1000, name: '务工' },
                                             { value: 2000, name: '养殖业' }
                                         ],
-                                        radius: ['20%', '30%'],
-                                        center: ["50%", "40%"],
+                                        radius: ['30%', '40%'],
+                                        center: ["50%", "50%"],
                                         formatter: "{b}\n{c}元\n({d}%)",
                                         titleShow: true,
                                         title: "转移性收入"

@@ -292,9 +292,8 @@ define(['echarts'], function(echarts) {
                 show:pieData.titleShow,
                 textStyle: {
                     color: '#fff',
-                    fontSize: '8'
-                },
-                bottom:10
+                    fontSize: '12'
+                }
             },
             tooltip: {
                 trigger: 'item',
@@ -312,7 +311,7 @@ define(['echarts'], function(echarts) {
                         position: 'outside',
                         textStyle: {
                             color: '#fff',
-                            fontSize: '6'
+                            fontSize: '10'
                         },
                         formatter: pieData.formatter || "{b} :  {c}"
                     },
@@ -326,8 +325,8 @@ define(['echarts'], function(echarts) {
                         lineStyle: {
                             color: '#fff'
                         },
-                        length: 10,
-                        length2: 4
+                        length: 12,
+                        length2: 8
                     }
                 },
                 data: pieData.data
@@ -412,6 +411,7 @@ define(['echarts'], function(echarts) {
                     fontSize: '14'
                 }
             },
+            color:["#fff"],
             grid: data.grid,
             tooltip: data.tooltip,
             xAxis: {
@@ -493,19 +493,19 @@ define(['echarts'], function(echarts) {
                 right: 10,
                 height: '60%'
             },
-            color: [ "#6ce6fe","#fff"],
+            color: ["#fff"],
             legend: {
                 data: [{
                     name: '低保标准',
                     textStyle: {
                         color: "#fff",
-                        fontSize:"10"
+                        fontSize:"12"
                     }
                 }, {
                     name: '扶贫保障标准',
                     textStyle: {
-                        color: "#6ce6fe",
-                        fontSize:"10"
+                        color: "#5cd25b",
+                        fontSize:"12"
                     }
                 }],
                 right: 0,
@@ -524,7 +524,7 @@ define(['echarts'], function(echarts) {
             xAxis: {
                 axisLine: {
                     lineStyle: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -536,7 +536,7 @@ define(['echarts'], function(echarts) {
                 type: 'value',
                 axisLine: {
                     lineStyle: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -557,7 +557,7 @@ define(['echarts'], function(echarts) {
                 areaStyle: {normal: {color:'rgba(72, 153, 241, 0.3)'}},
                 lineStyle: {
                     normal: {
-                        color: '#6ce6fe',
+                        color: '#5cd25b',
                         width: 2
                     }
                 },
@@ -566,7 +566,7 @@ define(['echarts'], function(echarts) {
                         show: true,
                         position: 'bottom',
                         textStyle: {
-                            color: "#6ce6fe",
+                            color: "#5cd25b",
                             fontSize: "16"
                         }
                     }

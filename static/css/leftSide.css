@@ -453,9 +453,9 @@ span.span-active {
 .per-right {
     float: right;
     /*background: blue;*/
-    width: 28vw;
+    width: 30vw;
     height: 100%;
-    padding: 0 2vw;
+    padding: 0 1.4vw;
     /*overflow: auto;*/
 }
 .per-right.card {
@@ -515,6 +515,7 @@ span.span-active {
     height: 8vw;
     /*background: blanchedalmond;*/
     margin-top: 1vw;
+    overflow-y: auto;
 }
 .physexam-record > div {
     width: 18%;
@@ -615,15 +616,17 @@ article h6 {
     height: 100%;
 }
 #profitBar>div {
-    width: 50%;
+    width: 49%;
     height: 80%;
-    float: left;
+    display: inline-block;
+    position: relative;
 }
 #profitBar span {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    font-size: .8vw;
 }
 #selfProfit,#transProfit {
     width: 100%;

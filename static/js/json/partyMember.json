@@ -608,7 +608,7 @@
         "party_branch": "中共莫旗汉古尔河镇胜利村中心党支部",
         "join_party_date": "2014.06.20",
         "date_completion": "2015.06.20",
-        "party_standing": "0",
+        "party_standing": "",
         "inner_party_post": ""
     },
     "王继玲": {
@@ -644,7 +644,7 @@
         "party_branch": "中共莫旗汉古尔河镇胜利村中心党支部",
         "join_party_date": "2014.06.20",
         "date_completion": "2015.06.20",
-        "party_standing": "0",
+        "party_standing": "",
         "inner_party_post": ""
     },
     "王立鹏": {
@@ -680,7 +680,7 @@
         "party_branch": "中共莫旗汉古尔河镇胜利村中心党支部",
         "join_party_date": "2015.05.14",
         "date_completion": "2016.05.26",
-        "party_standing": "0",
+        "party_standing": "",
         "inner_party_post": ""
     }
 }

@@ -476,7 +476,7 @@ span.span-active {
     border-radius: 3px;
 }
 .per-right.card section {
-    height: 14vw;
+    height: 10.6vw;
 }
 .cure-plan {
     margin-top: 1vw;
@@ -547,34 +547,38 @@ span.span-active {
 }
 .family-list {
     margin-top: 1vw;
+    overflow: hidden;
 }
 /*扶贫卡 五人小组名单*/
 .five-list>div {
     float: left;
     height: 3vw;
     padding: .6vw;
-    background: red;
+    /*background: red;*/
 }
 .five-list .img {
-    width: 4.8vw;
+    width: 3.8vw;
+    padding-left: .2vw;
+    padding-right: .2vw;
     /*border-radius: 3vw;*/
 }
 .five-list .img>div {
-    width: 4vw;
-    height: 4vw;
-    border-radius: 2vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.5vw;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: black;
+    /*background: black;*/
 }
 .five-list .info {
-    width: 12vw;
-    background: greenyellow;
+    width: 11vw;
+    /*background: greenyellow;*/
 }
-.five-list .info p {
+.five-list .info p,.five-list .state p {
     float: left;
+    margin: 0;
 }
 .five-list .info p:nth-child(2) {
     float: right;
@@ -583,8 +587,17 @@ span.span-active {
     float: right;
 }
 .five-list .state {
-    width: 10vw;
-    background: #fff;
+    width: 13vw;
+    /*background: #fff;*/
+}
+.five-list .state span.online {
+    display: inline-block;
+    width: .6vw;
+    height: .6vw;
+    background: red;
+    border-radius: .3vw;
+    margin-right: .4vw;
+    background: #1bf725;
 }
 .thin th,.family-list table th {
     background: #21427e;
@@ -624,12 +637,22 @@ article h6 {
     height: 8vw;
     overflow: auto;
 }
+.per-right.card section:nth-child(1) {
+    height: 21vw;
+}
+.per-right.card section:nth-child(3) {
+    height: 10vw;
+}
 .per-right .fupin-bar {
     height: 8.6vw;
 }
 .per-right .profit-bar {
     height: 15.4vw;
     overflow: hidden;
+}
+section.help-method .cure-content {
+    height: 6.8vw;
+    overflow-y: auto;
 }
 #fupinBar,#profitBar {
     width: 100%;

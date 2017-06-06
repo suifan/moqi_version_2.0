@@ -70,10 +70,10 @@
                         $("#performance").find(".progressBar").each(function() {
                             var percent = $(this).find(".progressRate").text();
                             if (percent.substr(-1) !== "%") {
-                                percent = percent.slice(0, -1) + "%"
+                                percent = percent.slice(0, -1) + "%";
                             }
                             progressBar.generate($(this), percent);
-                        })
+                        });
                     }
                     $(".command").viewer();
                     $(".management").viewer();
@@ -121,9 +121,9 @@
                         } else {
                             $(".bottom-header").find("li:eq(0)").addClass("click-active").siblings().removeClass("click-active");
                             if ($(".bottom-head").hasClass("active")) {
-                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png")
+                                $(".bottom-head").removeClass("active").find("img").attr("src", "../images/up_arrow.png");
                             } else {
-                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
+                                $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png");
                             }
                             api.getPovertyDistribution();
                         }
@@ -601,7 +601,7 @@
             //产业扶贫相关方法
             "getProduction": function() {
                 mapApi.mapPlay("none");
-                $('#centerSide').css('display', 'block');
+                
 
                 //左侧
                 $('#leftSide').html(template('productionLeftSideTemp', {}));
@@ -683,6 +683,7 @@
             },
             //生态扶贫相关方法
             'getEcology': function() {
+                $(".mapBox").hide();
 
                 $('#leftSide').html(template('ecologyLeftTemp', {}));
 
@@ -805,14 +806,18 @@
                     area = town;
                     mapApi.showMap(town);
                     mapApi.getData();
-                })
+                });
                 //切换头部标签
             $("#tab").on("click", "li", function() {
                 var activeBool = $(this).hasClass("active");
                 if (!activeBool) {
                     $(this).addClass("active");
+
                     $(this).siblings("li").removeClass("active")
                     $("body>div").hide();
+
+                    $(this).siblings("li").removeClass("active");
+
                 }
                 //map 的显示隐藏
                 if (!$(this).hasClass("production")&&!$(this).hasClass("relocate")) {
@@ -829,6 +834,7 @@
                 } else if ($(this).hasClass("production")) { //产业扶贫
                     $(".bottom").show();
                     $(".mapBox").show();
+                    $('#centerSide').show();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     api.getProduction();
@@ -868,7 +874,7 @@
                     api.getRelocate();
                 }
             });
-        })
+        });
 
 
 

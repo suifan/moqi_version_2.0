@@ -551,12 +551,12 @@ span.span-active {
 /*扶贫卡 五人小组名单*/
 .five-list>div {
     float: left;
-    height: 6vw;
-    padding: 1vw;
+    height: 3vw;
+    padding: .6vw;
     background: red;
 }
 .five-list .img {
-    width: 6vw;
+    width: 4.8vw;
     /*border-radius: 3vw;*/
 }
 .five-list .img>div {
@@ -570,8 +570,17 @@ span.span-active {
     background: black;
 }
 .five-list .info {
-    width: 8vw;
+    width: 12vw;
     background: greenyellow;
+}
+.five-list .info p {
+    float: left;
+}
+.five-list .info p:nth-child(2) {
+    float: right;
+}
+.five-list .state p:nth-child(2) {
+    float: right;
 }
 .five-list .state {
     width: 10vw;

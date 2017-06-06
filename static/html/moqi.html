@@ -3813,7 +3813,7 @@
             <div class="family-list">
                 <div class="five-list">
                     <div class="img">
-                        <div style="background: url('') no-repeat center center;background-size: 120%;"></div>
+                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
                     </div>
                     <div class="info">
                         <p>姓名：{{"张楚兰"}}</p>
@@ -3822,7 +3822,52 @@
                     </div>
                     <div class="state">
                         <p>{{"第一书记"}}</p>
-                        <p><div class="online"></div>在线</p>
+                        <p><span class="online"></span>在线</p>
+                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
+                    </div>
+                </div>
+                <div class="five-list">
+                    <div class="img">
+                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
+                    </div>
+                    <div class="info">
+                        <p>姓名：{{"张楚兰"}}</p>
+                        <p>性别：{{"男"}}</p>
+                        <p>联系电话：{{"14563787653"}}</p>
+                    </div>
+                    <div class="state">
+                        <p>{{"第一书记"}}</p>
+                        <p><span class="online"></span>在线</p>
+                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
+                    </div>
+                </div>
+                <div class="five-list">
+                    <div class="img">
+                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
+                    </div>
+                    <div class="info">
+                        <p>姓名：{{"张楚兰"}}</p>
+                        <p>性别：{{"男"}}</p>
+                        <p>联系电话：{{"14563787653"}}</p>
+                    </div>
+                    <div class="state">
+                        <p>{{"第一书记"}}</p>
+                        <p><span class="online"></span>在线</p>
+                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
+                    </div>
+                </div>
+                <div class="five-list">
+                    <div class="img">
+                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
+                    </div>
+                    <div class="info">
+                        <p>姓名：{{"张楚兰"}}</p>
+                        <p>性别：{{"男"}}</p>
+                        <p>联系电话：{{"14563787653"}}</p>
+                    </div>
+                    <div class="state">
+                        <p>{{"第一书记"}}</p>
+                        <p><span class="online"></span>在线</p>
                         <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
                     </div>
                 </div>
@@ -3855,15 +3900,18 @@
         <section class="help-method">
             <p class="per-title">治疗方案</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
-            {{each therapeutic_schedule as cure}}
-            <div class="cure-plan">
-                <div>疾病名称：<span>{{cure.name}}</span></div>
-                <div>
-                    <div class="cure-title">治疗方案：</div>
-                    <div class="cure-info"><span>{{cure.schedule}}</span></div>
+            <div class="cure-content">
+                {{each therapeutic_schedule as cure}}
+                <div class="cure-plan">
+                    <div>疾病名称：<span>{{cure.name}}</span></div>
+                    <div>
+                        <div class="cure-title">治疗方案：</div>
+                        <div class="cure-info"><span>{{cure.schedule}}</span></div>
+                    </div>
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
+
         </section>
         <section class="fupin-bar">
             <p class="per-title">健康基金</p>
@@ -3872,13 +3920,23 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>次数</th>
-                        <th>补助额度</th>
+                        <th>总医疗费用</th>
+                        <th>城乡居民医疗保险报销</th>
+                        <th>商业补充保险报销</th>
+                        <th>民政局大病救助</th>
+                        <th>政府医疗保障基金救助</th>
+                        <th>个人自付</th>
+                        <th>报销比例</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>{{1}}</td>
+                        <td>{{"暂无"}}</td>
+                        <td>{{"暂无"}}</td>
+                        <td>{{"暂无"}}</td>
+                        <td>{{"暂无"}}</td>
+                        <td>{{"暂无"}}</td>
                         <td>{{"暂无"}}</td>
                     </tr>
                     </tbody>

@@ -62,12 +62,6 @@
         // 数据加载
         var api = {
             'getHomePage': function() {
-                // $("#leftTabs").addClass("hide");
-                $("body>div").hide();
-                $(".bottom").show();
-                $(".mapBox").show();
-                $("#leftSide").show();
-                $("#rightSide").show();
                 //右侧--------------------start
                 $.getJSON("../js/json/homePage/dutyHost.json", function(data) {
                     if (data) {
@@ -89,7 +83,6 @@
                         $(".government").trigger("click");
                     }
                 });
-
                 //右侧--------------------end
 
                 //左侧--------------------start
@@ -115,14 +108,9 @@
                 }
                 chartData.data = [{ name: "目标户数", type: "bar", data: family, barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: people, barMaxWidth: 10 }]
                 charts.xBarChart("targetChart", chartData)
-
-                // $('#leftSide').html(template('homepageLeftSideTemp', data));
-
                 //左侧--------------------end
-
                 //底部--------------------start
                 $('.bottom').html(template('povertyStatus', {}));
-                // bottomBind();
                 //底部按钮点击事件
                 $(".bottom-head").on("click", function() {
                     var $this = $(this).siblings(".bottom-content");
@@ -137,7 +125,6 @@
                             } else {
                                 $(".bottom-head").addClass("active").find("img").attr("src", "../images/down_arrow.png")
                             }
-                            // api.slide("slideBox_r","box-wrapper",1900);
                             api.getPovertyDistribution();
                         }
                     });
@@ -477,8 +464,6 @@
                 //左侧--------------------end
 
                 //底部--------------------start
-                // $('.bottom').html(template('povertyStatus', {}));
-                // bottomBind();
                 //家医签约按钮点击事件
                 $(".bottom-head").on("click", function() {
                     var $this = $(this).siblings(".bottom-content");
@@ -807,9 +792,8 @@
             //左右两侧高度适应屏幕
             sideResize();
             window.onresize = function() {
-
                 sideResize();
-            };;
+            };
             //加载倒计时
             countDown.countDown("2018/1/1");
             //刷新时触发首页点击事件
@@ -817,50 +801,45 @@
             //绑定右上角区域切换事件
             $("#areaSelectInHeader").on("change", function() {
                     var town = $(this).val();
+
                     area = town;
                     mapApi.showMap(town);
                     mapApi.getData();
                 })
                 //切换头部标签
             $("#tab").on("click", "li", function() {
-
-                //--- 暂时代码 完成后删除 作用：禁止点击 "五个一批"和「六个精准」 by- xld
-                if (!$(this).attr('class')) {
-                    return;
-                }
-                //---暂时代码
                 var activeBool = $(this).hasClass("active");
                 if (!activeBool) {
                     $(this).addClass("active");
                     $(this).siblings("li").removeClass("active")
+                    $("body>div").hide();
                 }
                 //map 的显示隐藏
-                if (!$(this).hasClass("production")) {
+                if (!$(this).hasClass("production")&&!$(this).hasClass("relocate")) {
                     mapApi.mapPlay("block");
                     $('#centerSide').hide();
                 }
                 if ($(this).hasClass("homepage")) { //点击首页按钮
+                    $(".bottom").show();
+                    $(".mapBox").show();
+                    $("#leftSide").show();
+                    $("#rightSide").show();
                     api.getHomePage(area);
                     mapApi.init("moqi", "homepage");
                 } else if ($(this).hasClass("production")) { //产业扶贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $(".mapBox").show();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     api.getProduction();
                 } else if ($(this).hasClass("government")) { //党建促脱贫
-                    $("body>div").hide();
                     $(".mapBox").show();
                     $("#leftSide").show();
                     $(".bottom").show();
                     $("#rightSide").show();
-                    // $("#whole").hide();
                     api.getGovernment();
                     mapApi.init("moqi", "government");
-
                 } else if ($(this).hasClass("health")) { //健康脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $(".mapBox").show();
                     $("#leftSide").show();
@@ -868,26 +847,22 @@
                     api.getDisease();
                     mapApi.init("moqi", "health");
                 } else if ($(this).hasClass("ecology")) { //生态脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $('#centerSide').show();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     api.getEcology();
                 } else if ($(this).hasClass("education")) { //教育脱贫
-                    $("body>div").hide();
                     $(".bottom").show();
                     $("#leftSide").show();
                     $("#rightContent").show();
                     api.getEducation();
                 } else if ($(this).hasClass("fallback")) { //兜底脱贫
-                    $("body>div").hide();
                     $("#leftSide").show();
                     $("#rightSide").show();
                     $(".bottom").show();
                     api.getfallback();
                 } else if ($(this).hasClass("relocate")) {
-                    $("body>div").hide();
                     $("#whole").show();
                     $(".bottom").show();
                     api.getRelocate();
@@ -1216,6 +1191,29 @@
                                 jpage.page(res.data, "cadreTemp", container, 10);
                             });
                         });
+                        //驻村第一书记工作队按钮
+                        $('#workTeam,#villageCadre').on('click', function(event) {
+                            event.preventDefault();
+                            /* Act on the event */
+                            //$.getJSON("../js/json/cadre.json",function(res){
+                                var membersTemp = template("workTeamAndCadreTemp", {});
+                                var html = "<div>" + membersTemp + "</div>";
+                                //分页容器
+                                html += "<ul class='page'></ul>";
+                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
+                            if(event.target.id=="workTeam"){
+                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
+                            }
+                                var $pop = $.jBox(html, { title:title, buttons: {}, border: 0, opacity: 0.4 });
+                                document.getElementsByTagName('body')[0].style.padding = "0";
+                                // 获取表格容器
+                                $pop.find(".jbox-title").css({"width":"100%","position":"relative"});
+                                var container = $('.jbox-content>div').eq(1);
+                                //jpage.page(res.data, "cadreTemp", container, 10);
+                                //});
+                        });
+                        //村两委干部工作队按钮
+
                         //党村委会按钮
                         $('#partyVillageClub').on('click',function(event) {
                              $('.hangPai').show();//

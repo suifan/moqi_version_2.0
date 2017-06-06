@@ -24,7 +24,7 @@
     <div class='map-links flo-box '></div>
 
      <div id="hangPai" class="hangPai">
-       
+
     </div>
 
     <div id='svgBox' class="svgBox ">
@@ -2875,6 +2875,8 @@
             <li><a id="partyHome" class="partyLinks" href="javascript:;">党员家</a></li>
             <li><a id="partyLeader" class="partyLinks" href="javascript:;">干部</a></li>
             <li><a id="partyVillageClub" class="partyLinks" href="javascript:;">党村委会</a></li>
+            <li><a id="workTeam" class="partyLinks" href="javascript:;">驻村第一书记工作队</a></li>
+            <li><a id="villageCadre" class="partyLinks" href="javascript:;">村两委干部</a></li>
         </ul>
     </div>
     <div class="map-sanjiao"></div>
@@ -3008,28 +3010,6 @@
             <div>
                 <div id="diseaseIncidenceChart" style="height: 11vw;width: 100%;"></div>
             </div>
-        </div>
-    </div>
-</script>
-<!--贫困家庭模板-->
-<script id="povertyLeftSideTemp" type="text/html">
-    <div class="section">
-        <div class="header">
-            <h2>2017年度脱贫目标</h2>
-            {{if huorren==1 }}
-            <div class="switch-head">
-                <span class="span-active">户</span>
-                <span>人</span>
-            </div>
-            {{else if huorren==2}}
-            <div class="switch-head">
-                <span>户</span>
-                <span class="span-active">人</span>
-            </div>
-            {{/if}}
-        </div>
-        <div class="section-body">
-
         </div>
     </div>
 </script>
@@ -4299,7 +4279,43 @@
         </div>
     </div>
 </script>
-
+<!--党建 村两委书记、驻村第一书记工作队 弹窗模板-->
+<script id = "workTeamAndCadreTemp" type="text/html">
+    <div class="tuopin-left doc-left village">
+        <div class="family-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>职务</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>民族</th>
+                    <th>出生日期</th>
+                    <th>年龄</th>
+                    <th>联系方式</th>
+                    <th>入党时间</th>
+                    <th>原工作单位及职务</th>
+                    <th>所在党支部</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>duty</td>
+                    <td>name</td>
+                    <td>sex</td>
+                    <td>nation</td>
+                    <td>birthday</td>
+                    <td>age</td>
+                    <td>contect</td>
+                    <td>data</td>
+                    <td>ex-work</td>
+                    <td>party_standing</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
 <!--党建 党员家 弹窗模板-->
 <script id = "partyFamilyTemp" type="text/html">
     <div class="tuopin-left doc-left village">
@@ -4568,7 +4584,7 @@
 </script>
 <!--  生态扶贫模板 end-->
 
-<script id="relocateTemp" type="text/html">   
+<script id="relocateTemp" type="text/html">
     <div class="section relocateSection" id="houseRebuild">
         <div class="header">
             <h2>贫困户危房改造目标</h2>
@@ -4620,27 +4636,27 @@
                     stroke: #4141F7;
                     stroke-miterlimit: 10;
                 }
-                
+
                 .st1 {
                     fill: #0851F4;
                     stroke: #020F47;
                     stroke-miterlimit: 10;
                 }
-                
+
                 .st2 {
                     fill: #0851F4;
                 }
-                
+
                 .st3 {
                     stroke: #E85A2E;
                     stroke-width: 0.5;
                     stroke-miterlimit: 10;
                 }
-                
+
                 .asd {
                     fill: red;
                 }
-                
+
                 .st4 {
                     fill: yellow;
                     stroke: #E85A2E;
@@ -4661,7 +4677,7 @@
 
                     <circle class="hpCir  st3" cx="315.2" cy="236" r="3" />
                     <circle class="hpCir st4" cx="315.2" cy="236" r="1.5" />
-                    
+
                     <circle class="hpCir  st3" cx="332.5" cy="258" r="3" />
                     <circle class="hpCir st4" cx="332.5" cy="258" r="1.5" />
                 </g>

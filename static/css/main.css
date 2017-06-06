@@ -473,8 +473,17 @@ ul.page {
 }
 
 
+.jbox-title span{
+    position: absolute;
+    font-weight: normal;
+    top: 0;
+    left: 41%;
+}
 
+.jbox-close {
+    z-index:100;
 
+}
 
 
 

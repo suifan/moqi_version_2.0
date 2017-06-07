@@ -1436,17 +1436,13 @@
 
             "poorRate": function() {
                 var data = {
-
                     "nierjizhen":{
                          "dengteke": "5%",
                     },
                     "baoshanzhen": {
                          "xiwaertuzhen": "11%",
                     }
-                  
                 };
-
-
                 for(var  dataKey in data){
                         for (var key in dataKey) {
 

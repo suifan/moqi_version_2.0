@@ -3783,9 +3783,12 @@
                     <li>身份证号：<span>{{}}</span></li>
                     <li>住址：<span>{{address}}</span></li>
                     <li>类别：<span>{{}}</span></li>
-                    <li>疾病名称：<span>{{disease_name}}</span></li>
-                    <li>计划救治年份：<span>{{plan_cure_year}}</span></li>
-                    <li>救治情况：<span>{{cure_status}}</span></li>
+                    {{each illness as ill}}
+                        <li style="height: .6vw;"></li>
+                        <li>疾病名称：<span>{{ill.name}}</span></li>
+                        <li>计划救治年份：<span>{{ill.aim_date}}</span></li>
+                        <li>救治情况：<span>{{ill.help_status}}</span></li>
+                    {{/each}}
                 </ul>
             </div>
             <div class="per-leftbtm">
@@ -3794,9 +3797,12 @@
                     <li>手机号：<span>{{phone}}</span></li>
                     <li>脱贫属性：<span>{{poverty_over_property}}</span></li>
                     <li>家庭人数：<span>{{age}}</span></li>
-                    <li>诊断机构：<span>{{diagnose_organ}}</span></li>
-                    <li>治疗机构：<span>{{cure_organ}}</span></li>
-                    <li>治疗情况：<span>{{therapeutic_effect}}</span></li>
+                    {{each illness as ill}}
+                        <li style="height: .6vw;"></li>
+                        <li>诊断机构：<span>{{ill.diagnose_hospital}}</span></li>
+                        <li>治疗机构：<span>{{ill.help_hospital}}</span></li>
+                        <li>治疗情况：<span>{{ill.illness_status}}</span></li>
+                    {{/each}}
                 </ul>
             </div>
         </div>

@@ -366,7 +366,8 @@ span.span-active {
     line-height: 1.4vw;
 }
 .per-top {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-size: .8vw;
     line-height: 1.2vw;
 }
@@ -651,7 +652,7 @@ article h6 {
     overflow: hidden;
 }
 section.help-method .cure-content {
-    height: 6.8vw;
+    height: 8vw;
     overflow-y: auto;
 }
 #fupinBar,#profitBar {

@@ -25,6 +25,7 @@
     margin: 0 auto;
     text-align: center;
     font-size: 1.2vw;
+    border: 4px solid #0052e8;
 }
 #govermentHelpChart>div p {
     position: relative;

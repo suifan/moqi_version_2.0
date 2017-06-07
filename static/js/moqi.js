@@ -269,18 +269,18 @@
                 //左侧------start
                 var data = {
                     disease: [
-                        { name: "高血压", percent: "16%" },
-                        { name: "脑血管病", percent: "8%" },
-                        { name: "糖尿病", percent: "6%" },
-                        { name: "冠心病", percent: "5%" },
-                        { name: "脑梗", percent: "3%" },
-                        { name: "布病", percent: "2%" },
-                        { name: "类风湿性关节炎", percent: "2%" },
-                        { name: "关节病", percent: "2%" },
-                        { name: "胆囊炎", percent: "1%" },
-                        { name: "心肌病", percent: "1%" },
-                        { name: "肺结核", percent: "1%" },
-                        { name: "腰间盘突出", percent: "1%" }
+                        { name: "脑血管病", percent: "25.66%" },
+                        { name: "高血压", percent: "10.44%" },
+                        { name: "糖尿病", percent: "6.41%" },
+                        { name: "关节病", percent: "4.89%" },
+                        { name: "肺气肿", percent: "3.48%" },
+                        { name: "精神疾病", percent: "3.29%" },
+                        { name: "关节炎", percent: "3.60%" },
+                        { name: "肺结核病", percent: "1.96%" },
+                        { name: "心肌病", percent: "1.64%" },
+                        { name: "肝炎", percent: "1.13%" },
+                        { name: "肝硬化", percent: "0.98%" },
+                        { name: "其他疾病", percent: "35.82%" }
                     ],
 
                 };
@@ -300,17 +300,17 @@
                     center: ["45%", "45%"],
                     radius: ["30%", "50%"],
                     data: [
-                        { value: 532, name: '高血压' },
-                        { value: 275, name: '脑血管病' },
-                        { value: 191, name: '糖尿病' },
-                        { value: 164, name: '冠心病' },
-                        { value: 117, name: '脑梗' }
+                        { value: 267, name: '高血压' },
+                        { value: 656, name: '脑血管病' },
+                        { value: 164, name: '糖尿病' },
+                        { value: 125, name: '关节病' },
+                        { value: 89, name: '肺气肿' }
                     ],
                     total: "3356"
                 }
                 charts.labelPie("diseaseStructureChart", diseaseStructure);
-                var chartData_x = ["高血压", "糖尿病", "结核病", "重症精神病"];
-                var charData_y = ['565', '195', '67', '82'];
+                var chartData_x = ["高血压", "糖尿病",  "重症精神病","结核病"];
+                var charData_y = ['267', '164', '84', '50'];
                 chart.barChart("keyPopulationChart", chartData_x, charData_y);
                 //右侧---------end
                 //右侧--------------------start

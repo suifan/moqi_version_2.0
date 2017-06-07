@@ -3725,27 +3725,33 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>27000元</td>
-                        <td>2000元</td>
-                        <td>1000元</td>
-                        <td>4000元</td>
-                        <td>20000元</td>
+                        <td>{{income_detail.policy_income?income_detail.policy_income.total_help:"0"}}元</td>
+                        <td>{{income_detail.policy_income?income_detail.policy_income.house:"0"}}元</td>
+                        <td>{{income_detail.policy_income?income_detail.policy_income.healthy:"0"}}元</td>
+                        <td>{{income_detail.policy_income?income_detail.policy_income.education:"0"}}元</td>
+                        <td>{{income_detail.policy_income?income_detail.policy_income.relocation:"0"}}元</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </section>
         <section class="profit-bar">
-            <p class="per-title">家庭收入<span style="float: right;font-size: 1vw;font-weight: lighter;">总收入：24000元&nbsp;&nbsp;人均收入：6000元</span></p>
+            <p class="per-title">家庭收入<span style="float: right;font-size: 1vw;font-weight: lighter;">总收入：{{income_detail.total_income?income_detail.total_income.total_income:"0"}}元&nbsp;&nbsp;人均收入：{{income_detail.total_income?income_detail.total_income.average:"0"}}元</span></p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div id="profitBar">
-                <div>
+                <div style="width: 46%;">
+                    <div>自主经营性收入</div>
                     <div id="selfProfit"></div>
-                    <span>12000元</span>
+                    {{if income_detail.total_income}}
+                    <span>{{income_detail.total_income.self}}元</span>
+                    {{/if}}
                 </div>
-                <div>
+                <div style="width: 52%;">
+                    <div>转移性收入</div>
                     <div id="transProfit"></div>
-                    <span>12000元</span>
+                    {{if income_detail.total_income}}
+                    <span>{{income_detail.total_income.transfer}}元</span>
+                    {{/if}}
                 </div>
             </div>
         </section>
@@ -3835,66 +3841,23 @@
             <p class="per-title">五人小组名单</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="family-list">
+                {{each five_group as five}}
                 <div class="five-list">
                     <div class="img">
-                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
+                        <div style="background: url({{five.avatar||'../images/avatar/default.jpg'}}) no-repeat center center;background-size: 120%;"></div>
                     </div>
                     <div class="info">
-                        <p>姓名：{{"张楚兰"}}</p>
-                        <p>性别：{{"男"}}</p>
-                        <p>联系电话：{{"14563787653"}}</p>
+                        <p>姓名：{{five.name}}</p>
+                        <p>性别：{{five.gender}}</p>
+                        <p>联系电话：{{five.phone}}</p>
                     </div>
                     <div class="state">
-                        <p>{{"第一书记"}}</p>
+                        <p>{{five.identity}}</p>
                         <p><span class="online"></span>在线</p>
-                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
+                        <p>工作单位：{{five.org_name}}</p>
                     </div>
                 </div>
-                <div class="five-list">
-                    <div class="img">
-                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
-                    </div>
-                    <div class="info">
-                        <p>姓名：{{"张楚兰"}}</p>
-                        <p>性别：{{"男"}}</p>
-                        <p>联系电话：{{"14563787653"}}</p>
-                    </div>
-                    <div class="state">
-                        <p>{{"第一书记"}}</p>
-                        <p><span class="online"></span>在线</p>
-                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
-                    </div>
-                </div>
-                <div class="five-list">
-                    <div class="img">
-                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
-                    </div>
-                    <div class="info">
-                        <p>姓名：{{"张楚兰"}}</p>
-                        <p>性别：{{"男"}}</p>
-                        <p>联系电话：{{"14563787653"}}</p>
-                    </div>
-                    <div class="state">
-                        <p>{{"第一书记"}}</p>
-                        <p><span class="online"></span>在线</p>
-                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
-                    </div>
-                </div>
-                <div class="five-list">
-                    <div class="img">
-                        <div style="background: url('../images/avatar/default.jpg') no-repeat center center;background-size: 120%;"></div>
-                    </div>
-                    <div class="info">
-                        <p>姓名：{{"张楚兰"}}</p>
-                        <p>性别：{{"男"}}</p>
-                        <p>联系电话：{{"14563787653"}}</p>
-                    </div>
-                    <div class="state">
-                        <p>{{"第一书记"}}</p>
-                        <p><span class="online"></span>在线</p>
-                        <p>工作单位：{{"尼尔基镇扶贫管理处"}}</p>
-                    </div>
-                </div>
+                {{/each}}
                 <!--<table>
                     <thead>
                     <tr>
@@ -3955,13 +3918,13 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>{{1}}</td>
-                        <td>{{"暂无"}}</td>
-                        <td>{{"暂无"}}</td>
-                        <td>{{"暂无"}}</td>
-                        <td>{{"暂无"}}</td>
-                        <td>{{"暂无"}}</td>
-                        <td>{{"暂无"}}</td>
+                        <td>{{ill_insure.total_money||"暂无"}}</td>
+                        <td>{{ill_insure.town_insure||"暂无"}}</td>
+                        <td>{{ill_insure.business_insure||"暂无"}}</td>
+                        <td>{{ill_insure.civil_affairs_help||"暂无"}}</td>
+                        <td>{{ill_insure.government_help||"暂无"}}</td>
+                        <td>{{ill_insure.self||"暂无"}}</td>
+                        <td>{{ill_insure.rate||"暂无"}}</td>
                     </tr>
                     </tbody>
                 </table>

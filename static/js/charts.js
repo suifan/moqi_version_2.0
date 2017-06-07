@@ -325,8 +325,8 @@ define(['echarts'], function(echarts) {
                         lineStyle: {
                             color: '#fff'
                         },
-                        length: 12,
-                        length2: 8
+                        length: 10,
+                        length2: 6
                     }
                 },
                 data: pieData.data

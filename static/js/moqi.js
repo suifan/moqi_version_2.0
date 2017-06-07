@@ -1327,34 +1327,37 @@
                                     // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
                                     // chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
                                     //家庭收入
+                                    if(!res.data.income_detail)return;
+                                    var self_data = res.data.income_detail.self_income;
+                                    var trans_data = res.data.income_detail.trans_income;
                                     var selfProfit = {
                                         color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
                                         data: [
-                                            { value: 1500, name: '其它' },
-                                            { value: 2000, name: '财产' },
-                                            { value: 1000, name: '种植业' },
-                                            { value: 1000, name: '务工' },
-                                            { value: 2000, name: '养殖业' }
+                                            { value: self_data.other, name: '其它' },
+                                            { value: self_data.money, name: '财产' },
+                                            { value: self_data.farm, name: '种植业' },
+                                            { value: self_data.work, name: '务工' },
+                                            { value: self_data.feed, name: '养殖业' }
                                         ],
                                         radius: ['30%', '40%'],
                                         center: ["50%", "50%"],
                                         formatter: "{b}\n{c}元\n({d}%)",
-                                        titleShow: true,
+                                        titleShow: false,
                                         title: "自主性经营收入"
                                     };
                                     var transProfit = {
                                         color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
                                         data: [
-                                            { value: 1500, name: '其它' },
-                                            { value: 2000, name: '财产' },
-                                            { value: 1000, name: '种植业' },
-                                            { value: 1000, name: '务工' },
-                                            { value: 2000, name: '养殖业' }
+                                            { value: trans_data.basic, name: '低保五保' },
+                                            { value: trans_data.ecology, name: '生态扶持' },
+                                            { value: trans_data.insurance, name: '养老农业保险' },
+                                            { value: trans_data.industry, name: '产业扶持' },
+                                            { value: trans_data.food, name: '粮食、良种草原补贴' }
                                         ],
                                         radius: ['30%', '40%'],
                                         center: ["50%", "50%"],
                                         formatter: "{b}\n{c}元\n({d}%)",
-                                        titleShow: true,
+                                        titleShow: false,
                                         title: "转移性收入"
                                     };
                                     charts.labelPieChart("selfProfit", selfProfit);

@@ -1237,9 +1237,9 @@
                         //党村委会按钮
                         $('#partyVillageClub').on('click',function(event) {
                             if (mapApi.curr_path_id!='shenglicun') {
-                                
+                                 return;
                                 alert("该村此功能暂未上线");
-                                return;
+                               
                             }
                              $('.hangPai').show();//
                              $('#hangPai').html(template('hangPaiTemp',{}));

@@ -948,6 +948,7 @@
                 mapApi.curr_svg = oSvg;
                 if (mapApi.curr_svg) {
                     // console.log(mapType)
+                    // mapApi.hoverLock = true;
                     mapApi.oSvgBox.on("click", function(event) {
                         event.preventDefault();
                         //oSvg.find(".validMap").css("fill", mapApi.outColor);

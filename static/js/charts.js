@@ -701,7 +701,7 @@ define(['echarts'], function(echarts) {
         var youChart = echarts.init(document.getElementById(id));
         youChart.setOption({
             title: {
-                text: '合计:6276户,12412人投入2947.36万元,预计每户收益1.2万元',
+                text: '合计：6276户，15283人，投入2.9亿元，预计每户收益1.2万元',
                 textStyle: {
                     color: '#00d4ff',
                     fontStyle: 'normal',

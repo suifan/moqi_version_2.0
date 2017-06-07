@@ -229,7 +229,20 @@
      stroke-width: 0;
      r: 0.3%;
  }
- 
+.moqiSvg .cir-in {
+     fill: rgba(236, 57, 35, 0.87);
+     stroke: rgba(236, 57, 35, 0.87);
+     stroke-width: 0;
+     r: 0.3%;
+   
+ }
+.moqiSvg .cir-out {
+     fill: rgba(27, 247, 37, 0.5);
+     stroke: rgba(27, 247, 37, 1);
+     stroke-width: 0.1%;
+     r: 1.2%;
+     -webkit-animation: WaveOutL 3s infinite;
+ }
  @keyframes WaveOutS {
      0% {
          r: 0.1%;

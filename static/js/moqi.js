@@ -1336,11 +1336,11 @@
                                     var selfProfit = {
                                         color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
                                         data: [
-                                            { value: self_data.other, name: '其它' },
-                                            { value: self_data.money, name: '财产' },
-                                            { value: self_data.farm, name: '种植业' },
-                                            { value: self_data.work, name: '务工' },
-                                            { value: self_data.feed, name: '养殖业' }
+                                            { value: self_data.other||"", name: '其它' },
+                                            { value: self_data.money||"", name: '财产' },
+                                            { value: self_data.farm||"", name: '种植业' },
+                                            { value: self_data.work||"", name: '务工' },
+                                            { value: self_data.feed||"", name: '养殖业' }
                                         ],
                                         radius: ['30%', '40%'],
                                         center: ["50%", "50%"],
@@ -1351,11 +1351,11 @@
                                     var transProfit = {
                                         color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
                                         data: [
-                                            { value: trans_data.basic, name: '低保五保' },
-                                            { value: trans_data.ecology, name: '生态扶持' },
-                                            { value: trans_data.insurance, name: '养老农业保险' },
-                                            { value: trans_data.industry, name: '产业扶持' },
-                                            { value: trans_data.food, name: '粮食、良种草原补贴' }
+                                            { value: trans_data.basic||"", name: '低保五保' },
+                                            { value: trans_data.ecology||"", name: '生态扶持' },
+                                            { value: trans_data.insurance||"", name: '养老农业保险' },
+                                            { value: trans_data.industry||"", name: '产业扶持' },
+                                            { value: trans_data.food||"", name: '粮食、良种草原补贴' }
                                         ],
                                         radius: ['30%', '40%'],
                                         center: ["50%", "50%"],

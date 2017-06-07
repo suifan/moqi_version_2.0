@@ -919,7 +919,7 @@
                 var canWorkList = [];
                 $('.validMap').removeClass('validMap');
                 if (claName == 'government') {
-                    canWorkList = ['hanguerhezhen', 'shenglicun'];
+                    canWorkList = ['hanguerhezhen','nierjizhen',"baoshanzhen", "xiwaertuzhen", "aerlazhen", 'shenglicun','madangqiancun','dongkunqian','shuanglongquancun','xinfacun','xinglongcun','xiaoquanzicun','fuxingcun','aerlacun','dongkunqiancun'];
                 } else {
                     canWorkList = ['hanguerhezhen', 'nierjizhen', "baoshanzhen", "dengtekebanshichu", "xiwaertuzhen", "aerlazhen", 'fuxingcun', 'xiaoquanzicun', 'xinglongcun', 'xinfacun', 'xiangyangcun', 'shuanglongquancun', 'shenglicun', 'dongkunqiancun', 'madangqiancun', 'aerlacun', 'guonicun', 'minzucun'];
                 }
@@ -1420,26 +1420,35 @@
             },
 
             "poorRate": function() {
-                var poordata = {
-                    "nierjizhen": "1%",
-                    "baoshanzhen": "3%",
-                    "dengteke": "5%",
-                    "xiwaertuzhen": "11%",
-                }
-                for (var key in poordata) {
+                var data = {
 
-                    console.log("1%" < 0.03);
+                    "nierjizhen":{
+                         "dengteke": "5%",
+                    },
+                    "baoshanzhen": {
+                         "xiwaertuzhen": "11%",
+                    }
+                  
+                };
 
-                    if (parseInt(poordata[key]) <= 1) {
-                        $('#' + key).addClass('colorL');
-                    } else if (parseInt(poordata[key]) >= 5) {
-                        $('#' + key).addClass('colorL');
-                        // alert(key);
-                    } else {
-                        //$('#'+key).addClass('colorL');
-                        console.log(key);
+
+                for(var  dataKey in data){
+                        for (var key in dataKey) {
+
+                        console.log("1%" < 0.03);
+
+                        if (parseInt(poordata[key]) <= 1) {
+                            $('#' + key).addClass('colorL');
+                        } else if (parseInt(poordata[key]) >= 5) {
+                            $('#' + key).addClass('colorL');
+                            // alert(key);
+                        } else {
+                            //$('#'+key).addClass('colorL');
+                            console.log(key);
+                        }
                     }
                 }
+                
             },
         }; //mapApi
         //初始化地图方法；

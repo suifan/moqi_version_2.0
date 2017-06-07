@@ -1166,13 +1166,22 @@
                     } else if(text == "党建促脱贫"){
                         //modified for 党建点击村时，如果是胜利村则显示四条，其他则只显示两条 by tlw at 20170606 start
                         $(".map-links").html(template("mapPartyClickTemp", {}));
-                        if(!event.target.parentNode.id=="shenglicun"){
-                            $("#workTeam").parent().hide();
+                        var committeeData={},workTeamData={};
+                        $.getJSON(" ../js/json/committee.json",function(res){committeeData=res});
+                        $.getJSON(" ../js/json/first_secretary.json",function(res){workTeamData=res});
+                        if(event.target.parentNode.id!=="shenglicun"){
+                            $("#partyHome").parent().hide();
+                            $("#partyVillageClub").parent().hide();
+                        }
+                        if(!committeeData[mapApi.curr_path_name]){
                             $("#villageCadre").parent().hide();
+                        }
+                        if(!workTeamData[mapApi.curr_path_name]){
+                            $("#workTeam").parent().hide();
                         }
                         $(".map-links").css({
                             "left": x - $('.map-links').width()/2,
-                             "top": y - $('.map-links').height()*1.5,
+                             "top": y - $('.map-links').height()*1.5
                         }).addClass("show");
                         //modified for 党建点击村时，如果是胜利村则显示四条，其他则只显示两条 by tlw at 20170606 end
 
@@ -1210,27 +1219,28 @@
                         $('#workTeam,#villageCadre').on('click', function(event) {
                             event.preventDefault();
                             var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
-                            var url=" ../js/json/committee.json"
+                            // var url=" ../js/json/committee.json"
+                            var listData = committeeData
                             if(event.target.id=="workTeam"){
                                 title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
-                                url=" ../js/json/first_secretary.json"
+                                // url=" ../js/json/first_secretary.json"
+                                listData = workTeamData
                             }
                             /* Act on the event */
-                            $.getJSON(url,function(res){
+                            // $.getJSON(url,function(res){
                                 var data={}
-                                    data.data = res[mapApi.curr_path_name];
-                                if(!data.data){return}
-                                var membersTemp = template("workTeamAndCadreTemp", data);
-                                var html = "<div>" + membersTemp + "</div>";
+                                    data.data = listData[mapApi.curr_path_name];
+                                // var membersTemp = template("workTeamAndCadreTemp", data);
+                                var html = "<div></div>";
                                 //分页容器
                                 html += "<ul class='page'></ul>";
                                 var $pop = $.jBox(html, { title:title, buttons: {}, border: 0, opacity: 0.4 });
                                 document.getElementsByTagName('body')[0].style.padding = "0";
                                 // 获取表格容器
                                 $pop.find(".jbox-title").css({"width":"100%","position":"relative"});
-                                var container = $('.jbox-content>div').eq(1);
-                                //jpage.page(res.data, "cadreTemp", container, 10);
-                            });
+                                var container = $('.jbox-content>div').eq(0);
+                                jpage.page(data.data, "workTeamAndCadreTemp", container, 10);
+                            // });
                         });
                         //村两委干部工作队按钮
 

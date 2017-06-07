@@ -13,6 +13,12 @@ define(['jquery','template'],function($,template){
         var _data={};
         if(!data)return;
         var length =Math.ceil(data.length/num);
+        if(length<=1){
+            _data.data= data
+            var html = template(tempId, _data);
+            $(place).html(html);
+            return;
+        }
         var pageList = [];
         pageList.push("<li><</li>");
         for(var i=0;i<length;i++){

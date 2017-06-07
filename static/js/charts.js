@@ -934,7 +934,8 @@ define(['echarts'], function(echarts) {
                     position: 'top',
                     textStyle: {
                         fontSize: 18
-                    }
+                    },
+                    formatter:"{c}万亩"
 
                 },
 

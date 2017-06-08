@@ -413,7 +413,9 @@ span.span-active {
     margin-top: 1vw;
 }
 
-.per-btm article {}
+.per-btm article p{
+    font-size:1vw;
+}
 .per-top-head {
     display: block;
     height: 1.2vw;
@@ -495,6 +497,9 @@ span.span-active {
 .cure-info {
     display: inline-block;
     width: 84%;
+}
+.cure-info span{
+    font-size:1vw;
 }
 .per-lefttop div.per-img {
     width: 5.6vw;
@@ -623,7 +628,7 @@ span.span-active {
     height: 23vw;
     overflow: auto;
     line-height: 1.4vw;
-    margin-top: 1vw;
+    /*margin-top: 1vw;*/
 }
 article h6 {
     padding: 1vw 0;

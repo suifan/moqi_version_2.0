@@ -211,8 +211,8 @@
             },
             'getGovernment': function() {
                 $("#leftSide").html(template('governmentTemp_left', {}));
-                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
-                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
+                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
+                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
                 chart.pieChart("resumptionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', "分");
                 chart.pieChart("disciplineChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', '分');
                 $("#rightSide").html(template('governmentTemp_right', {}));

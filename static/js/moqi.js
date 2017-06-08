@@ -321,7 +321,7 @@
                     color: ['#3cb7f6','#1991d4', '#1578ae', '#136d9e', '#105e88'],
                     data: [
                         { value: 267, name: '家医团队' },
-                        { value: 3718, name: '健康家人' },
+                        { value: 3713, name: '健康家人' },
                         { value: 223, name: '专科医生' },
                         { value: 2456, name: '帮扶干部' },
                         { value: 220, name: '村支书' }
@@ -334,10 +334,10 @@
                 var documentSum = {
                     color: ['#fff100', '#63c727', '#1fa9f4', '#e9733f'],
                     data: [
-                        { value: 615, name: '完全丧失劳动能力' },
+                        { value: 614, name: '完全丧失劳动能力' },
                         { value: 864, name: '完全恢复劳动能力' },
-                        { value: 3718, name: '健康人群' },
-                        { value: 1073, name: '部分恢复劳动能力' }
+                        { value: 3713, name: '健康人群' },
+                        { value: 1079, name: '部分恢复劳动能力' }
                     ],
                     radius: ['40%', '60%'],
                     center: ["50%", "50%"],

@@ -1044,5 +1044,64 @@
             "ex_work": "--",
             "branch": "15849065360"
         }
+    ],
+    
+    "郭尼村": [
+        {
+            "town": "登特科",
+            "village": "郭尼村",
+            "duty": "村两委",
+            "name": "兰玉印",
+            "sex": "男",
+            "nation": "汉",
+            "birthday": "1975年11月01日",
+            "age": "42",
+            "contact": "15047024999",
+            "date": "1997、7",
+            "ex_work": "",
+            "branch": "郭尼村"
+        },
+        {
+            "town": "登特科",
+            "village": "郭尼村",
+            "duty": "村两委",
+            "name": "辛海",
+            "sex": "男",
+            "nation": "汉",
+            "birthday": "1975年09月26日",
+            "age": "42",
+            "contact": "13847076959",
+            "date": "1999、7",
+            "ex_work": "",
+            "branch": "郭尼村"
+        },
+        {
+            "town": "登特科",
+            "village": "郭尼村",
+            "duty": "村两委",
+            "name": "迟玉福",
+            "sex": "男",
+            "nation": "汉",
+            "birthday": "1974年06月20日",
+            "age": "43",
+            "contact": "13644701000",
+            "date": "1997、7",
+            "ex_work": "",
+            "branch": "郭尼村"
+        },
+        {
+            "town": "登特科",
+            "village": "郭尼村",
+            "duty": "村两委",
+            "name": "王可生",
+            "sex": "男",
+            "nation": "汉",
+            "birthday": "1981年07月05日",
+            "age": "36",
+            "contact": "13848081707",
+            "date": "2009、7",
+            "ex_work": "",
+            "branch": "郭尼村"
+        }
     ]
 }

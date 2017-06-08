@@ -920,7 +920,7 @@
                 var canWorkList = [];
                 $('.validMap').removeClass('validMap');
                 if (claName == 'government') {
-                    canWorkList = ['hanguerhezhen','nierjizhen',"baoshanzhen", "xiwaertuzhen", "aerlazhen", 'shenglicun','madangqiancun','dongkunqian','shuanglongquancun','xinfacun','xinglongcun','xiaoquanzicun','fuxingcun','aerlacun','dongkunqiancun'];
+                    canWorkList = ['hanguerhezhen','nierjizhen',"baoshanzhen","dengtekebanshichu", "xiwaertuzhen", "aerlazhen", 'shenglicun','madangqiancun','dongkunqian','shuanglongquancun','xinfacun','xinglongcun','xiaoquanzicun','fuxingcun','aerlacun','dongkunqiancun','guonicun'];
                 } else {
                     canWorkList = ['hanguerhezhen', 'nierjizhen', "baoshanzhen", "dengtekebanshichu", "xiwaertuzhen", "aerlazhen", 'fuxingcun', 'xiaoquanzicun', 'xinglongcun', 'xinfacun', 'xiangyangcun', 'shuanglongquancun', 'shenglicun', 'dongkunqiancun', 'madangqiancun', 'aerlacun', 'guonicun', 'minzucun'];
                 }

@@ -361,7 +361,7 @@ span.span-active {
 }
 .per-top>div {
     height: 13vw;
-    padding: 0 1.2vw;
+    padding: 0 1vw;
     float: left;
     line-height: 1.4vw;
 }
@@ -426,7 +426,8 @@ span.span-active {
     width: 18%;
 }
 .per-top div:nth-child(2) {
-    width: 24%;
+    /*width: 24%;*/
+    width: 26%;
 }
 .per-top div:nth-child(3) {
     width: 38%;

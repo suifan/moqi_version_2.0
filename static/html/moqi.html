@@ -3654,6 +3654,7 @@
                     <li>民族：<span>{{nation}}</span></li>
                     <li>健康情况：<span>{{health}}</span></li>
                     <li>劳动能力：<span>{{labor}}</span></li>
+                    <li>家庭人数：<span>{{people_num}}</span></li>
                 </ul>
             </div>
             <div class="per-leftbtm">
@@ -3781,23 +3782,23 @@
             <div class="per-leftmid">
                 <ul>
                     <li>姓名：<span>{{name}}</span>&nbsp;&nbsp;&nbsp;性别：{{gender}}</li>
-                    <li>身份证号：<span>{{}}</span></li>
+                    <li>年龄：<span>{{age}}</span></li>
                     <li>住址：<span>{{address}}</span></li>
-                    <li>类别：<span>{{}}</span></li>
+                    <li>类别：<span>{{level}}</span></li>
                     {{each illness as ill}}
                         <li style="height: .6vw;"></li>
                         <li>疾病名称：<span>{{ill.name}}</span></li>
-                        <li>计划救治年份：<span>{{ill.aim_date}}</span></li>
+                        <li>计划救治年份：<span>{{ill.aim_date?ill.aim_date:2017}}</span></li>
                         <li>救治情况：<span>{{ill.help_status}}</span></li>
                     {{/each}}
                 </ul>
             </div>
             <div class="per-leftbtm">
                 <ul>
-                    <li>年龄：<span>{{age}}</span></li>
+                    <li>身份证号：<span>{{idnum}}</span></li>
                     <li>手机号：<span>{{phone}}</span></li>
                     <li>脱贫属性：<span>{{poverty_over_property}}</span></li>
-                    <li>家庭人数：<span>{{age}}</span></li>
+                    <li>家庭人数：<span>{{people_num}}</span></li>
                     {{each illness as ill}}
                         <li style="height: .6vw;"></li>
                         <li>诊断机构：<span>{{ill.diagnose_hospital}}</span></li>
@@ -3863,7 +3864,9 @@
                     <div class="state">
                         <p>{{five.identity}}</p>
                         <p><span class="online"></span>在线</p>
-                        <p>工作单位：{{five.org_name}}</p>
+                        {{if five.org_name}}
+                        <p style="min-width: 9vw">工作单位：{{five.org_name}}</p>
+                        {{/if}}
                     </div>
                 </div>
                 {{/each}}
@@ -3897,15 +3900,9 @@
             <p class="per-title">治疗方案</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="cure-content">
-                {{each therapeutic_schedule as cure}}
                 <div class="cure-plan">
-                    <div>疾病名称：<span>{{cure.name}}</span></div>
-                    <div>
-                        <div class="cure-title">治疗方案：</div>
-                        <div class="cure-info"><span>{{cure.schedule}}</span></div>
-                    </div>
+                    <div class="cure-info"><span>{{treatment||暂无}}</span></div>
                 </div>
-                {{/each}}
             </div>
 
         </section>
@@ -3917,10 +3914,10 @@
                     <thead>
                     <tr>
                         <th>总医疗费用</th>
-                        <th>城乡居民医疗保险报销</th>
-                        <th>商业补充保险报销</th>
-                        <th>民政局大病救助</th>
-                        <th>政府医疗保障基金救助</th>
+                        <th>城乡居民医<br />疗保险报销</th>
+                        <th>商业补充<br />保险报销</th>
+                        <th>民政局大<br />病救助</th>
+                        <th>政府医疗保<br />障基金救助</th>
                         <th>个人自付</th>
                         <th>报销比例</th>
                     </tr>

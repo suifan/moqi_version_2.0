@@ -100,13 +100,14 @@
                 var chartData = {};
                 chartData.color = ["#1fa9f4", "#0cb871"];
                 chartData.yAxisData = [2017, 2018, 2019];
+                //数据更改，暂时写死 --bytlw 20170608
                 var people = [],
                     family = [];
                 for (var i = 0, length = targetChart.length; i < length; i++) {
                     family.push(targetChart[i].house_num);
                     people.push(targetChart[i].person_num);
                 }
-                chartData.data = [{ name: "目标户数", type: "bar", data: family, barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: people, barMaxWidth: 10 }]
+                chartData.data = [{ name: "目标户数", type: "bar", data: [1900,1900,1109], barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: [4580,4580,2974], barMaxWidth: 10 }]
                 charts.xBarChart("targetChart", chartData)
                 //左侧--------------------end
                 //底部--------------------start
@@ -211,8 +212,8 @@
             },
             'getGovernment': function() {
                 $("#leftSide").html(template('governmentTemp_left', {}));
-                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
-                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
+                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
+                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
                 chart.pieChart("resumptionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', "分");
                 chart.pieChart("disciplineChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', '分');
                 $("#rightSide").html(template('governmentTemp_right', {}));
@@ -1265,16 +1266,17 @@
                             }
                             //点击房子弹出卡片
                             function homeClick(){
-                               
+
                                 $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
-                                     
+
                                     var homeId=$(this).attr('data-Name');
                                     //获取扶贫卡内容数据
-                                 
+
                                    console.log(homeId);
                                    console.log('59316232421aa9160b19ed8d');
                                     $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
                                         console.log(res.data);
+                                        res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
                                         var  homeBox=  $.jBox('', { title:res.data.username, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
                                       
@@ -1324,7 +1326,7 @@
                                    // $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
                                    //      var cardHtml = template('helpCardTemp', res.data);
                                    //      document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
-                                      
+
                                    //  });
                                 });
                             }
@@ -1393,7 +1395,7 @@
                                 })
                             } else if (text == "首页") {
                                 console.log(userId);
-                              
+
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
                                     // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
@@ -1453,7 +1455,8 @@
                     function getHelpPoor(id, index) {
                         //获取扶贫卡数据
                    
-                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + id, function(res) {
+                        $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" +id, function(res) {
+                            res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
                             var cardHtml = template('helpCardTemp', res.data);
                             // console.log(res.data.physical_exam_records);
                             document.getElementsByClassName('jbox-content')[index].innerHTML = cardHtml;
@@ -1540,6 +1543,7 @@
                                     var homeId=$(this).attr('data-name');
                                     //获取扶贫卡内容数据
                                    $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
+                                       res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
                                         var cardHtml = template('helpCardTemp', res.data);
                                         document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
                                        console.log(); 

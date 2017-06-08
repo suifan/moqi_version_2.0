@@ -1276,7 +1276,7 @@
                                    console.log('59316232421aa9160b19ed8d');
                                     $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
                                         console.log(res.data);
-                                        res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
+                                        //res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
                                         var  homeBox=  $.jBox('', { title:res.data.username, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
                                       

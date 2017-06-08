@@ -100,13 +100,14 @@
                 var chartData = {};
                 chartData.color = ["#1fa9f4", "#0cb871"];
                 chartData.yAxisData = [2017, 2018, 2019];
+                //数据更改，暂时写死 --bytlw 20170608
                 var people = [],
                     family = [];
                 for (var i = 0, length = targetChart.length; i < length; i++) {
                     family.push(targetChart[i].house_num);
                     people.push(targetChart[i].person_num);
                 }
-                chartData.data = [{ name: "目标户数", type: "bar", data: family, barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: people, barMaxWidth: 10 }]
+                chartData.data = [{ name: "目标户数", type: "bar", data: [1900,1900,1109], barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: [4580,4580,2974], barMaxWidth: 10 }]
                 charts.xBarChart("targetChart", chartData)
                 //左侧--------------------end
                 //底部--------------------start

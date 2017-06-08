@@ -100,14 +100,13 @@
                 var chartData = {};
                 chartData.color = ["#1fa9f4", "#0cb871"];
                 chartData.yAxisData = [2017, 2018, 2019];
-                //数据更改，暂时写死 --bytlw 20170608
                 var people = [],
                     family = [];
                 for (var i = 0, length = targetChart.length; i < length; i++) {
                     family.push(targetChart[i].house_num);
                     people.push(targetChart[i].person_num);
                 }
-                chartData.data = [{ name: "目标户数", type: "bar", data: [1900,1900,1109], barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: [4580,4580,2974], barMaxWidth: 10 }]
+                chartData.data = [{ name: "目标户数", type: "bar", data: family, barMaxWidth: 10 }, { name: "目标人数", type: "bar", data: people, barMaxWidth: 10 }]
                 charts.xBarChart("targetChart", chartData)
                 //左侧--------------------end
                 //底部--------------------start
@@ -212,8 +211,8 @@
             },
             'getGovernment': function() {
                 $("#leftSide").html(template('governmentTemp_left', {}));
-                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
-                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100',"分");
+                chart.pieChart("satisfactionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
+                chart.pieChart("attendanceChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100%');
                 chart.pieChart("resumptionChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', "分");
                 chart.pieChart("disciplineChart", "#1b9deb", "#1b9deb", [{ "value": 100 }], '100', '分');
                 $("#rightSide").html(template('governmentTemp_right', {}));
@@ -276,7 +275,7 @@
                         { name: "关节病", percent: "4.89%" },
                         { name: "肺气肿", percent: "3.48%" },
                         { name: "精神疾病", percent: "3.29%" },
-                        { name: "关节炎", percent: "3.60%" },
+                        { name: "   关节炎", percent: "3.60%" },
                         { name: "肺结核病", percent: "1.96%" },
                         { name: "心肌病", percent: "1.64%" },
                         { name: "肝炎", percent: "1.13%" },
@@ -571,7 +570,7 @@
                         trigger: 'axis',
                         formatter: '{b}<br/>资金：{c}'
                     },
-                };;
+                };
 
                 charts.lineChart("fallbackInvestChart", touZiData);
                 //中间 end
@@ -1245,7 +1244,7 @@
                         });
                         //村两委干部工作队按钮
 
-                        //党村委会按钮
+                        //村地图按钮
                         $('#partyVillageClub').on('click',function(event) {
                             if (mapApi.curr_path_id!='shenglicun') {
                                  return;
@@ -1266,15 +1265,65 @@
                             }
                             //点击房子弹出卡片
                             function homeClick(){
+                               
                                 $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
                                      var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
                                     var homeId=$(this).attr('data-Name');
                                     //获取扶贫卡内容数据
-                                   $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
-                                        var cardHtml = template('helpCardTemp', res.data);
-                                        document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
+                                 
+                                   console.log(homeId);
+                                   console.log('59316232421aa9160b19ed8d');
+                                    $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
+                                        document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
                                       
+                                        // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
+                                        // chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
+                                        //家庭收入
+                                        if(!res.data.income_detail)return;
+                                        var self_data = res.data.income_detail.self_income;
+                                        var trans_data = res.data.income_detail.trans_income;
+                                        var selfProfit = {
+                                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                            data: [
+                                                { value: self_data.other||"", name: '其它' },
+                                                { value: self_data.money||"", name: '财产' },
+                                                { value: self_data.farm||"", name: '种植业' },
+                                                { value: self_data.work||"", name: '务工' },
+                                                { value: self_data.feed||"", name: '养殖业' }
+                                            ],
+                                            radius: ['30%', '40%'],
+                                            center: ["50%", "50%"],
+                                            formatter: "{b}\n{c}元\n({d}%)",
+                                            titleShow: false,
+                                            title: "自主性经营收入"
+                                        };
+                                        var transProfit = {
+                                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                                            data: [
+                                                { value: trans_data.basic||"", name: '低保五保' },
+                                                { value: trans_data.ecology||"", name: '生态扶持' },
+                                                { value: trans_data.insurance||"", name: '养老农业保险' },
+                                                { value: trans_data.industry||"", name: '产业扶持' },
+                                                { value: trans_data.food||"", name: '粮食、良种草原补贴' }
+                                            ],
+                                            radius: ['30%', '40%'],
+                                            center: ["50%", "50%"],
+                                            formatter: "{b}\n{c}元\n({d}%)",
+                                            titleShow: false,
+                                            title: "转移性收入"
+                                        };
+                                        charts.labelPieChart("selfProfit", selfProfit);
+                                        charts.labelPieChart("transProfit", transProfit);
                                     });
+
+
+
+                                    //  //
+                                   // $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
+                                   //      var cardHtml = template('helpCardTemp', res.data);
+                                   //      document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
+                                      
+                                   //  });
                                 });
                             }
                         });
@@ -1341,6 +1390,8 @@
                                     $popOther.find(".physexam-record img").viewer();
                                 })
                             } else if (text == "首页") {
+                                console.log(userId);
+                              
                                 $.get("http://moqi.test.grdoc.org/api/people/detail?id=" + userId, function(res) {
                                     document.getElementsByClassName('jbox-content')[1].innerHTML = template('personalTemp', res.data);
                                     // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);

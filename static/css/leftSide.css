@@ -412,6 +412,8 @@ span.span-active {
 .per-btm,.per-mid {
     margin-top: 1vw;
 }
+
+.per-btm article {}
 .per-top-head {
     display: block;
     height: 1.2vw;
@@ -479,6 +481,9 @@ span.span-active {
 }
 .per-right.card section {
     height: 10.6vw;
+}
+.per-right.card .help-method {
+    height: 7.6vw;
 }
 .cure-plan {
     margin-top: 1vw;
@@ -653,7 +658,8 @@ article h6 {
     overflow: hidden;
 }
 section.help-method .cure-content {
-    height: 8vw;
+    /*height: 8vw;*/
+    height: 5vw;
     overflow-y: auto;
 }
 #fupinBar,#profitBar {

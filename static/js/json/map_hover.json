@@ -1,11 +1,11 @@
 {
-    "povertyStructure": {
+    "povertyStructure": { 
         "aerlazhen": {
             "townName": "阿尔拉镇",
             "poorHouseCount": "112",
             "poorPeoCount": "286",
 			"poorSick": "10",
-			"signJYCount": "329"
+			"signJYCount": "87"
         },
         "bayanxiang": {
             "townName": "巴彦乡",
@@ -26,7 +26,7 @@
             "poorHouseCount": "402",
             "poorPeoCount": "968",
 			"poorSick": "195",
-			"signJYCount": "920"
+			"signJYCount": "435"
         },
         "dulaerxiang": {
             "townName": "杜拉尔乡",
@@ -75,7 +75,7 @@
             "poorHouseCount": "881",
             "poorPeoCount": "2233",
 			"poorSick": "349",
-			"signJYCount": "2223"
+			"signJYCount": "886"
         },
         "tawenaobaozhen": {
             "townName": "塔温敖宝镇",
@@ -96,7 +96,7 @@
             "poorHouseCount": "351",
             "poorPeoCount": "796",
 			"poorSick": "53",
-			"signJYCount": "482"
+			"signJYCount": "386"
         }
     }
 }

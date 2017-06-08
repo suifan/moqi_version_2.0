@@ -3663,7 +3663,7 @@
                     <li>银行卡号：<span>{{bank_card_id}}</span></li>
                     <li>贫困属性：<span>{{poor_property}}</span></li>
                     <li>脱贫属性：<span>{{poverty_over_property}}</span></li>
-                    <li>主要致(返)贫原因：<span>{{}}</span></li>
+                    <li>主要致(返)贫原因：<span>{{poor_reason}}</span></li>
                     <li>
                         <p>年收入（元）</p>
                         <p class="annual-money">{{income}}</p>
@@ -3847,6 +3847,7 @@
         </div>
     </div>
     <div class="per-right card">
+
         <section>
             <p class="per-title">五人小组名单</p>
             <div style="width: 100%; background: #fff; height:3px;"></div>
@@ -3901,7 +3902,7 @@
             <div style="width: 100%; background: #fff; height:3px;"></div>
             <div class="cure-content">
                 <div class="cure-plan">
-                    <div class="cure-info"><span>{{treatment||暂无}}</span></div>
+                    <div class="cure-info"><span>{{treatment||"暂无"}}</span></div>
                 </div>
             </div>
 

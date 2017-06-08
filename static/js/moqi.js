@@ -1267,13 +1267,15 @@
                             function homeClick(){
                                
                                 $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
-                                     var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
+                                     
                                     var homeId=$(this).attr('data-Name');
                                     //获取扶贫卡内容数据
                                  
                                    console.log(homeId);
                                    console.log('59316232421aa9160b19ed8d');
                                     $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
+                                        console.log(res.data);
+                                        var  homeBox=  $.jBox('', { title:res.data.username, buttons: {}, border: 0, opacity: 0.4 });
                                         document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
                                       
                                         // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);

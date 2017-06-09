@@ -1524,34 +1524,34 @@
         //初始化地图方法；
         mapApi.init("moqi", "homePage");
         //地图模块js ---------end----------
-        $('#logout').on('click',function(event) {
-                             $('.hangPai').show();//
-                             $('#hangPai').html(template('hangPaiTemp',{}));
-                             homeClick();
-                             //alert();
-                             $(".hangPai").scrollTop($(window).height()/3);
-                             $(".hangPai").scrollLeft($(window).width()/8);
-                            quitHp();
-                            //退出按钮
-                            function quitHp(){
-                                $('.quitHp-btn').on('click', function(event) {
-                                   $('.hangPai').hide();
-                                });
-                            }
-                            //点击房子弹出卡片
-                            function homeClick(){
-                                $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
-                                     var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
-                                    var homeId=$(this).attr('data-name');
-                                    //获取扶贫卡内容数据
-                                   $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
-                                       res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
-                                        var cardHtml = template('helpCardTemp', res.data);
-                                        document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
-                                       console.log(); 
-                                    });
-                                });
-                            }
-                        });
+        // $('#logout').on('click',function(event) {
+        //                      $('.hangPai').show();//
+        //                      $('#hangPai').html(template('hangPaiTemp',{}));
+        //                      homeClick();
+        //                      //alert();
+        //                      $(".hangPai").scrollTop($(window).height()/3);
+        //                      $(".hangPai").scrollLeft($(window).width()/8);
+        //                     quitHp();
+        //                     //退出按钮
+        //                     function quitHp(){
+        //                         $('.quitHp-btn').on('click', function(event) {
+        //                            $('.hangPai').hide();
+        //                         });
+        //                     }
+        //                     //点击房子弹出卡片
+        //                     function homeClick(){
+        //                         $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
+        //                              var  homeBox=  $.jBox('', { title:'详情', buttons: {}, border: 0, opacity: 0.4 });
+        //                             var homeId=$(this).attr('data-name');
+        //                             //获取扶贫卡内容数据
+        //                            $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
+        //                                res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
+        //                                 var cardHtml = template('helpCardTemp', res.data);
+        //                                 document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
+        //                                console.log(); 
+        //                             });
+        //                         });
+        //                     }
+        //                 });
 
     });

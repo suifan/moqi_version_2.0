@@ -945,6 +945,78 @@
                     $(this).removeClass('show');
                 });
             },
+             "quitHp":function(){
+                $('.quitHp-btn').on('click', function(event) {
+                   $('.hangPai').hide();
+                });
+            },
+
+                        //村地图按钮
+              "showVillageMap":function (){
+                    if (mapApi.curr_path_id!='shenglicun') {
+                         return;
+                        alert("该村此功能暂未上线");
+                       
+                    }
+                    $('.hangPai').show();//
+                    $('#hangPai').html(template('hangPaiTemp',{}));
+                     $('.'+'hp-'+mapApi.curr_path_id).show();
+                    $(".hangPai").scrollTop($(window).height()/3);
+                    $(".hangPai").scrollLeft($(window).width()/8);
+                    mapApi.homeClick();
+                    mapApi.quitHp();
+            },
+            "homeClick":function(){
+                $('.hp-shenglicun').find('.seeInfo').on('click', function(event) {
+
+                    var homeId=$(this).attr('data-Name');
+                    //获取扶贫卡内容数据
+
+                    $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
+                        console.log(res.data);
+                        //res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
+                        var  homeBox=  $.jBox('', { title:res.data.username, buttons: {}, border: 0, opacity: 0.4 });
+                        document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
+
+                        if(!res.data.income_detail)return;
+                        var self_data = res.data.income_detail.self_income;
+                        var trans_data = res.data.income_detail.trans_income;
+                        var selfProfit = {
+                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                            data: [
+                                { value: self_data.other||"", name: '其它' },
+                                { value: self_data.money||"", name: '财产' },
+                                { value: self_data.farm||"", name: '种植业' },
+                                { value: self_data.work||"", name: '务工' },
+                                { value: self_data.feed||"", name: '养殖业' }
+                            ],
+                            radius: ['30%', '40%'],
+                            center: ["50%", "50%"],
+                            formatter: "{b}\n{c}元\n({d}%)",
+                            titleShow: false,
+                            title: "自主性经营收入"
+                        };
+                        var transProfit = {
+                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
+                            data: [
+                                { value: trans_data.basic||"", name: '低保五保' },
+                                { value: trans_data.ecology||"", name: '生态扶持' },
+                                { value: trans_data.insurance||"", name: '养老农业保险' },
+                                { value: trans_data.industry||"", name: '产业扶持' },
+                                { value: trans_data.food||"", name: '粮食、良种草原补贴' }
+                            ],
+                            radius: ['30%', '40%'],
+                            center: ["50%", "50%"],
+                            formatter: "{b}\n{c}元\n({d}%)",
+                            titleShow: false,
+                            title: "转移性收入"
+                        };
+                        charts.labelPieChart("selfProfit", selfProfit);
+                        charts.labelPieChart("transProfit", transProfit);
+                    });
+
+                });
+            },
             //初始化 首页地图
             "getMap": function(oSvg) { //获取县地图
                 mapApi.curr_svg = oSvg;
@@ -1153,19 +1225,59 @@
                     // var area = "西瓦尔图镇";
                     // var curr_path_name = "兴隆村";
                     //请求贫困家庭列表数据
-                    if (text == "健康扶贫") {
-                        $.ajaxSettings.async = true;
+                     if (text == "健康扶贫") {
+                        if(event.target.parentNode.id=="shenglicun"){
+                             $(".map-links").html(template("villageClickTemp", {}))
+                             .css({
+                            "left": x - $('.map-links').width()/2,
+                             "top": y - $('.map-links').height()*1.5
+                             })
+                             .addClass('show');
+                             //点击列表详情
+                             $('#villagerList').on('click',function(){
+                                $.ajaxSettings.async = false;
+                                $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
+                                    // res = data;
+                                    getHouseList(data,mapApi.curr_path_name);
+                                    // console.log(data);
+                                });
+                             });
+                             //点击村地图按钮
+                              $('#partyVillageMap').on('click',mapApi.showVillageMap);
+                             return; 
+                        }
+                        $.ajaxSettings.async = false;
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
                             // res = data;
                             getHouseList(data,mapApi.curr_path_name);
                             // console.log(data);
-                        })
+                        });
                     } else if (text == "首页") {
+                        if(event.target.parentNode.id=="shenglicun"){
+                             $(".map-links").html(template("villageClickTemp", {}))
+                             .css({
+                            "left": x - $('.map-links').width()/2,
+                             "top": y - $('.map-links').height()*1.5
+                             })
+                             .addClass('show');
+                             //点击列表详情
+                             $('#villagerList').on('click',function(){
+                                $.ajaxSettings.async = false;
+                                $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
+                                                           // res = data;
+                                   getHouseList(data,mapApi.curr_path_name);
+                                   // console.log(data);
+                               });
+                             });
+                             //点击村地图按钮
+                              $('#partyVillageMap').on('click',mapApi.showVillageMap);
+                             return; 
+                        }
                         $.get("http://moqi.test.grdoc.org/api/people/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
                             // res = data;
                             getHouseList(data,mapApi.curr_path_name);
                             // console.log(data);
-                        })
+                        });
                     } else if(text == "党建促脱贫"){
                         //modified for 党建点击村时，如果是胜利村则显示四条，其他则只显示两条 by tlw at 20170606 start
                         $(".map-links").html(template("mapPartyClickTemp", {}));
@@ -1221,17 +1333,17 @@
                         //驻村第一书记工作队按钮
                         $('#workTeam,#villageCadre').on('click', function(event) {
                             event.preventDefault();
-                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>'
+                            var title=mapApi.curr_path_name+'<span>村 两 委 干 部</span>';
                             // var url=" ../js/json/committee.json"
-                            var listData = committeeData
+                            var listData = committeeData;
                             if(event.target.id=="workTeam"){
-                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>'
+                                title = mapApi.curr_path_name+'<span>驻 村 第 一 书 记 工 作 队</span>';
                                 // url=" ../js/json/first_secretary.json"
-                                listData = workTeamData
+                                listData = workTeamData;
                             }
                             /* Act on the event */
                             // $.getJSON(url,function(res){
-                                var data={}
+                                var data={};
                                     data.data = listData[mapApi.curr_path_name];
                                 // var membersTemp = template("workTeamAndCadreTemp", data);
                                 var html = "<div></div>";
@@ -1245,94 +1357,9 @@
                                 jpage.page(data.data, "workTeamAndCadreTemp", container, 10);
                             // });
                         });
-                        //村两委干部工作队按钮
-
                         //村地图按钮
-                        $('#partyVillageClub').on('click',function(event) {
-                            if (mapApi.curr_path_id!='shenglicun') {
-                                 return;
-                                alert("该村此功能暂未上线");
-                               
-                            }
-                             $('.hangPai').show();//
-                             $('#hangPai').html(template('hangPaiTemp',{}));
-                             homeClick();
-                            quitHp();
-                              $(".hangPai").scrollTop($(window).height()/3);
-                             $(".hangPai").scrollLeft($(window).width()/8);
-                            //退出按钮
-                            function quitHp(){
-                                $('.quitHp-btn').on('click', function(event) {
-                                   $('.hangPai').hide();
-                                });
-                            }
-                            //点击房子弹出卡片
-                            function homeClick(){
+                        $('#partyVillageMap').on('click',mapApi.showVillageMap);
 
-                                $('.hPshenglicunSvg').find('.seeInfo').on('click', function(event) {
-
-                                    var homeId=$(this).attr('data-Name');
-                                    //获取扶贫卡内容数据
-
-                                   console.log(homeId);
-                                   console.log('59316232421aa9160b19ed8d');
-                                    $.get("http://moqi.test.grdoc.org/api/people/detail?id="+homeId, function(res) {
-                                        console.log(res.data);
-                                        //res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
-                                        var  homeBox=  $.jBox('', { title:res.data.username, buttons: {}, border: 0, opacity: 0.4 });
-                                        document.getElementsByClassName('jbox-content')[0].innerHTML = template('personalTemp', res.data);
-                                      
-                                        // chart.barChart("fupinBar", ["住房保障","产业扶持","生态扶持","教育扶持","政策兜底"], [0, 0, 0, 0,0], true);
-                                        // chart.barChart("profitBar", ["自主经营性收入","政策性补贴收入"], [0, 0], true);
-                                        //家庭收入
-                                        if(!res.data.income_detail)return;
-                                        var self_data = res.data.income_detail.self_income;
-                                        var trans_data = res.data.income_detail.trans_income;
-                                        var selfProfit = {
-                                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
-                                            data: [
-                                                { value: self_data.other||"", name: '其它' },
-                                                { value: self_data.money||"", name: '财产' },
-                                                { value: self_data.farm||"", name: '种植业' },
-                                                { value: self_data.work||"", name: '务工' },
-                                                { value: self_data.feed||"", name: '养殖业' }
-                                            ],
-                                            radius: ['30%', '40%'],
-                                            center: ["50%", "50%"],
-                                            formatter: "{b}\n{c}元\n({d}%)",
-                                            titleShow: false,
-                                            title: "自主性经营收入"
-                                        };
-                                        var transProfit = {
-                                            color: ['#feef35', '#2caaf1', '#e77346', '#f6b45a ','#98da2a'],
-                                            data: [
-                                                { value: trans_data.basic||"", name: '低保五保' },
-                                                { value: trans_data.ecology||"", name: '生态扶持' },
-                                                { value: trans_data.insurance||"", name: '养老农业保险' },
-                                                { value: trans_data.industry||"", name: '产业扶持' },
-                                                { value: trans_data.food||"", name: '粮食、良种草原补贴' }
-                                            ],
-                                            radius: ['30%', '40%'],
-                                            center: ["50%", "50%"],
-                                            formatter: "{b}\n{c}元\n({d}%)",
-                                            titleShow: false,
-                                            title: "转移性收入"
-                                        };
-                                        charts.labelPieChart("selfProfit", selfProfit);
-                                        charts.labelPieChart("transProfit", transProfit);
-                                    });
-
-
-
-                                    //  //
-                                   // $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" + homeId, function(res) {
-                                   //      var cardHtml = template('helpCardTemp', res.data);
-                                   //      document.getElementsByClassName('jbox-content')[0].innerHTML = cardHtml;
-
-                                   //  });
-                                });
-                            }
-                        });
                     }else{
 
                     }

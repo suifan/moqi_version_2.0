@@ -348,6 +348,7 @@
                         type: 'GET',
                         url: 'http://api.homedoctor.grdoc.org/government/get-this-week-sign',
                         dataType: 'json',
+                        async:true,
                         data: {
                             province: '内蒙古',
                             city: '呼伦贝尔',
@@ -1153,6 +1154,7 @@
                     // var curr_path_name = "兴隆村";
                     //请求贫困家庭列表数据
                     if (text == "健康扶贫") {
+                        $.ajaxSettings.async = true;
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/list?town=" + area_name + "&village=" + mapApi.curr_path_name, function(data) {
                             // res = data;
                             getHouseList(data,mapApi.curr_path_name);
@@ -1454,7 +1456,7 @@
                      */
                     function getHelpPoor(id, index) {
                         //获取扶贫卡数据
-                   
+                        $.ajaxSettings.async=false;
                         $.get("http://moqi.test.grdoc.org/api/poverty_relief_card/detail?id=" +id, function(res) {
                             res.data.level = res.data.illness[0]?res.data.illness[0].illness_level:"";
                             var cardHtml = template('helpCardTemp', res.data);

@@ -935,7 +935,7 @@
             },
             // 返回莫旗大地图
             "goBack": function() {
-                $('#map-goBack').on('click', function(event) {
+                $('#map-goBack').unbind("click").on('click', function(event) {
                     event.preventDefault();
                     /* Act on the event */
                     area = "moqi";
